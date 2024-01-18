@@ -2,9 +2,16 @@
 
 ## BASE
 sudo apt install nala
+sudo nala upgrade
 
-sudo nala install xorg htop neofetch gparted tlp git ufw lm-sensors nano inxi bash-completion redshift p7zip-full arandr gnome-screenshot thunar gvfs network-manager-gnome lxappearance  brightnessctl acpi lightdm rofi
+sudo nala install xorg -y
+
+sudo nala install htop neofetch gparted tlp git ufw lm-sensors nano inxi bash-completion -y
+
+sudo nala install p7zip-full arandr gvfs network-manager-gnome brightnessctl acpi lightdm -y
+
+sudo nala install rofi redshift gnome-screenshot thunar lxappearance sakura -y
 
 
 ## OPCIONALES
-## sudo nala install gthumb bleachbit geany xarchiver sakura vlc firefox-esr
+## sudo nala install gthumb bleachbit geany xarchiver vlc firefox-esr -y

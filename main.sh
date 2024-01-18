@@ -11,6 +11,8 @@ sudo apt update && sudo apt upgrade -y
 sudo sed -i '36a Option "Tapping" "true"' /usr/share/X11/xorg.conf.d/40-libinput.conf 
 
 ## Debloat Debian
+##
+##
 
 echo "############ LIGHTDM ############" 
 ## Activar el DM
@@ -19,6 +21,13 @@ sudo systemctl enable lightdm.service
 echo "############ UFW ############" 
 ## Activacion ufw
 sudo ufw enable 
+
+echo "############ TLP ############" 
+## Activacion
+sudo tlp start 
+
+## Conf en modo bateria
+sudo tlp bat
 
 echo "############ ICEWM ############" 
 ## Configracion inicial
