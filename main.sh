@@ -1,6 +1,8 @@
 #!/bin/bash
 
-echo "############ SISTEMA ############" 
+
+
+echo "################### SISTEMA ###################" 
 ## Actualizacion
 sudo apt update && sudo apt upgrade -y
 
@@ -10,26 +12,22 @@ sudo apt update && sudo apt upgrade -y
 ## Configuracion de libinput
 sudo sed -i '36a Option "Tapping" "true"' /usr/share/X11/xorg.conf.d/40-libinput.conf 
 
-## Debloat Debian
-##
-##
-
-echo "############ LIGHTDM ############" 
+echo "################### LIGHTDM ###################" 
 ## Activar el DM
 sudo systemctl enable lightdm.service
 
-echo "############ UFW ############" 
+echo "################### UFW ###################" 
 ## Activacion ufw
 sudo ufw enable 
 
-echo "############ TLP ############" 
+echo "################### TLP ###################" 
 ## Activacion
 sudo tlp start 
 
 ## Conf en modo bateria
 sudo tlp bat
 
-echo "############ ICEWM ############" 
+echo "################### ICEWM ###################" 
 ## Configracion inicial
 ./iceWM/initConf.sh
 
@@ -42,17 +40,21 @@ echo "############ ICEWM ############"
 ## Walpaper
 ./iceWM/wallpaper.sh
 
-echo "############ THUNAR ############" 
+echo "################### THUNAR ###################" 
 ## Configurar terminal por defecto
 ./thunar/setDefaultTerminal.sh
 
-echo "############ PIPEWIRE ############"
+echo "################### PIPEWIRE ###################" 
 ./audio/pipewire.sh
 
-echo "############ FLATPAK ############"
+echo "################### FLATPAK ###################" 
 ## Instalacion base
 ./flatpak/instFlatpak.sh
 
 ## Instalacion apps
 ./flatpak/appsFlatpak.sh
+
+echo "################### DEBLOAT DEBIAN ###################" 
+./system/debloatDebian.sh
+
 
