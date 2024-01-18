@@ -52,7 +52,7 @@ echo "################### FLATPAK ###################"
 ./flatpak/instFlatpak.sh
 
 ## Instalacion apps
-./flatpak/appsFlatpak.sh
+#./flatpak/appsFlatpak.sh
 
 echo "################### DEBLOAT DEBIAN ###################" 
 ./system/debloatDebian.sh
