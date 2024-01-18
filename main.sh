@@ -1,8 +1,8 @@
 #!/bin/bash
 
-############ SISTEMA ############ 
+echo "############ SISTEMA ############" 
 ## Actualizacion
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade -y
 
 ## Instalcion apps minimas y opcionales
 ./system/apps.sh
@@ -12,15 +12,15 @@ sudo sed -i '36a Option "Tapping" "true"' /usr/share/X11/xorg.conf.d/40-libinput
 
 ## Debloat Debian
 
-############ LIGHTDM ############ 
+echo "############ LIGHTDM ############" 
 ## Activar el DM
 sudo systemctl enable lightdm.service
 
-############ UFW ############ 
+echo "############ UFW ############" 
 ## Activacion ufw
 sudo ufw enable 
 
-############ ICEWM ############ 
+echo "############ ICEWM ############" 
 ## Configracion inicial
 ./iceWM/initConf.sh
 
@@ -33,17 +33,17 @@ sudo ufw enable
 ## Walpaper
 ./iceWM/wallpaper.sh
 
-############ THUNAR ############ 
+echo "############ THUNAR ############" 
 ## Configurar terminal por defecto
 ./thunar/setDefaultTerminal.sh
 
-############ PIPEWIRE ############
+echo "############ PIPEWIRE ############"
 ./audio/pipewire.sh
 
-############ FLATPAK ############
+echo "############ FLATPAK ############"
 ## Instalacion base
 ./flatpak/instFlatpak.sh
 
 ## Instalacion apps
-## ./flatpak/appsFlatpak.sh
+./flatpak/appsFlatpak.sh
 
