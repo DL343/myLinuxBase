@@ -3,9 +3,6 @@
 
 
 echo "################### SISTEMA ###################" 
-## Actualizacion
-sudo apt update && sudo apt upgrade -y
-
 ## Instalcion apps minimas y opcionales
 ./system/apps.sh
 

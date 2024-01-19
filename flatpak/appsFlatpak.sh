@@ -1,19 +1,19 @@
 #!/bin/bash
 
 ## Joplin
-flatpak install flathub net.cozic.joplin_desktop
+flatpak install flathub -y net.cozic.joplin_desktop
 
 ## Waterfox 
-flatpak install flathub net.waterfox.waterfox
+flatpak install flathub -y net.waterfox.waterfox
 
 ## VLC
-flatpak install flathub org.videolan.VLC
+flatpak install flathub -y org.videolan.VLC
 
 ## Geany
-flatpak install flathub org.geany.Geany
+flatpak install flathub -y org.geany.Geany
 
 ## gThumb
-flatpak install flathub org.gnome.gThumb
+flatpak install flathub -y org.gnome.gThumb
 
 ## Bleachbit
-flatpak install flathub org.bleachbit.BleachBit
+flatpak install flathub -y org.bleachbit.BleachBit
