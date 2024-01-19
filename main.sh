@@ -40,6 +40,9 @@ echo "################### ICEWM ###################"
 ## Walpaper
 ./iceWM/wallpaper.sh
 
+## Establecer tema
+./iceWM/setTheme.sh
+
 echo "################### THUNAR ###################" 
 ## Configurar terminal por defecto
 ./thunar/setDefaultTerminal.sh
