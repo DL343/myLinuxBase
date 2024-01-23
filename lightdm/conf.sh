@@ -14,7 +14,7 @@ echo '###### PERSONALIZACION ######'
 sudo sed -i '65a greeter-session=lightdm-gtk-greeter-settings' /etc/lightdm/lightdm.conf  
 
 ## Establecer wallpaper
-sudo cp ./lightdm/wallpaper/lightdm.jpg /usr/share/pixmaps/lightdm.jpg
+sudo cp ./lightdm/wallpaper/* /usr/share/pixmaps/lightdm.jpg
 
 
 ## Configuracion

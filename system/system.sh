@@ -10,7 +10,7 @@ sudo nala upgrade -y
 
 sudo nala install xorg -y
 
-sudo nala install htop neofetch gparted tlp git ufw icewm -y
+sudo nala install htop neofetch gparted tlp git ufw xdg-user-dirs icewm -y
 sudo nala install lm-sensors nano inxi bash-completion -y
 
 sudo nala install p7zip-full arandr gvfs network-manager-gnome -y
@@ -29,10 +29,12 @@ echo '########## CONFIGURACION DE LIBINPUT ##########'
 sudo sed -i '36a Option "Tapping" "true"' /usr/share/X11/xorg.conf.d/40-libinput.conf 
 
 
-echo '########## CONFIGURACION DE POLKIT ##########'
+#echo '########## CONFIGURACION DE POLKIT ##########'
 #sudo nala install policykit-1-gnome
 #echo "/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &" >> $HOME/.icewm/startup  
 
+echo '########## GENERACION DE CARPETAS BASICAS ##########'
+xdg-user-dirs-update 
 
 
 
