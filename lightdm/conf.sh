@@ -10,20 +10,20 @@ sudo systemctl enable lightdm.service
 echo '###### PERSONALIZACION ######' 
 
 ## Dar de alta greeter
-sudo sed -i '65a greeter-session=lightdm-gtk-greeter-settings' /etc/lightdm/lightdm.conf  
+sudo sed -i '/# greeter-session=lightdm-gtk-greeter-settings/cgreeter-session=lightdm-gtk-greeter-settings' /etc/lightdm/lightdm.conf 
 
 ## Copiado de wallpaper
 sudo cp ./lightdm/wallpaper/* /usr/share/pixmaps/lightdm.jpg
 
 
 ## Configuracion del wallpaper
-sudo echo '[greeter]
+echo '[greeter]
 background = /usr/share/pixmaps/lightdm.jpg
 theme-name = Adwaita-dark
 icon-theme-name = Adwaita
 
+' | sudo tee /etc/lightdm/lightdm-gtk-greeter.conf
 
-' > /etc/lightdm/lightdm-gtk-greeter.conf
 
 
 ## Desactivar la ocultacion de los usuarios disponibles

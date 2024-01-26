@@ -28,6 +28,7 @@ echo '#!/bin/bash
 
 redshift -O 4250K -r -P &
 brightnessctl s 0 &
+parcellite &
 
 ' >> $HOME/.icewm/startup
 

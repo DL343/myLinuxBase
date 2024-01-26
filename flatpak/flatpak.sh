@@ -21,7 +21,9 @@ flatpak install flathub -y net.waterfox.waterfox
 ## VLC
 flatpak install flathub -y org.videolan.VLC
 
-## gThumb
-flatpak install flathub -y org.gnome.gThumb
+## Audacius
+flatpak install flathub -y org.atheme.audacious
 
+## Pinta
+flatpak install flathub -y com.github.PintaProject.Pinta
 

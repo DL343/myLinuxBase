@@ -10,18 +10,19 @@ sudo nala upgrade -y
 
 sudo nala install xorg -y
 
-sudo nala install htop neofetch gparted tlp git ufw xdg-user-dirs icewm -y
+sudo nala install htop neofetch gparted tlp git ufw xdg-user-dirs -y
 sudo nala install lm-sensors nano inxi bash-completion -y
 
 sudo nala install p7zip-full arandr gvfs network-manager-gnome -y
 sudo nala install brightnessctl acpi lightdm lightdm-gtk-greeter -y
 
-sudo nala install rofi redshift gnome-screenshot thunar -y
-sudo nala install lxappearance sakura qalculate-gtk arandr -y
+sudo nala install rofi redshift gnome-screenshot thunar  -y
+sudo nala install lxappearance  qalculate-gtk arandr  -y
+sudo nala install sakura icewm parcellite -y
 
 
 ## OPCIONALES
-sudo nala install geany bleachbit android-file-transfer -y
+sudo nala install geany bleachbit android-file-transfer mirage -y
 ## sudo nala install gthumb  xarchiver vlc firefox-esr -y
 
 
@@ -37,7 +38,7 @@ sudo sed -i '36a Option "Tapping" "true"' /usr/share/X11/xorg.conf.d/40-libinput
 echo '########## GENERACION DE CARPETAS DE USUARIO BASICAS ##########'
 xdg-user-dirs-update 
 
-#echo '########## CONFIGURACION DE GRUB ##########'
+echo '########## CONFIGURACION DE GRUB ##########'
 ### Contador a 1s
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=1/g' /etc/default/grub
 
@@ -47,7 +48,7 @@ sudo sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=saved/g' /etc/default/grub
 
 sudo update-grub
 
-## Apariencia
+echo '########## APARIENCIA ##########'
 mkdir -p $HOME/.config/gtk-3.0/
 
 echo "[Settings]
