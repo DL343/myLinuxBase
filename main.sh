@@ -30,7 +30,7 @@ echo "################### FLATPAK ###################"
 ## Instalacion base
 ./flatpak/flatpak.sh
 
-echo "################### DEBLOAT?? ###################" 
+echo "################### DEBLOAT?? ###################"
 ./system/debloat.sh
 
 

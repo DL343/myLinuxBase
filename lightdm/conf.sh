@@ -2,7 +2,6 @@
 
 echo '###### ASEGURAR INSTALACION ######'
 sudo nala install lightdm
-
 sudo nala install lightdm-gtk-greeter
 
 echo '###### HABILITAR EL DM ######'
@@ -13,13 +12,11 @@ echo '###### PERSONALIZACION ######'
 ## Dar de alta greeter
 sudo sed -i '65a greeter-session=lightdm-gtk-greeter-settings' /etc/lightdm/lightdm.conf  
 
-## Establecer wallpaper
+## Copiado de wallpaper
 sudo cp ./lightdm/wallpaper/* /usr/share/pixmaps/lightdm.jpg
 
 
-## Configuracion
-
-
+## Configuracion del wallpaper
 sudo echo '[greeter]
 background = /usr/share/pixmaps/lightdm.jpg
 theme-name = Adwaita-dark
@@ -29,4 +26,6 @@ icon-theme-name = Adwaita
 ' > /etc/lightdm/lightdm-gtk-greeter.conf
 
 
+## Desactivar la ocultacion de los usuarios disponibles
+sudo sed -i 's/greeter-hide-users=true/greeter-hide-users=false/g' /usr/share/lightdm/lightdm.conf.d/01_debian.conf 
 
