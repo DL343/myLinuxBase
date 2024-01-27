@@ -2,12 +2,23 @@
 
 echo '########## ¿¿DEBLOAT?? ##########'
 
-sudo systemctl disable bluetooth.service 
+if [ $(ps -p 1 -o comm=) ==  "systemd" ]; then
+		echo "SystemD detectado"
+	
+		sudo systemctl disable bluetooth.service 
+		sudo systemctl disable avahi-daemon.service 
+		sudo systemctl disable cron.service 
+		sudo systemctl disable anacron.service
+		sudo systemctl disable ModemManager.service 
 
-sudo systemctl disable avahi-daemon.service 
+	elif [ $(ps -p 1 -o comm=) ==  "sysvinit" ]; then
+		echo "SysVinit detectado"
+	
+		sudo update-rc.d -f cron remove
+		sudo update-rc.d -f  bluetooth remove
+		sudo update-rc.d -f  avahi-daemon remove
 
-sudo systemctl disable cron.service 
+fi
 
-sudo systemctl disable anacron.service
 
-sudo systemctl disable ModemManager.service 
+
