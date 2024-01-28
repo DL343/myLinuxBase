@@ -27,3 +27,43 @@ flatpak install flathub -y org.atheme.audacious
 ## Pinta
 flatpak install flathub -y com.github.PintaProject.Pinta
 
+
+echo '########## EMPEREJAR TEMAS E ICONOS DEL SISTEMA CON FLATPAK ##########'
+### Dar permiso a la carpeta
+sudo flatpak override --filesystem=$HOME/.themes
+sudo flatpak override --filesystem=$HOME/.icons
+
+## Establecer ficheros a usar
+
+if [ -d "$HOME/.themes/" ]; then
+	echo "Perfecto, existe la carpeta en $HOME/.themes"
+	
+else
+	echo "No existe la carpeta en $HOME/.themes, se procede a obtener los archivos..."
+	cp -r /usr/share/themes/ $HOME/.themes
+	echo "Listo"
+fi
+
+echo "Estableciendo configuracion..."
+sudo flatpak override --env=GTK_THEME=Adwaita-dark
+echo "-------Seccion lista---------"
+
+
+
+
+
+if [ -d "$HOME/.icons/" ]; then
+	echo "Perfecto, existe la carpeta en $HOME/.icons"
+	
+else
+	echo "No existe la carpeta en $HOME/.icons, se procede a obtener los archivos..."
+	cp -r /usr/share/icons/ $HOME/.icons
+	echo "Listo"
+fi
+
+echo "Estableciendo configuracion..."
+sudo flatpak override --env=ICON_THEME=Adwaita
+echo "-------Seccion lista---------"
+
+
+
