@@ -49,9 +49,6 @@ sudo flatpak override --env=GTK_THEME=Adwaita-dark
 echo "-------Seccion lista---------"
 
 
-
-
-
 if [ -d "$HOME/.icons/" ]; then
 	echo "Perfecto, existe la carpeta en $HOME/.icons"
 	
