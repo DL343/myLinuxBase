@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo '########## INSTALACION FLATPAK ##########'
-sudo apt install flatpak
+sudo nala install flatpak -y
 
 ## Añadir repo de flathub
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -37,7 +37,6 @@ sudo flatpak override --filesystem=$HOME/.icons
 
 if [ -d "$HOME/.themes/" ]; then
 	echo "Perfecto, existe la carpeta en $HOME/.themes"
-	
 else
 	echo "No existe la carpeta en $HOME/.themes, se procede a obtener los archivos..."
 	cp -r /usr/share/themes/ $HOME/.themes
@@ -46,12 +45,11 @@ fi
 
 echo "Estableciendo configuracion..."
 sudo flatpak override --env=GTK_THEME=Adwaita-dark
-echo "-------Seccion lista---------"
+echo "Listo."
 
 
 if [ -d "$HOME/.icons/" ]; then
 	echo "Perfecto, existe la carpeta en $HOME/.icons"
-	
 else
 	echo "No existe la carpeta en $HOME/.icons, se procede a obtener los archivos..."
 	cp -r /usr/share/icons/ $HOME/.icons
@@ -60,7 +58,6 @@ fi
 
 echo "Estableciendo configuracion..."
 sudo flatpak override --env=ICON_THEME=Adwaita
-echo "-------Seccion lista---------"
-
+echo "Listo."
 
 

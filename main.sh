@@ -1,37 +1,19 @@
 #!/bin/bash
 
-echo "################### SISTEMA ###################" 
+echo "############################ SISTEMA #############################" 
 ./system/system.sh
 
-echo "################### LIGHTDM ###################" 
+echo "############################ LIGHTDM #############################" 
 ./lightdm/conf.sh
 
-echo "################### UFW ###################" 
-## Activacion ufw
-sudo ufw enable 
-
-echo "################### TLP ###################" 
-## Activacion
-sudo tlp start 
-
-## Conf en modo bateria
-sudo tlp bat
-
-echo "################### ICEWM ###################" 
+echo "############################# ICEWM ##############################" 
 ./iceWM/icewm.sh
 
-echo "################### THUNAR ###################" 
-./thunar/setDefaultTerminal.sh
-
-echo "################### PIPEWIRE ###################" 
-./audio/pipewire.sh
-
-echo "################### FLATPAK ###################" 
-## Instalacion base
+echo "############################ FLATPAK #############################" 
 ./flatpak/flatpak.sh
 
-echo "################### DEBLOAT?? ###################"
+echo "############################ DEBLOAT?? ###########################"
 ./system/debloat.sh
 
-
-
+echo "############################ MY APPS ###########################"
+./system/myApps.sh
