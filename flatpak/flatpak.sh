@@ -1,63 +1,78 @@
 #!/bin/bash
 
-echo '########## INSTALACION FLATPAK ##########'
-sudo nala install flatpak -y
 
-## Añadir repo de flathub
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+if [ "$isFlatpak" == "y" ] || [ "$isFlatpak" == "" ]; then
+	echo "Comenzando instalacion..." 
+	
+	echo '########## INSTALACION FLATPAK ##########'
+	sudo nala install flatpak -y
 
-## Reinicio necesario
+	## Añadir repo de flathub
+	flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+	## Reinicio necesario
+
+	echo '########## APPS ##########'
+
+	## Joplin
+	flatpak install flathub -y net.cozic.joplin_desktop
+
+	## Waterfox 
+	flatpak install flathub -y net.waterfox.waterfox
+
+	## VLC
+	flatpak install flathub -y org.videolan.VLC
+
+	## Audacius
+	flatpak install flathub -y org.atheme.audacious
+
+	## Pinta
+	flatpak install flathub -y com.github.PintaProject.Pinta
 
 
+	echo '########## EMPEREJAR TEMAS E ICONOS DEL SISTEMA CON FLATPAK ##########'
+	### Dar permiso a la carpeta
+	sudo flatpak override --filesystem=$HOME/.themes
+	sudo flatpak override --filesystem=$HOME/.icons
 
-echo '########## APPS ##########'
+	## Establecer ficheros a usar
 
-## Joplin
-flatpak install flathub -y net.cozic.joplin_desktop
+	if [ -d "$HOME/.themes/" ]; then
+		echo "Perfecto, existe la carpeta en $HOME/.themes"
+	else
+		echo "No existe la carpeta en $HOME/.themes, se procede a obtener los archivos..."
+		cp -r /usr/share/themes/ $HOME/.themes
+		echo "Listo"
+	fi
 
-## Waterfox 
-flatpak install flathub -y net.waterfox.waterfox
-
-## VLC
-flatpak install flathub -y org.videolan.VLC
-
-## Audacius
-flatpak install flathub -y org.atheme.audacious
-
-## Pinta
-flatpak install flathub -y com.github.PintaProject.Pinta
+	echo "Estableciendo configuracion..."
+	sudo flatpak override --env=GTK_THEME=Adwaita-dark
+	echo "Listo."
 
 
-echo '########## EMPEREJAR TEMAS E ICONOS DEL SISTEMA CON FLATPAK ##########'
-### Dar permiso a la carpeta
-sudo flatpak override --filesystem=$HOME/.themes
-sudo flatpak override --filesystem=$HOME/.icons
+	if [ -d "$HOME/.icons/" ]; then
+		echo "Perfecto, existe la carpeta en $HOME/.icons"
+	else
+		echo "No existe la carpeta en $HOME/.icons, se procede a obtener los archivos..."
+		cp -r /usr/share/icons/ $HOME/.icons
+		echo "Listo"
+	fi
 
-## Establecer ficheros a usar
+	echo "Estableciendo configuracion..."
+	sudo flatpak override --env=ICON_THEME=Adwaita
+	echo "Listo."
 
-if [ -d "$HOME/.themes/" ]; then
-	echo "Perfecto, existe la carpeta en $HOME/.themes"
 else
-	echo "No existe la carpeta en $HOME/.themes, se procede a obtener los archivos..."
-	cp -r /usr/share/themes/ $HOME/.themes
-	echo "Listo"
+	echo "////////// Instalando apps de forma tradicional... //////////"
+	
+	wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
+	
+	#                  Navegador         Video           Musica                
+	sudo nala install firefox-esr        vlc             audacious                                 -y      
+
+	#                  Galeria         Editor Fotos
+	sudo nala install  mirage          mypaint                                                     -y
+
+	
 fi
-
-echo "Estableciendo configuracion..."
-sudo flatpak override --env=GTK_THEME=Adwaita-dark
-echo "Listo."
-
-
-if [ -d "$HOME/.icons/" ]; then
-	echo "Perfecto, existe la carpeta en $HOME/.icons"
-else
-	echo "No existe la carpeta en $HOME/.icons, se procede a obtener los archivos..."
-	cp -r /usr/share/icons/ $HOME/.icons
-	echo "Listo"
-fi
-
-echo "Estableciendo configuracion..."
-sudo flatpak override --env=ICON_THEME=Adwaita
-echo "Listo."
-
 
