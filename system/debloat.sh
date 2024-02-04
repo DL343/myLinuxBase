@@ -37,6 +37,10 @@ if [ $(ps -p 1 -o comm=) ==  "systemd" ]; then
 		## Libvirt
 		sudo systemctl disable libvirt-guests.service
 		sudo systemctl disable libvirtd.service
+		
+		## Investigando
+		
+		sudo systemctl mask rtkit-daemon.service
 
 
 	elif [ $(ps -p 1 -o comm=) ==  "init" ]; then
