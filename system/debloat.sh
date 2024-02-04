@@ -58,12 +58,7 @@ if [ $(ps -p 1 -o comm=) ==  "systemd" ]; then
 		sudo update-rc.d -f dundee remove
 		sudo update-rc.d -f network-manager remove
 		
-		
-		
-		## Investigando...
-		sudo update-rc.d -f rtkit-daemon remove
-		
-		
+		## Servicios de accesibilidad...
 		sudo update-rc.d -f at-spi-dbus-bus remove 		
 		sudo update-rc.d -f at-spi2-registryd remove
 
@@ -78,6 +73,9 @@ if [ $(ps -p 1 -o comm=) ==  "systemd" ]; then
 		
 		sudo chmod -x /usr/libexec/at-spi-bus-launcher 
 		sudo chmod -x /usr/libexec/at-spi2-registryd 
+		
+		## Investigando...
+		sudo update-rc.d -f rtkit-daemon remove
 		
 		## Libvirt
 		sudo update-rc.d -f libvirt-guests remove
