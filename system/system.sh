@@ -41,14 +41,6 @@ sudo ufw enable
 
 
 
-echo "############################## TLP ################################" 
-## Activacion
-sudo tlp start 
-
-## Conf en modo bateria
-sudo tlp bat
-
-
 
 
 echo "############################## THUNAR ################################" 

@@ -1,5 +1,14 @@
 #!/bin/bash
 
+function askPowerSaveTLP(){
+	if [ "$isTlp" == "y" ] || [ "$isTlp" == "Y" ] ||  [ "$isTlp" == "" ]; then
+		read -p "└───────¿Activar el modo ahorro de energia? (y/n) " isPowerSave
+		export isPowerSave
+	fi	
+
+}
+
+
 
 read -p "¿Instalar PipeWire? (y/n) " isPipeWire
 export isPipeWire
@@ -16,16 +25,19 @@ export isBluetooth
 read -p "¿Instalar flatpak? (y/n) " isFlatpak
 export isFlatpak 
 
-
-## ¿Connman o NetworkManager?
-
-
+read -p "¿Instalar TLP? (y/n) " isTlp
+export isTlp
+askPowerSaveTLP
 
 
 
 
 echo "############################ SISTEMA #############################" 
 ./system/system.sh
+
+
+echo "############################ TLP #############################" 
+./tlp/tlp.sh
 
 
 echo "############################ LIGHTDM #############################" 
@@ -46,4 +58,5 @@ echo "############################ DEBLOAT?? ###########################"
 
 echo "############################ MY APPS ###########################"
 ./system/myApps.sh
+
 
