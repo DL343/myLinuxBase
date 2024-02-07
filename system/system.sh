@@ -10,11 +10,29 @@ sudo nala upgrade -y
 
 sudo nala install xorg -y
 
-sudo nala install htop neofetch gparted tlp git ufw xdg-user-dirs -y
+sudo nala install htop neofetch gparted tlp ufw xdg-user-dirs -y
 sudo nala install lm-sensors nano inxi bash-completion -y
 
-sudo nala install p7zip-full arandr gvfs network-manager-gnome -y
-sudo nala install brightnessctl acpi lightdm lightdm-gtk-greeter -y
+sudo nala install p7zip-full arandr gvfs  -y
+sudo nala install lightdm lightdm-gtk-greeter -y
+       
+if [ -e /sys/class/power_supply/BAT1 ] || [ -e /sys/class/power_supply/BAT0 ]; then
+
+	echo "## Bateria detectada"   
+	echo "## Se instalan los paquetes 'brightnessctl' y 'acpi'"  
+	sudo nala install brightnessctl acpi -y
+
+	else
+	
+	echo "## Sin bateria detectada"     
+	echo "## Se omiten los paquetes 'brightnessctl' y 'acpi'"
+	
+fi
+
+## Para NetworkManager
+sudo nala install network-manager-gnome -y
+
+
                                        
 sudo nala install lxappearance arandr sakura thunar -y
 
@@ -35,7 +53,19 @@ sudo nala install   android-file-transfer  -y
 
 
 echo "################################ UFW ##############################" 
-## Activacion ufw
+## Asegurar instalacion
+sudo nala install ufw
+
+## Permitir el trafico saliente
+sudo ufw default allow outgoing
+
+## Bloquear el trafico entrante
+sudo ufw default deny incoming
+
+## Permitir trafico ssh
+#sudo ufw allow ssh
+
+# Activacion ufw
 sudo ufw enable 
 
 
@@ -44,6 +74,9 @@ sudo ufw enable
 
 
 echo "############################## THUNAR ################################" 
+## Asegurar instalacion
+sudo nala install thunar
+
 ## Establecer terminal por defecto
 mkdir -p $HOME/.config/xfce4/
 
@@ -75,14 +108,21 @@ echo '##################### CONFIGURACION DE POLKIT ######################'
 
 if [ "$isPolkit" == "y" ] || [ "$isPolkit" == "" ]; then
 
-sudo nala install policykit-1-gnome
-echo "/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &" >> $HOME/.icewm/startup  
+	## Asegurar instalacion
+	sudo nala install policykit-1-gnome
+
+	## Configurando...
+	echo "/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &" >> $HOME/.icewm/startup  
 
 
 fi
 
 
 echo '########### GENERACION DE CARPETAS DE USUARIO BASICAS #############'
+## Asegurar instalacion
+sudo nala install xdg-user-dirs
+
+## Configurando...
 xdg-user-dirs-update 
 
 
@@ -99,14 +139,14 @@ sudo nala install alsa-oss alsa-tools alsa-utils -y
 
 if [ "$isPipeWire" == "y" ] || [ "$isPipeWire" == "" ]; then
 
-## 2. SERVIDOR DE AUDIO
-### PIPEWIRE
-## // Paso 1.  Instalacion
-sudo nala install pipewire-audio wireplumber pipewire-pulse pipewire-alsa libspa-0.2-bluetooth pavucontrol -y
+	## 2. SERVIDOR DE AUDIO
+	### PIPEWIRE
+	## // Paso 1.  Instalacion
+	sudo nala install pipewire-audio wireplumber pipewire-pulse pipewire-alsa libspa-0.2-bluetooth pavucontrol -y
 
-## // Paso 2.  Configuracion
-systemctl --user --now enable pipewire pipewire-pulse  
-systemctl --user --now enable wireplumber.service
+	## // Paso 2.  Configuracion
+	systemctl --user --now enable pipewire pipewire-pulse  
+	systemctl --user --now enable wireplumber.service
 
 
 fi

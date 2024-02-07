@@ -11,21 +11,28 @@ cp -r /usr/share/icewm/ $HOME/.icewm/
 echo "
 
 ################# CUSTOM #################
-key "XF86AudioLowerVolume"      amixer sset Master 5%-
-key "XF86AudioRaiseVolume"      amixer sset Master 5%+
-key "XF86AudioMute"             amixer sset Master toggle
+key XF86AudioLowerVolume        amixer sset Master 5%-
+key XF86AudioRaiseVolume        amixer sset Master 5%+
+key XF86AudioMute               amixer sset Master toggle
+
+key Alt+KP_Subtract             amixer sset Master 5%-
+key Alt+KP_Add                  amixer sset Master 5%+
+key Alt+KP_Multiply             amixer sset Master toggle
+
 key XF86MonBrightnessDown       brightnessctl s 10%-
 key XF86MonBrightnessUp         brightnessctl s 10%+
+
 key Super+Enter                 sakura
 key Super+f                     thunar
 key Super+e                     geany
 key Super+m                     vlc
+key Ctrl+Shift+Escape           sakura -x htop
+
 #key Print                      gnome-screenshot -i
 key Print                       gnome-screenshot
 key Ctrl+Print                  gnome-screenshot -w
 key Alt+Print                   gnome-screenshot -a
 key Super+Space                 rofi -show-icons -show drun
-
 
 " >> $HOME/.icewm/keys 
 
