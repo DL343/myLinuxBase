@@ -5,7 +5,11 @@ sudo nala install lightdm
 sudo nala install lightdm-gtk-greeter
 
 echo '###### HABILITAR EL DM ######'
-sudo systemctl enable lightdm.service
+if [ "$isInit" ==  "systemd" ]; then
+	sudo systemctl enable lightdm.service
+elif [ "$isInit" ==  "init" ]; then
+	sudo update-rc.d -f lightdm defaults
+fi
 
 echo '###### PERSONALIZACION ######' 
 

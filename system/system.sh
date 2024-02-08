@@ -209,12 +209,18 @@ echo '######################### BLUETOOTH ##############################'
 
 if [ "$isBluetooth" == "y" ] || [ "$isBluetooth" == "" ]; then
 
+	echo "## Instalando paquetes para bluetooth..."
+
 	###               Soporte basico para bluetooth       Interfaz grafica para la gestion
 	sudo nala install bluez                               blueman
 	
 	### Iniciar y habilitar el servicio 
 	sudo systemctl start bluetooth.service 
 	sudo systemctl enable bluetooth.service 
+	
+else 
+	 
+	echo "## No se instalaran los paquetes para bluetooth"
 	
 fi
 

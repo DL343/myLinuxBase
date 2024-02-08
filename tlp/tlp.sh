@@ -6,8 +6,6 @@ echo "############################## TLP ################################"
 ## Activacion
 sudo tlp start 
 
-
-	
 if [ "$isPowerSave" == "y" ] || [ "$isPowerSave" == "Y" ] ||  [ "$isPowerSave" == "" ]; then
 echo "## Configuracion modo ahorro de energia"
 

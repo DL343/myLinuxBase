@@ -11,11 +11,13 @@ function askPolkitGnome(){
 }
 
 
+
+
 echo '########## ¿¿DEBLOAT?? ##########'
 
-if [ $(ps -p 1 -o comm=) ==  "systemd" ]; then
-		echo "systemd detectado"
-		echo "Removiendo servicios..."
+if [ "$isInit" ==  "systemd" ]; then
+		echo "## systemd detectado"
+		echo "## Removiendo servicios..."
 		
 		if [ "$isBluetooth" == "y" ] || [ "$isBluetooth" == "" ]; then
 			echo "## Bluetooth permitido, no se removera el servicio Bluetooth"
@@ -54,15 +56,15 @@ if [ $(ps -p 1 -o comm=) ==  "systemd" ]; then
 		askPolkitGnome
 
 
-	elif [ $(ps -p 1 -o comm=) ==  "init" ]; then
+	elif [ "$isInit" ==  "init" ]; then
 	
-		echo "sysVinit detectado"
-		echo "Removiendo servicios..."
+		echo "## sysVinit detectado"
+		echo "## Removiendo servicios..."
 		
 		if [ "$blueFlag" == "true" ]; then
-			echo "No se removera el servicio Bluetooth"
+			echo "## No se removera el servicio Bluetooth"
 		else
-			echo "Deshabilitando servicio bluetooth"
+			echo "## Deshabilitando servicio bluetooth"
 			sudo update-rc.d -f bluetooth remove
 		fi
 		

@@ -5,8 +5,17 @@ function askPowerSaveTLP(){
 		read -p "└───────¿Activar el modo ahorro de energia? (y/n) " isPowerSave
 		export isPowerSave
 	fi	
-
 }
+
+function askInit() {
+	if [ $(ps -p 1 -o comm=) ==  "systemd" ]; then
+		echo "systemd"
+	else
+		echo "init"
+	fi
+}
+
+export isInit=$(askInit)
 
 
 

@@ -34,6 +34,7 @@ key Ctrl+Print                  gnome-screenshot -w
 key Alt+Print                   gnome-screenshot -a
 key Super+Space                 rofi -show-icons -show drun
 
+
 " >> $HOME/.icewm/keys 
 
 
