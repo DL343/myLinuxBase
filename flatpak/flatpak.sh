@@ -63,17 +63,8 @@ if [ "$isFlatpak" == "y" ] || [ "$isFlatpak" == "" ]; then
 	echo "Listo."
 
 else
+
 	echo "## Flatpak marcado para no instalar"
-	echo "##////////// Instalando apps de forma tradicional... //////////"
-	
-	wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
-	
-	#                  Navegador        Video             Musica                
-	sudo nala install firefox-esr       mpv               audacious                                 -y      
-
-	#                  Galeria          Editor Fotos	  Salvapantalla
-	sudo nala install  mirage           gnome-paint       xscreensaver                              -y
-
 	
 fi
 

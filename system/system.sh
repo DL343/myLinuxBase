@@ -5,22 +5,28 @@ echo '########################## APPS BASICAS #########################'
 sudo apt update 
 
 ## BASE
-sudo apt install nala -y
-sudo nala upgrade -y
+sudo apt install nala                                                                 -y
+sudo nala upgrade 																	  -y
 
-sudo nala install xorg -y
+sudo nala install xorg 																  -y
 
-sudo nala install htop neofetch gparted tlp ufw xdg-user-dirs -y
-sudo nala install lm-sensors nano inxi bash-completion -y
+sudo nala install htop neofetch gparted tlp ufw 					                  -y
 
-sudo nala install p7zip-full arandr gvfs  -y
-sudo nala install lightdm lightdm-gtk-greeter -y
+
+
+sudo nala install lm-sensors nano inxi bash-completion 	          					  -y
+
+sudo nala install arandr gvfs 	p7zip-full 			     							  -y
+
+sudo nala install xdg-desktop-portal xdg-desktop-portal-gtk xdg-user-dirs 			  -y
+
+sudo nala install lightdm lightdm-gtk-greeter 										  -y
        
 if [ -e /sys/class/power_supply/BAT1 ] || [ -e /sys/class/power_supply/BAT0 ]; then
 
 	echo "## Bateria detectada"   
 	echo "## Se instalan los paquetes 'brightnessctl' y 'acpi'"  
-	sudo nala install brightnessctl acpi -y
+	sudo nala install brightnessctl acpi 											  -y
 
 	else
 	
@@ -30,28 +36,44 @@ if [ -e /sys/class/power_supply/BAT1 ] || [ -e /sys/class/power_supply/BAT0 ]; t
 fi
 
 ## Para NetworkManager
-sudo nala install network-manager-gnome -y
+sudo nala install network-manager-gnome 											  -y
 
 
                                        
-sudo nala install lxappearance arandr sakura thunar -y
+sudo nala install lxappearance arandr sakura thunar 								  -y
 
 
 #                 Lanzador           Filtro          EditorTxt       Screenshot				
-sudo nala install rofi               redshift        geany           gnome-screenshot         -y
+sudo nala install rofi               redshift        geany           gnome-screenshot      -y
 
 #                 Calculadora        Portapapeles    Limpiador       VisorDocumentos
-sudo nala install qalculate-gtk      parcellite      bleachbit       evince                   -y
+sudo nala install qalculate-gtk      parcellite      bleachbit       evince                -y
 
 #                                  
-# sudo nala install           -y
+# sudo nala install           															   -y
 
 
 
 ## OPCIONALES
-sudo nala install   android-file-transfer  -y
+sudo nala install   android-file-transfer  												   -y
 
 
+
+## 
+
+if [ "$isFlatpak" == "n" ] || [ "$isFlatpak" == "N" ]; then
+
+	echo "##////////// Instalando apps de forma tradicional... //////////"
+	
+	wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
+	
+	#                  Navegador        Video             Musica                
+	sudo nala install firefox-esr       mpv               audacious                                 -y      
+
+	#                  Galeria          Editor Fotos	  Salvapantalla
+	sudo nala install  mirage           gnome-paint       xscreensaver                              -y
+
+fi
 
 
 
