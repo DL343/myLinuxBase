@@ -37,11 +37,14 @@ sudo nala install network-manager-gnome -y
 sudo nala install lxappearance arandr sakura thunar -y
 
 
-#                 Lanzador           Filtro          EditorTxt       Screenshot
+#                 Lanzador           Filtro          EditorTxt       Screenshot				
 sudo nala install rofi               redshift        geany           gnome-screenshot         -y
 
-#                 Calculadora        Portapapeles    WM              Limpiador
-sudo nala install qalculate-gtk      parcellite      icewm           bleachbit                 -y
+#                 Calculadora        Portapapeles    Limpiador       VisorDocumentos
+sudo nala install qalculate-gtk      parcellite      bleachbit       evince                   -y
+
+#                                  
+# sudo nala install           -y
 
 
 
