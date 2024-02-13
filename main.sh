@@ -2,7 +2,7 @@
 
 function askPowerSaveTLP(){
 	if [ "$isTlp" == "y" ] || [ "$isTlp" == "Y" ] ||  [ "$isTlp" == "" ]; then
-		read -p "└───────¿Activar el modo ahorro de energia? (y/n) " isPowerSave
+		read -p "└───────¿Activar el modo ahorro de energia? [y/n] " isPowerSave
 		export isPowerSave
 	fi	
 }
@@ -19,22 +19,22 @@ export isInit=$(askInit)
 
 
 
-read -p "¿Instalar PipeWire? (y/n) " isPipeWire
+read -p "¿Instalar PipeWire? (Se removera PulseAudio si es que existe) [y/n] " isPipeWire
 export isPipeWire
 
-read -p "¿Instalar Qemu/KVM? (y/n) " isQemuKVM
+read -p "¿Instalar Qemu/KVM? [y/n] " isQemuKVM
 export isQemuKVM
 
-read -p "¿Instalar Polkit/PolicyKit? (y/n) " isPolkit
+read -p "¿Instalar Polkit/PolicyKit de Gnome? [y/n] " isPolkit
 export isPolkit
 
-read -p "¿Instalar soporte para Bluetooth? (y/n) " isBluetooth
+read -p "¿Instalar soporte para Bluetooth? [y/n] " isBluetooth
 export isBluetooth
 
-read -p "¿Instalar flatpak? (y/n) " isFlatpak
+read -p "¿Instalar flatpak? [y/n] " isFlatpak
 export isFlatpak 
 
-read -p "¿Instalar TLP? (y/n) " isTlp
+read -p "¿Instalar TLP? [y/n] " isTlp
 export isTlp
 askPowerSaveTLP
 

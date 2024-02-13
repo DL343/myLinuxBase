@@ -46,6 +46,7 @@ echo '#!/bin/bash
 redshift -O 4250K -r -P &
 brightnessctl s 0 &
 parcellite &
+xscreensaver -nosplash &
 
 ' >> $HOME/.icewm/startup
 
@@ -59,3 +60,5 @@ echo 'Theme="NanoBlue/default.theme"' > $HOME/.icewm/theme
 ########## ESTABLECER WALLPAPER ########## 
 cp ./iceWM/wallpaper/* $HOME/.icewm/themes/NanoBlue/eos.jpg
 
+
+xscreensaver -nosplash 
