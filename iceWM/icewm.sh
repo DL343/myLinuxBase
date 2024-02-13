@@ -32,7 +32,11 @@ key Ctrl+Shift+Escape           sakura -x htop
 key Print                       gnome-screenshot
 key Ctrl+Print                  gnome-screenshot -w
 key Alt+Print                   gnome-screenshot -a
-key Super+Space                 rofi -show-icons -show drun
+key Super+Space                 rofi -show-icons -theme /usr/share/rofi/themes/gruvbox-dark-hard.rasi  -show drun
+
+
+
+
 
 
 " >> $HOME/.icewm/keys 
@@ -61,4 +65,4 @@ echo 'Theme="NanoBlue/default.theme"' > $HOME/.icewm/theme
 cp ./iceWM/wallpaper/* $HOME/.icewm/themes/NanoBlue/eos.jpg
 
 
-xscreensaver -nosplash 
+
