@@ -34,13 +34,15 @@ key Ctrl+Print                  gnome-screenshot -w
 key Alt+Print                   gnome-screenshot -a
 key Super+Space                 rofi -show-icons -theme /usr/share/rofi/themes/gruvbox-dark-hard.rasi -font 'URW Gothic 14'  -show drun
 
+switchkey 'Super+p'         icewm-menu-xrandr
 
 
 
 
 
 
-" >> $HOME/.icewm/keys 
+
+" > $HOME/.icewm/keys 
 
 
 ########## INICIO AUTOMATICO ##########
@@ -53,7 +55,7 @@ brightnessctl s 0 &
 parcellite &
 xscreensaver -nosplash &
 
-' >> $HOME/.icewm/startup
+' > $HOME/.icewm/startup
 
 chmod +x $HOME/.icewm/startup
 

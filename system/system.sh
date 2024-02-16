@@ -248,10 +248,11 @@ fi
 
 
 
+	echo '################ SUSPENSION POR INACTIVIDAD #####################'
+	## Suspender despues de 30 minutos de inactividad
+	# ?
+	
 
-echo '################ SUSPENSION POR INACTIVIDAD #####################'
-## Suspender despues de 30 minutos de inactividad
-# ?
 
 
 
@@ -262,12 +263,13 @@ if [ -e /sys/class/power_supply/BAT1 ] || [ -e /sys/class/power_supply/BAT0 ]; t
 	echo "## Se instalan los paquetes 'brightnessctl' y 'acpi'"  
 	sudo nala install brightnessctl acpi 											  -y
 	
-	echo '####################### XSCREENSAVER ############################'
+
+	echo '############### XSCREENSAVER PARA LAPTOP ####################'
 	# Apagar y bloquear la pantalla después de 1 minuto de inactividad:
 	## Asegurar instalacion
 	sudo nala install xscreensaver
 	## Configuracion 
-	function confXSS() {
+	function confXSSL() {
 
 	echo '# XScreenSaver Preferences File
 	# Written by xscreensaver-settings 6.06 
@@ -568,20 +570,19 @@ if [ -e /sys/class/power_supply/BAT1 ] || [ -e /sys/class/power_supply/BAT0 ]; t
 	' >> $HOME/.xscreensaver
 
 	}
-	confXSS
-
+	confXSSL
 
 	else
 	
 	echo "## Sin bateria detectada, se considera un PC de escritorio"     
 	echo "## Se omiten los paquetes 'brightnessctl' y 'acpi'"
 	
-		echo '####################### XSCREENSAVER ############################'
+		echo '############### XSCREENSAVER PARA PC ####################'
 	# Apagar y bloquear la pantalla después de 1 minuto de inactividad:
 	## Asegurar instalacion
 	sudo nala install xscreensaver
 	## Configuracion 
-	function confXSS() {
+	function confXSSPC() {
 
 	echo '# XScreenSaver Preferences File
 	# Written by xscreensaver-settings 6.06 
@@ -882,9 +883,8 @@ if [ -e /sys/class/power_supply/BAT1 ] || [ -e /sys/class/power_supply/BAT0 ]; t
 	' >> $HOME/.xscreensaver
 
 	}
-	confXSS
+	confXSSPC
 
-	
 fi
 
 

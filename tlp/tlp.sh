@@ -1,10 +1,8 @@
 #!/bin/bash
 
-
-function setupTLP(){
 echo "############################## TLP ################################" 
-## Activacion
-sudo tlp start 
+
+function TlpPowerSave(){
 
 if [ "$isPowerSave" == "y" ] || [ "$isPowerSave" == "Y" ] ||  [ "$isPowerSave" == "" ]; then
 echo "## Configuracion modo ahorro de energia"
@@ -24,12 +22,12 @@ echo "
 # - In case of identical parameters, the last occurence has precedence
 # - This also means, parameters enabled here will override anything else
 # - However you may append values to a parameter already defined as intrinsic
-#   default or in a previously read file: use PARAMETER+="add values"
+#   default or in a previously read file: use PARAMETER+=\"add values\"
 # - IMPORTANT: all parameters here are disabled; remove the leading '#' if you
 #   like to enable a feature without default or have a value different from the
 #   default
 # - Default *: intrinsic default that is effective when the parameter is missing
-#     or disabled by a leading '#'; use PARAM="" to disable an intrinsic default
+#     or disabled by a leading '#'; use PARAM=\"\" to disable an intrinsic default
 # - Default <none>: do nothing or use kernel/hardware defaults
 # -
 # ------------------------------------------------------------------------------
@@ -66,7 +64,7 @@ TLP_PERSISTENT_DEFAULT=1
 # Note: try on laptops where operation mode AC/BAT is incorrectly detected.
 # Default: <none>
 
-#TLP_PS_IGNORE="BAT"
+#TLP_PS_IGNORE=\"BAT\"
 
 # Seconds laptop mode has to wait after the disk goes idle before doing a sync.
 # Non-zero value enables, zero disables laptop mode.
@@ -140,7 +138,7 @@ CPU_ENERGY_PERF_POLICY_ON_BAT=power
 #CPU_MIN_PERF_ON_BAT=0
 #CPU_MAX_PERF_ON_BAT=30
 
-# Set the CPU "turbo boost" (Intel) or "turbo core" (AMD) feature:
+# Set the CPU \"turbo boost\" (Intel) or \"turbo core\" (AMD) feature:
 #   0=disable, 1=allow.
 # Note: a value of 1 does *not* activate boosting, it just allows it.
 # Default: <none>
@@ -184,9 +182,9 @@ PLATFORM_PROFILE_ON_BAT=low-power
 # Define disk devices on which the following DISK/AHCI_RUNTIME parameters act.
 # Separate multiple devices with spaces.
 # Devices can be specified by disk ID also (lookup with: tlp diskid).
-# Default: "nvme0n1 sda"
+# Default: \"nvme0n1 sda\"
 
-#DISK_DEVICES="nvme0n1 sda"
+#DISK_DEVICES=\"nvme0n1 sda\"
 
 # Disk advanced power management level: 1..254, 255 (max saving, min, off).
 # Levels 1..127 may spin down the disk; 255 allowable on most drives.
@@ -194,8 +192,8 @@ PLATFORM_PROFILE_ON_BAT=low-power
 # to keep the hardware default for the particular disk.
 # Default: 254 (AC), 128 (BAT)
 
-#DISK_APM_LEVEL_ON_AC="254 254"
-#DISK_APM_LEVEL_ON_BAT="128 128"
+#DISK_APM_LEVEL_ON_AC=\"254 254\"
+#DISK_APM_LEVEL_ON_BAT=\"128 128\"
 
 # Exclude disk classes from advanced power management (APM):
 #   sata, ata, usb, ieee1394.
@@ -203,9 +201,9 @@ PLATFORM_PROFILE_ON_BAT=low-power
 # CAUTION: USB and IEEE1394 disks may fail to mount or data may get corrupted
 # with APM enabled. Be careful and make sure you have backups of all affected
 # media before removing 'usb' or 'ieee1394' from the denylist!
-# Default: "usb ieee1394"
+# Default: \"usb ieee1394\"
 
-#DISK_APM_CLASS_DENYLIST="usb ieee1394"
+#DISK_APM_CLASS_DENYLIST=\"usb ieee1394\"
 
 # Hard disk spin down timeout:
 #   0:        spin down disabled
@@ -216,8 +214,8 @@ PLATFORM_PROFILE_ON_BAT=low-power
 # to keep the hardware default for the particular disk.
 # Default: <none>
 
-#DISK_SPINDOWN_TIMEOUT_ON_AC="0 0"
-#DISK_SPINDOWN_TIMEOUT_ON_BAT="0 0"
+#DISK_SPINDOWN_TIMEOUT_ON_AC=\"0 0\"
+#DISK_SPINDOWN_TIMEOUT_ON_BAT=\"0 0\"
 
 # Select I/O scheduler for the disk devices.
 # Multi queue (blk-mq) schedulers:
@@ -234,26 +232,26 @@ PLATFORM_PROFILE_ON_BAT=low-power
 #   the old block layer in kernel 5.0
 # Default: keep
 
-#DISK_IOSCHED="mq-deadline mq-deadline"
+#DISK_IOSCHED=\"mq-deadline mq-deadline\"
 
 # AHCI link power management (ALPM) for SATA disks:
 #   min_power, med_power_with_dipm(*), medium_power, max_performance.
 # (*) Kernel 4.15 (or newer) required, then recommended.
 # Multiple values separated with spaces are tried sequentially until success.
 # Default:
-#  - "med_power_with_dipm max_performance" (AC)
-#  - "med_power_with_dipm min_power" (BAT)
+#  - \"med_power_with_dipm max_performance\" (AC)
+#  - \"med_power_with_dipm min_power\" (BAT)
 
-SATA_LINKPWR_ON_AC="med_power_with_dipm medium_power"
-#SATA_LINKPWR_ON_BAT="med_power_with_dipm min_power"
+SATA_LINKPWR_ON_AC=\"med_power_with_dipm medium_power\"
+#SATA_LINKPWR_ON_BAT=\"med_power_with_dipm min_power\"
 
 # Exclude SATA links from AHCI link power management (ALPM).
 # SATA links are specified by their host. Refer to the output of
-# tlp-stat -d to determine the host; the format is "hostX".
+# tlp-stat -d to determine the host; the format is \"hostX\".
 # Separate multiple hosts with spaces.
 # Default: <none>
 
-#SATA_LINKPWR_DENYLIST="host1"
+#SATA_LINKPWR_DENYLIST=\"host1\"
 
 # Runtime Power Management for NVMe, SATA, ATA and USB disks
 # as well as SATA ports:
@@ -284,7 +282,7 @@ SATA_LINKPWR_ON_AC="med_power_with_dipm medium_power"
 # Optical drive device to power off
 # Default: sr0
 
-#BAY_DEVICE="sr0"
+#BAY_DEVICE=\"sr0\"
 
 # Set the min/max/turbo frequency for the Intel GPU.
 # Possible values depend on your hardware. For available frequencies see
@@ -368,15 +366,15 @@ PCIE_ASPM_ON_BAT=powersupersave
 # Use lspci to get the adresses (1st column).
 # Default: <none>
 
-#RUNTIME_PM_DENYLIST="11:22.3 44:55.6"
+#RUNTIME_PM_DENYLIST=\"11:22.3 44:55.6\"
 
 # Exclude PCIe devices assigned to the listed drivers from Runtime PM.
 # Note: this preserves the kernel driver default, to force a certain state
 # use RUNTIME_PM_ENABLE/DISABLE instead.
 # Separate multiple drivers with spaces.
-# Default: "mei_me nouveau radeon", use "" to disable completely.
+# Default: \"mei_me nouveau radeon\", use \"\" to disable completely.
 
-#RUNTIME_PM_DRIVER_DENYLIST="mei_me nouveau radeon"
+#RUNTIME_PM_DRIVER_DENYLIST=\"mei_me nouveau radeon\"
 
 # Permanently enable/disable Runtime PM for listed PCIe device addresses
 # (independent of the power source). This has priority over all preceding
@@ -384,8 +382,8 @@ PCIE_ASPM_ON_BAT=powersupersave
 # Use lspci to get the adresses (1st column).
 # Default: <none>
 
-#RUNTIME_PM_ENABLE="11:22.3"
-#RUNTIME_PM_DISABLE="44:55.6"
+#RUNTIME_PM_ENABLE=\"11:22.3\"
+#RUNTIME_PM_DISABLE=\"44:55.6\"
 
 # Set to 0 to disable, 1 to enable USB autosuspend feature.
 # Default: 1
@@ -398,7 +396,7 @@ PCIE_ASPM_ON_BAT=powersupersave
 # automatically.
 # Default: <none>
 
-#USB_DENYLIST="1111:2222 3333:4444"
+#USB_DENYLIST=\"1111:2222 3333:4444\"
 
 # Exclude audio devices from USB autosuspend:
 #   0=do not exclude, 1=exclude.
@@ -434,7 +432,7 @@ PCIE_ASPM_ON_BAT=powersupersave
 # excluded above (separate with spaces). Use lsusb to get the ids.
 # Default: 0
 
-#USB_ALLOWLIST="1111:2222 3333:4444"
+#USB_ALLOWLIST=\"1111:2222 3333:4444\"
 
 # Set to 1 to disable autosuspend before shutdown, 0 to do nothing
 # Note: use as a workaround for USB devices that cause shutdown problems.
@@ -454,41 +452,41 @@ PCIE_ASPM_ON_BAT=powersupersave
 # Separate multiple devices with spaces.
 # Default: <none>
 
-#DEVICES_TO_DISABLE_ON_STARTUP="bluetooth nfc wifi wwan"
+#DEVICES_TO_DISABLE_ON_STARTUP=\"bluetooth nfc wifi wwan\"
 
 # Radio devices to enable on startup: bluetooth, nfc, wifi, wwan.
 # Separate multiple devices with spaces.
 # Default: <none>
 
-#DEVICES_TO_ENABLE_ON_STARTUP="wifi"
+#DEVICES_TO_ENABLE_ON_STARTUP=\"wifi\"
 
 # Radio devices to disable on shutdown: bluetooth, nfc, wifi, wwan.
 # Note: use as a workaround for devices that are blocking shutdown.
 # Default: <none>
 
-#DEVICES_TO_DISABLE_ON_SHUTDOWN="bluetooth nfc wifi wwan"
+#DEVICES_TO_DISABLE_ON_SHUTDOWN=\"bluetooth nfc wifi wwan\"
 
 # Radio devices to enable on shutdown: bluetooth, nfc, wifi, wwan.
 # (to prevent other operating systems from missing radios).
 # Default: <none>
 
-#DEVICES_TO_ENABLE_ON_SHUTDOWN="wwan"
+#DEVICES_TO_ENABLE_ON_SHUTDOWN=\"wwan\"
 
 # Radio devices to enable on AC: bluetooth, nfc, wifi, wwan.
 # Default: <none>
 
-#DEVICES_TO_ENABLE_ON_AC="bluetooth nfc wifi wwan"
+#DEVICES_TO_ENABLE_ON_AC=\"bluetooth nfc wifi wwan\"
 
 # Radio devices to disable on battery: bluetooth, nfc, wifi, wwan.
 # Default: <none>
 
-#DEVICES_TO_DISABLE_ON_BAT="bluetooth nfc wifi wwan"
+#DEVICES_TO_DISABLE_ON_BAT=\"bluetooth nfc wifi wwan\"
 
 # Radio devices to disable on battery when not in use (not connected):
 #   bluetooth, nfc, wifi, wwan.
 # Default: <none>
 
-#DEVICES_TO_DISABLE_ON_BAT_NOT_IN_USE="bluetooth nfc wifi wwan"
+#DEVICES_TO_DISABLE_ON_BAT_NOT_IN_USE=\"bluetooth nfc wifi wwan\"
 
 # Battery Care -- Charge thresholds
 # Charging starts when the charge level is below the START_CHARGE_THRESH value
@@ -541,25 +539,25 @@ PCIE_ASPM_ON_BAT=powersupersave
 
 # Radio devices to disable on connect.
 
-#DEVICES_TO_DISABLE_ON_LAN_CONNECT="wifi wwan"
-#DEVICES_TO_DISABLE_ON_WIFI_CONNECT="wwan"
-#DEVICES_TO_DISABLE_ON_WWAN_CONNECT="wifi"
+#DEVICES_TO_DISABLE_ON_LAN_CONNECT=\"wifi wwan\"
+#DEVICES_TO_DISABLE_ON_WIFI_CONNECT=\"wwan\"
+#DEVICES_TO_DISABLE_ON_WWAN_CONNECT=\"wifi\"
 
 # Radio devices to enable on disconnect.
 
-#DEVICES_TO_ENABLE_ON_LAN_DISCONNECT="wifi wwan"
-#DEVICES_TO_ENABLE_ON_WIFI_DISCONNECT=""
-#DEVICES_TO_ENABLE_ON_WWAN_DISCONNECT=""
+#DEVICES_TO_ENABLE_ON_LAN_DISCONNECT=\"wifi wwan\"
+#DEVICES_TO_ENABLE_ON_WIFI_DISCONNECT=\"\"
+#DEVICES_TO_ENABLE_ON_WWAN_DISCONNECT=\"\"
 
 # Radio devices to enable/disable when docked.
 
-#DEVICES_TO_ENABLE_ON_DOCK=""
-#DEVICES_TO_DISABLE_ON_DOCK=""
+#DEVICES_TO_ENABLE_ON_DOCK=\"\"
+#DEVICES_TO_DISABLE_ON_DOCK=\"\"
 
 # Radio devices to enable/disable when undocked.
 
-#DEVICES_TO_ENABLE_ON_UNDOCK="wifi"
-#DEVICES_TO_DISABLE_ON_UNDOCK=""
+#DEVICES_TO_ENABLE_ON_UNDOCK=\"wifi\"
+#DEVICES_TO_DISABLE_ON_UNDOCK=\"\"
 
 " | sudo tee /etc/tlp.conf
 		
@@ -570,8 +568,11 @@ fi
 
 
 if [ "$isTlp" == "y" ] || [ "$isTlp" == "Y" ] ||  [ "$isTlp" == "" ]; then
-
-	setupTLP
+	
+	## Activacion
+	sudo tlp start 
+	
+	TlpPowerSave
 
 else
  
