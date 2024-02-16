@@ -22,6 +22,7 @@ key Alt+KP_Multiply             amixer sset Master toggle
 key XF86MonBrightnessDown       brightnessctl s 10%-
 key XF86MonBrightnessUp         brightnessctl s 10%+
 
+key Ctrl+Alt+t                  sakura
 key Super+Enter                 sakura
 key Super+f                     thunar
 key Super+e                     geany

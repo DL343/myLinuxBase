@@ -42,30 +42,30 @@ askPowerSaveTLP
 
 
 echo "############################ SISTEMA #############################" 
-./system/system.sh
+./system/system.sh 
 
 
 echo "############################ TLP #############################" 
-./tlp/tlp.sh
+./tlp/tlp.sh 
 
 
 echo "############################ LIGHTDM #############################" 
-./lightdm/conf.sh
+./lightdm/conf.sh 
 
 
 echo "############################# ICEWM ##############################" 
-./iceWM/icewm.sh
+./iceWM/icewm.sh 
 
 
 echo "############################ FLATPAK #############################" 
-./flatpak/flatpak.sh
+./flatpak/flatpak.sh 
 
 
 echo "############################ DEBLOAT?? ###########################"
-./system/debloat.sh
+./system/debloat.sh 
 
 
 echo "############################ MY APPS ###########################"
-./system/myApps.sh
+./system/myApps.sh 
 
 
