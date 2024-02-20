@@ -559,7 +559,7 @@ PCIE_ASPM_ON_BAT=powersupersave
 #DEVICES_TO_ENABLE_ON_UNDOCK=\"wifi\"
 #DEVICES_TO_DISABLE_ON_UNDOCK=\"\"
 
-" | sudo tee /etc/tlp.conf
+" | sudo tee /etc/tlp.conf > /dev/null
 		
 else 
 		echo "## TLP se instalara con la configuracion predeterminada"	

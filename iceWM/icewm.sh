@@ -35,15 +35,35 @@ key Ctrl+Print                  gnome-screenshot -w
 key Alt+Print                   gnome-screenshot -a
 key Super+Space                 rofi -show-icons -theme /usr/share/rofi/themes/gruvbox-dark-hard.rasi -font 'URW Gothic 14'  -show drun
 
-switchkey 'Super+p'         icewm-menu-xrandr
+switchkey 'Super+p'             icewm-menu-xrandr
 
-
+key Super+F2                     $HOME/.config/scripts/toggle_nm-applet.sh
 
 
 
 
 
 " > $HOME/.icewm/keys 
+
+
+#### Toggle nm-applet
+mkdir -p $HOME/.config/scripts/
+
+echo '
+#!/bin/bash
+
+if pgrep -x "nm-applet" > /dev/null
+then
+	pkill nm-applet
+else
+	nm-applet &
+fi
+
+' > $HOME/.config/scripts/toggle_nm-applet.sh
+
+chmod +x $HOME/.config/scripts/toggle_nm-applet.sh
+
+
 
 
 ########## INICIO AUTOMATICO ##########

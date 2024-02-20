@@ -7,15 +7,9 @@ function askPowerSaveTLP(){
 	fi	
 }
 
-function askInit() {
-	if [ $(ps -p 1 -o comm=) ==  "systemd" ]; then
-		echo "systemd"
-	else
-		echo "init"
-	fi
-}
 
-export isInit=$(askInit)
+
+
 
 
 
@@ -25,8 +19,8 @@ export isPipeWire
 read -p "¿Instalar Qemu/KVM? [y/n] " isQemuKVM
 export isQemuKVM
 
-read -p "¿Instalar Polkit/PolicyKit de Gnome? [y/n] " isPolkit
-export isPolkit
+#read -p "¿Instalar Polkit/PolicyKit de Gnome? [y/n] " isPolkit
+#export isPolkit
 
 read -p "¿Instalar soporte para Bluetooth? [y/n] " isBluetooth
 export isBluetooth
@@ -38,6 +32,8 @@ read -p "¿Instalar TLP? [y/n] " isTlp
 export isTlp
 askPowerSaveTLP
 
+read -p "¿Ejecutar script 'Debloat'? [y/n] " isDebloat
+export isDebloat
 
 
 

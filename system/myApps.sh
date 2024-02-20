@@ -14,7 +14,7 @@ if [ "$isQemuKVM" == "y" ] || [ "$isQemuKVM" == "" ]; then
 		echo "## Habilitar servicio"
 		sudo systemctl enable --now libvirtd
 		
-		echo "## ¿¿¿¿Permitir usuario normal usar kvm y libvirt???????"
+		echo "## ¿¿¿¿Permitir usuario normal/comun usar kvm y libvirt???????"
 		sudo usermod -aG kvm $USER
 		sudo usermod -aG libvirt $USER
 		

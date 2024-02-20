@@ -120,16 +120,16 @@ fi
 
 echo '##################### CONFIGURACION DE POLKIT ######################'
 
-if [ "$isPolkit" == "y" ] || [ "$isPolkit" == "" ]; then
-
-	## Asegurar instalacion
-	sudo nala install policykit-1-gnome
-
-	## Configurando...
-	echo "/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &" >> $HOME/.icewm/startup  
 
 
-fi
+## Asegurar instalacion
+sudo nala install policykit-1-gnome
+
+## Configurando...
+echo "/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &" >> $HOME/.icewm/startup  
+
+
+
 
 
 echo '########### GENERACION DE CARPETAS DE USUARIO BASICAS #############'
@@ -153,7 +153,7 @@ sudo nala install alsa-oss alsa-tools alsa-utils -y
 
 if [ "$isPipeWire" == "y" ] || [ "$isPipeWire" == "" ]; then
 
-	if [ command -v pulseaudio &>/dev/null ]; then                      #### PENDIENTE DE COMPROBAR SI FUNCIONA
+	if [ $(command -v pulseaudio) &>/dev/null ]; then                      #### PENDIENTE DE COMPROBAR SI FUNCIONA
 		## PulseAudio detectado. Desinstalando...
 		systemctl --user --now disable pulseaudio.service pulseaudio.socket
 	else 
@@ -567,7 +567,7 @@ if [ -e /sys/class/power_supply/BAT1 ] || [ -e /sys/class/power_supply/BAT0 ]; t
 		pointerHysteresis:  10
 		authWarningSlack:   20
 
-	' >> $HOME/.xscreensaver
+	' > $HOME/.xscreensaver
 
 	}
 	confXSSL
@@ -880,12 +880,19 @@ else
 		pointerHysteresis:  10
 		authWarningSlack:   20
 
-	' >> $HOME/.xscreensaver
+	' > $HOME/.xscreensaver
 
 	}
 	confXSSPC
 
 fi
+
+echo '######################## NETWORK MANAGER ##############################'
+echo '## Deshabilitar "interfaces"'
+sudo mv /etc/network/interfaces /etc/network/interfaces.old
+
+
+
 
 
 
