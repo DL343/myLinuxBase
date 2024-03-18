@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ########## ASEGURAR INSTALACION ########## 
-sudo nala install icewm
+sudo nala install icewm -y
 
 ########## CONFIGURACION INICIAL ########## 
 cp -r /usr/share/icewm/ $HOME/.icewm/
@@ -33,7 +33,7 @@ key Ctrl+Shift+Escape           sakura -x htop
 key Print                       gnome-screenshot
 key Ctrl+Print                  gnome-screenshot -w
 key Alt+Print                   gnome-screenshot -a
-key Super+Space                 rofi -show-icons -theme /usr/share/rofi/themes/gruvbox-dark-hard.rasi -font 'URW Gothic 14'  -show drun
+key Super+Space                 rofi -modi drun,run -show-icons -theme /usr/share/rofi/themes/gruvbox-dark-hard.rasi -font 'URW Gothic 14'  -show drun
 
 switchkey 'Super+p'             icewm-menu-xrandr
 
@@ -46,22 +46,7 @@ key Super+F2                     $HOME/.config/scripts/toggle_nm-applet.sh
 " > $HOME/.icewm/keys 
 
 
-#### Toggle nm-applet
-mkdir -p $HOME/.config/scripts/
 
-echo '
-#!/bin/bash
-
-if pgrep -x "nm-applet" > /dev/null
-then
-	pkill nm-applet
-else
-	nm-applet &
-fi
-
-' > $HOME/.config/scripts/toggle_nm-applet.sh
-
-chmod +x $HOME/.config/scripts/toggle_nm-applet.sh
 
 
 
@@ -71,6 +56,7 @@ touch $HOME/.icewm/startup
 
 echo '#!/bin/bash
 
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 redshift -O 4250K -r -P &
 brightnessctl s 0 &
 parcellite &

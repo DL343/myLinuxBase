@@ -24,8 +24,7 @@ sudo nala install lightdm lightdm-gtk-greeter 										  -y
 
 
 
-## Para NetworkManager
-sudo nala install network-manager-gnome 											  -y
+
 
 
                                        
@@ -68,7 +67,7 @@ fi
 
 echo "################################ UFW ##############################" 
 ## Asegurar instalacion
-sudo nala install ufw
+sudo nala install ufw -y
 
 ## Permitir el trafico saliente
 sudo ufw default allow outgoing
@@ -89,7 +88,7 @@ sudo ufw enable
 
 echo "############################## THUNAR ################################" 
 ## Asegurar instalacion
-sudo nala install thunar
+sudo nala install thunar -y
 
 ## Establecer terminal por defecto
 mkdir -p $HOME/.config/xfce4/
@@ -119,14 +118,9 @@ fi
 
 
 echo '##################### CONFIGURACION DE POLKIT ######################'
-
-
-
 ## Asegurar instalacion
-sudo nala install policykit-1-gnome
+sudo nala install policykit-1-gnome -y
 
-## Configurando...
-echo "/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &" >> $HOME/.icewm/startup  
 
 
 
@@ -169,7 +163,9 @@ if [ "$isPipeWire" == "y" ] || [ "$isPipeWire" == "" ]; then
 	systemctl --user --now enable pipewire pipewire-pulse  
 	systemctl --user --now enable wireplumber.service
 
-
+	else
+	
+	echo "## No se instalara PipeWire"
 fi
 
 
@@ -888,10 +884,29 @@ else
 fi
 
 echo '######################## NETWORK MANAGER ##############################'
+
+## Para NetworkManager
+sudo nala install network-manager-gnome 											  -y
+
 echo '## Deshabilitar "interfaces"'
 sudo mv /etc/network/interfaces /etc/network/interfaces.old
 
+#### Toggle nm-applet
+mkdir -p $HOME/.config/scripts/
 
+echo '
+#!/bin/bash
+
+if pgrep -x "nm-applet" > /dev/null
+then
+	pkill nm-applet
+else
+	nm-applet &
+fi
+
+' > $HOME/.config/scripts/toggle_nm-applet.sh
+
+chmod +x $HOME/.config/scripts/toggle_nm-applet.sh
 
 
 

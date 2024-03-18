@@ -1,11 +1,9 @@
 #!/bin/bash
 
-echo "############################## TLP ################################" 
-
 function TlpPowerSave(){
 
 if [ "$isPowerSave" == "y" ] || [ "$isPowerSave" == "Y" ] ||  [ "$isPowerSave" == "" ]; then
-echo "## Configuracion modo ahorro de energia"
+echo "## Configurando modo ahorro de energia..."
 
 echo "
 # ------------------------------------------------------------------------------
@@ -560,10 +558,13 @@ PCIE_ASPM_ON_BAT=powersupersave
 #DEVICES_TO_DISABLE_ON_UNDOCK=\"\"
 
 " | sudo tee /etc/tlp.conf > /dev/null
+
+	echo "## Modo ahorro de energia aplicando correctamente"
 		
 else 
-		echo "## TLP se instalara con la configuracion predeterminada"	
+	echo "## TLP se instalara con la configuracion predeterminada"	
 fi
+
 }
 
 
