@@ -195,7 +195,7 @@ bar {
 ############### CUSTOM STARTUP ###################
 
 # Polkit Gnome
-exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 
+exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 
 
 # Filtro pantalla rojo
 exec redshift -O 4250K -r -P 
@@ -216,6 +216,7 @@ exec xscreensaver -nosplash
 bindsym mod1+KP_Subtract              exec amixer sset Master 5%-
 bindsym mod1+KP_Add                   exec amixer sset Master 5%+
 bindsym mod1+KP_Multiply              exec amixer sset Master toggle
+
 ## Brillo
 bindsym XF86MonBrightnessDown         exec brightnessctl s 10%-
 bindsym XF86MonBrightnessUp           exec brightnessctl s 10%+
@@ -252,7 +253,7 @@ bindsym $mod+F2                       exec $HOME/.config/scripts/toggle_nm-apple
 ## Script para encender/apagar orage (Calendario applet)
 bindsym $mod+mod1+c                   exec $HOME/.config/scripts/toggle_orage.sh
 
-## Script para encender/apagar  (Audio applet)
+## Script para encender/apagar  (Audio applet) ??????????????????????
 #bindsym $mod+mod1+c                  exec $HOME/.config/scripts/toggle_orage.sh
 
 
@@ -267,5 +268,5 @@ client.focused                   #000000    #ffdd00    #000000
 ## client.focused_inactive        
 ## client.urgent                  
 
-### ?????????????????????
+### ????????????????????? - Investigando....
 exec sakura -x pkill nm-applet
