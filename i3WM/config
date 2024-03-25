@@ -241,10 +241,10 @@ bindsym $mod+mod1+space               exec "rofi -modi drun,run -show-icons -the
 ## Captura de pantalla
 #bindsym Print                        gnome-screenshot -i
 bindsym Print                         exec gnome-screenshot
-bindsym Ctrl+Print                    exec gnome-screenshot -w
+bindsym Ctrl+Print                    exec gnome-screenshot -a  
 
 ## ?????????????????????
-bindsym Ctrl+mod1+Print               exec gnome-screenshot -a  
+bindsym Ctrl+mod1+Print               exec gnome-screenshot -w
 
 
 ## Script para encender/apagar nm-applet (Redes applet)
@@ -270,3 +270,9 @@ client.focused                   #000000    #ffdd00    #000000
 
 ### ????????????????????? - Investigando....
 exec sakura -x pkill nm-applet
+
+
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+z focus left
+bindsym $mod+x focus right
