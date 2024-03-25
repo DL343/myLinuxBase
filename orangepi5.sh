@@ -2,7 +2,10 @@
 
 
 ## De forma centralizada registra los registros del sistema y servicios
-sudo systemctl mask systemd-journal.service 
+sudo systemctl mask systemd-journald.service 
+
+## ??????????????????'
+sudo systemctl disable avahi-daemon.service 
 
 
 
@@ -11,7 +14,8 @@ sudo systemctl mask systemd-journal.service
 ##atop
 ##  |----> atopacctd
 sudo systemctl disable atop
-sudo systemctl disable atopacctd
+sudo systemctl disable atopacct.service 
+
 
 ## Registra los mensajes del sistema
 sudo systemctl disable rsyslog.service 
@@ -23,10 +27,12 @@ sudo systemctl disable cron
 sudo systemctl disable sshd
 
 ## proporciona la funcionalidad del Bluetooth
-sudo systemctl disable bluetoothd
+sudo systemctl disable bluetooth.service 
+
 
 ## Gestion de paquetes de software
-sudo systemctl disable  packagekitd
+sudo systemctl mask packagekit.service 
+
 
 ## Entropia adicional / Generacion de numeros, Criptografia, seguridad
 sudo systemctl disable haveged
@@ -43,11 +49,18 @@ sudo systemctl disable upower.service
 
 
 ## Soporte para la accesibilidad / asistencia
-sudo systemctl mask at-spi-bus-launcher
-sudo systemctl mask at-spi2-registryd.service
+sudo chmod -x /usr/libexec/at-spi-bus-launcher 
+sudo chmod -x /usr/libexec/at-spi2-registryd 
 
 ## Soporte para impresoras
 sudo systemctl disable cups.service
+sudo systemctl disable cups-browsed.service
+
+
+## Soporte empresarial de Ubuntu Pro, soporte tecnico
+sudo systemctl disable ubuntu-advantage.service 
+
+
 
 ################ APPS #####################
 ## Evolution
@@ -55,6 +68,16 @@ sudo apt remove evolution-data-server
 
 ## Thunderbird
 sudo apt remove thunderbird
+
+## Intercepta crasheos de primera vez
+sudo apt remove apport
+
+## Reporte de errores ubuntu
+sudo apt remove whoopsie
+
+## Reporte de hardware
+sudo apt remove ubuntu-report 
+
 
 
 
