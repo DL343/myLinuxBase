@@ -166,6 +166,9 @@ sudo apt install brave-browser
 echo "## Sakura"
 sudo apt install sakura -y
 
+echo "## Parcellite"
+sudo apt install parcellite -y
+
 echo "## Rofi"
 sudo apt install rofi -y
 
