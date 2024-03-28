@@ -49,8 +49,7 @@ sudo systemctl mask upower.service
 ## Soporte para la accesibilidad / asistencia
 systemctl --user mask at-spi-dbus-bus.service 
 
-## Soporte para impresoras
-sudo systemctl mask cups.service 
+
 
 ## Soporte empresarial de Ubuntu Pro, soporte tecnico
 sudo systemctl disable ubuntu-advantage.service 
@@ -111,34 +110,39 @@ sudo systemctl mask unattended-upgrades.service
 #        APPS INNECESARIAS
 ##################################
 
-remove=$("sudo apt remove")
 
 echo "## Intalador de paquetes facil y grafico" 
-$remove packagekit 
+sudo apt remove packagekit -y
 
 echo "## Actualizador de paquetes facil y grafico"
-$remove update-manager
+sudo apt remove update-manager -y
 
-## Thunderbird
-$remove thunderbird
+echo "## Thunderbird"
+sudo apt remove thunderbird -y
 
-## Intercepta crasheos de primera vez
-$remove apport
+echo "## Intercepta crasheos de primera vez"
+sudo apt remove apport -y
 
-## Reporte de errores ubuntu
-$remove whoopsie
+echo "## Reporte de errores ubuntu"
+sudo apt remove whoopsie -y
 
-## Reporte de hardware
-$remove ubuntu-report 
+echo "## Reporte de hardware"
+sudo apt remove ubuntu-report -y
 
-## Multiples servicios
-$remove evolution-data-server-common 
+echo "## Multiples servicios"
+sudo apt remove evolution-data-server-common -y 
 
-## Terminales
-$remove terminator xfce4-terminal 
+echo "## Terminales"
+sudo apt remove terminator xfce4-terminal -y
 
+echo "## Servicio impresoras"
+sudo apt remove cups -y
 
+echo "## IDE VSCode open source"
+sudo apt remove codium -y
 
+echo "## Vim"
+sudo apt remove vim -y
 
 
 ##################################
@@ -161,7 +165,7 @@ sudo apt install curl -y
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt update
-sudo apt install brave-browser
+sudo apt install brave-browser -y
 
 echo "## Sakura"
 sudo apt install sakura -y
@@ -179,6 +183,8 @@ echo "## Tema e iconos yaru"
 sudo apt install yaru-theme-gtk -y
 sudo apt install yaru-theme-icon -y
 
+echo "## Sensor de temp. para el panel xfce"
+sudo apt install xfce4-sensors-plugin/jammy
 
 
 
@@ -202,4 +208,9 @@ cp -r getXFCEConfig/xfce4/ $HOME/.config/xfce4/
 
 
 ## Swappines al 25
- sudo sed -i '/vm.swappiness=100/cvm.swappiness=25' /etc/sysctl.conf 
+ sudo sed -i '/vm.swappiness=100/cvm.swappiness=10' /etc/sysctl.conf 
+
+
+## Configurar redshift
+
+
