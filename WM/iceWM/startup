@@ -1,0 +1,10 @@
+#!/bin/bash
+
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+redshift -O 4250K -r -P &
+brightnessctl s 0 &
+parcellite &
+xscreensaver -nosplash &
+nitrogen --restore &
+gnome-keyring-daemon &
+

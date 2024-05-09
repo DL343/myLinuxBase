@@ -1,0 +1,24 @@
+Set-Service -StartupType Disable WinRM
+Set-Service -StartupType Disable MapsBroker
+Set-Service -StartupType Disable NcbService
+Set-Service -StartupType Disable RemoteAccess
+Set-Service -StartupType Disable RmSvc
+Set-Service -StartupType Disable DPS
+Set-Service -StartupType Disable InstallService
+Set-Service -StartupType Disable TermService
+Set-Service -StartupType Disable LanmanServer
+Set-Service -StartupType Disable Themes
+Set-Service -StartupType Disable wuauserv
+Set-Service -StartupType Disable DusmSvc
+Set-Service -StartupType Disable hidserv
+Set-Service -StartupType Disable SysMain
+Set-Service -StartupType Disable Spooler
+Set-Service -StartupType Disable LanmanWorkstation
+Set-Service -StartupType Disable BthAvctpSvc
+Set-Service -StartupType Disable NVDisplay.ContainerLocalSystem
+Set-Service -StartupType Disable 
+Set-Service -StartupType Disable 
+Set-Service -StartupType Disable 
+Set-Service -StartupType Disable 
+Set-Service -StartupType Disable 
+Set-Service -StartupType Disable 
