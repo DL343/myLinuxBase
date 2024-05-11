@@ -12,6 +12,8 @@ $Listo
 echo "
 ########## CONFIGURACION INICIAL ########## 
 "
+rm -r ~/.icewm/
+
 cp -r /usr/share/icewm/ ~/.icewm
 
 
@@ -43,8 +45,7 @@ echo "
 
 echo 'Theme="NanoBlue/default.theme"' > $HOME/.icewm/theme
 
-rm ~/.icewm/themes/NanoBlue/aeos.jpg
-
+rm ~/.icewm/themes/NanoBlue/eos.jpg
 
 $Listo
 

@@ -648,7 +648,7 @@ sudo cpufreq-set -c  7 -g ondemand
 chmod +x ~/.config/scripts/low_power.sh
 
 
-home="$HOME"
+home=$HOME
 
 ## Configuracion del servicio para systemd
 echo '                                                                                           
@@ -668,7 +668,7 @@ Wants=network-online.target
 
 [Service]
 ## Ruta del fichero/script a ejecutar               <-------------------------------------------------------------- INVESTIGAR COMO OBTENER RUTA DEL USUARIO ACTUAL
-ExecStart=$home/.config/scripts/low_power.sh 
+ExecStart='$home'/.config/scripts/low_power.sh 
 
 
 [Install]
@@ -712,5 +712,37 @@ sudo cpufreq-set -c  7 -g ondemand
 
 
 
+
+echo "
+########################################################################
+                                ALACRITTY
+########################################################################
+"
+
+
+
+## Creacion de la carpeta 
+mkdir -p $HOME/.config/alacritty/
+
+## Creacion del archivo
+touch $HOME/.config/alacritty/alacritty.toml
+
+
+echo "
+-----------------------
+    Personalizacion 
+-----------------------
+" 
+
+echo '
+import = [
+    "~/.config/alacritty/themes/themes/breeze.toml"
+]
+' > $HOME/.config/alacritty/alacritty.toml
+
+
+# We use Alacritty's default Linux config directory as our storage location here.
+mkdir -p ~/.config/alacritty/themes
+git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 
 

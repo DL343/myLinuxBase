@@ -187,7 +187,9 @@ function appsBloat(){
 		
 		## Monitoriza y controla procesos antes del OOM (Out Of Memory) en el espacio del kernel
 		systemd-oomd.service
-
+		
+		## 
+		accounts-daemon.service
 
 		
 	)
