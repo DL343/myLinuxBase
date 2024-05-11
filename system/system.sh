@@ -224,9 +224,10 @@ appBloat=(
 	##
 	ibus*
 	
-	##
+	## Gnome
 	gnome-shell-common
 	gnome-desktop3-data
+	tracker*
 	
 	## The Tracker project is a open community of developers who maintain an efficient, privacy-respecting desktop search engine, available as Free Software.
 	tracker-miner-fs
