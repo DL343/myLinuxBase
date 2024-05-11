@@ -40,6 +40,7 @@ policykit-1-gnome
 network-manager-gnome
 lightdm
 lightdm-gtk-greeter
+sakura
 
 inxi 
 arandr 
