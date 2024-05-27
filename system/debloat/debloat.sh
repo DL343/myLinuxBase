@@ -29,10 +29,16 @@ function appsBloat(){
 		## Registra errores del kernel
 		systemd-pstore.service
 		
+		##
+		avahi-daemon.service
+		avahi-daemon.socket
+		
+
 		
 		
 		
 		
+		## //////////////////////////////////////////////////////////////////////////////////////////
 		
 		
 		
@@ -49,7 +55,11 @@ function appsBloat(){
 		## Impresion 
 		cups.service 
 		cups.browsed.service
+		cups-browsed.service
 		
+		## Registro y envio de errores
+		apport.service
+				
 		## Volumenes logicos
 		lvm2.service
 		lvm2-monitor.service
@@ -62,7 +72,8 @@ function appsBloat(){
 		## Gestion de paquetes de software
 		packagekit.service
 		
-		## ¿¿¿¿¿¿¿¿¿SNAP EN UBUNTU?????????
+		## SNAP
+		snapd.apparmor.service
 		snapd.apparmor.service
 		snapd.autoimport.service
 		snapd.core-fixup.service
@@ -72,24 +83,16 @@ function appsBloat(){
 		snapd.service          
 		snapd.snap-repair.service
 		snapd.system-shutdown.service
+		snap.lxd.activate.service
 
-
-
-
-
-
-
-
-
-
-
+		## OpenVPN
+		openvpn.service
 
 		## Es responsable de la recopilación de datos de uso de recursos del sistema, como la CPU, la memoria, el disco y la red, para su posterior análisis y generación de informes.
 		##atop
 		##  |----> atopacctd
 		atop
 		atopacct.service 
-
 
 		## Es el componente del sistema que gestiona las conexiones SSH entrantes y salientes en el servidor.
 		sshd
@@ -108,8 +111,6 @@ function appsBloat(){
 		## Acceso y transferecias de archivos de sistemas remotos de forma segura
 		ssh.service 
 
-
-
 		## Es un servicio de llamadas a procedimientos remotos
 		rpcbind.service 
 
@@ -121,8 +122,6 @@ function appsBloat(){
 
 		## Registra los mensajes del sistema
 		rsyslog.service 
-
-
 
 		## Soporte empresarial de Ubuntu Pro, soporte tecnico
 		ubuntu-advantage.service 
@@ -142,10 +141,6 @@ function appsBloat(){
 		## Es el uso de componentes de red de almacenamiento responsables del proceso de transferencia de datos entre el servidor y el almacenamiento
 		multipathd.service
 
-
-
-
-		
 		## Permite a los programas acceder y administrar la información de las cuentas de usuario a través de D-Bus de forma estandarizada, sin importar cómo se proporcionen realmente al sistema.
 		#accounts-daemon.service
 			
@@ -158,9 +153,7 @@ function appsBloat(){
 		## Camaras 
 		rkaiq_3A.service
 		rkisp_3A.service
-
-
-
+		
 		## Asistencia ubuntu-advantage
 		ua-reboot-cmds.service
 
@@ -190,6 +183,21 @@ function appsBloat(){
 		
 		## 
 		accounts-daemon.service
+		
+		
+		
+		## ---------------------------------------------------
+		
+		
+		
+		
+		## Hora
+		fake-hwclock-save.service
+		fake-hwclock-load.service
+		
+		## Almacenamiento y administracion segura de las llaves SSH 
+		gcr-ssh-agent.service
+		gcr-ssh-agent.socket
 
 		
 	)

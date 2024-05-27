@@ -32,24 +32,23 @@ ufw
 preload 
 pcmanfm
 cpufrequtils
-lm-sensors 
 nano 
 gvfs
-orage
+p7zip-full  			     							  
 policykit-1-gnome
 network-manager-gnome
 lightdm
 lightdm-gtk-greeter
 sakura
 
+
+lm-sensors 
+orage
 inxi 
 arandr 
-p7zip-full  			     							  
 xdg-desktop-portal 
 xdg-desktop-portal-gtk 
-xdg-user-dirs			  
-lightdm 
-lightdm-gtk-greeter 										  
+xdg-user-dirs			  										  
 lxappearance 
 arandr 
 
@@ -63,7 +62,7 @@ geany
 xarchiver
 gnome-screenshot 
 mirage
-xscreensaver
+
 
 
 
@@ -72,10 +71,10 @@ qalculate-gtk
 bleachbit      					 
 evince            
 firefox-esr      
-mpv               
+vlc               
 audacious                           
 gnome-paint       
-         
+xscreensaver 
 
 
 
@@ -226,7 +225,6 @@ appBloat=(
 	
 	## Gnome
 	gnome-shell-common
-	gnome-desktop3-data
 	tracker*
 	
 	## The Tracker project is a open community of developers who maintain an efficient, privacy-respecting desktop search engine, available as Free Software.
