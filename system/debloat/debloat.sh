@@ -198,6 +198,17 @@ function appsBloat(){
 		## Almacenamiento y administracion segura de las llaves SSH 
 		gcr-ssh-agent.service
 		gcr-ssh-agent.socket
+		
+		## 
+		irqbalance.service
+
+		## Registros
+		dmesg.service
+
+		## Investigar
+		#fake-hwclock.service
+		#mkswap.service
+
 
 		
 	)

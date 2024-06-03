@@ -210,6 +210,7 @@ appBloat=(
  	
  	## 
  	ubuntu-pro-client*
+ 	ubuntu-release*
  	
  	## Editor de texto
  	gedit
@@ -226,11 +227,14 @@ appBloat=(
 	## Gnome
 	gnome-shell-common
 	tracker*
+	gnome-remote-desktop
+	
 	
 	## The Tracker project is a open community of developers who maintain an efficient, privacy-respecting desktop search engine, available as Free Software.
 	tracker-miner-fs
 	
-	
+	##
+	remina*
 
 )
 

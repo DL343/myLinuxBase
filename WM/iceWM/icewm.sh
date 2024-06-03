@@ -5,7 +5,7 @@ Listo='echo "Hecho"'
 echo "
 ########## ASEGURAR INSTALACION ########## 
 "
-sudo apt install icewm
+sudo apt install icewm -y
 
 $Listo
 
