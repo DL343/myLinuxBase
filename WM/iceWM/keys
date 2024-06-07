@@ -1,15 +1,32 @@
 
 ################# CUSTOM #################
-key XF86AudioLowerVolume        pactl set-sink-volume @DEFAULT_SINK@ -5%
-key XF86AudioRaiseVolume        pactl set-sink-volume @DEFAULT_SINK@ +5%
-key XF86AudioMute               pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-key Alt+KP_Subtract             pactl set-sink-volume @DEFAULT_SINK@ -5%
-key Alt+KP_Add                  pactl set-sink-volume @DEFAULT_SINK@ +5%
-key Alt+KP_Multiply             pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+#key XF86AudioLowerVolume        pactl set-sink-volume @DEFAULT_SINK@ -5%
+#key XF86AudioRaiseVolume        pactl set-sink-volume @DEFAULT_SINK@ +5%
+#key XF86AudioMute               pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+#key Alt+KP_Subtract             pactl set-sink-volume @DEFAULT_SINK@ -5%
+#key Alt+KP_Add                  pactl set-sink-volume @DEFAULT_SINK@ +5%
+#key Alt+KP_Multiply             pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+
+key XF86AudioLowerVolume         amixer sset Master 5%-
+key XF86AudioRaiseVolume         amixer sset Master 5%+
+key XF86AudioMute                amixer sset Master toggle
+
+key Alt+KP_Subtract             amixer sset Master 5%- 
+key Alt+KP_Add                  amixer sset Master 5%+
+key Alt+KP_Multiply             amixer sset Master toggle
+
+
+
 
 key XF86MonBrightnessDown       brightnessctl s 10%-
 key XF86MonBrightnessUp         brightnessctl s 10%+
+
+
+
 
 key Ctrl+Alt+t                  x-terminal-emulator
 key Super+Enter                 x-terminal-emulator
