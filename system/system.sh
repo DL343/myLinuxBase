@@ -1,5 +1,10 @@
 #!/bin/bash
 
+isMinimal="y"
+
+
+
+
 
 
 echo "
@@ -15,244 +20,258 @@ sudo apt update
 
 echo "
 ########################################################################
-                            APPS NECESARIAS
+                                APPS 
 ########################################################################
 "
 
+install="sudo apt install"
+
+y="-y"
+
+
+
+function appsMinimal(){
+	echo "
+	-------------
+	   Minimas
+	-------------
+	"
+	myAppsMinimal=(
+	## Base
+		xorg
+		bash-completion 
+		htop 
+		btop
+		neofetch 
+		gparted 
+		geany
+		pcmanfm
+		sakura
+		network-manager-gnome
+		nano 
+		gvfs
+		xarchiver
+		policykit-1-gnome
+		ufw 	
+		lightdm
+		lightdm-gtk-greeter	
+		cpufrequtils  
+	)
+
+
+	for package in "${myAppsMinimal[@]}"
+	do
+
+		union="$install $package $y"
+		echo "
+		-------------------------------------------
+		Instalando $package...
+		-------------------------------------------
+		"
+		
+		$union
+
+	done
+	
+}
+
+function myApps(){
+	
+	
+
+
+
 myApps=(
-## Base
-xorg
-bash-completion 
-htop 
-btop
-neofetch 
-gparted 
-tlp 
-ufw 	
-preload 
-pcmanfm
-cpufrequtils
-nano 
-gvfs
-p7zip-full  			     							  
-policykit-1-gnome
-network-manager-gnome
-lightdm
-lightdm-gtk-greeter
-sakura
 
+	preload ## ??
 
-lm-sensors 
-orage
-inxi 
-arandr 
-xdg-desktop-portal 
-xdg-desktop-portal-gtk 
-xdg-user-dirs			  										  
-lxappearance 
-arandr 
+	p7zip-full
+	lm-sensors 
+	orage
+	inxi 
+	arandr 
+	xdg-user-dirs		  										  
+	lxappearance 
+	arandr 
 
 
 
+	## Usuario
+	parcellite 
+	rofi  
+	gnome-screenshot 
+	mirage
 
-## Usuario
-parcellite 
-rofi  
-geany 
-xarchiver
-gnome-screenshot 
-mirage
-
-
-
-
-grimshot
-qalculate-gtk          
-bleachbit      					 
-evince            
-firefox-esr      
-vlc               
-audacious                           
-gnome-paint       
-xscreensaver 
+	grimshot
+	
+	qalculate-gtk          
+	bleachbit      					 
+	evince            
+	firefox-esr      
+	vlc               
+	audacious                           
+	gnome-paint       
+	xscreensaver 
 
 
 
 
 
-## Personalizacion
-yaru-theme-gtk 
-yaru-theme-icon 
-nitrogen
-redshift
-
-## Audio
-alsa-oss 
-alsa-tools 
-alsa-utils 
-pipewire-audio
-wireplumber 
-pipewire-pulse 
-pipewire-alsa 
-libspa-0.2-bluetooth 
-pavucontrol 
+	## Personalizacion
+	yaru-theme-gtk 
+	yaru-theme-icon 
+	nitrogen
+	redshift
 
 )
 
-install="sudo apt install"
-y="-y"
 
-for package in "${myApps[@]}"
-do
 
-	union="$install $package $y"
-	echo "
-	-------------------------------------------
-	Instalando $package...
-	-------------------------------------------
-	"
+
+	for package in "${myApps[@]}"
+	do
+
+		union="$install $package $y"
+		echo "
+		-------------------------------------------
+		Instalando $package...
+		-------------------------------------------
+		"
+		
+		$union
+
+	done
+
+
+	echo "## Brave" 
+	$install curl -y
+	sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+	echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+	sudo apt update
+	$install brave-browser -y
 	
-	$union
-
-done
-
-
-echo "## Brave" 
-$install curl -y
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo apt update
-$install brave-browser -y
+	
+	
+	
+	
 
 
-
-
-
-
-
-
-
-
+echo '
+######################################################################## 
+                               PRELOAD
+########################################################################
+'
 
 sudo systemctl enable preload.service
 
-sudo systemctl enable tlp.service
 
-
-
-
-
-
-
-
-
-
-
-echo "
+echo '
+######################################################################## 
+            GENERACION DE CARPETAS DE USUARIO BASICAS
 ########################################################################
-                         APPS INNECESARIAS
+'
+
+
+## Configuracion
+xdg-user-dirs-update 
+
+
+
+echo '
 ########################################################################
-"
+                     CONFIGURACION DE LIBINPUT 
+########################################################################
+ '
 
-appBloat=(
+if [ "$(sed -n '/Option "Tapping" "true"/p' /usr/share/X11/xorg.conf.d/40-libinput.conf)" == 'Option "Tapping" "true"' ]; then 
+
+	echo "Perfecto!, existe la configracion, omitiendo este paso...";
+
+else 
+
+   echo "No existe la configuracion, aplicando...."
+   sudo sed -i '/Identifier "libinput touchpad catchall"/a Option "Tapping" "true"' /usr/share/X11/xorg.conf.d/40-libinput.conf
+
+   echo "Listo"
+fi
 
 
-	## Intalador de paquetes facil y grafico" 
-	packagekit*
 
-	## Actualizador de paquetes facil y grafico"
-	update-manager 
 
-	## Thunderbird"
-	thunderbird 
 
-	## Intercepta crasheos de primera vez"
-	apport 
 
-	## Reporte de errores ubuntu"
-	whoopsie 
+echo '
+########################################################################
+                    PROTECTOR DE PANTALLA
+########################################################################
+'
 
-	## Reporte de hardware"
-	ubuntu-report 
+# Comprobar si es una laptop o un PC de escritorio
+if [ -e /sys/class/power_supply/BAT1 ] || [ -e /sys/class/power_supply/BAT0 ]; then
 
-	## Terminales"
-	terminator 
-	xterm
-	gnome-terminal
-
-	## IDE VSCode open source"
-	codium 
-
-	## Vim"
-	vim* 
-
-	## ?????
-	samba
-
-	## ?????
-	avahi* 
-
-	## Es un protocolo VPN de código abierto que utiliza técnicas de red privada virtual (VPN) para establecer conexiones seguras de sitio a sitio o de punto a punto
-	openvpn 
-
-	## paquete de servicio de Canonical para Ubuntu. Ofrece asistencia por niveles para implementaciones de escritorio, servidor y en la nube.
-	ubuntu-advantage*
+	echo "######## Bateria detectada ########"   
+	echo "## Se instalan los paquetes 'brightnessctl' y 'acpi'"  
+	sudo apt install brightnessctl acpi 											  -y
 	
-	##  Programas y controladores necesarios para el funcionamiento del Servidor Cloud
-	open-vm-tools
-	
-	## Servicio gnome para calendario, chat, documentos, correo 
- 	evolution-data-server*
- 	gnome-online-accounts
- 	
- 	## 
- 	gpg-agent 
- 	
- 	## 
- 	ubuntu-pro-client*
- 	ubuntu-release*
- 	
- 	## Editor de texto
- 	gedit
- 	
- 	## 
- 	snapd
 
-	##
-	cups*
-	
-	##
-	ibus*
-	
-	## Gnome
-	gnome-shell-common
-	tracker*
-	gnome-remote-desktop
-	
-	
-	## The Tracker project is a open community of developers who maintain an efficient, privacy-respecting desktop search engine, available as Free Software.
-	tracker-miner-fs
-	
-	##
-	remina*
+	echo '############### XSCREENSAVER PARA LAPTOP ####################'
+		# Apagar y bloquear la pantalla después de 1 minuto de inactividad:
+		## Asegurar instalacion
+		sudo apt install xscreensaver
+		## Configuracion 
+		cp system/xScreenSaver/xSSLatop $HOME/.xscreensaver 
 
-)
+else
+	
+	echo "## Sin bateria detectada, se considera un PC de escritorio"     
+	echo "## Se omiten los paquetes 'brightnessctl' y 'acpi'"
+	
+	echo '############### XSCREENSAVER PARA PC ####################'
+		# Apagar y bloquear la pantalla después de 1 minuto de inactividad:
+		## Asegurar instalacion
+		sudo apt install xscreensaver
+		## Configuracion 
+		cp system/xScreenSaver/xSSPC $HOME/.xscreensaver 
 
-remove="sudo apt remove --purge"
-y="-y"
+fi
 
-for package in "${appBloat[@]}";
-do
 
-	union="$remove $package $y" 
-	echo "
-	-------------------------------------------
-	Desinstalando $package...
-	-------------------------------------------
-	"
-	$union
 
-done
+}
+
+
+
+if [ "$isMinimal" == "y" ] || [ "$isMinimal" == "Y" ] || [ "$isMinimal" == "" ]
+then		
+
+	appsMinimal
+
+else
+
+	appsMinimal
+	myApps
+	
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -308,23 +327,6 @@ sudo ufw enable
 
 
 
-echo '
-########################################################################
-                     CONFIGURACION DE LIBINPUT 
-########################################################################
- '
-
-if [ "$(sed -n '/Option "Tapping" "true"/p' /usr/share/X11/xorg.conf.d/40-libinput.conf)" == 'Option "Tapping" "true"' ]; then 
-
-	echo "Perfecto!, existe la configracion, omitiendo este paso...";
-
-else 
-
-   echo "No existe la configuracion, aplicando...."
-   sudo sed -i '/Identifier "libinput touchpad catchall"/a Option "Tapping" "true"' /usr/share/X11/xorg.conf.d/40-libinput.conf
-
-   echo "Listo"
-fi
 
 
 
@@ -334,16 +336,6 @@ fi
 
 
 
-
-
-echo '
-######################################################################## 
-            GENERACION DE CARPETAS DE USUARIO BASICAS
-########################################################################
-'
-
-## Configuracion
-xdg-user-dirs-update 
 
 
 
@@ -356,8 +348,29 @@ echo '
 '
 
 # 1. INSTALACION DE LA BASE (ALSA)  
+	
+	
+appsAlsa=(
+	alsa-oss 
+	alsa-tools 
+	alsa-utils 
+)
 
 
+
+for package in "${appsAlsa[@]}";
+do
+
+	union="$install $package $y"
+	echo "
+	-------------------------------------------
+	Instalando $package...
+	-------------------------------------------
+	"
+	
+	$union
+	
+done
 
 
 if [ "$isPipeWire" == "y" ] || [ "$isPipeWire" == "" ]; then
@@ -373,6 +386,29 @@ if [ "$isPipeWire" == "y" ] || [ "$isPipeWire" == "" ]; then
 	### PIPEWIRE
 	## // Paso 1.  Instalacion
 
+	appsPipewire=(
+		pipewire-audio
+		wireplumber 
+		pipewire-pulse 
+		pipewire-alsa 
+		libspa-0.2-bluetooth 
+		pavucontrol 
+	)
+	
+	for package in "${appsPipewire[@]}";
+	do
+
+		union="$install $package $y"
+		echo "
+		-------------------------------------------
+		Instalando $package...
+		-------------------------------------------
+		"
+		
+		$union
+	
+	done
+	
 
 	## // Paso 2.  Configuracion
 	systemctl --user --now enable pipewire pipewire-pulse  
@@ -446,43 +482,6 @@ fi
 
 
 
-echo '
-########################################################################
-                    PROTECTOR DE PANTALLA
-########################################################################
-'
-
-# Comprobar si es una laptop o un PC de escritorio
-if [ -e /sys/class/power_supply/BAT1 ] || [ -e /sys/class/power_supply/BAT0 ]; then
-
-	echo "######## Bateria detectada ########"   
-	echo "## Se instalan los paquetes 'brightnessctl' y 'acpi'"  
-	sudo apt install brightnessctl acpi 											  -y
-	
-
-	echo '############### XSCREENSAVER PARA LAPTOP ####################'
-		# Apagar y bloquear la pantalla después de 1 minuto de inactividad:
-		## Asegurar instalacion
-		sudo apt install xscreensaver
-		## Configuracion 
-		cp system/xScreenSaver/xSSLatop $HOME/.xscreensaver 
-
-else
-	
-	echo "## Sin bateria detectada, se considera un PC de escritorio"     
-	echo "## Se omiten los paquetes 'brightnessctl' y 'acpi'"
-	
-	echo '############### XSCREENSAVER PARA PC ####################'
-		# Apagar y bloquear la pantalla después de 1 minuto de inactividad:
-		## Asegurar instalacion
-		sudo apt install xscreensaver
-		## Configuracion 
-		cp system/xScreenSaver/xSSPC $HOME/.xscreensaver 
-
-fi
-
-
-
 
 echo '
 ########################################################################
@@ -504,7 +503,7 @@ echo "
                               SWAPPINESS
 ########################################################################
 "
-## Swappines al 10
+## Swappines a 0
  sudo sed -i '/vm.swappiness=100/cvm.swappiness=0' /etc/sysctl.conf 
 
 
@@ -604,14 +603,17 @@ function TlpPowerSave(){
 
 if [ "$isPowerSave" == "y" ] || [ "$isPowerSave" == "Y" ] ||  [ "$isPowerSave" == "" ]
 then
+
 	echo "## Configurando modo ahorro de energia..."
 	
     sudo cp ./Apps/tlp/powerSaveTLP /etc/tlp.conf 
 
-	echo "## Modo ahorro de energia aplicando correctamente"
+	echo "## Modo ahorro de energia aplicando correctamente!"
 		
 else 
+
 	echo "## TLP se instalara con la configuracion predeterminada"	
+	
 fi
 
 }
@@ -619,9 +621,13 @@ fi
 
 if [ "$isTlp" == "y" ] || [ "$isTlp" == "Y" ] ||  [ "$isTlp" == "" ]
 then
+
+	echo "## Instalacion de TLP..."
+
+	sudo apt install tlp 
 	
-	## Activacion
-	sudo tlp start 
+	echo "## Habilitando servicio..."
+	sudo systemctl enable tlp
 	TlpPowerSave
 
 else
@@ -632,6 +638,19 @@ fi
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+function otros(){
 
 
 echo "
@@ -725,7 +744,6 @@ sudo cpufreq-set -c  7 -g ondemand
 
 
 
-
 echo "
 ########################################################################
                                 ALACRITTY
@@ -757,5 +775,10 @@ import = [
 # We use Alacritty's default Linux config directory as our storage location here.
 mkdir -p ~/.config/alacritty/themes
 git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
+
+
+}
+
+
 
 

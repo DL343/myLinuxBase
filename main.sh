@@ -11,26 +11,36 @@ function askPowerSaveTLP(){
 
 
 
-
-
-read -p "¿Instalar PipeWire? (Se removera PulseAudio si es que existe) [y/n] " isPipeWire
-export isPipeWire
-
-read -p "¿Instalar Qemu/KVM? [y/n] " isQemuKVM
-export isQemuKVM
-
-read -p "¿Instalar soporte para Bluetooth? [y/n] " isBluetooth
-export isBluetooth
-
-read -p "¿Instalar TLP? [y/n] " isTlp
-export isTlp
-askPowerSaveTLP
-
 read -p "¿Ejecutar script 'Debloat'? [y/n] " isDebloat
 export isDebloat
 
 read -p "¿Instalacion de apps minimas? [y/n] " isMinimal
 export isMinimal
+
+read -p "¿Instalar soporte para Bluetooth? [y/n] " isBluetooth
+export isBluetooth
+
+read -p "¿Instalar PipeWire(Servidor de audio y video)? 
+(Se removera PulseAudio(otro servidor de audio[legacy]) si es que existe) 
+[y/n] " isPipeWire
+export isPipeWire
+
+read -p "¿Instalar TLP(Ahorro de bateria)? [y/n] " isTlp
+export isTlp
+askPowerSaveTLP
+
+read -p "¿Instalar Qemu/KVM? [y/n] " isQemuKVM
+export isQemuKVM
+
+
+
+
+
+
+
+echo "############################ DEBLOAT #############################"
+./system/debloat/debloat.sh 
+
 
 
 echo "############################ SISTEMA #############################" 
@@ -61,11 +71,9 @@ cd ..
 
 
 
-echo "############################ DEBLOAT #############################"
-./system/debloat/debloat.sh 
 
 
-echo "############################ MY APPS #############################"
+echo "############################ OTRAS APPS #############################"
 ./system/myApps.sh 
 
 

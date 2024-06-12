@@ -1,16 +1,134 @@
 #!/bin/bash
 
+remove="sudo apt remove --purge"
+
+y="-y"
+
 
 function appsBloat(){
 
 
 
 
+
+
+echo "
+########################################################################
+                    ELIMINACION APPS INNECESARIAS
+########################################################################
+"
+
+appBloat=(
+
+
+	## Intalador de paquetes facil y grafico" 
+	packagekit*
+
+	## Actualizador de paquetes facil y grafico"
+	update-manager 
+
+	## Thunderbird"
+	thunderbird 
+
+	## Intercepta crasheos de primera vez"
+	apport 
+
+	## Reporte de errores ubuntu"
+	whoopsie 
+
+	## Reporte de hardware"
+	ubuntu-report 
+
+	## Terminales"
+	terminator 
+	xterm
+	gnome-terminal
+
+	## IDE VSCode open source"
+	codium 
+
+	## Vim"
+	vim* 
+
+	## ?????
+	samba
+
+	## ?????
+	avahi* 
+
+	## Es un protocolo VPN de código abierto que utiliza técnicas de red privada virtual (VPN) para establecer conexiones seguras de sitio a sitio o de punto a punto
+	openvpn 
+
+	## paquete de servicio de Canonical para Ubuntu. Ofrece asistencia por niveles para implementaciones de escritorio, servidor y en la nube.
+	ubuntu-advantage*
+	
+	##  Programas y controladores necesarios para el funcionamiento del Servidor Cloud
+	open-vm-tools
+	
+	## Servicio gnome para calendario, chat, documentos, correo 
+ 	evolution-data-server*
+ 	gnome-online-accounts
+ 	
+ 	## 
+ 	gpg-agent 
+ 	
+ 	## 
+ 	ubuntu-pro-client*
+ 	ubuntu-release*
+ 	
+ 	## Editor de texto
+ 	gedit
+ 	
+ 	## 
+ 	snapd
+
+	##
+	cups*
+	
+	##
+	ibus*
+	
+	## Gnome
+	gnome-shell-common
+	tracker*
+	gnome-remote-desktop
+	
+	
+	## The Tracker project is a open community of developers who maintain an efficient, privacy-respecting desktop search engine, available as Free Software.
+	tracker-miner-fs
+	
+	##
+	remmina*
+
+)
+
+
+
+for package in "${appBloat[@]}";
+do
+
+	union="$remove $package $y" 
 	echo "
-	########################################################################
-						 ENMASCARANDO SERVICIOS
-	########################################################################
+	-------------------------------------------
+	Desinstalando $package...
+	-------------------------------------------
 	"
+	$union
+
+done
+
+
+
+
+
+
+
+
+echo "
+####################################################################
+                      ENMASCARANDO SERVICIOS
+####################################################################
+"
 	servicesBloatMask=(
 
 		## ------ DEBIAN BASE ------- ##
@@ -204,9 +322,19 @@ function appsBloat(){
 
 		## Registros
 		dmesg.service
+		
+		cups.path
+		cups.socket
+		snapd.socket
+		ssh.socket
+		systemd-oomd.socket
+		
+		whoopsie.path
 
 		## Investigar
-		#fake-hwclock.service
+		fake-hwclock.service
+		fake-hwclock-save.timer
+		
 		#mkswap.service
 
 
@@ -238,10 +366,10 @@ function appsBloat(){
 
 
 
-	echo "
-	########################################################################
-						DESHABILITANDO SERVICIOS
-	########################################################################
+echo "
+###################################################################
+                   DESHABILITANDO SERVICIOS
+###################################################################
 	"
 
 	servicesBloatDisable=(
@@ -261,6 +389,8 @@ function appsBloat(){
 		-------------------------------------------
 		Deshabilitando $app...
 		-------------------------------------------
+		
+		
 		"
 		
 		$union
