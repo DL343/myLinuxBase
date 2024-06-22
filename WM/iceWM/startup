@@ -6,5 +6,5 @@ brightnessctl s 0 &
 parcellite &
 xscreensaver -nosplash &
 nitrogen --restore &
-gnome-keyring-daemon &
+#gnome-keyring-daemon &
 

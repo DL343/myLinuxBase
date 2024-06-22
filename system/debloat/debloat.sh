@@ -67,10 +67,7 @@ appBloat=(
 	
 	## Servicio gnome para calendario, chat, documentos, correo 
  	evolution-data-server*
- 	gnome-online-accounts
- 	
- 	## 
- 	gpg-agent 
+ 	gnome-online-accounts 
  	
  	## 
  	ubuntu-pro-client*
@@ -309,9 +306,7 @@ echo "
 		
 		
 		
-		## Hora
-		fake-hwclock-save.service
-		fake-hwclock-load.service
+
 		
 		## Almacenamiento y administracion segura de las llaves SSH 
 		gcr-ssh-agent.service
@@ -328,13 +323,16 @@ echo "
 		snapd.socket
 		ssh.socket
 		systemd-oomd.socket
-		
 		whoopsie.path
 
-		## Investigar
-		fake-hwclock.service
-		fake-hwclock-save.timer
+
+		fake-hwclock-save.service
+		fake-hwclock-load.service
 		
+		
+		## Investigar
+		#fake-hwclock.service
+		#fake-hwclock-save.timer
 		#mkswap.service
 
 
