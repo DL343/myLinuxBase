@@ -1,24 +1,69 @@
+## Administracion de maquinas remotas 
 Set-Service -StartupType Disable WinRM
+
+## 
 Set-Service -StartupType Disable MapsBroker
+
+## Administracion de conexiones de red
 Set-Service -StartupType Disable NcbService
+
+## Acceso remoto
 Set-Service -StartupType Disable RemoteAccess
+
+## 
 Set-Service -StartupType Disable RmSvc
+
+## Diagnostico del sistema
 Set-Service -StartupType Disable DPS
+
+##
 Set-Service -StartupType Disable InstallService
+
+## 
 Set-Service -StartupType Disable TermService
+
+## Recursos compartidos de red con protocolo SMB 
 Set-Service -StartupType Disable LanmanServer
+
+## Temas
 Set-Service -StartupType Disable Themes
+
+## Actualizaciones automaticas (Windows Update) 
 Set-Service -StartupType Disable wuauserv
+
+## 
 Set-Service -StartupType Disable DusmSvc
+
+## Administracion de dispositivos de interfaz humana como teclados y ratones
 Set-Service -StartupType Disable hidserv
+
+## Precarga de aplicaciones
 Set-Service -StartupType Disable SysMain
+
+## Impresion
 Set-Service -StartupType Disable Spooler
+
+## Acceso a recursos compartidos en una red
 Set-Service -StartupType Disable LanmanWorkstation
+
+## Audio Bluetooth
 Set-Service -StartupType Disable BthAvctpSvc
+
+## Panel de control Nvidia
 Set-Service -StartupType Disable NVDisplay.ContainerLocalSystem
+
+## Iluminacion Logitech
+Set-Service -StartupType Disable logi_lamparray_service 
+
+## Acceso a servidores remotos por VPN y SSTP 
+Set-Service -StartupType Disable SstpSvc
+
+## Administra conexiones de acceso telefonico y VPN desde el equipo a Internet u otras redes remotas
+Set-Service -StartupType Disable RasMan 
+
 Set-Service -StartupType Disable 
+
 Set-Service -StartupType Disable 
+
 Set-Service -StartupType Disable 
-Set-Service -StartupType Disable 
-Set-Service -StartupType Disable 
-Set-Service -StartupType Disable 
+
