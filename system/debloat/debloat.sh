@@ -84,6 +84,10 @@ appBloat=(
 	
 	##
 	ibus*
+	xdg-desktop-portal
+	xdg-desktop-portal-gtk
+
+
 	
 	## Gnome
 	gnome-shell-common

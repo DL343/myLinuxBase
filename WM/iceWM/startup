@@ -4,7 +4,7 @@
 redshift -O 4250K -r -P &
 brightnessctl s 0 &
 parcellite &
-xscreensaver -nosplash &
+#xscreensaver -nosplash &
 nitrogen --restore &
 #gnome-keyring-daemon &
 

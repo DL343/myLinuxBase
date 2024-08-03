@@ -1,6 +1,8 @@
 #!/bin/bash
 
-isMinimal="y"
+install="sudo apt install"
+
+y="-y"
 
 
 
@@ -24,9 +26,6 @@ echo "
 ########################################################################
 "
 
-install="sudo apt install"
-
-y="-y"
 
 
 
@@ -83,7 +82,7 @@ function myApps(){
 
 myApps=(
 
-	preload ## ??
+	preload  
 
 	p7zip-full
 	lm-sensors 
@@ -421,7 +420,7 @@ fi
 
 
 ## Configuracion volumen
-amixer sset Master 99%
+amixer sset Master 100%
 
 
 
@@ -514,11 +513,11 @@ echo "
 ########################################################################
 "
 ## En terminal 
-echo "KEYMAP=es" | sudo tee /etc/vconsole.conf
-echo "LANG=es_ES.UTF8" | sudo tee /etc/locale.conf
+##echo "KEYMAP=es" | sudo tee /etc/vconsole.conf
+##echo "LANG=es_ES.UTF8" | sudo tee /etc/locale.conf
 
 ## En xorg
-sudo localectl set-x11-keymap latam
+##sudo localectl set-x11-keymap latam
 
 
 
@@ -652,129 +651,128 @@ fi
 
 function otros(){
 
+	echo "
+	########################################################################
+						LOW POWER PREFIX - 5V 3A (15W)
+	########################################################################
+	"
 
-echo "
-########################################################################
-                    LOW POWER PREFIX - 5V 3A (15W)
-########################################################################
-"
+	## Creacion del directorio por si no existe
+	mkdir -p ~/.config/scripts/
 
-## Creacion del directorio por si no existe
-mkdir -p ~/.config/scripts/
+	## Configuracion del script
+	echo '#!/bin/bash
 
-## Configuracion del script
-echo '#!/bin/bash
+	sudo cpufreq-set -c  0 -u 1.8GHz
+	sudo cpufreq-set -c  5 -u 1.8GHz
+	sudo cpufreq-set -c  7 -u 1.8GHz
 
-sudo cpufreq-set -c  0 -u 1.8GHz
-sudo cpufreq-set -c  5 -u 1.8GHz
-sudo cpufreq-set -c  7 -u 1.8GHz
+	sudo cpufreq-set -c  0 -g ondemand
+	sudo cpufreq-set -c  5 -g ondemand
+	sudo cpufreq-set -c  7 -g ondemand
 
-sudo cpufreq-set -c  0 -g ondemand
-sudo cpufreq-set -c  5 -g ondemand
-sudo cpufreq-set -c  7 -g ondemand
-
-' > ~/.config/scripts/low_power.sh
-
-
-## Dando permiso de ejecucion al script
-chmod +x ~/.config/scripts/low_power.sh
+	' > ~/.config/scripts/low_power.sh
 
 
-home=$HOME
-
-## Configuracion del servicio para systemd
-echo '                                                                                           
-## Se indican las directivas
-[Unit]
-## Descripcion del servicio
-Description=Servicio de una sola ejecucion para reducir el consumo para cargadores limitados a 5V 3A (15W)
-
-## Controla el orden de ejecucion, "ejecutate despues de ..."
-After=network.target network-online.target
+	## Dando permiso de ejecucion al script
+	chmod +x ~/.config/scripts/low_power.sh
 
 
-## Version ligera de "Requires". Systemd intentara arrancar las
-##  unidades indicadas
-Wants=network-online.target
+	home=$HOME
+
+	## Configuracion del servicio para systemd
+	echo '                                                                                           
+	## Se indican las directivas
+	[Unit]
+	## Descripcion del servicio
+	Description=Servicio de una sola ejecucion para reducir el consumo para cargadores limitados a 5V 3A (15W)
+
+	## Controla el orden de ejecucion, "ejecutate despues de ..."
+	After=network.target network-online.target
 
 
-[Service]
-## Ruta del fichero/script a ejecutar               <-------------------------------------------------------------- INVESTIGAR COMO OBTENER RUTA DEL USUARIO ACTUAL
-ExecStart='$home'/.config/scripts/low_power.sh 
+	## Version ligera de "Requires". Systemd intentara arrancar las
+	##  unidades indicadas
+	Wants=network-online.target
 
 
-[Install]
-WantedBy=multi-user.target
+	[Service]
+	## Ruta del fichero/script a ejecutar               <-------------------------------------------------------------- INVESTIGAR COMO OBTENER RUTA DEL USUARIO ACTUAL
+	ExecStart='$home'/.config/scripts/low_power.sh 
 
 
-' | sudo tee /etc/systemd/system/low_power.service
+	[Install]
+	WantedBy=multi-user.target
 
 
-
-## Habilitando el servicio en systemd
-sudo systemctl enable low_power.service
-
-
-: " POWER SUPER SAVE
-
-sudo cpufreq-set -c  0 -u 1.2GHz
-sudo cpufreq-set -c  5 -u 1.2GHz
-sudo cpufreq-set -c  7 -u 1.2GHz
-
-sudo cpufreq-set -c  0 -u 1.4GHz
-sudo cpufreq-set -c  5 -u 1.4GHz
-sudo cpufreq-set -c  7 -u 1.4GHz
-
-sudo cpufreq-set -c  0 -u 1.8GHz
-sudo cpufreq-set -c  5 -u 1.8GHz
-sudo cpufreq-set -c  7 -u 1.8GHz
-
-sudo cpufreq-set -c  0 -g ondemand
-sudo cpufreq-set -c  5 -g ondemand
-sudo cpufreq-set -c  7 -g ondemand
-
-
-1.8Ghz = max 11.6 W 
-1.2Ghz = max 7.6 W
+	' | sudo tee /etc/systemd/system/low_power.service
 
 
 
-"
+	## Habilitando el servicio en systemd
+	sudo systemctl enable low_power.service
+
+
+	: " POWER SUPER SAVE
+
+	sudo cpufreq-set -c  0 -u 1.2GHz
+	sudo cpufreq-set -c  5 -u 1.2GHz
+	sudo cpufreq-set -c  7 -u 1.2GHz
+
+	sudo cpufreq-set -c  0 -u 1.4GHz
+	sudo cpufreq-set -c  5 -u 1.4GHz
+	sudo cpufreq-set -c  7 -u 1.4GHz
+
+	sudo cpufreq-set -c  0 -u 1.8GHz
+	sudo cpufreq-set -c  5 -u 1.8GHz
+	sudo cpufreq-set -c  7 -u 1.8GHz
+
+	sudo cpufreq-set -c  0 -g ondemand
+	sudo cpufreq-set -c  5 -g ondemand
+	sudo cpufreq-set -c  7 -g ondemand
+
+
+	1.8Ghz = max 11.6 W 
+	1.2Ghz = max 7.6 W
+
+
+
+	"
 
 
 
 
-echo "
-########################################################################
-                                ALACRITTY
-########################################################################
-"
+	echo "
+	########################################################################
+									ALACRITTY
+	########################################################################
+	"
 
 
 
-## Creacion de la carpeta 
-mkdir -p $HOME/.config/alacritty/
+	## Creacion de la carpeta 
+	mkdir -p $HOME/.config/alacritty/
 
-## Creacion del archivo
-touch $HOME/.config/alacritty/alacritty.toml
-
-
-echo "
------------------------
-    Personalizacion 
------------------------
-" 
-
-echo '
-import = [
-    "~/.config/alacritty/themes/themes/breeze.toml"
-]
-' > $HOME/.config/alacritty/alacritty.toml
+	## Creacion del archivo
+	touch $HOME/.config/alacritty/alacritty.toml
 
 
-# We use Alacritty's default Linux config directory as our storage location here.
-mkdir -p ~/.config/alacritty/themes
-git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
+	echo "
+	-----------------------
+		Personalizacion 
+	-----------------------
+	" 
+
+	echo '
+	import = [
+		"~/.config/alacritty/themes/themes/breeze.toml"
+	]
+	' > $HOME/.config/alacritty/alacritty.toml
+
+
+	# We use Alacritty's default Linux config directory as our storage location here.
+	mkdir -p ~/.config/alacritty/themes
+	git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 
 
 }
