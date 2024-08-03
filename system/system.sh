@@ -649,7 +649,7 @@ fi
 
 
 
-function otros(){
+function lowPowerPrefix(){
 
 	echo "
 	########################################################################
@@ -660,7 +660,7 @@ function otros(){
 	## Creacion del directorio por si no existe
 	mkdir -p ~/.config/scripts/
 
-	## Configuracion del script
+	## Configuracion e inyeccion del script
 	echo '#!/bin/bash
 
 	sudo cpufreq-set -c  0 -u 1.8GHz
@@ -680,7 +680,7 @@ function otros(){
 
 	home=$HOME
 
-	## Configuracion del servicio para systemd
+	## Configuracion del servicio en systemd para ejecutar el script al arranque
 	echo '                                                                                           
 	## Se indican las directivas
 	[Unit]
@@ -735,10 +735,11 @@ function otros(){
 	1.8Ghz = max 11.6 W 
 	1.2Ghz = max 7.6 W
 
-
-
 	"
 
+}
+
+function alacritty(){
 
 
 
