@@ -107,7 +107,7 @@ myApps=(
 	bleachbit      					 
 	evince            
 	firefox-esr      
-	vlc               
+	mpv               
 	audacious                           
 	gnome-paint       
 	xscreensaver 
@@ -623,7 +623,7 @@ then
 
 	echo "## Instalacion de TLP..."
 
-	sudo apt install tlp 
+	sudo apt install tlp -y
 	
 	echo "## Habilitando servicio..."
 	sudo systemctl enable tlp

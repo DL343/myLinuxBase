@@ -7,9 +7,9 @@ if [ "$isQemuKVM" == "y" ] || [ "$isQemuKVM" == "" ]; then
 	if [ "$egrep -c '(vmx|svm)' /proc/cpuinfo" > 0 ]; then
 		echo "Perfecto, existe el soporte!"
 		echo "Comenzando instalacion..."
-		sudo nala install qemu-system-x86 virt-manager virtinst 
-		sudo nala install libvirt-clients bridge-utils libvirt-daemon-system 
-		sudo nala install dnsmasq qemu-utils ovmf
+		sudo apt install qemu-system-x86 virt-manager virtinst -y
+		sudo apt install libvirt-clients bridge-utils libvirt-daemon-system -y
+		sudo apt install dnsmasq qemu-utils ovmf -y
 		
 		echo "## Habilitar servicio"
 		sudo systemctl enable --now libvirtd
