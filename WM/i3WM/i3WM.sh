@@ -1,7 +1,22 @@
 #!/bin/bash
 
+echo "
+########## ASEGURAR INSTALACION ########## 
+"
+sudo apt install i3 -y
 
-## Aplicar configuracion
-cp i3WM/config $HOME/.config/i3/config
+echo "## Listo"
 
-echo '## Listo'
+
+
+
+
+echo "
+########## CONFIGURACION ########## 
+"
+
+echo "## Agregar configuraciones" 
+cp -rp ./geti3WMConfig/i3 $HOME/.config/
+
+echo "## Listo"
+

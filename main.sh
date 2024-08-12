@@ -33,6 +33,72 @@ read -p "¿Instalar Qemu/KVM? [y/n] " isQemuKVM
 export isQemuKVM
 
 
+while true 
+do
+
+	read -p "
+	1) IceWM
+	2) XFCE
+	3) i3
+	4) Ningun WM
+	## Selecciona un WM:
+	" seleccion
+
+
+
+	case $seleccion in
+		1)
+			echo "Se selecciono IceWM"
+			
+			## Ingresando a iceWM.sh
+			cd ./WM/iceWM/
+			./iceWM.sh
+
+			## Regresando a la posicion de main
+			cd ..
+			cd ..
+
+			break
+			;;
+		2)
+			echo "XFCE"
+			
+			## Ingresando a iceWM.sh
+			cd ./WM/XFCE/
+			./XFCE.sh
+
+			## Regresando a la posicion de main
+			cd ..
+			cd ..
+
+			
+			break
+			;;
+		3)
+			echo "i3"
+			
+			## Ingresando a i3WM.sh
+			cd ./WM/i3WM/
+			./i3WM.sh
+
+			## Regresando a la posicion de main
+			cd ..
+			cd ..
+			
+			break
+			;;
+		4)
+			echo "Entendido, sin WM"
+			break
+			;;
+		*)
+			echo "Valor invalido, reintentalo nuevamente"
+			continue
+			;;
+	esac
+done
+
+
 
 
 
@@ -57,16 +123,6 @@ cd ..
 
 ./añadidos/Toggles/setToogles.sh
 
-
-
-
-echo "############################# ICEWM ##############################" 
-cd ./WM/iceWM/
-
-./icewm.sh
-
-cd ..
-cd ..
 
 
 
