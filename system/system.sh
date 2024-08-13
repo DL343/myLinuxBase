@@ -54,7 +54,7 @@ function appsMinimal(){
 		ufw 	
 		lightdm
 		lightdm-gtk-greeter	
-		cpufrequtils  
+		
 	)
 
 
@@ -82,7 +82,7 @@ function myApps(){
 
 myApps=(
 
-	preload  
+	##preload  
 
 	p7zip-full
 	lm-sensors 
@@ -100,8 +100,10 @@ myApps=(
 	rofi  
 	gnome-screenshot 
 	mirage
+	nitrogen
+	redshift
 
-	grimshot
+	##grimshot
 	
 	qalculate-gtk          
 	bleachbit      					 
@@ -109,7 +111,7 @@ myApps=(
 	firefox-esr      
 	mpv               
 	audacious                           
-	gnome-paint       
+	##gnome-paint       
 	xscreensaver 
 
 
@@ -119,8 +121,7 @@ myApps=(
 	## Personalizacion
 	yaru-theme-gtk 
 	yaru-theme-icon 
-	nitrogen
-	redshift
+
 
 )
 
@@ -161,7 +162,7 @@ echo '
 ########################################################################
 '
 
-sudo systemctl enable preload.service
+##sudo systemctl enable preload.service
 
 
 echo '
@@ -656,6 +657,9 @@ function lowPowerPrefix(){
 						LOW POWER PREFIX - 5V 3A (15W)
 	########################################################################
 	"
+	
+	## Asegurar instalacion
+	install cpufrequtils  
 
 	## Creacion del directorio por si no existe
 	mkdir -p ~/.config/scripts/

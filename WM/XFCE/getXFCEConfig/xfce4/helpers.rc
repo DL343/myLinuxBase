@@ -1,4 +1,4 @@
+FileManager=pcmanfm
 WebBrowser=debian-sensible-browser
-TerminalEmulator=sakura
-FileManager=thunar
+TerminalEmulator=debian-x-terminal-emulator
 

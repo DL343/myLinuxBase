@@ -20,8 +20,8 @@ export isMinimal
 read -p "¿Instalar soporte para Bluetooth? [y/n] " isBluetooth
 export isBluetooth
 
-read -p "¿Instalar PipeWire(Servidor de audio y video)? 
-(Se removera PulseAudio(otro servidor de audio[legacy]) si es que existe) 
+read -p "¿Instalar PipeWire? 
+(Se removera PulseAudio si es que existe) 
 [y/n] " isPipeWire
 export isPipeWire
 
@@ -37,11 +37,14 @@ while true
 do
 
 	read -p "
+	###############################
+	SELECCIONA UN WM:
 	1) IceWM
 	2) XFCE
 	3) i3
-	4) Ningun WM
-	## Selecciona un WM:
+	4) Ninguno
+	###############################
+	
 	" seleccion
 
 
