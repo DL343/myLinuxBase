@@ -51,7 +51,7 @@ do
 
 	case $seleccion in
 		1)
-			echo "Se selecciono IceWM"
+			echo "## > Se selecciono IceWM"
 			
 			## Ingresando a iceWM.sh
 			cd ./WM/iceWM/
@@ -64,7 +64,7 @@ do
 			break
 			;;
 		2)
-			echo "XFCE"
+			echo "## > Se selecciono XFCE"
 			
 			## Ingresando a iceWM.sh
 			cd ./WM/XFCE/
@@ -78,7 +78,7 @@ do
 			break
 			;;
 		3)
-			echo "i3"
+			echo "## > Se selecciono i3"
 			
 			## Ingresando a i3WM.sh
 			cd ./WM/i3WM/
@@ -91,7 +91,7 @@ do
 			break
 			;;
 		4)
-			echo "Entendido, sin WM"
+			echo "## > Se selecciono, sin WM"
 			break
 			;;
 		*)

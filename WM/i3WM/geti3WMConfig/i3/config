@@ -216,15 +216,15 @@ exec brightnessctl s 0
 
 
 ################# VOLUMEN ################
-##### LAPTOP
-#bindsym XF86AudioLowerVolume        pactl set-sink-volume @DEFAULT_SINK@ -5%
-#bindsym XF86AudioRaiseVolume        pactl set-sink-volume @DEFAULT_SINK@ +5%
-#bindsym XF86AudioMute               pactl set-sink-mute @DEFAULT_SINK@ toggle
+##### LAPTOP (Comentado porque i3 ya lo tiene configurado)
+#bindsym XF86AudioLowerVolume         exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+#bindsym XF86AudioRaiseVolume         exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+#bindsym XF86AudioMute                exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 ##### PC
-bindsym mod1+KP_Subtract            pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym mod1+KP_Add                 pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym mod1+KP_Multiply            pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym mod1+KP_Subtract              exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym mod1+KP_Add                   exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym mod1+KP_Multiply              exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 ################ BRILLO ################
 bindsym XF86MonBrightnessDown         exec brightnessctl s 10%-

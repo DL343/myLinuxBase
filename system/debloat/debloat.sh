@@ -51,10 +51,7 @@ appBloat=(
 	vim* 
 
 	## ?????
-	samba
-
-	## ?????
-	avahi* 
+	samba 
 
 	## Es un protocolo VPN de código abierto que utiliza técnicas de red privada virtual (VPN) para establecer conexiones seguras de sitio a sitio o de punto a punto
 	openvpn 
