@@ -110,7 +110,8 @@ myApps=(
 	#evince            
 	firefox-esr      
 	mpv               
-	audacious                           
+	audacious      
+	console-data                     
 	##gnome-paint       
 	#xscreensaver 
 

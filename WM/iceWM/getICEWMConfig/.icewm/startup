@@ -7,4 +7,5 @@ parcellite &
 #xscreensaver -nosplash &
 nitrogen --restore &
 #gnome-keyring-daemon &
+$HOME/.config/scripts/toggle_us_latam.sh &
 

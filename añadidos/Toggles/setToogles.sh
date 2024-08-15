@@ -47,13 +47,9 @@ else
         blueman-applet &
 fi
 
-
 ' > $HOME/.config/scripts/toggle_blueman-applet.sh
 
 chmod +x $HOME/.config/scripts/toggle_blueman-applet.sh
-
-
-
 
 
 
@@ -78,7 +74,31 @@ else
         orage &
 fi
 
-
 ' > $HOME/.config/scripts/toggle_orage.sh
 
 chmod +x $HOME/.config/scripts/toggle_orage.sh
+
+
+
+echo "
+#############################################
+    TOGGLE DISTRIBUCION TECLADO US/LATAM
+#############################################
+"
+## Creacion de la ubicacion
+mkdir -p $HOME/.config/scripts/
+
+
+## Creacion del script
+echo '
+#!/bin/bash
+
+## Listar mas opciones
+#localectl list-x11-keymap-layouts
+
+setxkbmap -layout us,latam -option "grp:alt_shift_toggle"
+
+' > $HOME/.config/scripts/toggle_us_latam.sh  
+
+chmod +x $HOME/.config/scripts/toggle_us_latam.sh  
+

@@ -203,16 +203,10 @@ exec redshift -O 4250K -r -P
 # Brillo al minimo
 exec brightnessctl s 0
 
-# Salvapantallas <----------------------------------- Revizar alternativa
+# Salvapantallas
 # exec xscreensaver -nosplash
 
 ## exec parcellite (i3 ya lo activa por defecto)
- 
-
-
-################# CUSTOM #################
-
-
 
 
 ################# VOLUMEN ################
@@ -241,6 +235,7 @@ bindsym $mod+mod1+e                   exec geany
 bindsym $mod+mod1+space               exec "rofi -modi drun,run -show-icons -theme /usr/share/rofi/themes/gruvbox-dark-hard.rasi -font 'URW Gothic 14' -show drun"
 bindsym Ctrl+Shift+Escape             exec sakura -x htop
 
+
 ## Atajo clasico para terminar apps 
 bindsym mod1+F4                       kill
 
@@ -267,6 +262,8 @@ bindsym mod1+Print                  exec gnome-screenshot -w
 bindsym $mod+F2                     exec $HOME/.config/scripts/toggle_nm-applet.sh
 bindsym $mod+mod1+b                 exec $HOME/.config/scripts/toggle_blueman-applet.sh
 bindsym $mod+mod1+c                 exec $HOME/.config/scripts/toggle_orage.sh
+exec $HOME/.config/scripts/toggle_us_latam.sh
+
 
 ## Script para encender/apagar  (Audio applet) ??????????????????????
 #bindsym $mod+mod1+c                  exec $HOME/.config/scripts/toggle_orage.sh
