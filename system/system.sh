@@ -319,6 +319,8 @@ sudo ufw enable
 echo "## Asegurar instalacion"
 sudo apt install pcmanfm -y
 
+mkdir -p $HOME/.config/pcmanfm/default/pcmanfm.conf
+
 echo "
 [config]
 bm_open_method=0
@@ -329,7 +331,7 @@ mount_removable=1
 autorun=1
 
 [ui]
-always_show_tabs=0
+always_show_tabs=1
 max_tab_chars=32
 win_width=640
 win_height=480
@@ -545,32 +547,6 @@ echo "
 
 
 
-############################# SCRIPTS ##################################
-
-#~ echo '#### NOTIFICACION BATERIA #####'
-
-#~ mkdir -p $HOME/.config/scripts
-
-#~ echo '
-	#~ #!/bin/bash
-	
-	
-	#~ # Obtener el nivel de batería
-	#~ battery_level=$(acpi -b | grep -P -o "[0-9]+(?=%)")
-
-	#~ # Comprobar si el nivel de batería es bajo
-	#~ if [ "$battery_level" -lt 101 ]; then
-		#~ # Mostrar notificación
-		#~ xmessage -center -buttons Aceptar:OK -default Aceptar -title "AVISO: Bateria baja" -bg \#FFAA00 -fg \#000000 -geometry 400x200 El nivel de la bateria es del $battery_level%. &
-	#~ fi
-		
-	#~ ' > $HOME/.config/scripts/batteryCheck.sh
-
-#~ chmod +x $HOME/.config/scripts/batteryCheck.sh
-
-#~ sudo sed -i '$a */2 *  *  *  *   '"$USER"'   '"$HOME"'/.config/scripts/batteryCheck.sh' /etc/crontab
-
-
 
 
 echo "
@@ -589,11 +565,32 @@ fi
 
 echo '###### PERSONALIZACION ######' 
 
-## Dar de alta greeter
+## Configuracion de greeter
 sudo sed -i '/# greeter-session=lightdm-gtk-greeter-settings/cgreeter-session=lightdm-gtk-greeter-settings' /etc/lightdm/lightdm.conf 
 
-## Copiado de wallpaper
-sudo cp ./Apps/lightdm/* /usr/share/pixmaps/lightdm.jpg
+## Copiado de wallpaper aleatorio
+carpeta="./wallpapers"
+if [ ! -d "$carpeta" ] 
+then
+
+    echo "El directorio no existe"
+    
+fi
+
+
+imagenes=( "$carpeta"/*.{jpg,png} )
+if [ ${#imagenes[@]} -eq 0 ]
+then
+
+	echo "No hay imagenes"
+	
+fi
+
+## Seleccion de indice aleatorio
+indice=$(( RANDOM % ${#imagenes[@]} ))
+imagenSeleccionada="${imagenes[$indice]}"
+
+sudo cp "$imagenSeleccionada" /usr/share/pixmaps/lightdm.jpg
 
 ## Configuracion del wallpaper
 echo '[greeter]
@@ -607,6 +604,7 @@ icon-theme-name = Adwaita
 
 ## Desactivar la ocultacion de los usuarios disponibles
 sudo sed -i 's/greeter-hide-users=true/greeter-hide-users=false/g' /usr/share/lightdm/lightdm.conf.d/01_debian.conf 
+
 
 
 
@@ -798,6 +796,35 @@ function alacritty(){
 
 
 }
+
+
+
+############################# SCRIPTS ##################################
+
+#~ echo '#### NOTIFICACION BATERIA #####'
+
+#~ mkdir -p $HOME/.config/scripts
+
+#~ echo '
+	#~ #!/bin/bash
+	
+	
+	#~ # Obtener el nivel de batería
+	#~ battery_level=$(acpi -b | grep -P -o "[0-9]+(?=%)")
+
+	#~ # Comprobar si el nivel de batería es bajo
+	#~ if [ "$battery_level" -lt 101 ]; then
+		#~ # Mostrar notificación
+		#~ xmessage -center -buttons Aceptar:OK -default Aceptar -title "AVISO: Bateria baja" -bg \#FFAA00 -fg \#000000 -geometry 400x200 El nivel de la bateria es del $battery_level%. &
+	#~ fi
+		
+	#~ ' > $HOME/.config/scripts/batteryCheck.sh
+
+#~ chmod +x $HOME/.config/scripts/batteryCheck.sh
+
+#~ sudo sed -i '$a */2 *  *  *  *   '"$USER"'   '"$HOME"'/.config/scripts/batteryCheck.sh' /etc/crontab
+
+
 
 
 

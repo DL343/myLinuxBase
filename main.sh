@@ -38,7 +38,7 @@ do
 
 	read -p "
 	###############################
-	SELECCIONA UN WM:
+	SELECCIONA UN WM/DE:
 	1) IceWM
 	2) XFCE
 	3) i3
