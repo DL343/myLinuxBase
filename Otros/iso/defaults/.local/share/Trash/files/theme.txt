@@ -1,0 +1,41 @@
+# GRUB2 gfxmenu Griffin theme
+# Designed for any resolution
+# Tux model made by andy cucaro (downloaded in sketchfab.com)
+
+# Global Property
+title-text: ""
+desktop-image: "background.png"
+desktop-color: "#000000"
+terminal-font: "griffin"
+terminal-box: "terminal_box_*.png"
+terminal-left: "0"
+terminal-top: "0"
+terminal-width: "100%"
+terminal-height: "100%"
+terminal-border: "0"
+
+# Show the boot menu
++ boot_menu {
+  left = 5%
+  top = 30%
+  width = 45%
+  height = 60%
+  item_font = "griffin"
+  item_color = "#000000"
+  selected_item_color = "#83a748"
+  item_height = 24
+  item_spacing = 12
+  selected_item_pixmap_style = "select_*.png"
+}
+
+# Show a countdown message using the label component
++ label {
+  top = 10%
+  left = 15%
+  width = 30%
+  align = "center"
+  id = "__timeout__"
+  text = "Booting in %d seconds"
+  color = "#000000"
+  font = "Unifont Regular 16"
+}

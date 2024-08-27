@@ -463,9 +463,12 @@ sudo sed -i '/GRUB_DEFAULT=saved/a GRUB_SAVEDEFAULT=true' /etc/default/grub
 ### Wallpaper grub
 #### Copiar...
 sudo cp ./Apps/grub/* /boot/grub/imgGrub.jpg
-
 #### Configurar 
 sudo sed -i '$a GRUB_BACKGROUND="/boot/grub/imgGrub.jpg"' /etc/default/grub
+
+#### Mostrar informacion mas detallada
+sudo sed -i 's/GRUB_DISTRIBUTOR=`lsb_release -i -s 2> \/dev\/null || echo Debian`/GRUB_DISTRIBUTOR=`lsb_release -d -s 2> \/dev\/null || echo Debian`/g' /etc/default/grub
+ /etc/default/grub
 
 
 ## Actualizar cambios a grub
