@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 ## 5. Retoques:
 
 nombreDistro=Prueba001

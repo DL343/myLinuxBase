@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 nombreDistro=Prueba001
 
 
@@ -84,9 +86,9 @@ libduktape207 ## Biblioteca para el motor de JavaScript Duktape, versión 2.07.
 ##################### AJUSTES ENTORNO ###################### 
 ############################################################
 ## Establece variables de entorno globales para todos los usuarios del sistema.
-echo '
-
-'  tee /etc/environtment
+#echo '
+#
+#' > /etc/environtment
 
 
 ## Configura las variables de entorno relacionadas con la localizació, idioma, etc. del sistema
@@ -103,14 +105,14 @@ LC_PAPER=en_US.UTF-8
 LC_TELEPHONE=en_US.UTF-8
 LC_TIME=en_US.UTF-8
 LANGUAGE=en_US.UTF-8
-" | tee /etc/locale.conf
+" > /etc/locale.conf
 
 ## Configura el mapa de teclas del sistema para la consola virtual (Las tty's)
 echo "KEYMAP=us
-" | tee /etc/vconsole.conf
+" > /etc/vconsole.conf
 
 ## Configuración de la zona horaria del sistema.
-echo "America/New_York" | tee /etc/timezone
+echo "America/New_York" > /etc/timezone
 
 ## Configuración del teclado en X11.
 echo '
@@ -119,18 +121,18 @@ Section "InputClass"
         MatchIsKeyboard "on"
         Option "XkbLayout" "us"
 EndSection
-' | tee /etc/X11/xorg.conf.d/00-keyboard.conf
+' > /etc/X11/xorg.conf.d/00-keyboard.conf
 
 ## Afecta cómo se manejan los caracteres y las configuraciones regionales para "live" y "root"
 echo "export LC_CTYPE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8" | tee /home/live/.bashrc
+export LC_ALL=en_US.UTF-8" > /home/live/.bashrc
 
 echo "export LC_CTYPE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8" | tee /root/.bashrc
+export LC_ALL=en_US.UTF-8" > /root/.bashrc
 
 ## Son configuraciones de idioma y codificación de caracteres.
 echo "en_US.UTF-8 UTF-8
-C.UTF-8 UTF-8" | tee /etc/locale.gen
+C.UTF-8 UTF-8" > /etc/locale.gen
 locale-gen
 
 ##########################################################
@@ -343,7 +345,7 @@ echo "
 
 - /home/*/.local/share/RecentDocuments/*
 
-" | tee /usr/lib/refractasnapshot/snapshot_exclude.list
+" > /usr/lib/refractasnapshot/snapshot_exclude.list
 	
 }
 
@@ -444,7 +446,7 @@ GRUB_CMDLINE_LINUX=""
 # Uncomment to get a beep at grub start
 #GRUB_INIT_TUNE="480 440 1"
 
-' | tee /etc/default/grub.ucf-dist
+' > /etc/default/grub.ucf-dist
 
 }
 
@@ -463,7 +465,7 @@ XKBVARIANT=""
 XKBOPTIONS=""
 
 BACKSPACE="guess"
-' | tee /etc/default/keyboard
+' > /etc/default/keyboard
 
 
 ## Variables determinan la configuración regional que afecta
@@ -479,7 +481,7 @@ LC_NUMERIC=en_US.UTF-8
 LC_PAPER=en_US.UTF-8
 LC_TELEPHONE=en_US.UTF-8
 LC_TIME=en_US.UTF-8
-"|  tee /etc/default/locale
+" > /etc/default/locale
 
 
 ## Configura las entredas del menu de GRUB 
@@ -499,7 +501,7 @@ sed -i '/COMPRESS=/cCOMPRESS=xz' /etc/initramfs-tools/initramfs.conf
 # UMASK=0077 significa que los permisos predeterminados para los archivos y directorios creados serán muy restrictivos:
 # Archivos: Los permisos serán 600 (solo lectura y escritura para el propietario).
 # Directorios: Los permisos serán 700 (lectura, escritura y ejecución solo para el propietario).
-echo 'UMASK=0077' |  tee /etc/initramfs-tools/conf.d/calamares-safe-initramfs.conf
+echo 'UMASK=0077' > /etc/initramfs-tools/conf.d/calamares-safe-initramfs.conf
 
 
 ## El archivo se utiliza para configurar la reanudación desde la suspensión o hibernación.
@@ -515,7 +517,7 @@ blacklist microcode
 
 ## Controla el altavoz interno de la placa base (también conocido como "buzzer" o "beeper").
 blacklist pcspkr
-' |  tee /etc/modprobe.d/amd64-microcode-blacklist.conf
+' > /etc/modprobe.d/amd64-microcode-blacklist.conf
 
 
 ## INTEL
@@ -526,7 +528,7 @@ blacklist microcode
 
 ## Controla el altavoz interno de la placa base (también conocido como "buzzer" o "beeper")
 blacklist pcspkr
-' |  tee /etc/modprobe.d/intel-microcode-blacklist.conf
+' > /etc/modprobe.d/intel-microcode-blacklist.conf
 
 update-initramfs -u
 
@@ -552,7 +554,7 @@ echo '
 	</match>
 	<define_admin_auth group="adm"/>
 </config>
-' |  tee /etc/PolicyKit/PolicyKit.conf
+' > /etc/PolicyKit/PolicyKit.conf
  
 
 
