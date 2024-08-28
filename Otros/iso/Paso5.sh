@@ -64,4 +64,4 @@ insserv -r apparmor
 insserv -r smartmontools
 
 
-
+##reboot

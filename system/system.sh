@@ -43,6 +43,8 @@ function appsMinimal(){
 		btop
 		neofetch 
 		gparted 
+		btrfs-progs ## Herramientas para manejar el sistema de archivos Btrfs.
+		mtools ## Conjunto de herramientas para manipular disquetes (especialmente FAT).
 		geany
 		pcmanfm
 		sakura
@@ -54,6 +56,10 @@ function appsMinimal(){
 		ufw 	
 		lightdm
 		lightdm-gtk-greeter	
+		cryptsetup ## Herramienta para gestionar el cifrado de discos y particiones usando LUKS.
+		gcr ## Biblioteca para manejar certificados y claves, usada en aplicaciones de seguridad.
+		unar ## Utilidad para descomprimir archivos en varios formatos, como RAR y ZIP.
+		keyutils ## Utilidades para gestionar claves y conjuntos de claves en el kernel de Linux.
 		
 	)
 
@@ -67,7 +73,6 @@ function appsMinimal(){
 		Instalando $package...
 		-------------------------------------------
 		"
-		
 		$union
 
 	done

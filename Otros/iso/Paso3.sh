@@ -69,3 +69,5 @@ exit 0
 " > /sbin/sources-media
 
 apt update
+
+##reboot
