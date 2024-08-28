@@ -20,8 +20,9 @@ nombreDistro=Prueba001
 
 
 ## Calamares y Refractasnapshot
-apt -y install refractasnapshot-base calamares 
-## calamares-settings-loc-os
+apt -y install calamares 
+apt -y install ./refractasnapshot-base_10.2.12_all.deb 
+## calamares-settings-loc-os refractasnapshot-base 
 
 ## LiveTools
 apt -y install live-boot live-config-doc live-config-sysvinit live-config live-tools live-boot-initramfs-tools
