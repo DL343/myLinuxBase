@@ -13,8 +13,8 @@ nombreDistro=Prueba001
 mkdir -p /etc/skel
 
 ## Copia de home's
-cp -r ./defaults/ /etc/skel/
-cp -r ./live/ /home/
+cp -r ./sesion/skel/ /etc/
+cp -r ./sesion/live/ /home/
 
 ## Ajuste de permisos
 chown live /home/live -R
@@ -22,7 +22,7 @@ chown live /home/live -R
 
 
 ####################################################
-########### INSTALADOR CALAMARES ###################
+##################  CALAMARES ######################
 ####################################################
 
 ## Icono de la aplicacion calamares
@@ -36,7 +36,7 @@ chown live /home/live -R
 ################### A ELIMINAR #####################
 ####################################################
 
-sudo apt remove aspell-es chafa cups-pk-helper debian-reference-es debian-reference-common fonts-liberation git ispanish task-spanish manpages-es system-config-printer system-config-printer-common python3-gi-cairo python3-cairo system-config-printer-udev python3-cupshelpers python3-cups python3-smbc rtkit 
+#sudo apt remove aspell-es chafa cups-pk-helper debian-reference-es debian-reference-common fonts-liberation git ispanish task-spanish manpages-es system-config-printer system-config-printer-common python3-gi-cairo python3-cairo system-config-printer-udev python3-cupshelpers python3-cups python3-smbc rtkit 
 ##blueman
 
 ####################################################
@@ -50,7 +50,7 @@ echo "$nombreDistro" > /etc/hostname
 ####################################################
 sed -i 's/#autologin-user=/autologin-user=live/g' /etc/lightdm/lightdm.conf
 sed -i 's/#autologin-user-timeout=0/autologin-user-timeout=0/g' /etc/lightdm/lightdm.conf
-sed -i 's/#autologin-session=/autologin-session=xfce/g' /etc/lightdm/lightdm.conf 
+sed -i 's/#autologin-session=/autologin-session=icewm/g' /etc/lightdm/lightdm.conf 
 
 
 ####################################################

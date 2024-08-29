@@ -156,8 +156,8 @@ sed -i 's/#mksq_opt="-comp xz -Xbcj x86"/mksq_opt="-comp xz -Xbcj x86"/' /etc/re
 
 ##########################################
 
-## Archivos y directorios que no se incluiran a la ISO
-cp ./snapshot_exclude.list /usr/lib/refractasnapshot/snapshot_exclude.list
+## Archivos y directorios que no se incluiran a la ISO -----------------------------------------------------------------------------------
+cp ./refractaSnapshot/snapshot_exclude.list /usr/lib/refractasnapshot/snapshot_exclude.list
 ## Lineas a descomentar
 : "
 - /var/log/[a-b,A-Z]*
@@ -210,7 +210,7 @@ apt -y remove amd64-microcode intel-microcode
 
 
 ## Copia de seguridad de /etc/default/grub // ¿Necesario? -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-cp ./grub.ucf-dist /etc/default/grub.ucf-dist
+cp ./grub/grub.ucf-dist /etc/default/grub.ucf-dist
 
 ## Configurar la disposición del teclado en el sistema
 echo '
