@@ -12,3 +12,4 @@ Terminal=false
 StartupNotify=true
 Categories=Qt;System;
 X-AppStream-Ignore=true
+Name[es_MX]=calamares.desktop

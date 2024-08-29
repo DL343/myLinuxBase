@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
 
 nombreDistro=Prueba001
 
@@ -8,9 +7,6 @@ nombreDistro=Prueba001
 ## 1. Instalacion de debian base con root:root y live:live
 ## 2. Modificaciones profundas (init(libudev1), 		repositorios, 		/etc/lsb-release, 		Kernel)
 ## 3. Auxiliar(Limpiar restos de systemd si es que se elimino), 			Se instala ENV/WM			Algo con los repositorios:
-## /etc/apt/sources.list
-## /sbin/sources-final
-## /sbin/sources-media
 ## 4. Preparativos:
 
 
@@ -19,10 +15,13 @@ nombreDistro=Prueba001
 ############################################################
 
 
-## Calamares y Refractasnapshot
-apt -y install calamares 
+## Calamares (COn su respectivo modulo de configuracion)
+apt -y install calamares calamares-settings-debian
+## calamares-settings-loc-os 
+
+## Refractasnapshot
 apt -y install ./refractasnapshot-base_10.2.12_all.deb 
-## calamares-settings-loc-os refractasnapshot-base 
+## refractasnapshot-base 
 
 ## LiveTools
 apt -y install live-boot live-config-doc live-config-sysvinit live-config live-tools live-boot-initramfs-tools
@@ -52,6 +51,7 @@ apt -y install firmware-atheros firmware-b43-installer firmware-brcm80211 firmwa
 ## Misc. Tools
 apt -y install xorg 
 apt -y install icewm --no-install-recommends 
+apt -y install lightdm lightdm-gtk-greeter
 
 
 
@@ -295,6 +295,9 @@ update-initramfs -u
 ########################################################
 ##################### POLICYKIT #######################
 ########################################################
+mkdir -p /etc/PolicyKit/
+
+
 echo '
 <?xml version="1.0" encoding="UTF-8"?> <!-- -*- XML -*- -->
 
@@ -314,11 +317,10 @@ echo '
 	<define_admin_auth group="adm"/>
 </config>
 ' > /etc/PolicyKit/PolicyKit.conf
- 
 
 
 
-##reboot
+reboot
 
 
 

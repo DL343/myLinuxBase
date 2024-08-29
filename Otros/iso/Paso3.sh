@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
 
 echo "
 # See https://wiki.debian.org/SourcesList for more information.
@@ -70,4 +69,5 @@ exit 0
 
 apt update
 
-##reboot
+
+reboot

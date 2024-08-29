@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
 
 ## 5. Retoques:
 
@@ -27,10 +26,10 @@ chown live /home/live -R
 ####################################################
 
 ## Icono de la aplicacion calamares
-cp ./iconCaramares.png /usr/share/icons/hicolor/48x48/apps/iconCaramares.png
+#cp ./calamares-loc-os.png /usr/share/icons/hicolor/48x48/apps/calamares-loc-os.png
 
 ## Aplicacion
-cp ./calamares.desktop /home/live/Desktop/Instalar.desktop
+#cp ./calamares.desktop /home/live/Desktop/Instalar.desktop
 
 
 ####################################################
@@ -64,4 +63,4 @@ insserv -r apparmor
 insserv -r smartmontools
 
 
-##reboot
+reboot
