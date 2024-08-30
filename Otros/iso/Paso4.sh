@@ -20,7 +20,7 @@ apt -y install calamares calamares-settings-debian
 ## calamares-settings-loc-os 
 
 ## Refractasnapshot
-apt -y install ./refractasnapshot-base_10.2.12_all.deb 
+apt -y install ./refractaSnapshot/refractasnapshot-base_10.2.12_all.deb 
 ## refractasnapshot-base 
 
 ## LiveTools
@@ -185,7 +185,7 @@ sed -i 's/#mksq_opt="-comp xz -Xbcj x86"/mksq_opt="-comp xz -Xbcj x86"/' /etc/re
 ##########################################
 
 ## Archivos y directorios que no se incluiran a la ISO -----------------------------------------------------------------------------------
-cp ./refractaSnapshot/snapshot_exclude.list /usr/lib/refractasnapshot/snapshot_exclude.list
+cp ./refractaSnapshot/snapshot_exclude.list /usr/lib/refractasnapshot/
 ## Lineas a descomentar
 : "
 - /var/log/[a-b,A-Z]*
