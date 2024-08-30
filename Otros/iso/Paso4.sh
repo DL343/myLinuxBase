@@ -47,11 +47,37 @@ apt -y install policykit-1 polkitd-pkla p11-kit
 ## Firmwares
 apt -y install firmware-atheros firmware-b43-installer firmware-brcm80211 firmware-iwlwifi firmware-libertas firmware-linux-nonfree firmware-linux firmware-misc-nonfree firmware-qlogic firmware-realtek-rtl8723cs-bt firmware-realtek firmware-samsung
 
+## Misc. Tools
+apt -y install xorg zenity xapps-common uno-libs-private toilet tree unar caca-utils acl btrfs-progs cryptsetup gcr glpkg  gparted lynx mtools ntpsec user-setup yad libduktape207 mlocate keyutils
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Misc. Tools
-apt -y install xorg 
-apt -y install icewm --no-install-recommends 
-apt -y install lightdm lightdm-gtk-greeter
+#apt -y install xorg 
+#apt -y install icewm --no-install-recommends 
+#apt -y install lightdm lightdm-gtk-greeter
 
 
 
@@ -72,6 +98,8 @@ apt -y install lightdm lightdm-gtk-greeter
 #lynx ## Navegador web en modo texto.
 #yad ## Herramienta similar a Zenity, que permite crear diálogos gráficos desde la línea de comandos.
 #libduktape207 ## Biblioteca para el motor de JavaScript Duktape, versión 2.07.
+
+
 
 
 
@@ -210,7 +238,7 @@ apt -y remove amd64-microcode intel-microcode
 
 
 ## Copia de seguridad de /etc/default/grub // ¿Necesario? -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-cp ./grub/grub.ucf-dist /etc/default/grub.ucf-dist
+cp ./grub/grub.ucf-dist /etc/default/
 
 ## Configurar la disposición del teclado en el sistema
 echo '
@@ -297,27 +325,7 @@ update-initramfs -u
 ########################################################
 mkdir -p /etc/PolicyKit/
 
-
-echo '
-<?xml version="1.0" encoding="UTF-8"?> <!-- -*- XML -*- -->
-
-<!DOCTYPE pkconfig PUBLIC "-//freedesktop//DTD PolicyKit Configuration 1.0//EN"
-"http://hal.freedesktop.org/releases/PolicyKit/1.0/config.dtd">
-
-<!-- See the manual page PolicyKit.conf(5) for file format -->
-
-<config version="0.1">
-	<match user="root">
-		<return result="yes"/>
-	</match>
-	<!-- don`t ask password for user in live session -->
-	<match user="live">
-		<return result="yes"/>
-	</match>
-	<define_admin_auth group="adm"/>
-</config>
-' > /etc/PolicyKit/PolicyKit.conf
-
+cp ./policyKit/PolicyKit.conf /etc/PolicyKit/
 
 
 reboot

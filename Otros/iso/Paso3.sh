@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-cp ./sesion/sources.list /etc/apt/sources.list
+cp ./apt/sources.list /etc/apt/
 
-cp ./sesion/sources-final /sbin/sources-final 
+cp ./apt/sources-final /sbin/
 
-cp ./sesion/sources-media /sbin/sources-media
+cp ./apt/sources-media /sbin/
 
 apt update
 
