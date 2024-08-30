@@ -50,7 +50,7 @@ echo "$nombreDistro" > /etc/hostname
 ####################################################
 sed -i 's/#autologin-user=/autologin-user=live/g' /etc/lightdm/lightdm.conf
 sed -i 's/#autologin-user-timeout=0/autologin-user-timeout=0/g' /etc/lightdm/lightdm.conf
-sed -i 's/#autologin-session=/autologin-session=icewm/g' /etc/lightdm/lightdm.conf 
+sed -i 's/#autologin-session=/autologin-session=icewm-session/g' /etc/lightdm/lightdm.conf 
 
 
 ####################################################

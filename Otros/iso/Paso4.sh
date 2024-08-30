@@ -24,7 +24,8 @@ apt -y install ./refractaSnapshot/refractasnapshot-base_10.2.12_all.deb
 ## refractasnapshot-base 
 
 ## LiveTools
-apt -y install live-boot live-config-doc live-config-sysvinit live-config live-tools live-boot-initramfs-tools
+apt -y install live-boot live-config-doc  live-config live-tools live-boot-initramfs-tools
+## live-config-sysvinit ## Para sysVinit
 
 ## ISO Tools
 apt -y install xorriso genisoimage squashfs-tools
@@ -48,7 +49,7 @@ apt -y install policykit-1 polkitd-pkla p11-kit
 apt -y install firmware-atheros firmware-b43-installer firmware-brcm80211 firmware-iwlwifi firmware-libertas firmware-linux-nonfree firmware-linux firmware-misc-nonfree firmware-qlogic firmware-realtek-rtl8723cs-bt firmware-realtek firmware-samsung
 
 ## Misc. Tools
-apt -y install xorg zenity xapps-common uno-libs-private toilet tree unar caca-utils acl btrfs-progs cryptsetup gcr glpkg  gparted lynx mtools ntpsec user-setup yad libduktape207 mlocate keyutils
+##apt -y install xorg zenity xapps-common uno-libs-private toilet tree unar caca-utils acl btrfs-progs cryptsetup gcr glpkg  gparted lynx mtools ntpsec user-setup yad libduktape207 mlocate keyutils
 
 
 
@@ -75,10 +76,10 @@ apt -y install xorg zenity xapps-common uno-libs-private toilet tree unar caca-u
 
 
 ## Misc. Tools
-#apt -y install xorg 
-#apt -y install icewm --no-install-recommends 
-#apt -y install lightdm lightdm-gtk-greeter
-
+apt -y install xorg 
+apt -y install icewm --no-install-recommends 
+apt -y install lightdm lightdm-gtk-greeter
+apt -y install smartmontools 
 
 
 #mlocate ## Herramienta para la búsqueda rápida de archivos en el sistema, basada en una base de datos.
@@ -94,11 +95,12 @@ apt -y install xorg zenity xapps-common uno-libs-private toilet tree unar caca-u
 #tree ## Muestra la estructura de directorios en forma de árbol.
 #caca-utils ## Utilidades relacionadas con la biblioteca libcaca para generar arte ASCII en la terminal.
 #acl ## Implementa listas de control de acceso (Access Control Lists) para un manejo más fino de permisos de archivos.
-#glpkg ## Gestión de paquetes para GLPK, una biblioteca para programación lineal y combinatoria.
 #lynx ## Navegador web en modo texto.
 #yad ## Herramienta similar a Zenity, que permite crear diálogos gráficos desde la línea de comandos.
 #libduktape207 ## Biblioteca para el motor de JavaScript Duktape, versión 2.07.
 
+## Disponible para sysvinit? 
+#glpkg ## Gestión de paquetes para GLPK, una biblioteca para programación lineal y combinatoria.
 
 
 

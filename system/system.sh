@@ -92,8 +92,7 @@ myApps=(
 	p7zip-full
 	lm-sensors 
 	orage
-	inxi 
-	arandr 
+	inxi  
 	xdg-user-dirs		  										  
 	lxappearance 
 	arandr 
@@ -113,7 +112,7 @@ myApps=(
 	#qalculate-gtk          
 	bleachbit      					 
 	#evince            
-	firefox-esr      
+	#firefox-esr      
 	mpv               
 	audacious      
 	console-data                     
@@ -128,11 +127,7 @@ myApps=(
 	#yaru-theme-gtk 
 	#yaru-theme-icon 
 
-
 )
-
-
-
 
 	for package in "${myApps[@]}"
 	do
@@ -155,7 +150,6 @@ myApps=(
 	echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 	sudo apt update
 	$install brave-browser -y
-	
 	
 	
 	
@@ -217,13 +211,13 @@ if [ -e /sys/class/power_supply/BAT1 ] || [ -e /sys/class/power_supply/BAT0 ]; t
 
 	echo "######## Bateria detectada ########"   
 	echo "## Se instalan los paquetes 'brightnessctl' y 'acpi'"  
-	sudo apt install brightnessctl acpi 											  -y
+	sudo apt -y install brightnessctl acpi 											 
 	
 
 	echo '############### XSCREENSAVER PARA LAPTOP ####################'
 		# Apagar y bloquear la pantalla después de 1 minuto de inactividad:
 		## Asegurar instalacion
-		sudo apt install xscreensaver
+		sudo apt -y install xscreensaver 
 		## Configuracion 
 		cp system/xScreenSaver/xSSLatop $HOME/.xscreensaver 
 
@@ -235,7 +229,7 @@ else
 	echo '############### XSCREENSAVER PARA PC ####################'
 		# Apagar y bloquear la pantalla después de 1 minuto de inactividad:
 		## Asegurar instalacion
-		sudo apt install xscreensaver
+		sudo apt -y install xscreensaver
 		## Configuracion 
 		cp system/xScreenSaver/xSSPC $HOME/.xscreensaver 
 
@@ -324,7 +318,7 @@ sudo ufw enable
 echo "## Asegurar instalacion"
 sudo apt install pcmanfm -y
 
-mkdir -p $HOME/.config/pcmanfm/default/pcmanfm.conf
+mkdir -p $HOME/.config/pcmanfm/default/
 
 echo "
 [config]
@@ -373,8 +367,8 @@ echo '
 
 # 1. INSTALACION DE LA BASE (ALSA)  
 	
-	
-appsAlsa=(
+: '
+#appsAlsa=(
 	alsa-oss 
 	alsa-tools 
 	alsa-utils 
@@ -395,7 +389,7 @@ do
 	$union
 	
 done
-
+'
 
 if [ "$isPipeWire" == "y" ] || [ "$isPipeWire" == "" ]; then
 
@@ -530,9 +524,17 @@ echo "
                               SWAPPINESS
 ########################################################################
 "
-## Swappines a 0
- sudo sed -i '/vm.swappiness=100/cvm.swappiness=0' /etc/sysctl.conf 
+## Ajuste swappines 
+if grep -q 'vm.swappiness=' /etc/sysctl.conf
+then
+	echo "Texto encontrado, ajustando..."
+	sudo sed -i '/vm.swappiness=/c vm.swappiness=10' /etc/sysctl.conf
 
+else
+	echo "Texto no encontrado, añadiendo..."
+	echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.conf > /dev/null
+	
+fi
 
 
 echo "
