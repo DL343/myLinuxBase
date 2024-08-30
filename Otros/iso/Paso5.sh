@@ -48,9 +48,9 @@ echo "$nombreDistro" > /etc/hostname
 ####################################################
 ################# DISPLAY MANAGER ##################
 ####################################################
-sed -i '/autologin-user=/c autologin-user=live/' /etc/lightdm/lightdm.conf
-sed -i '/autologin-user-timeout=0/c autologin-user-timeout=0/' /etc/lightdm/lightdm.conf
-sed -i '/autologin-session=/c autologin-session=icewm-session/' /etc/lightdm/lightdm.conf 
+sed -i '/autologin-user=/c autologin-user=live' /etc/lightdm/lightdm.conf
+sed -i '/autologin-user-timeout=0/c autologin-user-timeout=0' /etc/lightdm/lightdm.conf
+sed -i '/autologin-session=/c autologin-session=icewm-session' /etc/lightdm/lightdm.conf 
 
 
 ####################################################
