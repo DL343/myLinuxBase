@@ -31,6 +31,13 @@ chown live /home/live -R
 ## Aplicacion
 #cp ./calamares.desktop /home/live/Desktop/Instalar.desktop
 
+echo '
+username: live
+' > /etc/calamares/modules/removeuser.conf
+
+sed  '/  - users/a \ \ - removeuser' /etc/calamares/settings.conf 
+
+
 
 ####################################################
 ################### A ELIMINAR #####################
