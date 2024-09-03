@@ -49,8 +49,8 @@ apt -y install policykit-1 polkitd-pkla p11-kit
 apt -y install firmware-atheros firmware-b43-installer firmware-brcm80211 firmware-iwlwifi firmware-libertas firmware-linux-nonfree firmware-linux firmware-misc-nonfree firmware-qlogic firmware-realtek-rtl8723cs-bt firmware-realtek firmware-samsung
 
 ## Misc. Tools
-##apt -y install xorg zenity xapps-common uno-libs-private toilet tree unar caca-utils acl btrfs-progs cryptsetup gcr glpkg  gparted lynx mtools ntpsec user-setup yad libduktape207 mlocate keyutils
-
+apt -y install xorg zenity xapps-common uno-libs-private toilet tree unar caca-utils acl btrfs-progs cryptsetup gcr  gparted lynx mtools ntpsec user-setup yad libduktape207 mlocate keyutils
+## glpkg 
 
 
 
@@ -76,10 +76,10 @@ apt -y install firmware-atheros firmware-b43-installer firmware-brcm80211 firmwa
 
 
 ## Misc. Tools
-apt -y install xorg 
+apt -y install xorg   
 apt -y install icewm --no-install-recommends 
-apt -y install lightdm lightdm-gtk-greeter
-apt -y install smartmontools 
+apt -y install lightdm lightdm-gtk-greeter 
+apt -y install smartmontools xz-utils
 
 
 #mlocate ## Herramienta para la búsqueda rápida de archivos en el sistema, basada en una base de datos.
@@ -159,6 +159,7 @@ export LC_ALL=en_US.UTF-8" > /root/.bashrc
 ## Son configuraciones de idioma y codificación de caracteres.
 echo "en_US.UTF-8 UTF-8
 C.UTF-8 UTF-8" > /etc/locale.gen
+
 locale-gen
 
 ##########################################################

@@ -95,7 +95,7 @@ myApps=(
 	inxi  
 	xdg-user-dirs		  										  
 	lxappearance 
-	arandr 
+	lxrandr 
 
 
 

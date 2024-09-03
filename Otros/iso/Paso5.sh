@@ -35,9 +35,13 @@ echo '
 username: live
 ' > /etc/calamares/modules/removeuser.conf
 
-sed  '/  - users/a \ \ - removeuser' /etc/calamares/settings.conf 
 
-
+if grep -q "  - removeuser" /etc/calamares/settings.conf 
+then 
+	echo "El ajuste ya esta aplicado, omitiendo este paso..."
+else
+	sed -i '/  - users/a \ \ - removeuser' /etc/calamares/settings.conf 
+fi
 
 ####################################################
 ################### A ELIMINAR #####################
