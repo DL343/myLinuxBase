@@ -926,7 +926,7 @@
 # TerminalCommand="x-terminal-emulator -hold"
 
 #  Clock Time format (strftime format string)
-# TimeFormat="%X"
+TimeFormat="%x | %H:%M"
 
 #  Alternate Clock Time format for blinking effects.
 # TimeFormatAlt=""
