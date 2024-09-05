@@ -42,7 +42,7 @@ key Super+Space                 rofi -modi drun,run -show-icons -theme /usr/shar
 ################ CAPTURA PANTALLA ################ 
 #key Print                      gnome-screenshot -i
 key Print                       gnome-screenshot
-key Super+Shift+s               gnome-screenshot -a
+key Ctrl+Print                  gnome-screenshot -a
 key Alt+Print                   gnome-screenshot -w
 
 switchkey 'Super+p'             icewm-menu-xrandr
