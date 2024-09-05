@@ -104,3 +104,11 @@ TitleFontName="-*-verdana-bold-r-normal-*-13-*-*-*-p-*-koi8-r"
 TitleFontNameXft="verdana:size=10:bold"
 
 # vim:ft=dosini
+
+
+#Memory Manager
+ColorMEMStatusFree=              "rgb:2F/34/3F"
+ColorMEMStatusCached=            "rgb:D0/D0/D0"
+ColorMEMStatusUser=              "rgb:4A/96/E7"
+ColorMEMStatusBuffers=           "rgb:FF/00/00"
+

@@ -42,7 +42,7 @@ key Super+Space                 rofi -modi drun,run -show-icons -theme /usr/shar
 ################ CAPTURA PANTALLA ################ 
 #key Print                      gnome-screenshot -i
 key Print                       gnome-screenshot
-key Ctrl+Print                  gnome-screenshot -a
+key Super+Shift+s               gnome-screenshot -a
 key Alt+Print                   gnome-screenshot -w
 
 switchkey 'Super+p'             icewm-menu-xrandr
@@ -50,5 +50,7 @@ switchkey 'Super+p'             icewm-menu-xrandr
 ################ TOGGLES ################ 
 key Super+F2                    $HOME/.config/scripts/toggle_nm-applet.sh
 key Super+b                     $HOME/.config/scripts/toggle_blueman-applet.sh
-key Super+c                     $HOME/.config/scripts/toggle_orage.sh
+key Super+c                     $HOME/.config/scripts/toggle_zenityCalendar.sh
+key Super+v                     $HOME/.config/scripts/toggle_volumeIcon.sh
+
 

@@ -56,32 +56,6 @@ chmod +x $HOME/.config/scripts/toggle_blueman-applet.sh
 
 echo "
 #############################################
-         TOGGLE ORAGE (CALENDARIO)
-#############################################
-"
-## Creacion de la ubicacion
-mkdir -p $HOME/.config/scripts/
-
-
-## Creacion del script
-echo '
-#!/bin/bash
-
-if pgrep -x "orage" > /dev/null
-then
-        pkill orage
-else
-        orage &
-fi
-
-' > $HOME/.config/scripts/toggle_orage.sh
-
-chmod +x $HOME/.config/scripts/toggle_orage.sh
-
-
-
-echo "
-#############################################
     TOGGLE DISTRIBUCION TECLADO US/LATAM
 #############################################
 "
@@ -101,4 +75,57 @@ setxkbmap -layout latam,us -option "grp:alt_shift_toggle"
 ' > $HOME/.config/scripts/toggle_us_latam.sh  
 
 chmod +x $HOME/.config/scripts/toggle_us_latam.sh  
+
+
+echo "
+#############################################
+    TOGGLE VOLUMEICON(ICONO VOLUMEN)
+#############################################
+"
+
+## Creacion de la ubicacion
+mkdir -p $HOME/.config/scripts/
+
+
+## Creacion del script
+echo '
+#!/bin/bash
+
+if pgrep -x "volumeicon" > /dev/null
+then
+        pkill volumeicon
+else
+        volumeicon &
+fi
+
+' > $HOME/.config/scripts/toggle_volumeIcon.sh
+
+chmod +x $HOME/.config/scripts/toggle_volumeIcon.sh
+
+
+
+
+echo "
+#############################################
+    TOGGLE ZENITY --CALENDAR (CALENDARIO)
+#############################################
+"
+## Creacion de la ubicacion
+mkdir -p $HOME/.config/scripts/
+
+
+## Creacion del script
+echo '
+#!/bin/bash
+
+if pgrep -x "zenity" > /dev/null
+then
+        pkill zenity
+else
+        zenity --calendar &
+fi
+
+' > $HOME/.config/scripts/toggle_zenityCalendar.sh
+
+chmod +x $HOME/.config/scripts/toggle_zenityCalendar.sh
 

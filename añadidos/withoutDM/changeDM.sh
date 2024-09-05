@@ -25,7 +25,7 @@ echo "Aplicando ajustes..."
  
 if grep -q '############## CUSTOM ##################' $HOME/.profile
 then
-	echo 'Existe este ajuste, omitiendo este paso...' 
+	echo 'Existe este ajuste (.profile), omitiendo este paso...' 
 else
 
 	echo '
@@ -38,13 +38,13 @@ else
 	  exec startx
 	fi
 
-	## Ajuste adicional
-	dbus-update-activation-environment DISPLAY
+
 
 
 	'  >> $HOME/.profile
 
 fi
+
 
 echo "
 --------------
