@@ -140,7 +140,7 @@ echo "KEYMAP=us
 ## Configuración de la zona horaria del sistema.
 echo "America/New_York" > /etc/timezone
 
-## Configuración del teclado en X11.
+## Configuración del teclado en X11. <<<<--------------------------- INVESTIGAR
 echo '
 Section "InputClass"
         Identifier "system-keyboard"
@@ -157,10 +157,9 @@ echo "export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8" > /root/.bashrc
 
 ## Son configuraciones de idioma y codificación de caracteres.
-echo "en_US.UTF-8 UTF-8
-C.UTF-8 UTF-8" > /etc/locale.gen
-
-locale-gen
+##echo "en_US.UTF-8 UTF-8
+##C.UTF-8 UTF-8" > /etc/locale.gen
+##locale-gen
 
 ##########################################################
 ######################## REFRACTA ######################## 
