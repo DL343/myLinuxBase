@@ -7,4 +7,4 @@
 #prog Netscape netscape netscape
 #prog    "Vim" vim /usr/bin/gvim -f
 #prog    "WWW" ! x-www-browser
-
+#prog "Clock" netscape x-terminal-emulator
