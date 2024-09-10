@@ -193,14 +193,13 @@ sed -i '/#username=/c username="live"' /etc/refractasnapshot.conf
 ## Archivos y directorios que no se incluiran a la ISO -----------------------------------------------------------------------------------
 cp ./refractaSnapshot/snapshot_exclude.list /usr/lib/refractasnapshot/
 
-if [ "systemd" == "${init}" ]
-then
+#if [ "systemd" == "${init}" ]
+#then
 	
 	## Imagen Arranque Instalacion (640x480).png (Colores oscuros de preferencia)--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	#cp ./imagenBootloader.png /usr/lib/refractasnapshot/iso/isolinux/splash.png
 
-	
-fi
+#fi
 
 
 
@@ -294,7 +293,6 @@ mkdir -p /etc/PolicyKit/
 
 cp ./policyKit/PolicyKit.conf /etc/PolicyKit/
 
-reboot
 
 
 
@@ -311,27 +309,23 @@ reboot
 if [ "sysvinit" == "${init}" ]
 then
 	
-	## Configuraciones de calamares
+	###### Configuraciones de calamares
 	echo "calamares-settings para sysvinit"
 	apt -y install calamares-settings-loc-os 
 	apt -y install live-config-sysvinit 
 	apt -y install glpkg 
 
 
-## REFRACTA
+	###### REFRACTA
 	## Ajuste sysvinit
 	sed -i '/#patch_init_nosystemd="yes"/c patch_init_nosystemd="yes"' /etc/refractasnapshot.conf
 	
 	## Imagen arranque	
 	cp ./LO/splash.png /usr/lib/refractasnapshot/iso/isolinux/splash.png
 	
-## GRUB
+	###### GRUB
 	## Configuracion
 	cp ./LO/grub /etc/default/grub
-	
-	
-	
-	
 	
 	## Tema GRUB
 	mkdir -p /boot/grub/themes/Loc-OS/
@@ -339,11 +333,15 @@ then
 	
 	update-grub
 
-    ## Connman
+
+
+	####### Connman
 	apt -y install connman connman-gtk
 	apt -y purge network-manager
 	
-	#### Apariencia
+	
+	
+	####### Apariencia
 	## Wallpapers
 	 cp ./LO/wallpapers/* /usr/share/wallpapers/
 	
@@ -368,3 +366,6 @@ then
 
 fi
 
+
+
+reboot
