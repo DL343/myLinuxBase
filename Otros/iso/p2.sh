@@ -80,7 +80,7 @@ DISTRIB_DESCRIPTION='Loc-OS Linux 23'" > /etc/lsb-release
 
 
 
-	reboot
+	#reboot
 
 
 fi

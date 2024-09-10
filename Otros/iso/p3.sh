@@ -7,7 +7,7 @@ then
 	############################################################
 	################## LIMPIEZA DE SYSTEMD #################### 
 	############################################################
-	apt purge *systemd*  
+	apt -y purge *systemd*  
 	update-grub
 	
 fi
@@ -21,4 +21,4 @@ cp ./apt/sources-media /sbin/
 
 apt update
 
-reboot
+#reboot
