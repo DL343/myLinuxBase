@@ -9,7 +9,8 @@ source ./variables.sh
 
 if [ "sysvinit" == "${init}" ]
 then
-	
+
+	apt -y install wget
 
 	############################################################
 	################# INSTALACION DE SYSVINIT ################## 
