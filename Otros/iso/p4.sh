@@ -6,22 +6,21 @@ source ./variables.sh
 #################### APPS NECESARIAS ####################### 
 ############################################################
 
-## Calamares 
-apt -y install calamares 
+
 
 if [ "systemd" == "${init}" ]
 then
-	apt -y install calamares-settings-debian
-	apt -y install live-config-systemd 
+
+	apt -y install calamares live-config-systemd calamares-settings-debian
 	apt -y install network-manager-gnome
 	
 else 
-	
-	apt -y install calamares-settings-loc-os 
-	apt -y install live-config-sysvinit 
+  
+	apt -y install calamares live-config-sysvinit calamares-settings-loc-os
 	apt -y install glpkg 
 
 fi
+
 
 ## Refractasnapshot
 apt -y install ./refractaSnapshot/refractasnapshot-base_10.2.12_all.deb 
