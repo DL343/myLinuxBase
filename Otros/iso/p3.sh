@@ -2,6 +2,9 @@
 
 source ./variables.sh
 
+dhclient
+
+
 if [ "sysvinit" == "${init}" ]
 then
 	############################################################

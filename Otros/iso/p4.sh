@@ -2,6 +2,9 @@
 
 source ./variables.sh
 
+dhclient
+
+
 ############################################################
 #################### APPS NECESARIAS ####################### 
 ############################################################
@@ -11,19 +14,15 @@ source ./variables.sh
 if [ "systemd" == "${init}" ]
 then
 
-	apt -y install calamares live-config-systemd calamares-settings-debian
+	apt -y install ./refractaSnapshot/refractasnapshot-base_10.2.12_all.deb calamares live-config-systemd calamares-settings-debian
 	apt -y install network-manager-gnome
 	
 else 
   
-	apt -y install calamares live-config-sysvinit calamares-settings-loc-os
+	apt -y install ./refractaSnapshot/refractasnapshot-base_10.2.12_all.deb calamares live-config-sysvinit calamares-settings-loc-os
 	apt -y install glpkg 
 
 fi
-
-
-## Refractasnapshot
-apt -y install ./refractaSnapshot/refractasnapshot-base_10.2.12_all.deb 
 
 
 ## LiveTools
@@ -48,7 +47,7 @@ apt -y install gnustep-base-common gnustep-base-runtime gnustep-common
 apt -y install policykit-1 polkitd-pkla p11-kit
 
 ## Firmwares
-#apt -y install firmware-atheros firmware-b43-installer firmware-brcm80211 firmware-iwlwifi firmware-libertas firmware-linux-nonfree firmware-linux firmware-misc-nonfree firmware-qlogic firmware-realtek-rtl8723cs-bt firmware-realtek firmware-samsung
+apt -y install firmware-atheros firmware-b43-installer firmware-brcm80211 firmware-iwlwifi firmware-libertas firmware-linux-nonfree firmware-linux firmware-misc-nonfree firmware-qlogic firmware-realtek-rtl8723cs-bt firmware-realtek firmware-samsung
 
 ## Misc. Tools
 apt -y install xorg zenity xapps-common uno-libs-private toilet tree unar caca-utils acl btrfs-progs cryptsetup gcr  gparted lynx mtools ntpsec user-setup yad libduktape207 mlocate keyutils
@@ -380,7 +379,7 @@ echo '
 # it autoloads.  This is not always safe, so we block it by default.
 
 ## Debian default
-#blacklist microcode
+blacklist microcode
 
 ' > /etc/modprobe.d/amd64-microcode-blacklist.conf
 
@@ -391,7 +390,7 @@ echo '
 # it autoloads.  This is not always safe, so we block it by default.
 
 ## Debian default
-#blacklist microcode
+blacklist microcode
 
 ' > /etc/modprobe.d/intel-microcode-blacklist.conf
 	
