@@ -11,7 +11,15 @@ apt -y install calamares
 
 if [ "systemd" == "${init}" ]
 then
-	apt -y calamares-settings-debian network-manager-gnome
+	apt -y install calamares-settings-debian
+	apt -y install live-config-systemd 
+	apt -y install network-manager-gnome
+	
+else 
+	
+	apt -y install calamares-settings-loc-os 
+	apt -y install live-config-sysvinit 
+	apt -y install glpkg 
 
 fi
 
@@ -309,13 +317,10 @@ cp ./policyKit/PolicyKit.conf /etc/PolicyKit/
 if [ "sysvinit" == "${init}" ]
 then
 	
-	###### Configuraciones de calamares
-	echo "calamares-settings para sysvinit"
-	apt -y install calamares-settings-loc-os 
-	apt -y install live-config-sysvinit 
-	apt -y install glpkg 
-
-
+	###### Configuraciones de calamares ***Se movio hasta arriba por paquetes que lo necesitan 
+	## echo "calamares-settings para sysvinit"
+	
+	
 	###### REFRACTA
 	## Ajuste sysvinit
 	sed -i '/#patch_init_nosystemd="yes"/c patch_init_nosystemd="yes"' /etc/refractasnapshot.conf
@@ -362,6 +367,35 @@ then
 	#mkdir -p /home/live/.config/neofetch
 	#cp ./LO/neofetch.conf /etc/skel/.config/neofetch/config.conf
 	#cp ./LO/neofetch.conf /home/live/.config/neofetch/config.conf
+	
+	
+	
+	
+	########################################################
+	################ MODULOS DEL KERNEL ################### 
+	########################################################
+	## Evita que ciertos módulos del kernel del microcodigo del procesador se carguen automáticamente
+	## AMD 
+	echo '
+	# The microcode module attempts to apply a microcode update when
+	# it autoloads.  This is not always safe, so we block it by default.
+
+	## Debian default
+	#blacklist microcode
+
+	' > /etc/modprobe.d/amd64-microcode-blacklist.conf
+
+
+	## INTEL
+	echo '
+	# The microcode module attempts to apply a microcode update when
+	# it autoloads.  This is not always safe, so we block it by default.
+
+	## Debian default
+	#blacklist microcode
+
+	' > /etc/modprobe.d/intel-microcode-blacklist.conf
+
 	
 
 fi

@@ -1,5 +1,5 @@
 
-		#!/bin/bash
+		#!/usr/bin/env bash
 		init="sysvinit"
-		nombreDistro="6543876543"
+		nombreDistro="prueba0021"
 		
