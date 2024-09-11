@@ -7,15 +7,21 @@ dhclient
 
 if [ "sysvinit" == "${init}" ]
 then
+	echo "
 	############################################################
 	################## LIMPIEZA DE SYSTEMD #################### 
 	############################################################
+	"
 	apt -y purge *systemd*  
 	update-grub
 	
 fi
 
-## Ajuste estandar de repositorios
+echo "
+############################################################
+############ AJUSTE ESTANDAR DE REPOSITORIOS ###############
+############################################################
+"
 cp ./apt/sources.list /etc/apt/
 
 cp ./apt/sources-final /sbin/

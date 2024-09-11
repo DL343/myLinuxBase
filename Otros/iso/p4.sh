@@ -5,20 +5,23 @@ source ./variables.sh
 dhclient
 
 
-############################################################
-#################### APPS NECESARIAS ####################### 
-############################################################
-
+echo "
+########################################################################
+############################ APPS NECESARIAS ########################### 
+########################################################################
+"
 
 
 if [ "systemd" == "${init}" ]
 then
-
+	
+	echo ":: calamares para systemd"
 	apt -y install ./refractaSnapshot/refractasnapshot-base_10.2.12_all.deb calamares live-config-systemd calamares-settings-debian
 	apt -y install network-manager-gnome
 	
 else 
-  
+	
+	echo ":: calamares para sysvinit"
 	apt -y install ./refractaSnapshot/refractasnapshot-base_10.2.12_all.deb calamares live-config-sysvinit calamares-settings-loc-os
 	apt -y install glpkg 
 
@@ -87,10 +90,11 @@ apt -y install xz-utils
 
 
 
-
-###########################################################
-################# AJUSTES GENERALES  ###################### 
-############################################################
+echo "
+########################################################################
+################# AJUSTES REGION, IDIOMA, TECLADO...  ##################
+########################################################################
+"
 ## Establece variables de entorno globales.
 echo 'QT_QPA_PLATFORMTHEME=gtk2' > /etc/environtment
 
@@ -180,10 +184,11 @@ LC_TIME=en_US.UTF-8
 
 locale-gen
 
-##########################################################
-######################## REFRACTA ######################## 
-##########################################################
-
+echo "
+########################################################################
+############################### REFRACTA ############################### 
+########################################################################
+"
 ## Nombre Distro
 sed -i "/snapshot_basename=\"snapshot\"/c snapshot_basename=\"${nombreDistro}\"" /etc/refractasnapshot.conf
 
@@ -192,27 +197,24 @@ sed -i "/snapshot_basename=\"snapshot\"/c snapshot_basename=\"${nombreDistro}\""
 ## Tipo de compresion (Compresion optimizada para CISC (x86))
 sed -i '/#mksq_opt="-comp xz -Xbcj x86"/c mksq_opt="-comp xz -Xbcj x86"/' /etc/refractasnapshot.conf
 
+## Ajuste limite de CPU
 sed -i '/limit=/c limit="90"' /etc/refractasnapshot.conf
 
+## 
 sed -i '/#username=/c username="live"' /etc/refractasnapshot.conf
 
 ## Archivos y directorios que no se incluiran a la ISO -----------------------------------------------------------------------------------
 cp ./refractaSnapshot/snapshot_exclude.list /usr/lib/refractasnapshot/
 
-#if [ "systemd" == "${init}" ]
-#then
-	
-	## Imagen Arranque Instalacion (640x480).png (Colores oscuros de preferencia)--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	#cp ./imagenBootloader.png /usr/lib/refractasnapshot/iso/isolinux/splash.png
-
-#fi
 
 
 
-########################################################
-######################## GRUB ######################### 
-########################################################
 
+echo "
+########################################################################
+################################# GRUB ################################# 
+########################################################################
+"
 ## Configura las entredas del menu de GRUB 
 sed -i "s/Ubuntu|Kubuntu)/Ubuntu|Kubuntu|${nombreDistro}*)/" /etc/grub.d/10_linux
 
@@ -224,10 +226,11 @@ cp ./grub/grub.ucf-dist /etc/default/
 
 update-grub
 
-
-########################################################
-######################## INIT ######################### 
-########################################################
+echo "
+########################################################################
+################################ INIT ################################## 
+########################################################################
+"
 ## Configuracion del initramfs
 ## Debian Vanilla: COMPRESS=zstd || COMPRESS: [ gzip | bzip2 | lz4 | lzma | lzop | xz | zstd ]
 sed -i '/COMPRESS=/c COMPRESS=xz' /etc/initramfs-tools/initramfs.conf
@@ -244,11 +247,11 @@ rm /etc/initramfs-tools/conf.d/resume
 
 
 
-
-########################################################
-################ MODULOS DEL KERNEL ################### 
-########################################################
-
+echo "
+########################################################################
+######################### MODULOS DEL KERNEL ########################### 
+########################################################################
+"
 apt -y remove amd64-microcode intel-microcode
 
 if [ "systemd" == "${init}" ]
@@ -291,10 +294,11 @@ fi
 
 update-initramfs -u
 
-
-########################################################
-##################### POLICYKIT #######################
-########################################################
+echo "
+########################################################################
+############################## POLICYKIT ###############################
+########################################################################
+"
 mkdir -p /etc/PolicyKit/
 
 cp ./policyKit/PolicyKit.conf /etc/PolicyKit/
@@ -309,93 +313,79 @@ cp ./policyKit/PolicyKit.conf /etc/PolicyKit/
 
 
 
-########################################################################
-############################# ¿SYSVINIT? ###############################
-########################################################################
 if [ "sysvinit" == "${init}" ]
 then
+
+	echo "
+	########################################################################
+	############################## SYSVINIT ################################
+	########################################################################
+	"
 	
-	###### Configuraciones de calamares ***Se movio hasta arriba por paquetes que lo necesitan 
-	## echo "calamares-settings para sysvinit"
+	###### Paquetes de configuraciones de calamares ***Se movio hasta arriba que se necesitan 
+
 	
 	
-	###### REFRACTA
+	echo "
+	########################################################################
+	############################## REFRACTA ################################
+	########################################################################
+	"		
 	## Ajuste sysvinit
 	sed -i '/#patch_init_nosystemd="yes"/c patch_init_nosystemd="yes"' /etc/refractasnapshot.conf
 	
-	## Imagen arranque	
-	cp ./LO/splash.png /usr/lib/refractasnapshot/iso/isolinux/splash.png
+
 	
-	###### GRUB
+	echo "
+	########################################################################
+	###############################  GRUB  #################################
+	########################################################################
+	"	
 	## Configuracion
 	cp ./LO/grub /etc/default/grub
+	#update-grub 
 	
-	## Tema GRUB
-	mkdir -p /boot/grub/themes/Loc-OS/
-	cp ./LO/grub_theme/* /boot/grub/themes/Loc-OS/
-	
-	update-grub
 
-
-
-	####### Connman
+	echo "
+	########################################################################
+	#############################  CONNMAN  ################################
+	########################################################################
+	"	
 	apt -y install connman connman-gtk
 	apt -y purge network-manager
 	
 	
-	
-	####### Apariencia
-	## Wallpapers
-	 cp ./LO/wallpapers/* /usr/share/wallpapers/
-	
-	## Colores
-	## /usr/share/color-schemes/
-	
-	## Iconos
-	cp -r ./LO/icons/* /usr/share/icons/
-	
-	## Cursor
-	
-	
-	## Icono usuario
-	cp ./LO/face.png /etc/skel/.face
+	echo "
+	########################################################################
+	####################### MODULOS DEL KERNEL ############################# 
+	########################################################################
+	"
+	## ***Todo esta comentado, al instalar paquetes piden regresar el archivo como estaba
+	## Evita que ciertos módulos del kernel del microcodigo del procesador se carguen automáticamente
+	## AMD 
+	echo '
+	# The microcode module attempts to apply a microcode update when
+	# it autoloads.  This is not always safe, so we block it by default.
 
-	## Neofetch
-	#mkdir -p /etc/skel/.config/neofetch
-	#mkdir -p /home/live/.config/neofetch
-	#cp ./LO/neofetch.conf /etc/skel/.config/neofetch/config.conf
-	#cp ./LO/neofetch.conf /home/live/.config/neofetch/config.conf
-	
-	
-	
-	
-########################################################
-################ MODULOS DEL KERNEL ################### 
-########################################################
-## Evita que ciertos módulos del kernel del microcodigo del procesador se carguen automáticamente
-## AMD 
-echo '
-# The microcode module attempts to apply a microcode update when
-# it autoloads.  This is not always safe, so we block it by default.
+	## Debian default
+	blacklist microcode
 
-## Debian default
-blacklist microcode
-
-' > /etc/modprobe.d/amd64-microcode-blacklist.conf
+	' > /etc/modprobe.d/amd64-microcode-blacklist.conf
 
 
-## INTEL
-echo '
-# The microcode module attempts to apply a microcode update when
-# it autoloads.  This is not always safe, so we block it by default.
+	## INTEL
+	echo '
+	# The microcode module attempts to apply a microcode update when
+	# it autoloads.  This is not always safe, so we block it by default.
 
-## Debian default
-blacklist microcode
+	## Debian default
+	blacklist microcode
 
-' > /etc/modprobe.d/intel-microcode-blacklist.conf
-	
+	' > /etc/modprobe.d/intel-microcode-blacklist.conf
+		
 	update-initramfs -u
-
+		
+		
 	
 
 fi

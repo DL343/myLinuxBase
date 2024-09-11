@@ -17,7 +17,7 @@ do
 
 	read -p "
 	Selecciona el numero de acuerdo al init deseado:
-	1 - sysvinit 
+	1 - sysVinit 
 	2 - systemd
 	" isInit
 
@@ -49,6 +49,33 @@ do
 
 	esac
 	
+done
+
+while true
+do
+
+read -p "
+Habilitar personalizacion? 
+1 - Si
+2 - No
+" isPersonalize
+	case $isPersonalize in
+
+		1)
+		echo "custom=\"y\"" >> ./variables.sh
+		break
+		;;
+		
+		2)
+		echo "custom=\"n\"" >> ./variables.sh
+		break
+		;;
+		*)
+		echo "::!!! Valor invalido, intentalo nuevamente"
+		continue
+		;;
+	esac
+
 done
 
 
