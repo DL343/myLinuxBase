@@ -41,12 +41,9 @@ then
 	## TEMAS
 	#
 	
-	## ICONOS
+	## ICONOS + CURSOR
 	mkdir -p /usr/share/icons/
 	cp -r ./custom/icons/* /usr/share/icons/
-	
-	## CURSOR
-	#
 	
 	## ------------------------------
 	

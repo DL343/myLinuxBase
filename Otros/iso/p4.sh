@@ -23,7 +23,7 @@ then
 else 
 	
 	echo ":: calamares para sysvinit"
-	apt -y install ./refractaSnapshot/refractasnapshot-base_10.2.12_all.deb calamares live-config-sysvinit calamares-settings-loc-os \
+	apt -y install refractasnapshot-base calamares live-config-sysvinit calamares-settings-loc-os \
 	live-boot live-config-doc  live-config live-tools live-boot-initramfs-tools
 	apt -y install glpkg 
 
