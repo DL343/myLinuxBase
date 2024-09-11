@@ -341,8 +341,8 @@ then
 	###############################  GRUB  #################################
 	########################################################################
 	"	
-	## Configuracion
-	cp ./LO/grub /etc/default/grub
+	fullNameDistro="Loc-OS 23 Linux (Con Tutti)"
+	sed -i "/GRUB_DISTRIBUTOR=/c GRUB_DISTRIBUTOR=\`lsb_release -d -s 2> \/dev\/null || echo '${fullNameDistro}'\`" /etc/default/grub
 	#update-grub 
 	
 

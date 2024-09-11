@@ -453,21 +453,32 @@ echo '
                       CONFIGURACION DE GRUB
 ########################################################################'
 ### Contador a 1 segundo
-sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=1/g' /etc/default/grub
+sudo sed -i '/GRUB_TIMEOUT=/c GRUB_TIMEOUT=1' /etc/default/grub
 
 ### Guardar la ultima particion seleccionada
-sudo sed -i 's/GRUB_DEFAULT=0/GRUB_DEFAULT=saved/g' /etc/default/grub
-sudo sed -i '/GRUB_DEFAULT=saved/a GRUB_SAVEDEFAULT=true' /etc/default/grub
+sudo sed -i '/GRUB_DEFAULT=/c GRUB_DEFAULT=saved/g' /etc/default/grub
+
+if grep -q "GRUB_SAVEDEFAULT=true" /etc/default/grub
+then
+
+	echo "Existe 'GRUB_SAVEDEFAULT=true' omitiendo este paso"
+
+else
+
+	sudo sed -i '/GRUB_DEFAULT=saved/a GRUB_SAVEDEFAULT=true' /etc/default/grub
+
+fi
 
 ### Wallpaper grub
 #### Copiar...
 sudo cp ./Apps/grub/* /boot/grub/imgGrub.jpg
-#### Configurar 
+#### Añade al final
 sudo sed -i '$a GRUB_BACKGROUND="/boot/grub/imgGrub.jpg"' /etc/default/grub
 
 #### Mostrar informacion mas detallada
-sudo sed -i 's/GRUB_DISTRIBUTOR=`lsb_release -i -s 2> \/dev\/null || echo Debian`/GRUB_DISTRIBUTOR=`lsb_release -d -s 2> \/dev\/null || echo Debian`/g' /etc/default/grub
- /etc/default/grub
+sudo sed -i '/GRUB_DISTRIBUTOR=/c GRUB_DISTRIBUTOR=`lsb_release -d -s 2> \/dev\/null || echo Debian`' /etc/default/grub
+
+sudo sed -i '/GRUB_CMDLINE_LINUX_DEFAULT=/c GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"' /etc/default/grub
 
 
 ## Actualizar cambios a grub

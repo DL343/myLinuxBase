@@ -6,6 +6,7 @@ source ./variables.sh
 if [ "sysvinit" == "${init}" ]
 then
 	
+	echo "sysVinit"
 
 fi
 
@@ -13,9 +14,13 @@ fi
 
 if [ "systemd" == "${init}" ]
 then
-	
+
+		echo "systemd"
 
 fi
+
+
+
 
 
 
@@ -64,22 +69,26 @@ then
 	
 	## PLYMOUTH?
 	
-	
-	## GRUB: Tema
-	: ' 
 
-== GRUB_TIMEOUT=5
-++ GRUB_DISTRIBUTOR=`lsb_release -d -s 2> /dev/null || echo 'Loc-OS 23 Linux (Con Tutti)'`	
+	## GRUB: Añadiendo linea para que GRUB reconozca una ruta de temas
+	if grep -q "GRUB_THEME=/boot/grub/themes/custom/theme.txt" /etc/default/grub
+	then
 
-== GRUB_CMDLINE_LINUX=""
-++ GRUB_THEME=/boot/grub/themes/custom/theme.txt
+		echo "Existe 'GRUB_THEME=/boot/grub/themes/custom/theme.txt' omitiendo este paso..."
 
+	else 
 
+		sed -i '/GRUB_CMDLINE_LINUX=""/a GRUB_THEME=/boot/grub/themes/custom/theme.txt' /etc/default/grub
 
-	
-	' 
+	fi
+
+	## GRUB: Creacion de carpeta
 	mkdir -p /boot/grub/themes/custom/
+	
+	## GRUB: Copiado de temas
 	cp -r ./custom/grub_theme/* /boot/grub/themes/custom/
+	
+	## GRUB: Actualizando cambios a GRUB
 	update-grub
 	
 	
