@@ -16,20 +16,20 @@ if [ "systemd" == "${init}" ]
 then
 	
 	echo ":: calamares para systemd"
-	apt -y install ./refractaSnapshot/refractasnapshot-base_10.2.12_all.deb calamares live-config-systemd calamares-settings-debian
+	apt -y install ./refractaSnapshot/refractasnapshot-base_10.2.12_all.deb calamares live-config-systemd calamares-settings-debian \
+	live-boot live-config-doc  live-config live-tools live-boot-initramfs-tools
 	apt -y install network-manager-gnome
 	
 else 
 	
 	echo ":: calamares para sysvinit"
-	apt -y install ./refractaSnapshot/refractasnapshot-base_10.2.12_all.deb calamares live-config-sysvinit calamares-settings-loc-os
+	apt -y install ./refractaSnapshot/refractasnapshot-base_10.2.12_all.deb calamares live-config-sysvinit calamares-settings-loc-os \
+	live-boot live-config-doc  live-config live-tools live-boot-initramfs-tools
 	apt -y install glpkg 
 
 fi
 
 
-## LiveTools
-apt -y install live-boot live-config-doc  live-config live-tools live-boot-initramfs-tools
 
 ## ISO Tools
 apt -y install xorriso genisoimage squashfs-tools
@@ -50,7 +50,7 @@ apt -y install gnustep-base-common gnustep-base-runtime gnustep-common
 apt -y install policykit-1 polkitd-pkla p11-kit
 
 ## Firmwares
-apt -y install firmware-atheros firmware-b43-installer firmware-brcm80211 firmware-iwlwifi firmware-libertas firmware-linux-nonfree firmware-linux firmware-misc-nonfree firmware-qlogic firmware-realtek-rtl8723cs-bt firmware-realtek firmware-samsung
+#apt -y install firmware-atheros firmware-b43-installer firmware-brcm80211 firmware-iwlwifi firmware-libertas firmware-linux-nonfree firmware-linux firmware-misc-nonfree firmware-qlogic firmware-realtek-rtl8723cs-bt firmware-realtek firmware-samsung
 
 ## Misc. Tools
 apt -y install xorg zenity xapps-common uno-libs-private toilet tree unar caca-utils acl btrfs-progs cryptsetup gcr  gparted lynx mtools ntpsec user-setup yad libduktape207 mlocate keyutils
