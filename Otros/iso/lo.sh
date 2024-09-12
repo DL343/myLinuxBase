@@ -37,3 +37,14 @@ cp ./LO/welcome/Welcome.desktop /home/live/.config/autostart/Welcome.desktop
 
 ## Ajuste de permisos
 chown -R live /home/live/ 
+
+
+echo "
+########################################################################
+########################### BROWSER SELECTOR ###########################
+########################################################################
+"
+
+
+
+
