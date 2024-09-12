@@ -13,7 +13,25 @@ echo "
 
 
 
+if [ "systemd" == "${init}" ]
+then
+	
+	echo ":: calamares para systemd"
+	apt -y install ./refractaSnapshot/refractasnapshot-base_10.2.12_all.deb calamares calamares-settings-debian live-config-systemd 
+		
+		
+else 
+	
+	echo ":: calamares para sysvinit"
+	apt -y install /refractaSnapshot/refractasnapshot-base_10.2.12_all.deb calamares calamares-settings-loc-os .live-config-sysvinit
+	
+	apt -y install glpkg
 
+fi
+
+
+## LiveTools
+apt -y install live-boot live-config-doc live-config live-tools live-boot-initramfs-tools
 
 
 ## ISO Tools
@@ -46,9 +64,9 @@ apt -y install xorg zenity xapps-common uno-libs-private toilet tree unar caca-u
 ## Misc. Tools
 apt -y install xorg   
 apt -y install icewm --no-install-recommends 
-apt -y install lightdm lightdm-gtk-greeter nitrogen
-apt -y install xz-utils 
-
+#apt -y install lightdm lightdm-gtk-greeter 
+apt -y install xz-utils nitrogen 
+apt -y install connman connman-gtk
 
 #mlocate ## Herramienta para la búsqueda rápida de archivos en el sistema, basada en una base de datos.
 #user-setup ## Herramienta para la configuración y gestión de usuarios en un sistema.
@@ -70,32 +88,6 @@ apt -y install xz-utils
 ## Disponible para sysvinit? 
 #glpkg ## Gestión de paquetes para GLPK, una biblioteca para programación lineal y combinatoria.
 
-
-
-if [ "systemd" == "${init}" ]
-then
-	
-	echo ":: calamares para systemd"
-	apt -y install calamares calamares-settings-debian ./refractaSnapshot/refractasnapshot-base_10.2.12_all.deb
-	
-	## LiveTools
-	apt -y install live-boot live-config-doc live-config-systemd live-config live-tools live-boot-initramfs-tools
-
-		
-	## Network-Manager
-	apt -y install network-manager-gnome
-		
-else 
-	
-	echo ":: calamares para sysvinit"
-	apt -y install calamares calamares-settings-loc-os ./refractaSnapshot/refractasnapshot-base_10.2.12_all.deb
-	
-	## LiveTools
-	apt -y install live-boot live-config-doc live-config-sysvinit live-config live-tools live-boot-initramfs-tools
-
-	apt -y install glpkg
-
-fi
 
 
 
@@ -355,14 +347,6 @@ then
 	sed -i "/GRUB_DISTRIBUTOR=/c GRUB_DISTRIBUTOR=\`lsb_release -d -s 2> \/dev\/null || echo '${fullNameDistro}'\`" /etc/default/grub
 	#update-grub 
 	
-
-	echo "
-	########################################################################
-	#############################  CONNMAN  ################################
-	########################################################################
-	"	
-	apt -y install connman connman-gtk
-	apt -y purge network-manager
 	
 	
 	echo "
