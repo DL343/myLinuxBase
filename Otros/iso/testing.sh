@@ -28,7 +28,6 @@ echo "#########################################"
 
 
 
-dpkg -i ./refractaSnapshot/refractasnapshot-base_10.2.12_all.deb
 
 
 if [ "systemd" == "${init}" ]
@@ -50,6 +49,9 @@ else
 
 fi
 
+## ISO Tools
+apt -y install xorriso genisoimage squashfs-tools
 
+dpkg -i ./refractaSnapshot/refractasnapshot-base_10.2.12_all.deb
 
 
