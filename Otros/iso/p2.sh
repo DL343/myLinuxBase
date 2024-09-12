@@ -58,9 +58,9 @@ DISTRIB_DESCRIPTION='Loc-OS Linux 23'" > /etc/lsb-release
 	touch /etc/apt/preferences.d/00systemd
 	chmod 777 /etc/apt/preferences.d/00systemd
 
-	echo "Package: *systemd*:any
-	Pin: origin *
-	Pin-Priority: -1" > /etc/apt/preferences.d/00systemd
+echo "Package: *systemd*:any
+Pin: origin *
+Pin-Priority: -1" > /etc/apt/preferences.d/00systemd
 
 	echo "
 	############################################################
