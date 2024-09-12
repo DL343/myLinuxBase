@@ -13,30 +13,6 @@ echo "
 
 
 
-if [ "systemd" == "${init}" ]
-then
-	
-	echo ":: calamares para systemd"
-	apt -y install calamares calamares-settings-debian 
-	
-	## LiveTools
-	apt -y install live-boot live-config-doc live-config-systemd live-config live-tools live-boot-initramfs-tools
-
-		
-	## Network-Manager
-	apt -y install network-manager-gnome
-		
-else 
-	
-	echo ":: calamares para sysvinit"
-	apt -y install calamares calamares-settings-loc-os 
-	
-	## LiveTools
-	apt -y install live-boot live-config-doc live-config-sysvinit live-config live-tools live-boot-initramfs-tools
-
-	apt -y install glpkg
-
-fi
 
 
 
@@ -96,7 +72,31 @@ apt -y install xz-utils
 
 
 
-apt -y install./refractaSnapshot/refractasnapshot-base_10.2.12_all.deb
+if [ "systemd" == "${init}" ]
+then
+	
+	echo ":: calamares para systemd"
+	apt -y install calamares calamares-settings-debian ./refractaSnapshot/refractasnapshot-base_10.2.12_all.deb
+	
+	## LiveTools
+	apt -y install live-boot live-config-doc live-config-systemd live-config live-tools live-boot-initramfs-tools
+
+		
+	## Network-Manager
+	apt -y install network-manager-gnome
+		
+else 
+	
+	echo ":: calamares para sysvinit"
+	apt -y install calamares calamares-settings-loc-os ./refractaSnapshot/refractasnapshot-base_10.2.12_all.deb
+	
+	## LiveTools
+	apt -y install live-boot live-config-doc live-config-sysvinit live-config live-tools live-boot-initramfs-tools
+
+	apt -y install glpkg
+
+fi
+
 
 
 
