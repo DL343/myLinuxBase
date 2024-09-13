@@ -137,7 +137,7 @@ chmod +x $HOME/.config/scripts/toggle_zenityCalendar.sh
 
 echo "
 #############################################
-              GNOME-SCREENSHOT
+         CONTROL SEGUNDO VOLUMEN +
 #############################################
 "
 ## Creacion de la ubicacion
@@ -145,19 +145,98 @@ mkdir -p $HOME/.config/scripts/
 
 
 ## Creacion del script
-echo '
+cat << 'EOF' > $HOME/.config/scripts/secondVolume+.sh
 #!/bin/bash
 
-if ! pgrep -x "gnome-screenshot" > /dev/null
-then 
-	gnome-screenshot -a &
-fi 
+# Obtén la lista de dispositivos de salida
+sinks=$(pactl list short sinks | awk '{print $1}')
+
+# Conviértelo en una lista
+sink_list=($sinks)
+
+# Verifica si hay al menos dos dispositivos
+if [ ${#sink_list[@]} -lt 2 ]; then
+    echo "Menos de dos dispositivos de salida conectados."
+    exit 1
+fi
+
+# Selecciona el segundo dispositivo
+second_sink=${sink_list[1]}
+
+# Ajusta el volumen del segundo dispositivo
+pactl set-sink-volume "$second_sink" +5%
+EOF
 
 
-' > $HOME/.config/scripts/gnome_screenshot.sh
-
-chmod +x $HOME/.config/scripts/gnome_screenshot.sh
+chmod +x $HOME/.config/scripts/secondVolume+.sh 
 
 
+echo "
+#############################################
+         CONTROL SEGUNDO VOLUMEN -
+#############################################
+"
+## Creacion de la ubicacion
+mkdir -p $HOME/.config/scripts/
+
+
+## Creacion del script
+cat << 'EOF' > $HOME/.config/scripts/secondVolume-.sh
+#!/bin/bash
+
+# Obtén la lista de dispositivos de salida
+sinks=$(pactl list short sinks | awk '{print $1}')
+
+# Conviértelo en una lista
+sink_list=($sinks)
+
+# Verifica si hay al menos dos dispositivos
+if [ ${#sink_list[@]} -lt 2 ]; then
+    echo "Menos de dos dispositivos de salida conectados."
+    exit 1
+fi
+
+# Selecciona el segundo dispositivo
+second_sink=${sink_list[1]}
+
+# Ajusta el volumen del segundo dispositivo
+pactl set-sink-volume "$second_sink" -5%
+EOF
+
+chmod +x $HOME/.config/scripts/secondVolume-.sh 
+
+echo "
+#############################################
+         CONTROL SEGUNDO VOLUMEN /
+#############################################
+"
+## Creacion de la ubicacion
+mkdir -p $HOME/.config/scripts/
+
+
+## Creacion del script
+cat << 'EOF' > $HOME/.config/scripts/secondVolumeMute.sh
+#!/bin/bash
+
+# Obtén la lista de dispositivos de salida
+sinks=$(pactl list short sinks | awk '{print $1}')
+
+# Conviértelo en una lista
+sink_list=($sinks)
+
+# Verifica si hay al menos dos dispositivos
+if [ ${#sink_list[@]} -lt 2 ]; then
+    echo "Menos de dos dispositivos de salida conectados."
+    exit 1
+fi
+
+# Selecciona el segundo dispositivo
+second_sink=${sink_list[1]}
+
+# Ajusta el volumen del segundo dispositivo
+pactl set-sink-mute "$second_sink" toggle
+EOF
+
+chmod +x $HOME/.config/scripts/secondVolumeMute.sh 
 
 

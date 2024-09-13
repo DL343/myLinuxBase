@@ -5,6 +5,16 @@ source ./variables.sh
 
 apt -y install wget
 
+if [ "systemd" == "${init}" ]
+then
+
+	echo ""$nombreDistro" GNU/Linux "$version" \n \l" 
+
+fi
+
+
+
+
 if [ "sysvinit" == "${init}" ]
 then
 

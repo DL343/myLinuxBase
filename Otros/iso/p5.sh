@@ -77,6 +77,7 @@ then
 	sed -i '/autologin-user=/c autologin-user=live' /etc/lightdm/lightdm.conf
 	sed -i '/autologin-user-timeout=/c autologin-user-timeout=0' /etc/lightdm/lightdm.conf
 	sed -i '/autologin-session=/c autologin-session=icewm-session' /etc/lightdm/lightdm.conf
+	
 
 
 fi

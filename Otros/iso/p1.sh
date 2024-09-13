@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+version="0.1"
 
 ############################################################
 ################## SELECCION VARIABLES #################### 
@@ -24,21 +25,11 @@ do
 	case $isInit in
 	1)
 		init="sysvinit"
-		echo "
-		#!/usr/bin/env bash
-		init=\"${init}\"
-		nombreDistro=\"${nombreDistro}\"
-		" > ./variables.sh
 		break
 		;;
 		
 	2)
 		init="systemd"
-		echo "
-		#!/usr/bin/env bash
-		init=\"${init}\"
-		nombreDistro=\"${nombreDistro}\"
-		" > ./variables.sh
 		break
 		;;
 
@@ -62,12 +53,12 @@ Habilitar personalizacion?
 	case $isPersonalize in
 
 		1)
-		echo "custom=\"y\"" >> ./variables.sh
+		custom="y" 
 		break
 		;;
 		
 		2)
-		echo "custom=\"n\"" >> ./variables.sh
+		custom="n"
 		break
 		;;
 		*)
@@ -77,6 +68,15 @@ Habilitar personalizacion?
 	esac
 
 done
+
+echo "
+#!/usr/bin/env bash
+init=\"${init}\"
+nombreDistro=\"${nombreDistro}\"
+custom=\"${custom}\" 
+
+version=\"${version}\"
+" > variables.sh
 
 
 echo "
