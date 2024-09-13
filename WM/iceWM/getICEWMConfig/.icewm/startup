@@ -1,6 +1,6 @@
 #!/bin/bash
 
-## 
+##
 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 
 ## Luz calida
@@ -28,3 +28,5 @@ $HOME/.config/scripts/toggle_us_latam.sh &
 
 ## Ajuste sin WM
 dbus-update-activation-environment DISPLAY &
+
+
