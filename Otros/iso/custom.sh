@@ -12,7 +12,7 @@ then
 	"	
 
 	## TEMAS
-	#
+	# --
 	
 	## ICONOS + CURSOR
 	mkdir -p /usr/share/icons/

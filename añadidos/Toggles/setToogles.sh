@@ -129,3 +129,35 @@ fi
 
 chmod +x $HOME/.config/scripts/toggle_zenityCalendar.sh
 
+
+
+
+
+
+
+echo "
+#############################################
+              GNOME-SCREENSHOT
+#############################################
+"
+## Creacion de la ubicacion
+mkdir -p $HOME/.config/scripts/
+
+
+## Creacion del script
+echo '
+#!/bin/bash
+
+if ! pgrep -x "gnome-screenshot" > /dev/null
+then 
+	gnome-screenshot -a &
+fi 
+
+
+' > $HOME/.config/scripts/gnome_screenshot.sh
+
+chmod +x $HOME/.config/scripts/gnome_screenshot.sh
+
+
+
+

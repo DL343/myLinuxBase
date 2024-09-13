@@ -17,7 +17,9 @@ echo "
 ############################## REPO MANAGER ##############################
 ########################################################################
 "
-apt -y install ./LO/repo-manager/repo-manager-loc-os_0.3_all.deb 
+
+## Instalacion
+apt -y install repo-manager-loc-os_0.3_all.deb 
 
 
 echo "
@@ -25,26 +27,20 @@ echo "
 ############################## WELCOME ##############################
 ########################################################################
 "
-mkdir -p /usr/share/pixmaps/loc-oswelcome/
 
-## Copiado
-cp ./LO/welcome/assets/* /usr/share/pixmaps/loc-oswelcome/
-cp ./LO/welcome/loc-oswelcome.sh /bin/loc-oswelcome.sh
+## Instalacion
+apt -y install 
 
-## Autoinicio al arranque del usuario live
-mkdir -p /home/live/.config/autostart/
-cp ./LO/welcome/Welcome.desktop /home/live/.config/autostart/Welcome.desktop
+## Cambio de iconos
+cp ./LO/Welcome/Waterfox.png  /opt/browsers/icons/firefox.png
 
-## Ajuste de permisos
-chown -R live /home/live/ 
+## Ajuste script eliminacion firefox => waterfox
+cp ./LO/Welcome/chromium.sh /opt/browsers/scripts/chromium.sh
 
+sh -c 'xrandr --output Virtual-1 --mode 1360x768'
 
-echo "
-########################################################################
-########################### BROWSER SELECTOR ###########################
-########################################################################
-"
-
+## Autoinicio de Welcome para iceWM
+echo "/bin/loc-oswelcome.sh" >>  $HOME/.icewm/startup 
 
 
 

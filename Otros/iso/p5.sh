@@ -8,6 +8,8 @@ echo "
 ########################################################################
 "
 
+
+
 ## Creacion de la carpeta por si no existe
 mkdir -p /etc/skel
 
@@ -18,6 +20,9 @@ cp -r ./sesion/live/ /home/
 ## Ajuste de permisos
 chown live /home/live -R
 
+
+
+echo "sh -c 'xrandr --output Virtual-1 --mode 1360x768'" >>  $HOME/.icewm/startup 
 
 
 
@@ -97,12 +102,21 @@ echo "${nombreDistro}" > /etc/hostname
 
 
 
+echo "
+########################################################################
+######################### AJUSTES USUARIO LIVE #########################
+########################################################################
+" 
 
+####### PRIVILEGIOS
+if ! grep -q "live    ALL=(ALL:ALL) ALL" /etc/sudoers 
+then
 
+	sed -i '/root	ALL=(ALL:ALL) ALL/a live    ALL=(ALL:ALL) ALL' /etc/sudoers 
 
+fi
 
-
-
+########## INICIO AUTOMATICO (systemd)
 
 
 
@@ -141,6 +155,23 @@ then
 
 	## Se elimina una herramientas para controlar y monitorear discos duros utilizando SMART.
 	insserv -r smartmontools
+	
+	
+	
+	echo "
+	########################################################################
+	######################### AJUSTES USUARIO LIVE #########################
+	########################################################################
+	" 
+	
+	########## INICIO AUTOMATICO (sysVinit)
+	## Ajuste al archivo
+	sed -i '/1:2345:respawn:\/sbin\/getty/c 1:2345:respawn:\/sbin\/getty -a live --noclear 38400 tty1' /etc/inittab
+
+	## Aplicando cambios
+	sudo init q
+
+
 	
 fi
 

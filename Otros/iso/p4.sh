@@ -23,7 +23,7 @@ then
 else 
 	
 	echo ":: calamares para sysvinit"
-	apt -y install /refractaSnapshot/refractasnapshot-base_10.2.12_all.deb calamares calamares-settings-loc-os .live-config-sysvinit
+	apt -y install ./refractaSnapshot/refractasnapshot-base_10.2.12_all.deb calamares calamares-settings-loc-os live-config-sysvinit
 	
 	apt -y install glpkg
 
@@ -62,7 +62,8 @@ apt -y install xorg zenity xapps-common uno-libs-private toilet tree unar caca-u
 
 
 ## Misc. Tools
-apt -y install xorg   
+apt -y install xorg
+apt -y install sakura   
 apt -y install icewm --no-install-recommends 
 #apt -y install lightdm lightdm-gtk-greeter 
 apt -y install xz-utils nitrogen 
@@ -181,8 +182,7 @@ LC_TIME=en_US.UTF-8
 ##export LC_ALL=en_US.UTF-8" > /root/.bashrc
 
 ## Define qué configuraciones regionales estarán disponibles en el sistema. 
-##echo "en_US.UTF-8 UTF-8
-##C.UTF-8 UTF-8" > /etc/locale.gen
+cp ./locale/locale.gen /etc/locale.gen
 
 locale-gen
 
@@ -261,8 +261,7 @@ then
 	
 ## Evita que ciertos módulos del kernel del microcodigo del procesador se carguen automáticamente
 ## AMD 
-echo '
-# The microcode module attempts to apply a microcode update when
+echo '# The microcode module attempts to apply a microcode update when
 # it autoloads.  This is not always safe, so we block it by default.
 
 ## Debian default
@@ -277,8 +276,7 @@ blacklist pcspkr
 
 
 ## INTEL
-echo '
-# The microcode module attempts to apply a microcode update when
+echo '# The microcode module attempts to apply a microcode update when
 # it autoloads.  This is not always safe, so we block it by default.
 
 ## Debian default
