@@ -8,7 +8,7 @@ apt -y install wget
 if [ "systemd" == "${init}" ]
 then
 
-	echo ""$nombreDistro" GNU/Linux "$version" \n \l" 
+	echo ""$nombreDistro" GNU/Linux "$version" \n \l" > /etc/issue 
 
 fi
 

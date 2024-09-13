@@ -53,7 +53,7 @@ apt -y install gnustep-base-common gnustep-base-runtime gnustep-common
 apt -y install policykit-1 polkitd-pkla p11-kit
 
 ## Firmwares
-#apt -y install firmware-atheros firmware-b43-installer firmware-brcm80211 firmware-iwlwifi firmware-libertas firmware-linux-nonfree firmware-linux firmware-misc-nonfree firmware-qlogic firmware-realtek-rtl8723cs-bt firmware-realtek firmware-samsung
+apt -y install firmware-atheros firmware-b43-installer firmware-brcm80211 firmware-iwlwifi firmware-libertas firmware-linux-nonfree firmware-linux firmware-misc-nonfree firmware-qlogic firmware-realtek-rtl8723cs-bt firmware-realtek firmware-samsung
 
 ## Misc. Tools
 apt -y install xorg zenity xapps-common uno-libs-private toilet tree unar caca-utils acl btrfs-progs cryptsetup gcr  gparted lynx mtools ntpsec user-setup yad libduktape207 mlocate keyutils
@@ -245,9 +245,14 @@ echo 'UMASK=0077' > /etc/initramfs-tools/conf.d/calamares-safe-initramfs.conf
 
 
 ## El archivo se utiliza para configurar la reanudación desde la suspensión o hibernación.
-rm /etc/initramfs-tools/conf.d/resume
 
-
+if [ -f /etc/initramfs-tools/conf.d/resume ]
+then
+	rm /etc/initramfs-tools/conf.d/resume
+else
+	echo "El fichero a eliminar no existe, 
+probablemente ya se removio anteriormente, omitiendo este paso..."
+fi
 
 echo "
 ########################################################################
@@ -289,10 +294,12 @@ blacklist microcode
 blacklist pcspkr
 ' > /etc/modprobe.d/intel-microcode-blacklist.conf
 
+update-initramfs -u
+
 fi
 
 
-update-initramfs -u
+
 
 echo "
 ########################################################################
@@ -375,8 +382,6 @@ blacklist microcode
 		
 	update-initramfs -u
 		
-		
-	
 
 fi
 
