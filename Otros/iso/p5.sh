@@ -22,9 +22,6 @@ chown live /home/live -R
 
 
 
-echo "sh -c 'xrandr --output Virtual-1 --mode 1360x768'" >>  $HOME/.icewm/startup 
-
-
 
 if [ "systemd" == "${init}" ]
 then
@@ -110,14 +107,26 @@ echo "
 " 
 
 ####### PRIVILEGIOS
-if ! grep -q "live    ALL=(ALL:ALL) ALL" /etc/sudoers 
+if grep -q "live    ALL=(ALL:ALL) ALL" /etc/sudoers 
 then
+
+	echo "Existe ajuste, omitiendo este paso..."
+	
+else
 
 	sed -i '/root	ALL=(ALL:ALL) ALL/a live    ALL=(ALL:ALL) ALL' /etc/sudoers 
 
 fi
 
-########## INICIO AUTOMATICO (systemd)
+
+######## AJUSTE RESOLUCION
+if grep -q "sh -c 'xrandr --output Virtual-1 --mode 1360x768'" /home/live/.icewm/startup
+then
+	echo "Existe el ajuste, omitiendo este paso..."
+else
+	echo "sh -c 'xrandr --output Virtual-1 --mode 1360x768'" >>  /home/live/.icewm/startup 
+fi
+########## LOGIN SIN CONTRASEÑA (systemd)
 
 
 
@@ -165,7 +174,7 @@ then
 	########################################################################
 	" 
 	
-	########## INICIO AUTOMATICO (sysVinit)
+	########## LOGIN SIN CONTRASEÑA (sysVinit)
 	## Ajuste al archivo
 	sed -i '/1:2345:respawn:\/sbin\/getty/c 1:2345:respawn:\/sbin\/getty -a live --noclear 38400 tty1' /etc/inittab
 

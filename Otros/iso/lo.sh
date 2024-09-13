@@ -19,7 +19,7 @@ echo "
 "
 
 ## Instalacion
-apt -y install repo-manager-loc-os_0.3_all.deb 
+apt -y install repo-manager-loc-os
 
 
 echo "
@@ -37,10 +37,12 @@ cp ./LO/Welcome/Waterfox.png  /opt/browsers/icons/firefox.png
 ## Ajuste script eliminacion firefox => waterfox
 cp ./LO/Welcome/chromium.sh /opt/browsers/scripts/chromium.sh
 
-sh -c 'xrandr --output Virtual-1 --mode 1360x768'
-
 ## Autoinicio de Welcome para iceWM
-echo "/bin/loc-oswelcome.sh" >>  $HOME/.icewm/startup 
-
+if grep -q "/bin/loc-oswelcome.sh" /home/live/.icewm/startup
+then
+	echo "Existe el ajuste, omitiendo este paso..."
+else
+	echo "/bin/loc-oswelcome.sh" >>  /home/live/.icewm/startup 
+fi
 
 
