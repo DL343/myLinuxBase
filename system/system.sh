@@ -56,10 +56,6 @@ function appsMinimal(){
 		ufw 	
 		lightdm
 		lightdm-gtk-greeter	
-		cryptsetup ## Herramienta para gestionar el cifrado de discos y particiones usando LUKS.
-		gcr ## Biblioteca para manejar certificados y claves, usada en aplicaciones de seguridad.
-		unar ## Utilidad para descomprimir archivos en varios formatos, como RAR y ZIP.
-		keyutils ## Utilidades para gestionar claves y conjuntos de claves en el kernel de Linux.
 		
 	)
 
@@ -88,7 +84,11 @@ function myApps(){
 myApps=(
 
 	##preload  
-
+	##cryptsetup ## Herramienta para gestionar el cifrado de discos y particiones usando LUKS.
+	gcr ## Biblioteca para manejar certificados y claves, usada en aplicaciones de seguridad.
+	##unar ## Utilidad para descomprimir archivos en varios formatos, como RAR y ZIP.
+	keyutils ## Utilidades para gestionar claves y conjuntos de claves en el kernel de Linux.
+	ncdu
 	p7zip-full
 	lm-sensors 
 	orage
@@ -102,7 +102,7 @@ myApps=(
 	## Usuario
 	parcellite 
 	rofi  
-	gnome-screenshot 
+	flameshot
 	mirage
 	nitrogen
 	redshift

@@ -180,8 +180,18 @@ then
 
 	## Aplicando cambios
 	sudo init q
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
-
+	apt -y install seatd 
 	
 fi
 

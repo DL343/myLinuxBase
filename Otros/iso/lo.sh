@@ -29,7 +29,7 @@ echo "
 "
 
 ## Instalacion
-apt -y install 
+apt -y install welcome-loc-os
 
 ## Cambio de iconos
 cp ./LO/Welcome/Waterfox.png  /opt/browsers/icons/firefox.png

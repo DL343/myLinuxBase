@@ -197,7 +197,7 @@ sed -i "/snapshot_basename=\"snapshot\"/c snapshot_basename=\"${nombreDistro}\""
 ##sed -i "/volid=\"liveiso\"/c volid=\"${nombreDistro}\"" /etc/refractasnapshot.conf 
 
 ## Tipo de compresion (Compresion optimizada para CISC (x86))
-sed -i '/#mksq_opt="-comp xz -Xbcj x86"/c mksq_opt="-comp xz -Xbcj x86"/' /etc/refractasnapshot.conf
+sed -i '/#mksq_opt="-comp xz -Xbcj x86"/c mksq_opt="-comp xz -Xbcj x86"' /etc/refractasnapshot.conf
 
 ## Ajuste limite de CPU
 sed -i '/limit=/c limit="90"' /etc/refractasnapshot.conf
