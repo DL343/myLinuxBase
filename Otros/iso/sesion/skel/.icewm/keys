@@ -1,4 +1,6 @@
 
+
+
 ########################## CUSTOM ###############################
 
 
@@ -18,9 +20,11 @@ key Alt+KP_Multiply             pactl set-sink-mute @DEFAULT_SINK@ toggle
 #key XF86AudioRaiseVolume         amixer sset Master 5%+
 #key XF86AudioMute                amixer sset Master toggle
 
-#key Alt+KP_Subtract             amixer sset Master 5%- 
-#key Alt+KP_Add                  amixer sset Master 5%+
-#key Alt+KP_Multiply             amixer sset Master toggle
+#key Super+Alt+KP_Subtract         
+#key Super+Alt+KP_Add             
+#key Super+Alt+KP_Multiply        
+
+
 
 
 
@@ -40,12 +44,12 @@ key Super+Space                 rofi -modi drun,run -show-icons -theme /usr/shar
 
 
 ################ CAPTURA PANTALLA ################ 
-#key Print                      gnome-screenshot -i
-key Print                       gnome-screenshot
-key Ctrl+Print                  gnome-screenshot -a
-key Alt+Print                   gnome-screenshot -w
+key Print                       flameshot full
+key Super+Shift+s               flameshot gui
+
 
 switchkey 'Super+p'             icewm-menu-xrandr
+
 
 ################ TOGGLES ################ 
 key Super+F2                    $HOME/.config/scripts/toggle_nm-applet.sh
