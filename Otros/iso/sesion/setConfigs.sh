@@ -19,6 +19,10 @@ install -D $HOME/.face							             $BASE/.face
 install -D $HOME/.profile                                    $BASE/.profile
 install -D $HOME/.xinitrc                                    $BASE/.xinitrc
 
+cp -r $HOME/.icewm                                           $BASE/
+
+
+
 
 
 BASE=./live/
@@ -34,3 +38,5 @@ install -D $HOME/.config/flameshot/flameshot.ini             $BASE/.config/flame
 install -D $HOME/.face							             $BASE/.face 
 install -D $HOME/.profile                                    $BASE/.profile
 install -D $HOME/.xinitrc                                    $BASE/.xinitrc
+
+cp -r $HOME/.icewm                                           $BASE/
