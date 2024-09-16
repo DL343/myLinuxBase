@@ -19,8 +19,6 @@ echo "
 
 
 echo "## Agregar configuraciones" 
-cp -rp ./getICEWMConfig/.icewm/ $HOME/
-
-
+cp -r ./getICEWMConfig/.icewm/  $HOME/
 
 echo "## Listo"
