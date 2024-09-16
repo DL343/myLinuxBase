@@ -176,10 +176,10 @@ then
 	
 	########## LOGIN SIN CONTRASEÑA (sysVinit)
 	## Ajuste al archivo
-	sed -i '/1:2345:respawn:\/sbin\/getty/c 1:2345:respawn:\/sbin\/getty -a live --noclear 38400 tty1' /etc/inittab
+	##sed -i '/1:2345:respawn:\/sbin\/getty/c 1:2345:respawn:\/sbin\/getty -a live --noclear 38400 tty1' /etc/inittab
 
 	## Aplicando cambios
-	sudo init q
+	##sudo init q
 	
 	
 	

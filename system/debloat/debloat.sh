@@ -97,7 +97,12 @@ appBloat=(
 	
 	##
 	remmina*
-
+	
+	##
+	rtkit
+	
+	## 
+	at-spi2-core
 )
 
 

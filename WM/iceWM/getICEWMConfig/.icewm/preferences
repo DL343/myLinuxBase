@@ -965,7 +965,7 @@ TimeFormat="%x | %H:%M"
 # WinMenuItems="rmsnxfhualytiecw"
 
 #  Add a workspace.
-WorkspaceNames=" 1 ", " 2 ", " 3 ", " 4 "
+WorkspaceNames=" 1 ", " 2 "
 
 #  Time before workspace status window is hidden in ms.
 # WorkspaceStatusTime=700 # [0-2500]

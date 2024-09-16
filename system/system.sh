@@ -91,7 +91,6 @@ myApps=(
 	ncdu
 	p7zip-full
 	lm-sensors 
-	orage
 	inxi  
 	xdg-user-dirs		  										  
 	lxappearance 
@@ -200,40 +199,40 @@ fi
 
 
 
-echo '
-########################################################################
-                    PROTECTOR DE PANTALLA
-########################################################################
-'
+#echo '
+#########################################################################
+                    #PROTECTOR DE PANTALLA
+#########################################################################
+#'
 
-# Comprobar si es una laptop o un PC de escritorio
-if [ -e /sys/class/power_supply/BAT1 ] || [ -e /sys/class/power_supply/BAT0 ]; then
+## Comprobar si es una laptop o un PC de escritorio
+#if [ -e /sys/class/power_supply/BAT1 ] || [ -e /sys/class/power_supply/BAT0 ]; then
 
-	echo "######## Bateria detectada ########"   
-	echo "## Se instalan los paquetes 'brightnessctl' y 'acpi'"  
-	sudo apt -y install brightnessctl acpi 											 
+	#echo "######## Bateria detectada ########"   
+	#echo "## Se instalan los paquetes 'brightnessctl' y 'acpi'"  
+	#sudo apt -y install brightnessctl acpi 											 
 	
 
-	echo '############### XSCREENSAVER PARA LAPTOP ####################'
-		# Apagar y bloquear la pantalla después de 1 minuto de inactividad:
-		## Asegurar instalacion
-		sudo apt -y install xscreensaver 
-		## Configuracion 
-		cp system/xScreenSaver/xSSLatop $HOME/.xscreensaver 
+	#echo '############### XSCREENSAVER PARA LAPTOP ####################'
+		## Apagar y bloquear la pantalla después de 1 minuto de inactividad:
+		### Asegurar instalacion
+		#sudo apt -y install xscreensaver 
+		### Configuracion 
+		#cp system/xScreenSaver/xSSLatop $HOME/.xscreensaver 
 
-else
+#else
 	
-	echo "## Sin bateria detectada, se considera un PC de escritorio"     
-	echo "## Se omiten los paquetes 'brightnessctl' y 'acpi'"
+	#echo "## Sin bateria detectada, se considera un PC de escritorio"     
+	#echo "## Se omiten los paquetes 'brightnessctl' y 'acpi'"
 	
-	echo '############### XSCREENSAVER PARA PC ####################'
-		# Apagar y bloquear la pantalla después de 1 minuto de inactividad:
-		## Asegurar instalacion
-		sudo apt -y install xscreensaver
-		## Configuracion 
-		cp system/xScreenSaver/xSSPC $HOME/.xscreensaver 
+	#echo '############### XSCREENSAVER PARA PC ####################'
+		## Apagar y bloquear la pantalla después de 1 minuto de inactividad:
+		### Asegurar instalacion
+		#sudo apt -y install xscreensaver
+		### Configuracion 
+		#cp system/xScreenSaver/xSSPC $HOME/.xscreensaver 
 
-fi
+#fi
 
 
 
@@ -539,27 +538,13 @@ echo "
 if grep -q 'vm.swappiness=' /etc/sysctl.conf
 then
 	echo "Texto encontrado, ajustando..."
-	sudo sed -i '/vm.swappiness=/c vm.swappiness=10' /etc/sysctl.conf
+	sudo sed -i '/vm.swappiness=/c vm.swappiness=15' /etc/sysctl.conf
 
 else
 	echo "Texto no encontrado, añadiendo..."
-	echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.conf > /dev/null
+	echo "vm.swappiness=15" | sudo tee -a /etc/sysctl.conf > /dev/null
 	
 fi
-
-
-echo "
-########################################################################
-                               TECLADO
-########################################################################
-"
-## En terminal 
-##echo "KEYMAP=es" | sudo tee /etc/vconsole.conf
-##echo "LANG=es_ES.UTF8" | sudo tee /etc/locale.conf
-
-## En xorg
-##sudo localectl set-x11-keymap latam
-
 
 
 
