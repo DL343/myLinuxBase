@@ -1,1 +1,1 @@
-icewm
+icewm-session
