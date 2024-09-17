@@ -51,7 +51,7 @@ then
 	if grep -q "  - removeuser" /etc/calamares/settings.conf
 	then
 	
-		echo "El ajuste '  - removeuser' existe, omitiendo este paso..."
+		echo "El ajuste '## Se añade la linea para eliminar usuario' existe, omitiendo este paso..."
 		
 	else
 	perl -i -pe '
