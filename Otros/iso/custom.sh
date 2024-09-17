@@ -12,7 +12,8 @@ then
 	"	
 
 	## TEMAS
-	# --
+	mkdir -p /usr/share/themes/
+	cp -r ./custom/themes/Adwaita-dark /usr/share/themes/
 	
 	## ICONOS + CURSOR
 	mkdir -p /usr/share/icons/
