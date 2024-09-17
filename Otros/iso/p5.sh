@@ -86,7 +86,7 @@ echo "
 ########################################################################
 "
 
-apt -y remove aspell-es chafa cups-pk-helper debian-reference-es debian-reference-common fonts-liberation ispanish task-spanish manpages-es system-config-printer system-config-printer-common python3-gi-cairo python3-cairo system-config-printer-udev python3-cupshelpers python3-cups python3-smbc 
+##apt -y remove aspell-es chafa cups-pk-helper debian-reference-es debian-reference-common fonts-liberation ispanish task-spanish manpages-es system-config-printer system-config-printer-common python3-gi-cairo python3-cairo system-config-printer-udev python3-cupshelpers python3-cups python3-smbc 
 ##blueman
 
 echo "
@@ -124,7 +124,9 @@ if grep -q "sh -c 'xrandr --output Virtual-1 --mode 1360x768'" /home/live/.icewm
 then
 	echo "Existe el ajuste, omitiendo este paso..."
 else
-	echo "sh -c 'xrandr --output Virtual-1 --mode 1360x768'" >>  /home/live/.icewm/startup 
+	echo "
+sh -c 'xrandr --output Virtual-1 --mode 1360x768'" >>  /home/live/.icewm/startup 
+
 fi
 ########## LOGIN SIN CONTRASEÑA (systemd)
 
