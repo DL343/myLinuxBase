@@ -20,10 +20,12 @@ install -D $HOME/.profile                                    $BASE/.profile
 install -D $HOME/.xinitrc                                    $BASE/.xinitrc
 
 cp -r $HOME/.icewm                                           $BASE/
+cp -r $HOME/.config/scripts/                                 $BASE/.config/
 
 
 
 
+#######################################################################################
 
 BASE=./live/
 install -D $HOME/.gtkrc-2.0                                  $BASE/.gtkrc-2.0
@@ -40,3 +42,4 @@ install -D $HOME/.profile                                    $BASE/.profile
 install -D $HOME/.xinitrc                                    $BASE/.xinitrc
 
 cp -r $HOME/.icewm                                           $BASE/
+cp -r $HOME/.config/scripts/                                 $BASE/.config/
