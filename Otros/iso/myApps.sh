@@ -186,6 +186,8 @@ fi
 ' > /home/live/.config/scripts/toggle_network-applet.sh 
 
 
+sudo chown -R live:live /home/live/
+
 
 
 sudo apt remove avahi-daemon   git  at-spi2-core  rtkit
