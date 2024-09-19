@@ -203,7 +203,7 @@ then
 	
 	
 
-	apt -y install seatd 
+	##apt -y install seatd 
 	
 fi
 

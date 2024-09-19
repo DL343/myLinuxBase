@@ -18,7 +18,7 @@ else
 	nm-applet &
 fi
 
-' > $HOME/.config/scripts/toggle_nm-applet.sh
+' > $HOME/.config/scripts/toggle_network-applet.sh
 
 chmod +x $HOME/.config/scripts/toggle_nm-applet.sh
 
