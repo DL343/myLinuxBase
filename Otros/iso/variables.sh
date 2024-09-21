@@ -1,8 +1,26 @@
 
 #!/usr/bin/env bash
 init="sysvinit"
-nombreDistro="prueba0025"
+nombreDistro="prueba0031"
 custom="y" 
 
-version="0.1"
+
+
+
+
+
+## OBLIGATORIOS
+numVersion="0.1"
+
+
+# -----------------------------------------
+
+## Opcionales
+codeName=""
+productUrl=""
+supportUrl=""
+knownIssuesUrl=""
+releaseNotesUrl=""
+donateUrl=""
+
 

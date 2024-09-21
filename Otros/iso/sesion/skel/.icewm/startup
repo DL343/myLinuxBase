@@ -1,10 +1,10 @@
 #!/bin/bash
 
-##
+## Polkit
 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 
 ## Luz calida
-redshift -O 4250K -r -P &
+#redshift -O 4250K -r -P &
 
 ## Brillo al minimo
 brightnessctl s 0 &
@@ -12,21 +12,21 @@ brightnessctl s 0 &
 ## Portapapeles
 parcellite &
 
-## Restaura la ultima imagen aplicada
-nitrogen --restore &
-
 ## Salvapantallas
 #xscreensaver -nosplash &
 
-## Keyring
-#gnome-keyring-daemon &
 
 ##----------------------------------------
 
 ## Cambios de distribucion de teclado us/latam
 $HOME/.config/scripts/toggle_us_latam.sh &
 
-## Ajuste sin WM
+## Ajuste sin DM
 dbus-update-activation-environment DISPLAY &
 
+## NumBloq Activado 
+numlockx &
+
+## Escritorio
+pcmanfm --desktop &
 

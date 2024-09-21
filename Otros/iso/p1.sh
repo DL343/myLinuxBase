@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
 
-version="0.1"
+## OBLIGATORIOS
+numVersion="0.1"
+
+## Opcionales
+## Entre parentesis  // codeName='(sparky)'
+codeName=""
+productUrl=""
+supportUrl=""
+knownIssuesUrl=""
+releaseNotesUrl=""
+donateUrl=""
 
 ############################################################
 ################## SELECCION VARIABLES #################### 
@@ -75,7 +85,25 @@ init=\"${init}\"
 nombreDistro=\"${nombreDistro}\"
 custom=\"${custom}\" 
 
-version=\"${version}\"
+
+
+
+
+
+## OBLIGATORIOS
+numVersion=\"${numVersion}\"
+
+
+# -----------------------------------------
+
+## Opcionales
+codeName=\"${codeName}\"
+productUrl=\"${productUrl}\"
+supportUrl=\"${supportUrl}\"
+knownIssuesUrl=\"${knownIssuesUrl}\"
+releaseNotesUrl=\"${releaseNotesUrl}\"
+donateUrl=\"${donateUrl}\"
+
 " > variables.sh
 
 

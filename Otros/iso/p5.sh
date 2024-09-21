@@ -63,6 +63,165 @@ then
 			} 
 		}' /etc/calamares/settings.conf
 	fi
+	
+	
+
+## CALAMARES: IMAGENES 
+dirORIGEN=./custom/calamares/
+## 256 x 256
+install -D $dirORIGEN/01.png     /etc/calamares/branding/debian/debian-logo.png
+
+## 457 × 300
+install -D $dirORIGEN/02.png     /etc/calamares/branding/debian/welcome.png
+
+
+## CALAMARES: SLIDES
+## 830 × 608
+mkdir -p /etc/calamares/branding/debian/slides/
+cp $dirORIGEN/slides/*        /etc/calamares/branding/debian/slides/
+
+
+
+####### CALAMARES: CONFIGURACION "BRANDING" 
+echo "
+---
+componentName:   debian
+welcomeStyleCalamares: true
+welcomeExpandingLogo: true
+windowExpanding: normal
+windowSize: 800px,520px
+windowPlacement: center
+
+strings:
+    productName:         "${nombreDistro}" GNU/Linux
+    shortProductName:    "${nombreDistro}"
+    version:             "${numVersion}" "${codeName}"
+    shortVersion:        "${numVersion}"
+    versionedName:       "${nombreDistro}" "${numVersion}" "${codeName}"
+    shortVersionedName:  "${nombreDistro}" "${numVersion}"
+    bootloaderEntryName: "${nombreDistro}"
+    productUrl:          "${productUrl}"
+    supportUrl:          "${supportUrl}"
+    knownIssuesUrl:      "${knownIssuesUrl}"
+    releaseNotesUrl:     "${releaseNotesUrl}"
+    donateUrl:           "${donateUrl}"
+
+images:
+    productLogo:         \"debian-logo.png\"
+    productIcon:         \"debian-logo.png\"
+    productWelcome:      \"welcome.png\"
+    # productWallpaper:  \"wallpaper.png\"
+
+slideshow:               \"show.qml\"
+
+style:
+   sidebarBackground:    \"#2c3133\"
+   sidebarText:          \"#FFFFFF\"
+   sidebarTextSelect:    \"#4d7079\"
+   sidebarTextSelect:    \"#292F34\"
+
+slideshowAPI: 2
+
+"  > /etc/calamares/branding/debian/branding.desc
+
+
+
+######## CONFIGURACION SLIDES
+echo "
+/* === This file is part of Calamares - <http://github.com/calamares> ===
+ *
+ *   Copyright 2015, Teo Mrnjavac <teo@kde.org>
+ *   Copyright 2018-2019, Jonathan Carter <jcc@debian.org>
+ *
+ *   Calamares is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, or (at your option) any later version.
+ *
+ *   Calamares is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Calamares. If not, see <http://www.gnu.org/licenses/>.
+ */
+ 
+ import QtQuick 2.0;
+import calamares.slideshow 1.0;
+
+Presentation
+{
+    id: presentation
+
+    Timer {
+        interval: 40000
+        running: true
+        repeat: true
+        onTriggered: presentation.goToNextSlide()
+    }
+Slide 
+{
+        anchors.fill: parent
+
+        Image {
+            id: background1
+            source: \"slides/01.png\"
+            anchors.fill: parent
+        
+        }
+}   
+Slide 
+{
+        anchors.fill: parent
+
+        Image {
+            id: background2
+            source: \"slides/02.png\"
+            anchors.fill: parent
+        
+        }
+}   
+Slide 
+{
+        anchors.fill: parent
+
+        Image {
+            id: background3
+            source: \"slides/03.png\"
+            anchors.fill: parent
+        
+    }
+}   
+Slide 
+{
+        anchors.fill: parent
+
+        Image {
+            id: background4
+            source: \"slides/04.png\"
+            anchors.fill: parent
+        
+        }
+    }
+
+Slide 
+{
+        anchors.fill: parent
+
+        Image {
+            id: background5
+            source: \"slides/05.png\"
+            anchors.fill: parent
+        
+        }
+    }
+    
+}
+
+ 
+" > /etc/calamares/branding/debian/show.qml
+
+
 
 
 	echo "
@@ -70,6 +229,8 @@ then
 	########################## DISPLAY MANAGER #############################
 	########################################################################
 	"
+	## LIGHTDM
+	apt -y install lightdm lightdm-gtk-greeter 
 	
 	sed -i '/autologin-user=/c autologin-user=live' /etc/lightdm/lightdm.conf
 	sed -i '/autologin-user-timeout=/c autologin-user-timeout=0' /etc/lightdm/lightdm.conf
@@ -198,13 +359,23 @@ then
 	
 	
 	
+	echo "
+	########################################################################
+	########################## DISPLAY MANAGER #############################
+	########################################################################
+	"
 	
+	## LXDM
+	apt -y install lxdm 
+	apt -y install lxdm-loc-os
+
+	sed -i '/session=/c session=/usr/bin/icewm-session' /etc/lxdm/default.conf
+	
+
 	
 	
 	
 
-	##apt -y install seatd 
-	
 fi
 
 

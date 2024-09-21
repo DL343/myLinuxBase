@@ -18,7 +18,7 @@ sudo apt install gcr unar keyutils ncdu p7zip-full lm-sensors inxi  xdg-user-dir
 parcellite 	rofi  	flameshot	mirage	nitrogen	redshift	bleachbit    mpv      audacious      	console-data        
 
 
-sudo apt install volumeicon-alsa
+sudo apt install volumeicon-alsa numlockx
 
 
 if [ "$(sed -n '/Option "Tapping" "true"/p' /usr/share/X11/xorg.conf.d/40-libinput.conf)" == 'Option "Tapping" "true"' ]; then 

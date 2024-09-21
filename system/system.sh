@@ -41,7 +41,7 @@ function appsMinimal(){
 		bash-completion 
 		htop 
 		btop
-		neofetch 
+		##neofetch 
 		gparted 
 		btrfs-progs ## Herramientas para manejar el sistema de archivos Btrfs.
 		mtools ## Conjunto de herramientas para manipular disquetes (especialmente FAT).
@@ -105,7 +105,8 @@ myApps=(
 	mirage
 	nitrogen
 	redshift
-
+	numlockx
+	volumeicon-alsa
 	##grimshot
 	
 	#qalculate-gtk          

@@ -26,14 +26,6 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-    ########################################
-	############## CUSTOM ##################
-    ######################################## 
-	
-	## Inicio automatico del WM despues del inicio de sesion 
-	if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-	  exec startx
-	fi
 
 
 

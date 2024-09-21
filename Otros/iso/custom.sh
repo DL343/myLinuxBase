@@ -23,7 +23,7 @@ then
 	
 	## WALLPAPERS
 	mkdir -p /usr/share/wallpapers/
-    cp ./custom/wallpapers/* /usr/share/wallpapers/
+    cp ./custom/wallpapers/* /usr/share/wallpapers/default.png
 	 
 	## COLORES
 	## /usr/share/color-schemes/

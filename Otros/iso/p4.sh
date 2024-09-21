@@ -64,7 +64,7 @@ apt -y install xorg zenity xapps-common uno-libs-private toilet tree unar caca-u
 apt -y install xorg
 apt -y install sakura   
 apt -y install icewm --no-install-recommends 
-#apt -y install lightdm lightdm-gtk-greeter 
+
 apt -y install xz-utils nitrogen 
 apt -y install connman connman-gtk
 
@@ -199,7 +199,7 @@ sed -i "/snapshot_basename=\"snapshot\"/c snapshot_basename=\"${nombreDistro}\""
 ##sed -i '/#mksq_opt="-comp xz -Xbcj x86"/c mksq_opt="-comp xz -Xbcj x86"' /etc/refractasnapshot.conf
 
 ## Ajuste limite de CPU
-sed -i '/limit=/c limit="90"' /etc/refractasnapshot.conf
+##sed -i '/limit=/c limit="90"' /etc/refractasnapshot.conf
 
 ## 
 sed -i '/#username=/c username="live"' /etc/refractasnapshot.conf
