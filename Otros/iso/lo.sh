@@ -5,10 +5,12 @@ echo "
 ############################## CALAMARES ##############################
 ########################################################################
 "
-## Icono 
+## IMG: Icono 
+cp ./LO/Calamares/calamares-loc-os.png /home/live/
 #
 
 ## Entrada en el escritorio
+cp ./LO/Calamares/install.desktop /home/live/desktop
 #
 
 

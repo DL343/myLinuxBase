@@ -286,7 +286,9 @@ then
 	echo "Existe el ajuste, omitiendo este paso..."
 else
 	echo "
-sh -c 'xrandr --output Virtual-1 --mode 1360x768'" >>  /home/live/.icewm/startup 
+sh -c 'xrandr --output Virtual-1 --mode 1360x768' &
+xdg-user-dirs-update &
+" >>  /home/live/.icewm/startup 
 
 fi
 ########## LOGIN SIN CONTRASEÑA (systemd)
