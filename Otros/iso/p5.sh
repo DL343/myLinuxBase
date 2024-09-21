@@ -301,7 +301,6 @@ fi
 
 
 
-
 if [ "sysvinit" == "${init}" ]
 then
 
@@ -377,6 +376,42 @@ then
 	
 	
 	
+echo "
+########################################################################
+                              AJUSTE CONNMAN
+########################################################################
+"
+
+## SKEL
+echo '
+#!/bin/bash
+
+if pgrep -x "connman-gtk" > /dev/null
+then
+        pkill connman-gtk
+else
+        connman-gtk &
+fi
+' | sudo tee /etc/skel/.config/scripts/toggle_network-applet.sh 
+
+
+
+## LIVE
+echo '
+#!/bin/bash
+
+if pgrep -x "connman-gtk" > /dev/null
+then
+        pkill connman-gtk
+else
+        connman-gtk &
+fi
+' > /home/live/.config/scripts/toggle_network-applet.sh 
+
+
+sudo chown -R live:live /home/live/
+
+
 
 fi
 
