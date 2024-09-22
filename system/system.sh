@@ -95,6 +95,7 @@ myApps=(
 	xdg-user-dirs		  										  
 	lxappearance 
 	lxrandr 
+	
 
 
 

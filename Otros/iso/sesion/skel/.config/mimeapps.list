@@ -1,0 +1,87 @@
+[Added Associations]
+## TEXTOS
+text/plain=geany.desktop
+text/plain=geany.desktop
+text/markdown=geany.desktop
+
+## IMAGENES
+image/png=mirage.desktop
+image/jpeg=mirage.desktop
+image/png=mirage.desktop
+image/gif=mirage.desktop
+image/svg+xml=mirage.desktop
+
+## VIDEO
+video/mp4=mpv.desktop
+video/x-matroska=mpv.desktop
+video/x-msvideo=mpv.desktop
+video/x-flv=mpv.desktop
+
+## AUDIO
+audio/mpeg=audacious.desktop
+audio/wav=audacious.desktop
+audio/ogg=audacious.desktop
+audio/flac=audacious.desktop
+audio/x-wav=audacious.desktop
+
+## COMPRESION/DESCOMPRESION
+application/zip=xarchiver.desktop
+application/x-tar=xarchiver.desktop
+application/x-rar=xarchiver.desktop
+application/x-7z-compressed=xarchiver.desktop
+application/x-xz-compressed-tar=xarchiver.desktop
+
+## PDF
+application/pdf=evince.desktop
+
+## GESTOR DE ARCHIVOS
+inode/directory=pcmanfm.desktop
+
+
+
+
+########################################
+########################################
+########################################
+
+
+
+
+[Default Applications]
+## TEXTOS
+text/plain=geany.desktop
+text/plain=geany.desktop
+text/markdown=geany.desktop
+
+## IMAGENES
+image/png=mirage.desktop
+image/jpeg=mirage.desktop
+image/png=mirage.desktop
+image/gif=mirage.desktop
+image/svg+xml=mirage.desktop
+
+## VIDEO
+video/mp4=mpv.desktop
+video/x-matroska=mpv.desktop
+video/x-msvideo=mpv.desktop
+video/x-flv=mpv.desktop
+
+## AUDIO
+audio/mpeg=audacious.desktop
+audio/wav=audacious.desktop
+audio/ogg=audacious.desktop
+audio/flac=audacious.desktop
+audio/x-wav=audacious.desktop
+
+## COMPRESION/DESCOMPRESION
+application/zip=xarchiver.desktop
+application/x-tar=xarchiver.desktop
+application/x-rar=xarchiver.desktop
+application/x-7z-compressed=xarchiver.desktop
+application/x-xz-compressed-tar=xarchiver.desktop
+
+## PDF
+application/pdf=evince.desktop
+
+## GESTOR DE ARCHIVOS
+inode/directory=pcmanfm.desktop
