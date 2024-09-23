@@ -21,17 +21,123 @@ echo "
 appBloat=(
 
 
+	## Accesibilidad 
+	at-spi2-core
+	
+	## Intercepta crasheos de primera vez"
+	apport 
+	
+	##
+	avahi-* 
+	
+	
+	## IDE VSCode open source"
+	codium 
+	
+	## Servicio gnome para calendario, chat, documentos, correo 
+ 	evolution-data-server*   gnome-online-accounts
+ 	
+ 	##
+	cups*
+	
+
+ 	
+ 	## Editor de texto
+ 	gedit 	
+ 	
+ 	## Gnome
+	gnome-shell-common
+	gnome-remote-desktop
+	gnome-terminal
+	
+	##
+	gpg-agent 	
+ 	
+ 	##
+	ibus*
+	
+	##  Registra y reporta errores del núcleo
+	kerneloops 
+	
+	
+	## Protocolo de impresión en red que permite a las computadoras enviar trabajos de impresión a impresoras conectadas en red (aparece como lpd)
+	lpr
+	
+	##
+	modemmanager  
+
+	## Es un protocolo VPN de código abierto que utiliza técnicas de red privada virtual (VPN) para establecer conexiones seguras de sitio a sitio o de punto a punto
+	openvpn 
+	
+	##  Programas y controladores necesarios para el funcionamiento del Servidor Cloud
+	open-vm-tools
+	
+
 	## Intalador de paquetes facil y grafico" 
 	packagekit*
+	
+	## Gestión de servicios en el sistema de transporte QRTR (Qualcomm Remote Transport).
+	qrtr-tools
 
-	## Actualizador de paquetes facil y grafico"
-	update-manager 
+	
+	
+	
+	##
+	rsyslog 
+
+	##
+	rtkit
+	
+	##
+	remmina*	
+
+	## ?????
+	samba 
+
+ 	## 
+ 	snapd	
+ 	
+ 	##
+ 	switcheroo-control  
+ 	
+
+	## Terminales"
+	terminator 
+	xterm
+	gnome-terminal
+
 
 	## Thunderbird"
 	thunderbird 
 
-	## Intercepta crasheos de primera vez"
-	apport 
+	## The Tracker project is a open community of developers who maintain an efficient, privacy-respecting desktop search engine, available as Free Software.
+	tracker-miner-fs
+	tracker*	
+	
+	##
+	tumbler*
+	
+	## Actualizador de paquetes facil y grafico"
+	update-manager 
+	
+	##
+	power-profiles-daemon 
+
+
+	## paquete de servicio de Canonical para Ubuntu. Ofrece asistencia por niveles para implementaciones de escritorio, servidor y en la nube.
+	ubuntu-advantage*
+	
+	## 
+ 	ubuntu-pro-client*
+ 	ubuntu-release*
+	
+
+	
+	##
+	unattended-upgrades 
+	
+	## Vim"
+	vim* 
 
 	## Reporte de errores ubuntu"
 	whoopsie 
@@ -39,70 +145,30 @@ appBloat=(
 	## Reporte de hardware"
 	ubuntu-report 
 
-	## Terminales"
-	terminator 
-	xterm
-	gnome-terminal
-
-	## IDE VSCode open source"
-	codium 
-
-	## Vim"
-	vim* 
-
-	## ?????
-	samba 
-
-	## Es un protocolo VPN de código abierto que utiliza técnicas de red privada virtual (VPN) para establecer conexiones seguras de sitio a sitio o de punto a punto
-	openvpn 
-
-	## paquete de servicio de Canonical para Ubuntu. Ofrece asistencia por niveles para implementaciones de escritorio, servidor y en la nube.
-	ubuntu-advantage*
-	
-	##  Programas y controladores necesarios para el funcionamiento del Servidor Cloud
-	open-vm-tools
-	
-	## Servicio gnome para calendario, chat, documentos, correo 
- 	evolution-data-server*
- 	gnome-online-accounts 
- 	
- 	## 
- 	ubuntu-pro-client*
- 	ubuntu-release*
- 	
- 	## Editor de texto
- 	gedit
- 	
- 	## 
- 	snapd
 
 	##
-	cups*
-	
-	##
-	ibus*
 	xdg-desktop-portal
 	xdg-desktop-portal-gtk
+	xdg-desktop-portal-gnome
 
 
-	
-	## Gnome
-	gnome-shell-common
-	tracker*
-	gnome-remote-desktop
-	
-	
-	## The Tracker project is a open community of developers who maintain an efficient, privacy-respecting desktop search engine, available as Free Software.
-	tracker-miner-fs
-	
+
+
+
+
+
 	##
-	remmina*
-	
+	upower 
+
 	##
-	rtkit
-	
-	## 
-	at-spi2-core
+	colord
+
+
+
+
+
+
+
 )
 
 
@@ -110,7 +176,7 @@ appBloat=(
 for package in "${appBloat[@]}";
 do
 
-	union="$remove $package $y" 
+	union="$remove --purge $package $y" 
 	echo "
 	-------------------------------------------
 	Desinstalando $package...
@@ -144,15 +210,10 @@ echo "
 		cron
 		anacron.service 
 		
-		## Gestion de redes 2G/3G/4G/5G (Configuracion de Gnome se rompe)
-		ModemManager.service
-		
 		## Registra errores del kernel
 		systemd-pstore.service
 		
-		##
-		avahi-daemon.service
-		avahi-daemon.socket
+
 		
 
 		
@@ -166,32 +227,17 @@ echo "
 		
 		
 		
-		## Es un servicio del sistema que hace mas facil administrar, instalar, generar perfiles de color.
-		colord.service
 
 
-		## Gestiona la bateria y energia
-		upower.service
-		
-		## Impresion 
-		cups.service 
-		cups.browsed.service
-		cups-browsed.service
-		
-		## Registro y envio de errores
-		apport.service
+
 				
 		## Volumenes logicos
 		lvm2.service
 		lvm2-monitor.service
 		
-		## Permite cambiar en diferentes perfiles de energia
-		power-profiles-daemon.service 
-		
 
 		
-		## Gestion de paquetes de software
-		packagekit.service
+
 		
 		## SNAP
 		snapd.apparmor.service
@@ -205,9 +251,15 @@ echo "
 		snapd.snap-repair.service
 		snapd.system-shutdown.service
 		snap.lxd.activate.service
+		
+		
 
 		## OpenVPN
 		openvpn.service
+		
+		
+		
+		
 
 		## Es responsable de la recopilación de datos de uso de recursos del sistema, como la CPU, la memoria, el disco y la red, para su posterior análisis y generación de informes.
 		##atop
@@ -218,8 +270,7 @@ echo "
 		## Es el componente del sistema que gestiona las conexiones SSH entrantes y salientes en el servidor.
 		sshd
 
-		## Gestion de paquetes de software
-		packagekit.service 
+
 
 		## Entropia adicional / Generacion de numeros, Criptografia, seguridad
 		haveged
@@ -238,35 +289,16 @@ echo "
 		## Actualizaciones desatendidas
 		unattended-upgrades.service 
 
-		## Gestiona la impresora
-		lpd
-
-		## Registra los mensajes del sistema
-		rsyslog.service 
-
-		## Soporte empresarial de Ubuntu Pro, soporte tecnico
-		ubuntu-advantage.service 
-
 		## Supervisa y gestiona/optimiza almacenamiento 
 		multipathd.service
-
-		## Toggle gpu integrada y dedicada
-		switcheroo-control
-
-		## Registro y envio de errores en el kernel
-		kerneloops
 
 		## Contenedores
 		lxcfs.service 
 
 		## Es el uso de componentes de red de almacenamiento responsables del proceso de transferencia de datos entre el servidor y el almacenamiento
 		multipathd.service
-
-		## Permite a los programas acceder y administrar la información de las cuentas de usuario a través de D-Bus de forma estandarizada, sin importar cómo se proporcionen realmente al sistema.
-		#accounts-daemon.service
 			
-		## DM
-		gdm3
+
 
 		## Sensores
 		lm-sensors.service 
@@ -292,19 +324,11 @@ echo "
 		
 		## SMART Disk Monitoring Daemon
 		smartmontools.service 
-		
-		## Acceso remoto
-		gnome-remote-desktop.service
-		
-		## ???
-		qrtr-ns.service
-		
+				
 		## Monitoriza y controla procesos antes del OOM (Out Of Memory) en el espacio del kernel
 		systemd-oomd.service
 		
-		## 
-		accounts-daemon.service
-		
+
 		
 		
 		## ---------------------------------------------------
@@ -363,9 +387,6 @@ echo "
 
 	## systemctl --user mask ssh-agent.service ## PENDIENTE INVESTIGAR  
 
-	## Soporte para la accesibilidad / asistencia
-	systemctl --user mask at-spi-dbus-bus.service 
-	systemctl --user mask at-spi2-registryd.service
 
 
 
