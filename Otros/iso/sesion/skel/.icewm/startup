@@ -1,32 +1,33 @@
 #!/bin/bash
 
-## Polkit
+## Agente de autenticación de PolicyKit
 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 
-## Luz calida
-#redshift -O 4250K -r -P &
+## Depósito de claves de GNOME: Servicio de secretos
+/usr/bin/gnome-keyring-daemon --start --components=secrets &
 
-## Brillo al minimo
-brightnessctl s 0 &
+## Certificados y almacenamiento de claves
+/usr/bin/gnome-keyring-daemon --start --components=pkcs11 &
 
 ## Portapapeles
 parcellite &
 
-## Salvapantallas
-#xscreensaver -nosplash &
-
-
 ##----------------------------------------
-
-## Cambios de distribucion de teclado us/latam
-$HOME/.config/scripts/toggle_us_latam.sh &
-
-## Ajuste sin DM
-dbus-update-activation-environment DISPLAY &
 
 ## NumBloq Activado 
 numlockx &
 
-## Escritorio
-pcmanfm --desktop &
+## Brillo al minimo
+brightnessctl s 0 &
 
+## Cambios de distribucion de teclado us/latam (ALT+SHIFT)
+$HOME/.config/scripts/toggle_us_latam.sh &
+
+## Salvapantallas
+#xscreensaver -nosplash &
+
+## Luz calida
+#redshift -O 4250K -r -P &
+
+## Ajuste sin DM
+#dbus-update-activation-environment DISPLAY &

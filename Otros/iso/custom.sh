@@ -80,8 +80,15 @@ then
 	echo "Existe el ajuste, omitiendo este paso..."
 else
 	echo "
+## Ajuste resolucion pantalla
 sh -c 'xrandr --output Virtual-1 --mode 1360x768' &
+
+## Generacion de carpetas
 xdg-user-dirs-update &
+
+## Escritorio
+pcmanfm --desktop &
+
 " >>  /home/live/.icewm/startup 
 
 fi
