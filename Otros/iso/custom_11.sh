@@ -100,13 +100,13 @@ fi
 
 
 ########## AJUSTE PERMISOS APAGADO/REINICIO/SUSPENSION
-#mkdir -p /etc/sudoers.d/
+mkdir -p /etc/sudoers.d/
 
-#echo "
-#%users ALL=(ALL) NOPASSWD: /sbin/reboot
-#%users ALL=(ALL) NOPASSWD: /sbin/poweroff
-#%users ALL=(ALL) NOPASSWD: /usr/sbin/pm-suspend
-#" > /etc/sudoers.d/icewm
+echo "
+%users ALL=(ALL) NOPASSWD: /sbin/reboot
+%users ALL=(ALL) NOPASSWD: /sbin/poweroff
+%users ALL=(ALL) NOPASSWD: /usr/sbin/pm-suspend
+" > /etc/sudoers.d/icewm
 
 	
 
