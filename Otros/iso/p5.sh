@@ -8,7 +8,8 @@ echo "
 ########################################################################
 "
 
-
+## Eliminacion rastros anteriores
+rm -r /home/live/
 
 ## Creacion de la carpeta por si no existe
 mkdir -p /etc/skel
@@ -36,7 +37,7 @@ then
 
 
 	## Aplicacion
-	#cp ./calamares.desktop /home/live/Desktop/Instalar.desktop
+	#??????cp ./instaladorCalamares/calamares.desktop /home/live/Desktop/Instalar.desktop
 	
 	## Configuracion general
 	cp ./instaladorCalamares/settings.conf /etc/calamares/

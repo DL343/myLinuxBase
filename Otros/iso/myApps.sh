@@ -7,7 +7,8 @@ sudo apt upgrade -y
 
 sudo apt -y install xorg	bash-completion 	htop 		btop		fastfetch 		gparted 	\
 btrfs-progs 		mtools 		geany		pcmanfm		sakura	\
-nano 		gvfs		xarchiver		policykit-1-gnome		ufw 	
+nano 		gvfs		xarchiver		policykit-1-gnome		
+##ufw 	
 
 
 

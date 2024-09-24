@@ -107,7 +107,7 @@
 # ClockClassHint="icewm.XClock"
 
 #  Command to run on clock.
-# ClockCommand="xclock -name icewm -title Clock"
+ ClockCommand="zenity --calendar"
 
 #  Confirm logout.
 # ConfirmLogout=1 # 0/1
@@ -878,10 +878,10 @@ TaskBarShowMailboxStatus=0 # 0/1
 # TaskBarShowNetStatus=1 # 0/1
 
 #  Show 'show desktop' button on taskbar (value of 2 to put after the clock)
-# TaskBarShowShowDesktopButton=1 # [0-2]
+ TaskBarShowShowDesktopButton=0 # [0-2]
 
 #  Show 'Start' menu on task bar.
-# TaskBarShowStartMenu=1 # 0/1
+ TaskBarShowStartMenu=0 # 0/1
 
 #  Show transient (dialogs, ...) windows on task bar.
 # TaskBarShowTransientWindows=1 # 0/1
@@ -893,7 +893,7 @@ TaskBarShowMailboxStatus=0 # 0/1
 # TaskBarShowWindowIcons=1 # 0/1
 
 #  Show 'window list' menu on task bar.
-# TaskBarShowWindowListMenu=1 # 0/1
+ TaskBarShowWindowListMenu=0 # 0/1
 
 #  Show windows on the taskbar.
 # TaskBarShowWindows=1 # 0/1
@@ -905,13 +905,13 @@ TaskBarShowMailboxStatus=0 # 0/1
 # TaskBarTaskGrouping=0 # [0-3]
 
 #  Enable mouse wheel cycling over workspaces and task buttons in taskbar.
-# TaskBarUseMouseWheel=1 # 0/1
+ TaskBarUseMouseWheel=0 # 0/1
 
 #  Task bar width as percentage of the screen width.
 # TaskBarWidthPercentage=100 # [0-100]
 
 #  Place workspace pager on left, not right.
-# TaskBarWorkspacesLeft=1 # 0/1
+#TaskBarWorkspacesLeft=1 # 0/1
 
 #  Limit number of taskbar workspaces.
 # TaskBarWorkspacesLimit=""
@@ -1378,7 +1378,7 @@ WorkspaceNames=" 1 ", " 2 "
 # ShowMenuButtonIcon=1 # 0/1
 
 #  Dimension of the small icons.
-# SmallIconSize=16 # [8-128]
+#SmallIconSize=16 # [8-128]
 
 #  Name of the status display font.
 # StatusFontName="-misc-dejavu sans mono-bold-r-normal--12-*-*-*-*-*-*-*"

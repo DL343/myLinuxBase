@@ -40,7 +40,7 @@ key Super+Enter                 x-terminal-emulator
 key Super+f                     pcmanfm
 key Super+e                     geany
 key Ctrl+Shift+Escape           sakura -x htop
-key Super+Space                 rofi -modi drun,run -show-icons -theme /usr/share/rofi/themes/gruvbox-dark-hard.rasi -font 'URW Gothic 14'  -show drun
+key Super+Space                 rofi -modi drun,run -show-icons -theme /usr/share/rofi/themes/Monokai.rasi -font 'mono 14' -show drun
 key Super+Alt+v                 pavucontrol
 
 ################ CAPTURA PANTALLA ################ 

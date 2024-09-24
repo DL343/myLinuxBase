@@ -23,6 +23,9 @@ brightnessctl s 0 &
 ## Cambios de distribucion de teclado us/latam (ALT+SHIFT)
 $HOME/.config/scripts/toggle_us_latam.sh &
 
+## Nitrogen
+nitrogen --restore
+
 ## Salvapantallas
 #xscreensaver -nosplash &
 

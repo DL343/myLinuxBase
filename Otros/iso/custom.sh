@@ -73,8 +73,12 @@ then
 	################################## ICEWM  ##############################
 	########################################################################
 	"	
+	
+apt -y install xorg
+apt -y install sakura   
+apt -y install icewm --no-install-recommends 
 
-######## AJUSTE RESOLUCION
+######## AJUSTE CONFIGURACIONES SOLO EN LIVE
 if grep -q "sh -c 'xrandr --output Virtual-1 --mode 1360x768'" /home/live/.icewm/startup
 then
 	echo "Existe el ajuste, omitiendo este paso..."

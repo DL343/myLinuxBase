@@ -47,7 +47,11 @@ if grep -q "/bin/loc-oswelcome.sh" /home/live/.icewm/startup
 then
 	echo "Existe el ajuste, omitiendo este paso..."
 else
-	echo "/bin/loc-oswelcome.sh" >>  /home/live/.icewm/startup 
+	echo "
+## Script inicio
+/bin/loc-oswelcome.sh
+
+" >>  /home/live/.icewm/startup 
 fi
 
 
