@@ -37,6 +37,7 @@ key XF86MonBrightnessUp         brightnessctl s 10%+
 ################ GENERAL ################ 
 key Ctrl+Alt+t                  x-terminal-emulator
 key Super+Enter                 x-terminal-emulator
+key Super+t                     x-terminal-emulator
 key Super+f                     pcmanfm
 key Super+e                     geany
 key Ctrl+Shift+Escape           sakura -x htop

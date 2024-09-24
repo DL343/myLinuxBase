@@ -6,11 +6,11 @@ echo "
 ########################################################################
 "
 ## IMG: Icono 
-##cp ./LO/Calamares/calamares-loc-os.png /home/live/
+#cp ./LO/Calamares/calamares-loc-os.png /home/live/
 #
 
 ## Entrada en el escritorio
-##cp ./LO/Calamares/install.desktop /home/live/Desktop
+cp ./LO/Calamares/install.desktop /home/live/Desktop/install.desktop
 #
 
 
