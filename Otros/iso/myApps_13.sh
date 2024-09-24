@@ -15,11 +15,11 @@ nano 		gvfs		xarchiver		policykit-1-gnome
 
 
 
-sudo apt install gcr unar keyutils ncdu p7zip-full lm-sensors inxi  xdg-user-dirs lxappearance lxrandr \
+sudo apt -y install gcr unar keyutils ncdu p7zip-full lm-sensors inxi  xdg-user-dirs lxappearance lxrandr \
 parcellite 	rofi  	flameshot	mirage	nitrogen	redshift	bleachbit    mpv      audacious      	console-data        
 
 
-sudo apt install volumeicon-alsa numlockx
+sudo apt -y install volumeicon-alsa numlockx
 
 
 if [ "$(sed -n '/Option "Tapping" "true"/p' /usr/share/X11/xorg.conf.d/40-libinput.conf)" == 'Option "Tapping" "true"' ]; then 
@@ -62,7 +62,7 @@ echo '
 ########################################################################
 '
 
-sudo apt install  libconfig++9v5 libffado2 liblua5.4-0 libpipewire-0.3-modules libroc0.3 libspeexdsp1 libwireplumber-0.4-0 libxml++2.6-2v5 pipewire pipewire-bin pipewire-pulse  wireplumber  pulseaudio-utils  wireplumber-doc	pavucontrol 
+sudo apt -y install libconfig++9v5 libffado2 liblua5.4-0 libpipewire-0.3-modules libroc0.3 libspeexdsp1 libwireplumber-0.4-0 libxml++2.6-2v5 pipewire pipewire-bin pipewire-pulse  wireplumber  pulseaudio-utils  wireplumber-doc	pavucontrol 
 
 
 
@@ -108,7 +108,7 @@ echo '
 	echo "## Instalando paquetes para bluetooth..."
 
 	###               Soporte basico para bluetooth       Interfaz grafica para la gestion
-	sudo apt install  bluez                               blueman -y
+	sudo apt -y install  bluez                               blueman -y
 	
 
 	
@@ -153,16 +153,17 @@ echo "
 ########################################################################
 "
 
-sudo apt install chromium waterfox
+sudo apt -y install chromium waterfox
 
 
 
 
+sudo apt -y remove --purge avahi-daemon   git  at-spi2-core  rtkit \
+xdg-desktop-portal   xdg-desktop-portal-gtk
 
-sudo apt remove avahi-daemon   git  at-spi2-core  rtkit
-sudo apt remove xdg-desktop-portal   xdg-desktop-portal-gtk
 
 
-#sudo apt remove cron
-#sudo apt remove aspell-es chafa cups-pk-helper debian-reference-es debian-reference-common fonts-liberation ispanish task-spanish manpages-es system-config-printer system-config-printer-common  system-config-printer-udev python3-cupshelpers python3-cups python3-smbc 
-## python3-gi-cairo python3-cairo
+apt -y remove --purge aspell-es chafa cups-pk-helper debian-reference-es \
+debian-reference-common fonts-liberation ispanish task-spanish \
+manpages-es system-config-printer system-config-printer-common \
+system-config-printer-udev  python3-cupshelpers python3-cups
