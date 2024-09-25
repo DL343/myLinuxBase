@@ -635,7 +635,7 @@ function lowPowerPrefix(){
 	"
 	
 	## Asegurar instalacion
-	install cpufrequtils  
+	apt -y install cpufrequtils  
 
 	## Creacion del directorio por si no existe
 	mkdir -p ~/.config/scripts/
