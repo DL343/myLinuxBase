@@ -40,7 +40,6 @@ function appsMinimal(){
 		xorg
 		bash-completion 
 		htop 
-		btop
 		##neofetch 
 		gparted 
 		btrfs-progs ## Herramientas para manejar el sistema de archivos Btrfs.
@@ -62,14 +61,12 @@ function appsMinimal(){
 
 	for package in "${myAppsMinimal[@]}"
 	do
-
-		union="$install $package $y"
 		echo "
 		-------------------------------------------
 		Instalando $package...
 		-------------------------------------------
 		"
-		$union
+		$install $package $y
 
 	done
 	
@@ -90,7 +87,6 @@ myApps=(
 	keyutils ## Utilidades para gestionar claves y conjuntos de claves en el kernel de Linux.
 	ncdu
 	p7zip-full
-	lm-sensors 
 	inxi  
 	xdg-user-dirs		  										  
 	lxappearance 
@@ -108,18 +104,14 @@ myApps=(
 	redshift
 	numlockx
 	volumeicon-alsa
-	##grimshot
-	
-	#qalculate-gtk          
+       
 	bleachbit      					 
-	#evince            
-	#firefox-esr      
+            
 	mpv               
 	audacious      
-	console-data                     
-	##gnome-paint       
+	console-data                         
 	#xscreensaver 
-
+	#evince  
 
 
 
@@ -132,15 +124,12 @@ myApps=(
 
 	for package in "${myApps[@]}"
 	do
-
-		union="$install $package $y"
 		echo "
 		-------------------------------------------
 		Instalando $package...
 		-------------------------------------------
 		"
-		
-		$union
+		$install $package $y
 
 	done
 
@@ -171,7 +160,6 @@ echo '
             GENERACION DE CARPETAS DE USUARIO BASICAS
 ########################################################################
 '
-
 
 ## Configuracion
 xdg-user-dirs-update 
@@ -316,43 +304,7 @@ sudo ufw enable
 
 #echo "############################## PCMANFM ################################" 
 
-echo "## Asegurar instalacion"
-sudo apt install pcmanfm -y
 
-mkdir -p $HOME/.config/pcmanfm/default/
-
-echo "
-[config]
-bm_open_method=0
-
-[volume]
-mount_on_startup=1
-mount_removable=1
-autorun=1
-
-[ui]
-always_show_tabs=1
-max_tab_chars=32
-win_width=640
-win_height=480
-maximized=1
-splitter_pos=150
-media_in_new_tab=0
-desktop_folder_new_win=0
-change_tab_on_drop=1
-close_on_unmount=1
-focus_previous=0
-side_pane_mode=places
-view_mode=list
-show_hidden=1
-sort=name;ascending;
-toolbar=newtab;navigation;home;
-show_statusbar=1
-pathbar_mode_buttons=0
-
-" > $HOME/.config/pcmanfm/default/pcmanfm.conf
-
-echo "## Listo"
 
 ### Establecer terminal por defecto
 #mkdir -p $HOME/.config/xfce4/
@@ -392,58 +344,51 @@ do
 done
 '
 
-if [ "$isPipeWire" == "y" ] || [ "$isPipeWire" == "" ]; then
+if which pipewire
+then
+	echo "::::: Existe PIPEWIRE, omitiendo esta seccion"
+else
 
-	if [ $(command -v pulseaudio) &>/dev/null ]; then                      #### PENDIENTE DE COMPROBAR SI FUNCIONA
-		## PulseAudio detectado. Desinstalando...
-		systemctl --user --now disable pulseaudio.service pulseaudio.socket
-	else 
-		echo "No existe pulseaudio, continuando al siguiente paso..."
+
+	if [ "$isPipeWire" == "y" ] || [ "$isPipeWire" == "" ]; then
+
+
+		## 2. SERVIDOR DE AUDIO
+		### PIPEWIRE
+		## // Paso 1.  Instalacion
+		
+			if [ $(command -v pulseaudio) &>/dev/null ]; then  
+
+		appsPipewire=(
+			pipewire-audio
+			wireplumber 
+			pipewire-pulse 
+			pipewire-alsa 
+			libspa-0.2-bluetooth 
+			pavucontrol 
+		)
+		
+		for package in "${appsPipewire[@]}";
+		do
+			echo "
+			-------------------------------------------
+			Instalando $package...
+			-------------------------------------------
+			"
+			$install $package $y
+		done
+		
+
+		## // Paso 2.  Configuracion
+		systemctl --user --now enable pipewire pipewire-pulse  
+		systemctl --user --now enable wireplumber.service
+
+		else
+		
+		echo "## No se instalara PipeWire"
 	fi
 
-	## 2. SERVIDOR DE AUDIO
-	### PIPEWIRE
-	## // Paso 1.  Instalacion
-
-	appsPipewire=(
-		pipewire-audio
-		wireplumber 
-		pipewire-pulse 
-		pipewire-alsa 
-		libspa-0.2-bluetooth 
-		pavucontrol 
-	)
-	
-	for package in "${appsPipewire[@]}";
-	do
-
-		union="$install $package $y"
-		echo "
-		-------------------------------------------
-		Instalando $package...
-		-------------------------------------------
-		"
-		
-		$union
-	
-	done
-	
-
-	## // Paso 2.  Configuracion
-	systemctl --user --now enable pipewire pipewire-pulse  
-	systemctl --user --now enable wireplumber.service
-
-	else
-	
-	echo "## No se instalara PipeWire"
 fi
-
-
-## Configuracion volumen
-amixer sset Master 100%
-
-
-
 
 
 
@@ -497,7 +442,7 @@ echo '
 
 if [ "$isBluetooth" == "y" ] || [ "$isBluetooth" == "" ]; then
 
-	echo "## Instalando paquetes para bluetooth..."
+	echo "::::: Instalando paquetes para bluetooth..."
 
 	###               Soporte basico para bluetooth       Interfaz grafica para la gestion
 	sudo apt install  bluez                               blueman -y
@@ -508,7 +453,7 @@ if [ "$isBluetooth" == "y" ] || [ "$isBluetooth" == "" ]; then
 	
 else 
 	 
-	echo "## No se instalaran los paquetes para bluetooth"
+	echo "::::: No se instalaran los paquetes para bluetooth"
 	
 fi
 
@@ -522,7 +467,7 @@ echo '
 ########################################################################
 '
 
-echo '## Deshabilitar "interfaces"'
+echo '::::: Deshabilitando "interfaces"...'
 sudo mv /etc/network/interfaces /etc/network/interfaces.old
 
 
@@ -539,11 +484,11 @@ echo "
 ## Ajuste swappines 
 if grep -q 'vm.swappiness=' /etc/sysctl.conf
 then
-	echo "Texto encontrado, ajustando..."
+	echo "::::: Texto encontrado, ajustando..."
 	sudo sed -i '/vm.swappiness=/c vm.swappiness=15' /etc/sysctl.conf
 
 else
-	echo "Texto no encontrado, añadiendo..."
+	echo "::::: Texto no encontrado, añadiendo..."
 	echo "vm.swappiness=15" | sudo tee -a /etc/sysctl.conf > /dev/null
 	
 fi
@@ -611,7 +556,7 @@ icon-theme-name = Adwaita
 
 
 ## Desactivar la ocultacion de los usuarios disponibles
-sudo sed -i 's/greeter-hide-users=true/greeter-hide-users=false/g' /usr/share/lightdm/lightdm.conf.d/01_debian.conf 
+sudo sed -i '/greeter-hide-users=/c greeter-hide-users=false' /usr/share/lightdm/lightdm.conf.d/01_debian.conf 
 
 
 

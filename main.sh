@@ -20,9 +20,7 @@ export isMinimal
 read -p "¿Instalar soporte para Bluetooth? [y/n] " isBluetooth
 export isBluetooth
 
-read -p "¿Instalar PipeWire? 
-(Se removera PulseAudio si es que existe) 
-[y/n] " isPipeWire
+read -p "¿Instalar PipeWire? [y/n] " isPipeWire
 export isPipeWire
 
 read -p "¿Instalar TLP(Ahorro de bateria)? [y/n] " isTlp
