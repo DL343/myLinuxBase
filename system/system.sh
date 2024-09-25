@@ -1,6 +1,6 @@
 #!/bin/bash
 
-install="sudo apt install"
+install=" apt install"
 
 y="-y"
 
@@ -15,7 +15,7 @@ echo "
 ########################################################################
 "
 
-sudo apt update
+ apt update
 
 
 
@@ -136,9 +136,9 @@ myApps=(
 
 	echo "## Brave" 
 	$install curl -y
-	sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-	echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-	sudo apt update
+	 curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+	echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"| tee /etc/apt/sources.list.d/brave-browser-release.list
+	 apt update
 	$install brave-browser -y
 	
 	
@@ -152,7 +152,7 @@ echo '
 ########################################################################
 '
 
-##sudo systemctl enable preload.service
+## systemctl enable preload.service
 
 
 echo '
@@ -179,7 +179,7 @@ if [ "$(sed -n '/Option "Tapping" "true"/p' /usr/share/X11/xorg.conf.d/40-libinp
 else 
 
    echo "No existe la configuracion, aplicando...."
-   sudo sed -i '/Identifier "libinput touchpad catchall"/a Option "Tapping" "true"' /usr/share/X11/xorg.conf.d/40-libinput.conf
+    sed -i '/Identifier "libinput touchpad catchall"/a Option "Tapping" "true"' /usr/share/X11/xorg.conf.d/40-libinput.conf
 
    echo "Listo"
 fi
@@ -200,13 +200,13 @@ fi
 
 	#echo "######## Bateria detectada ########"   
 	#echo "## Se instalan los paquetes 'brightnessctl' y 'acpi'"  
-	#sudo apt -y install brightnessctl acpi 											 
+	# apt -y install brightnessctl acpi 											 
 	
 
 	#echo '############### XSCREENSAVER PARA LAPTOP ####################'
 		## Apagar y bloquear la pantalla después de 1 minuto de inactividad:
 		### Asegurar instalacion
-		#sudo apt -y install xscreensaver 
+		# apt -y install xscreensaver 
 		### Configuracion 
 		#cp system/xScreenSaver/xSSLatop $HOME/.xscreensaver 
 
@@ -218,7 +218,7 @@ fi
 	#echo '############### XSCREENSAVER PARA PC ####################'
 		## Apagar y bloquear la pantalla después de 1 minuto de inactividad:
 		### Asegurar instalacion
-		#sudo apt -y install xscreensaver
+		# apt -y install xscreensaver
 		### Configuracion 
 		#cp system/xScreenSaver/xSSPC $HOME/.xscreensaver 
 
@@ -271,7 +271,7 @@ echo "
                GENERANDO ACTUALILACION DEL SISTEMA
 ########################################################################
 "
-sudo apt upgrade -y
+ apt upgrade -y
 
 
 
@@ -286,16 +286,16 @@ echo "
 
 
 ## Permitir el trafico saliente
-sudo ufw default allow outgoing
+ ufw default allow outgoing
 
 ## Bloquear el trafico entrante
-sudo ufw default deny incoming
+ ufw default deny incoming
 
 ## Permitir trafico ssh
-#sudo ufw allow ssh
+# ufw allow ssh
 
 # Activacion ufw
-sudo ufw enable 
+ ufw enable 
 
 
 
@@ -310,6 +310,8 @@ sudo ufw enable
 #mkdir -p $HOME/.config/xfce4/
 
 #echo "TerminalEmulator=sakura" >> $HOME/.config/xfce4/helpers.rc
+
+
 
 
 echo '
@@ -344,21 +346,22 @@ do
 done
 '
 
+
+
 if which pipewire
 then
 	echo "::::: Existe PIPEWIRE, omitiendo esta seccion"
 else
 
 
-	if [ "$isPipeWire" == "y" ] || [ "$isPipeWire" == "" ]; then
+	if [ "$isPipeWire" == "y" ] || [ "$isPipeWire" == "" ]
+	then
 
 
 		## 2. SERVIDOR DE AUDIO
 		### PIPEWIRE
 		## // Paso 1.  Instalacion
 		
-			if [ $(command -v pulseaudio) &>/dev/null ]; then  
-
 		appsPipewire=(
 			pipewire-audio
 			wireplumber 
@@ -368,7 +371,7 @@ else
 			pavucontrol 
 		)
 		
-		for package in "${appsPipewire[@]}";
+		for package in "${appsPipewire[@]}"
 		do
 			echo "
 			-------------------------------------------
@@ -383,12 +386,17 @@ else
 		systemctl --user --now enable pipewire pipewire-pulse  
 		systemctl --user --now enable wireplumber.service
 
-		else
+	else
 		
 		echo "## No se instalara PipeWire"
+	
 	fi
 
 fi
+
+
+
+
 
 
 
@@ -399,10 +407,10 @@ echo '
                       CONFIGURACION DE GRUB
 ########################################################################'
 ### Contador a 1 segundo
-sudo sed -i '/GRUB_TIMEOUT=/c GRUB_TIMEOUT=1' /etc/default/grub
+ sed -i '/GRUB_TIMEOUT=/c GRUB_TIMEOUT=1' /etc/default/grub
 
 ### Guardar la ultima particion seleccionada
-sudo sed -i '/GRUB_DEFAULT=/c GRUB_DEFAULT=saved/g' /etc/default/grub
+ sed -i '/GRUB_DEFAULT=/c GRUB_DEFAULT=saved/g' /etc/default/grub
 
 if grep -q "GRUB_SAVEDEFAULT=true" /etc/default/grub
 then
@@ -411,24 +419,24 @@ then
 
 else
 
-	sudo sed -i '/GRUB_DEFAULT=saved/a GRUB_SAVEDEFAULT=true' /etc/default/grub
+	 sed -i '/GRUB_DEFAULT=saved/a GRUB_SAVEDEFAULT=true' /etc/default/grub
 
 fi
 
 ### Wallpaper grub
 #### Copiar...
-sudo cp ./Apps/grub/* /boot/grub/imgGrub.jpg
+ cp ./Apps/grub/* /boot/grub/imgGrub.jpg
 #### Añade al final
-sudo sed -i '$a GRUB_BACKGROUND="/boot/grub/imgGrub.jpg"' /etc/default/grub
+ sed -i '$a GRUB_BACKGROUND="/boot/grub/imgGrub.jpg"' /etc/default/grub
 
 #### Mostrar informacion mas detallada
-sudo sed -i '/GRUB_DISTRIBUTOR=/c GRUB_DISTRIBUTOR=`lsb_release -d -s 2> \/dev\/null || echo Debian`' /etc/default/grub
+ sed -i '/GRUB_DISTRIBUTOR=/c GRUB_DISTRIBUTOR=`lsb_release -d -s 2> \/dev\/null || echo Debian`' /etc/default/grub
 
-sudo sed -i '/GRUB_CMDLINE_LINUX_DEFAULT=/c GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"' /etc/default/grub
+ sed -i '/GRUB_CMDLINE_LINUX_DEFAULT=/c GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"' /etc/default/grub
 
 
 ## Actualizar cambios a grub
-sudo update-grub
+ update-grub
 
 
 
@@ -445,11 +453,11 @@ if [ "$isBluetooth" == "y" ] || [ "$isBluetooth" == "" ]; then
 	echo "::::: Instalando paquetes para bluetooth..."
 
 	###               Soporte basico para bluetooth       Interfaz grafica para la gestion
-	sudo apt install  bluez                               blueman -y
+	 apt install  bluez                               blueman -y
 	
 	### Iniciar y habilitar el servicio 
-	sudo systemctl start bluetooth.service 
-	sudo systemctl enable bluetooth.service 
+	 systemctl start bluetooth.service 
+	 systemctl enable bluetooth.service 
 	
 else 
 	 
@@ -468,7 +476,7 @@ echo '
 '
 
 echo '::::: Deshabilitando "interfaces"...'
-sudo mv /etc/network/interfaces /etc/network/interfaces.old
+ mv /etc/network/interfaces /etc/network/interfaces.old
 
 
 
@@ -485,11 +493,11 @@ echo "
 if grep -q 'vm.swappiness=' /etc/sysctl.conf
 then
 	echo "::::: Texto encontrado, ajustando..."
-	sudo sed -i '/vm.swappiness=/c vm.swappiness=15' /etc/sysctl.conf
+	 sed -i '/vm.swappiness=/c vm.swappiness=15' /etc/sysctl.conf
 
 else
 	echo "::::: Texto no encontrado, añadiendo..."
-	echo "vm.swappiness=15" | sudo tee -a /etc/sysctl.conf > /dev/null
+	echo "vm.swappiness=15" |  tee -a /etc/sysctl.conf > /dev/null
 	
 fi
 
@@ -511,15 +519,15 @@ echo "
 
 echo '###### HABILITAR EL DM ######'
 if [ "$isInit" ==  "systemd" ]; then
-	sudo systemctl enable lightdm.service
+	 systemctl enable lightdm.service
 elif [ "$isInit" ==  "init" ]; then
-	sudo update-rc.d -f lightdm defaults
+	 update-rc.d -f lightdm defaults
 fi
 
 echo '###### PERSONALIZACION ######' 
 
 ## Configuracion de greeter
-sudo sed -i '/# greeter-session=lightdm-gtk-greeter-settings/cgreeter-session=lightdm-gtk-greeter-settings' /etc/lightdm/lightdm.conf 
+ sed -i '/# greeter-session=lightdm-gtk-greeter-settings/cgreeter-session=lightdm-gtk-greeter-settings' /etc/lightdm/lightdm.conf 
 
 ## Copiado de wallpaper aleatorio
 carpeta="./wallpapers"
@@ -543,7 +551,7 @@ fi
 indice=$(( RANDOM % ${#imagenes[@]} ))
 imagenSeleccionada="${imagenes[$indice]}"
 
-sudo cp "$imagenSeleccionada" /usr/share/pixmaps/lightdm.jpg
+ cp "$imagenSeleccionada" /usr/share/pixmaps/lightdm.jpg
 
 ## Configuracion del wallpaper
 echo '[greeter]
@@ -551,12 +559,12 @@ background = /usr/share/pixmaps/lightdm.jpg
 theme-name = Adwaita-dark
 icon-theme-name = Adwaita
 
-' | sudo tee /etc/lightdm/lightdm-gtk-greeter.conf
+' |  tee /etc/lightdm/lightdm-gtk-greeter.conf
 
 
 
 ## Desactivar la ocultacion de los usuarios disponibles
-sudo sed -i '/greeter-hide-users=/c greeter-hide-users=false' /usr/share/lightdm/lightdm.conf.d/01_debian.conf 
+ sed -i '/greeter-hide-users=/c greeter-hide-users=false' /usr/share/lightdm/lightdm.conf.d/01_debian.conf 
 
 
 
@@ -574,7 +582,7 @@ then
 
 	echo "## Configurando modo ahorro de energia..."
 	
-    sudo cp ./Apps/tlp/powerSaveTLP /etc/tlp.conf 
+     cp ./Apps/tlp/powerSaveTLP /etc/tlp.conf 
 
 	echo "## Modo ahorro de energia aplicando correctamente!"
 		
@@ -592,10 +600,10 @@ then
 
 	echo "## Instalacion de TLP..."
 
-	sudo apt install tlp -y
+	 apt install tlp -y
 	
 	echo "## Habilitando servicio..."
-	sudo systemctl enable tlp
+	 systemctl enable tlp
 	TlpPowerSave
 
 else
@@ -635,13 +643,13 @@ function lowPowerPrefix(){
 	## Configuracion e inyeccion del script
 	echo '#!/bin/bash
 
-	sudo cpufreq-set -c  0 -u 1.8GHz
-	sudo cpufreq-set -c  5 -u 1.8GHz
-	sudo cpufreq-set -c  7 -u 1.8GHz
+	 cpufreq-set -c  0 -u 1.8GHz
+	 cpufreq-set -c  5 -u 1.8GHz
+	 cpufreq-set -c  7 -u 1.8GHz
 
-	sudo cpufreq-set -c  0 -g ondemand
-	sudo cpufreq-set -c  5 -g ondemand
-	sudo cpufreq-set -c  7 -g ondemand
+	 cpufreq-set -c  0 -g ondemand
+	 cpufreq-set -c  5 -g ondemand
+	 cpufreq-set -c  7 -g ondemand
 
 	' > ~/.config/scripts/low_power.sh
 
@@ -677,31 +685,31 @@ function lowPowerPrefix(){
 	WantedBy=multi-user.target
 
 
-	' | sudo tee /etc/systemd/system/low_power.service
+	' |  tee /etc/systemd/system/low_power.service
 
 
 
 	## Habilitando el servicio en systemd
-	sudo systemctl enable low_power.service
+	 systemctl enable low_power.service
 
 
 	: " POWER SUPER SAVE
 
-	sudo cpufreq-set -c  0 -u 1.2GHz
-	sudo cpufreq-set -c  5 -u 1.2GHz
-	sudo cpufreq-set -c  7 -u 1.2GHz
+	 cpufreq-set -c  0 -u 1.2GHz
+	 cpufreq-set -c  5 -u 1.2GHz
+	 cpufreq-set -c  7 -u 1.2GHz
 
-	sudo cpufreq-set -c  0 -u 1.4GHz
-	sudo cpufreq-set -c  5 -u 1.4GHz
-	sudo cpufreq-set -c  7 -u 1.4GHz
+	 cpufreq-set -c  0 -u 1.4GHz
+	 cpufreq-set -c  5 -u 1.4GHz
+	 cpufreq-set -c  7 -u 1.4GHz
 
-	sudo cpufreq-set -c  0 -u 1.8GHz
-	sudo cpufreq-set -c  5 -u 1.8GHz
-	sudo cpufreq-set -c  7 -u 1.8GHz
+	 cpufreq-set -c  0 -u 1.8GHz
+	 cpufreq-set -c  5 -u 1.8GHz
+	 cpufreq-set -c  7 -u 1.8GHz
 
-	sudo cpufreq-set -c  0 -g ondemand
-	sudo cpufreq-set -c  5 -g ondemand
-	sudo cpufreq-set -c  7 -g ondemand
+	 cpufreq-set -c  0 -g ondemand
+	 cpufreq-set -c  5 -g ondemand
+	 cpufreq-set -c  7 -g ondemand
 
 
 	1.8Ghz = max 11.6 W 
@@ -775,7 +783,7 @@ function alacritty(){
 
 #~ chmod +x $HOME/.config/scripts/batteryCheck.sh
 
-#~ sudo sed -i '$a */2 *  *  *  *   '"$USER"'   '"$HOME"'/.config/scripts/batteryCheck.sh' /etc/crontab
+#~  sed -i '$a */2 *  *  *  *   '"$USER"'   '"$HOME"'/.config/scripts/batteryCheck.sh' /etc/crontab
 
 
 
