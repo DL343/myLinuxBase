@@ -47,7 +47,6 @@ function appsMinimal(){
 		geany
 		pcmanfm
 		sakura
-		network-manager-gnome
 		nano 
 		gvfs
 		xarchiver
@@ -55,6 +54,7 @@ function appsMinimal(){
 		ufw 	
 		lightdm
 		lightdm-gtk-greeter	
+		network-manager-gnome
 		
 	)
 
@@ -99,20 +99,20 @@ myApps=(
 	parcellite 
 	rofi  
 	flameshot
-	mirage
 	nitrogen
 	redshift
 	numlockx
 	volumeicon-alsa
        
-	bleachbit      					 
-            
-	mpv               
-	audacious      
+    					 
+    bleachbit     
+	mpv  
+	mirage             
+     
 	console-data                         
 	#xscreensaver 
 	#evince  
-
+	##audacious 
 
 
 

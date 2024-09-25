@@ -6,9 +6,9 @@ Look=flat
 #Taskbar
 ColorDefaultTaskBar=#2f343f
 ColorNormalTaskBarApp=#2f343f
-ColorNormalTaskBarAppText=#D3DAE3
-ColorActiveTaskBarApp=#8b8b8b
-ColorActiveTaskBarAppText=#D3DAE3
+ColorNormalTaskBarAppText=#FFFFFF
+ColorActiveTaskBarApp=#6b6b6b
+ColorActiveTaskBarAppText=#FFFFFF
 ColorMinimizedTaskBarApp=#2f343f
 ColorMinimizedTaskBarAppText=#D3DAE3
 ColorInvisibleTaskBarApp=#2f343f
@@ -28,8 +28,8 @@ TitleButtonsLeft="s"
 TitleButtonsRight="xmi"
 
 #Window border
-BorderSizeX=1
-BorderSizeY=1
+BorderSizeX=4
+BorderSizeY=4
 DlgBorderSizeX=1
 DlgBorderSizeY=1
 
@@ -78,7 +78,7 @@ ColorLabelText=#D3DAE3
 
 #Clock
 ColorClock=#2f343f
-ColorClockText=#D3DAE3
+ColorClockText=#ffffff
 
 #Cpu
 #ColorCPUStatusUser=#5294E2
@@ -87,14 +87,14 @@ ColorClockText=#D3DAE3
 ColorCPUStatusIdle=#2f343f
 
 #Net monitor
-ColorNetSend=#5294E2
-ColorNetReceive=#D3DAE3
+ColorNetSend=#ffffff
+ColorNetReceive=#00d0ff
 ColorNetIdle=#2f343f
 
 #Workspaces
 ColorActiveWorkspaceButton="rgb:4b/46/f6"
 ColorActiveWorkspaceButtonText=#D3DAE3
-SmallIconSize=16
+SmallIconSize=18
 
 # Dialog
 ColorDialog=#2f343f
@@ -107,8 +107,8 @@ TitleFontNameXft="verdana:size=10:bold"
 
 
 #Memory Manager
-ColorMEMStatusFree=              "rgb:2F/34/3F"
-ColorMEMStatusCached=            "rgb:D0/D0/D0"
-ColorMEMStatusUser=              "rgb:4A/96/E7"
-ColorMEMStatusBuffers=           "rgb:FF/00/00"
+ColorMEMStatusFree=#0bff00
+ColorMEMStatusCached=#dbff33
+ColorMEMStatusUser=#ff0000             
+ColorMEMStatusBuffers=007eff
 
