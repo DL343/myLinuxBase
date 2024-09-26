@@ -103,9 +103,9 @@ fi
 mkdir -p /etc/sudoers.d/
 
 echo "
-%users ALL=(ALL) NOPASSWD: /sbin/reboot
-%users ALL=(ALL) NOPASSWD: /sbin/poweroff
-%users ALL=(ALL) NOPASSWD: /usr/sbin/pm-suspend
+ALL ALL=(ALL) NOPASSWD: /sbin/reboot
+ALL ALL=(ALL) NOPASSWD: /sbin/poweroff
+ALL ALL=(ALL) NOPASSWD: /usr/sbin/pm-suspend
 " > /etc/sudoers.d/icewm
 
 	

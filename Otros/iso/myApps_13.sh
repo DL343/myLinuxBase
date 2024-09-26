@@ -7,7 +7,7 @@ sudo apt upgrade -y
 
 sudo apt -y install xorg	bash-completion 	htop 		btop		fastfetch 		gparted 	\
 btrfs-progs 		mtools 		geany		pcmanfm		sakura	\
-nano 		gvfs		xarchiver		policykit-1-gnome		
+nano 		gvfs		xarchiver		policykit-1-gnome		brightnessctl	
 ##ufw 	
 
 
@@ -16,7 +16,7 @@ nano 		gvfs		xarchiver		policykit-1-gnome
 
 
 sudo apt -y install gcr unar keyutils ncdu p7zip-full lm-sensors inxi  xdg-user-dirs lxappearance lxrandr \
-parcellite 	rofi  	flameshot	mirage	nitrogen	redshift	bleachbit    mpv      audacious      	console-data        
+parcellite 	rofi  	flameshot	mirage	nitrogen	redshift	bleachbit    mpv       	console-data        
 
 
 sudo apt -y install volumeicon-alsa numlockx

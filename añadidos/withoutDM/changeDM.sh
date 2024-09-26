@@ -12,7 +12,7 @@ echo "
 read -p "¿Que WM desea aplicar?: " WM
 
 ## Configuracion de startx
-echo "$WM" > ~/.xinitrc
+echo "dbun-run-session -- ${WM}" > $HOME/.xinitrc
 echo 'Listo
 
 
@@ -29,18 +29,14 @@ then
 else
 
 	echo '
-    ########################################
-	############## CUSTOM ##################
-    ######################################## 
-	
+	########################################################################
+	############################## CUSTOM ##################################
+	########################################################################
+
 	## Inicio automatico del WM despues del inicio de sesion 
 	if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 	  exec startx
 	fi
-
-
-
-
 	'  >> $HOME/.profile
 
 fi

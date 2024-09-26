@@ -791,7 +791,7 @@
 # SubmenuMenuActivateDelay=300 # [0-5000]
 
 #  Command to send the system to standby mode.
-# SuspendCommand="test -e /run/systemd/system && systemctl suspend || sudon -n /usr/sbin/pm-suspend"
+ SuspendCommand="test -e /run/systemd/system && systemctl suspend || sudo -n /usr/sbin/pm-suspend"
 
 #  Width of battery Monitor.
 # TaskBarApmGraphWidth=10 # [1-1000]

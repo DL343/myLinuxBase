@@ -1,5 +1,8 @@
 #!/bin/bash
 
+## Ajuste sin DM
+##dbus-update-activation-environment DISPLAY &
+
 ## Agente de autenticación de PolicyKit
 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 
@@ -32,5 +35,3 @@ nitrogen --restore
 ## Luz calida
 #redshift -O 4250K -r -P &
 
-## Ajuste sin DM
-#dbus-update-activation-environment DISPLAY &
