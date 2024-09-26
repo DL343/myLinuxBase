@@ -14,7 +14,7 @@ echo "dbun-run-session -- icewm-session" > /etc/skel/.xinitrc
 
 
 ##### SE AÑADE AJUSTE DE .PROFILE
-if grep -q "------------------- CUSTOM ------------------" /etc/skel/.profile
+if grep -q "CUSTOM" /etc/skel/.profile
 then
 	echo "::::: Existe 'AJUSTE DE .PROFILE', omitiendo este paso..."
 else
@@ -111,3 +111,6 @@ echo "
 dbus-update-activation-environment DISPLAY &
 " >> /etc/skel/.icewm/startup
 fi
+
+
+update-rc.d cron remove
