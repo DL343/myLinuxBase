@@ -10,7 +10,7 @@ echo "
 ########################################################################
 "
 ##### GENERACION .XINITRC
-echo "dbun-run-session -- icewm-session" > /etc/skel/.xinitrc
+echo "dbus-run-session -- icewm-session" > /etc/skel/.xinitrc
 
 
 ##### SE AÑADE AJUSTE DE .PROFILE

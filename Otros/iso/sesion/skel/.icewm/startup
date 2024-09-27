@@ -14,7 +14,7 @@ parcellite &
 
 ##----------------------------------------
 
-## NumBloq Activado 
+## NumBloq Activado
 numlockx &
 
 ## Brillo al minimo
@@ -31,4 +31,7 @@ nitrogen --restore
 
 ## Luz calida
 #redshift -O 4250K -r -P &
+
+## Generacion carpetas
+xdg-user-dirs-update &
 

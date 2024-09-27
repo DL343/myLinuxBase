@@ -14,6 +14,7 @@ install -D $BASE/.config/pcmanfm/default/pcmanfm.conf          $HOME/.config/pcm
 install -D $BASE/.config/pcmanfm/default/desktop-items-0.conf  $HOME/.config/pcmanfm/default/desktop-items-0.conf
 install -D $BASE/.config/flameshot/flameshot.ini               $HOME/.config/flameshot/flameshot.ini 
 install -D $BASE/.config/mimeapps.list                         $HOME/.config/mimeapps.list 
+install -D $BASE/.config/htop/htoprc                           $HOME/.config/htop/htoprc
 install -D $BASE/.config/bleachbit/bleachbit.ini               $HOME/.config/bleachbit/bleachbit.ini
 
 install -D $BASE/.face							               $HOME/.face 
