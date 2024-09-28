@@ -259,30 +259,26 @@ echo "
 	servicesBloatMask=(
 
 		## ------ DEBIAN BASE ------- ##
-		
+
 		## De forma centralizada registra los registros del sistema y servicios
-		systemd-journald.service 
-		systemd-journald.socket
-		
+		 systemd-journald.service systemd-journald-dev-log.socket systemd-journald.socket
+
 		## Registra errores del kernel
 		systemd-pstore.service
-		
-	
+
+
 		## //////////////////////////////////////////////////////////////////////////////////////////
-		
-		
-		
-		
-		
+
+
 		## Permite el funcionamiento del entorno en vivo de Ubuntu, facilitando su uso y gestión de archivos temporales o persistentes.
 		## casper.service 
-		
+
 		## Está relacionado con el sistema de archivos ext4 y forma parte de la funcionalidad de mantenimiento automático de los sistemas de archivos
 		## e2scrub_reap.service 
-		
+
 		##  Se encarga de ejecutar scripts o tareas finales después de que se han montado todos los sistemas de archivos y antes de que el sistema esté completamente operativo.
 		## finalrd.service  
-		
+
 		## Se encarga de inicializar el espacio de swap
 		## mkswap.service
 		
