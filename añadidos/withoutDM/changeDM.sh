@@ -23,7 +23,7 @@ echo 'Listo
 echo "Aplicando ajustes..." 
 
  
-if grep -q '############## CUSTOM ##################' $HOME/.profile
+if grep -q 'CUSTOM' $HOME/.profile
 then
 	echo 'Existe este ajuste (.profile), omitiendo este paso...' 
 else
