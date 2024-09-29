@@ -12,7 +12,7 @@ echo "
 read -p "¿Que WM desea aplicar?: " WM
 
 ## Configuracion de startx
-echo "dbun-run-session -- ${WM}" > $HOME/.xinitrc
+echo "dbus-run-session -- ${WM}" > $HOME/.xinitrc
 echo 'Listo
 
 
