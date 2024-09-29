@@ -41,7 +41,7 @@ echo "
 ########################################################################
 " 
 
-apt remove --purge nftables
+update-rc.d nftables remove
 apt install ufw
 ## Permitir el trafico saliente
 #sudo ufw default allow outgoing
