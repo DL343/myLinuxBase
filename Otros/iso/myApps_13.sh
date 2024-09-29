@@ -8,7 +8,7 @@ sudo apt upgrade -y
 sudo apt -y install xorg	bash-completion 	htop 		btop		fastfetch 		gparted 	\
 btrfs-progs 		mtools 		geany		pcmanfm		sakura	\
 nano 		gvfs		xarchiver		policykit-1-gnome		brightnessctl	
-##ufw 	
+	
 
 
 
@@ -41,7 +41,8 @@ echo "
 ########################################################################
 " 
 
-
+apt remove --purge nftables
+apt install ufw
 ## Permitir el trafico saliente
 #sudo ufw default allow outgoing
 
