@@ -1,5 +1,14 @@
 #!/bin/bash
 
+## Ajuste sin DM
+#dbus-update-activation-environment DISPLAY &
+
+## Salvapantallas
+#xscreensaver -nosplash &
+
+## Luz calida
+#redshift -O 4250K -r -P &
+
 ## Agente de autenticación de PolicyKit
 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 
@@ -25,12 +34,6 @@ $HOME/.config/scripts/toggle_us_latam.sh &
 
 ## Nitrogen
 nitrogen --restore
-
-## Salvapantallas
-#xscreensaver -nosplash &
-
-## Luz calida
-#redshift -O 4250K -r -P &
 
 ## Generacion carpetas
 xdg-user-dirs-update &

@@ -102,7 +102,7 @@ echo "
 "
 
 ##### STARTUP
-if grep -q "dbus-update-activation-environment DISPLAY &" /etc/skel/.icewm/startup
+if grep -q -x "dbus-update-activation-environment DISPLAY &" /etc/skel/.icewm/startup
 then
 	echo "::::: Existe 'dbus-update-activation-environment DISPLAY &', omitiendo este paso..."
 else

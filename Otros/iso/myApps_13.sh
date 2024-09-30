@@ -66,6 +66,7 @@ echo '
 sudo apt -y install libconfig++9v5 libffado2 liblua5.4-0 libpipewire-0.3-modules libroc0.3 libspeexdsp1 libwireplumber-0.4-0 libxml++2.6-2v5 pipewire pipewire-bin pipewire-pulse  wireplumber  pulseaudio-utils  wireplumber-doc	pavucontrol 
 
 
+pactl set-sink-volume @DEFAULT_SINK@ 25%
 
 
 echo '

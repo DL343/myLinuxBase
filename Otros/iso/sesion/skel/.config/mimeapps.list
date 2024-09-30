@@ -18,11 +18,11 @@ video/x-msvideo=mpv.desktop
 video/x-flv=mpv.desktop
 
 ## AUDIO
-audio/mpeg=audacious.desktop
-audio/wav=audacious.desktop
-audio/ogg=audacious.desktop
-audio/flac=audacious.desktop
-audio/x-wav=audacious.desktop
+audio/mpeg=mpv.desktop
+audio/wav=mpv.desktop
+audio/ogg=mpv.desktop
+audio/flac=mpv.desktop
+audio/x-wav=mpv.desktop
 
 ## COMPRESION/DESCOMPRESION
 application/zip=xarchiver.desktop
@@ -67,11 +67,11 @@ video/x-msvideo=mpv.desktop
 video/x-flv=mpv.desktop
 
 ## AUDIO
-audio/mpeg=audacious.desktop
-audio/wav=audacious.desktop
-audio/ogg=audacious.desktop
-audio/flac=audacious.desktop
-audio/x-wav=audacious.desktop
+audio/mpeg=mpv.desktop
+audio/wav=mpv.desktop
+audio/ogg=mpv.desktop
+audio/flac=mpv.desktop
+audio/x-wav=mpv.desktop
 
 ## COMPRESION/DESCOMPRESION
 application/zip=xarchiver.desktop
