@@ -367,7 +367,30 @@ then
 	## Aplicando cambios
 	##sudo init q
 	
+	update-rc.d cron remove
+	update-rc.d nftables remove
+
 	
+	
+
+echo "
+########################################################################
+############################### TTY'S ##################################
+########################################################################
+"
+if grep -q 'setleds -D +num < $tty' /etc/rc.local
+then
+	echo 'Existe "setleds -D +num < $tty", omitiendo este paso...'
+else
+echo '
+for tty in /dev/tty[0-9]*; do
+        setleds -D +num < $tty
+done
+' >> /etc/rc.local 
+
+fi
+
+
 	########## Ajustando numero de tty's (sysVinit)
 	## Ajuste al archivo
 	sed -i '/4:23:respawn:\/sbin\/getty/c #4:23:respawn:\/sbin\/getty 38400 tty4' /etc/inittab
@@ -376,6 +399,9 @@ then
 
 	## Aplicando cambios
 	sudo init q
+
+
+
 	
 	
 	

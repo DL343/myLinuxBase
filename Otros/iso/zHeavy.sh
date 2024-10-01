@@ -2,13 +2,15 @@
 
 source ./variables.sh
 
-
+#### DEPENDENCIA
+apt -y install seatd
 
 echo "
 ########################################################################
 ########################### AJUSTE SIN DM ##############################
 ########################################################################
 "
+
 ##### GENERACION .XINITRC
 echo "dbus-run-session -- icewm-session" > /etc/skel/.xinitrc
 
@@ -36,8 +38,7 @@ echo "
 ########################################################################
 "
 
-##### DEPENDENCIA
-apt -y install seatd
+
 
 ##### CONSERVAR CHROMIUM
 echo "
@@ -115,26 +116,3 @@ fi
 
 
 
-
-echo "
-########################################################################
-############################### TTY'S ##################################
-########################################################################
-"
-if grep -q 'setleds -D +num < $tty' /etc/rc.local
-then
-	echo 'Existe "setleds -D +num < $tty", omitiendo este paso...'
-else
-echo '
-for tty in /dev/tty[0-9]*; do
-        setleds -D +num < $tty
-done
-' >> /etc/rc.local 
-
-fi
-
-
-
-
-
-update-rc.d cron remove

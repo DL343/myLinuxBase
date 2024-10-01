@@ -2,7 +2,8 @@
 
 source ./variables.sh
 
-
+apt update
+apt upgrade
 
 echo "
 ########################################################################
@@ -58,7 +59,7 @@ apt -y install firmware-atheros firmware-b43-installer firmware-brcm80211 firmwa
 apt -y install xorg zenity xapps-common uno-libs-private toilet tree unar caca-utils acl btrfs-progs cryptsetup gcr  gparted lynx mtools ntpsec user-setup yad libduktape207 mlocate keyutils
 
 
-apt -y install xz-utils nitrogen 
+ 
 apt -y install connman connman-gtk
 
 #mlocate ## Herramienta para la búsqueda rápida de archivos en el sistema, basada en una base de datos.
@@ -100,8 +101,8 @@ sed -i "/snapshot_basename=\"snapshot\"/c snapshot_basename=\"${nombreDistro}\""
 ##sed -i '/mksq_opt="-comp xz -Xbcj x86"/c mksq_opt="-comp xz -Xbcj x86"' /etc/refractasnapshot.conf
 
 ## Ajuste limite de CPU
-sed -i '/limit_cpu=/c limit_cpu="yes"' /etc/refractasnapshot.conf
-sed -i '/limit=/c limit="95"' /etc/refractasnapshot.conf
+#sed -i '/limit_cpu=/c limit_cpu="yes"' /etc/refractasnapshot.conf
+#sed -i '/limit=/c limit="95"' /etc/refractasnapshot.conf
 
 ## 
 sed -i '/username=/c username="live"' /etc/refractasnapshot.conf
@@ -118,6 +119,9 @@ echo "
 ################################# GRUB ################################# 
 ########################################################################
 "
+
+nombreDistro="Loc-OS"
+
 ## Configura las entredas del menu de GRUB 
 sed -i "/Ubuntu|Kubuntu)/c Ubuntu|Kubuntu|${nombreDistro}*)" /etc/grub.d/10_linux
 
@@ -134,9 +138,12 @@ echo "
 ################################ INIT ################################## 
 ########################################################################
 "
+
+apt install xz-utils
+
 ## Configuracion del initramfs
 ## Debian Vanilla: COMPRESS=zstd || COMPRESS: [ gzip | bzip2 | lz4 | lzma | lzop | xz | zstd ]
-sed -i '/COMPRESS=/c COMPRESS=xz' /etc/initramfs-tools/initramfs.conf
+sed -i '/COMPRESS=/c COMPRESS=gzip' /etc/initramfs-tools/initramfs.conf
 
 
 # UMASK=0077 significa que los permisos predeterminados para los archivos y directorios creados serán muy restrictivos:

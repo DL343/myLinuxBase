@@ -9,17 +9,12 @@ sudo apt -y install xorg	bash-completion 	htop 		btop		fastfetch 		gparted 	\
 btrfs-progs 		mtools 		geany		pcmanfm		sakura	\
 nano 		gvfs		xarchiver		policykit-1-gnome		brightnessctl	
 	
-
-
-
-
-
-
+	
 sudo apt -y install gcr unar keyutils ncdu p7zip-full lm-sensors inxi  xdg-user-dirs lxappearance lxrandr \
 parcellite 	rofi  	flameshot	mirage	nitrogen	redshift	bleachbit    mpv       	console-data        
 
 
-sudo apt -y install volumeicon-alsa numlockx
+sudo apt -y install volumeicon-alsa   numlockx   xdg-desktop-portal
 
 
 if [ "$(sed -n '/Option "Tapping" "true"/p' /usr/share/X11/xorg.conf.d/40-libinput.conf)" == 'Option "Tapping" "true"' ]; then 
@@ -41,7 +36,6 @@ echo "
 ########################################################################
 " 
 
-update-rc.d nftables remove
 
 apt install ufw
 ## Permitir el trafico saliente
@@ -159,11 +153,14 @@ echo "
 sudo apt -y install chromium waterfox
 
 
-sudo apt -y remove --purge avahi-daemon   git  at-spi2-core  rtkit \
-xdg-desktop-portal   xdg-desktop-portal-gtk
+sudo apt -y remove --purge avahi-daemon   git  at-spi2-core  rtkit 
+
+
+
+##   xdg-desktop-portal-gtk
 
 
 apt -y remove --purge aspell-es chafa cups-pk-helper debian-reference-es \
 debian-reference-common fonts-liberation ispanish task-spanish \
 manpages-es system-config-printer system-config-printer-common \
-system-config-printer-udev  python3-cupshelpers python3-cups
+system-config-printer-udev  python3-cupshelpers python3-cups xterm
