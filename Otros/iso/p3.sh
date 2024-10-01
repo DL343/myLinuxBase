@@ -72,6 +72,7 @@ echo "America/New_York" > /etc/timezone
 
 
 ## Distribucion de teclado en X11.
+mkdir -p /etc/X11/xorg.conf.d/
 echo '
 Section "InputClass"
         Identifier "system-keyboard"

@@ -10,6 +10,7 @@ echo "
 #
 
 ## Entrada en el escritorio
+mkdir -p /home/live/Desktop/
 cp ./LO/Calamares/install.desktop /home/live/Desktop/install.desktop
 #
 

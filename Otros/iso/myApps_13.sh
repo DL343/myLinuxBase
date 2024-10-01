@@ -42,6 +42,7 @@ echo "
 " 
 
 update-rc.d nftables remove
+
 apt install ufw
 ## Permitir el trafico saliente
 #sudo ufw default allow outgoing
@@ -158,11 +159,8 @@ echo "
 sudo apt -y install chromium waterfox
 
 
-
-
 sudo apt -y remove --purge avahi-daemon   git  at-spi2-core  rtkit \
 xdg-desktop-portal   xdg-desktop-portal-gtk
-
 
 
 apt -y remove --purge aspell-es chafa cups-pk-helper debian-reference-es \

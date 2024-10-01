@@ -119,7 +119,7 @@ echo "
 ########################################################################
 "
 ## Configura las entredas del menu de GRUB 
-sed -i "s/Ubuntu|Kubuntu)/Ubuntu|Kubuntu|${nombreDistro}*)/" /etc/grub.d/10_linux
+sed -i "/Ubuntu|Kubuntu)/c Ubuntu|Kubuntu|${nombreDistro}*)" /etc/grub.d/10_linux
 
 ## Copia de seguridad de /etc/default/grub // ¿Necesario? -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 cp ./grub/grub.ucf-dist /etc/default/
