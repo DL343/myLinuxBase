@@ -21,15 +21,21 @@ then
 	
 	## ------------------------------
 	
-	## WALLPAPERS
+	## WALLPAPER PRINCIPAL
 	mkdir -p /usr/share/wallpapers/
-    cp ./custom/wallpapers/* /usr/share/wallpapers/default.png
+    cp ./custom/wall/* /usr/share/wallpapers/default.png
+    
+    ## WALLPAPER'S COMPLEMENTARIOS
+    cp ./custom/wallpapers/* /usr/share/wallpapers/
+    
 	 
 	## COLORES
 	## /usr/share/color-schemes/
 	
+	
 	## IMAGEN PERFIL USUARIO
 	cp ./custom/face/* /etc/skel/.face
+	
 	
 	## ------------------------------
 	
@@ -66,49 +72,6 @@ then
 				## GRUB: Actualizando cambios a GRUB
 				update-grub
 		fi
-
-
-	echo "
-	########################################################################
-	################################## ICEWM  ##############################
-	########################################################################
-	"	
-	
-apt -y install xorg
-apt -y install sakura   
-apt -y install icewm --no-install-recommends 
-
-######## AJUSTE CONFIGURACIONES SOLO EN LIVE
-if grep -q "sh -c 'xrandr --output Virtual-1 --mode 1360x768'" /home/live/.icewm/startup
-then
-	echo "Existe el ajuste, omitiendo este paso..."
-else
-	echo "
-## Generacion de carpetas
-xdg-user-dirs-update &
-
-## Escritorio
-pcmanfm --desktop &
-
-" >>  /home/live/.icewm/startup 
-
-## Ajuste resolucion pantalla
-##sh -c 'xrandr --output Virtual-1 --mode 1280x768' &
-
-
-fi
-
-
-########## AJUSTE PERMISOS APAGADO/REINICIO/SUSPENSION
-mkdir -p /etc/sudoers.d/
-
-echo "
-ALL ALL=(ALL) NOPASSWD: /sbin/reboot
-ALL ALL=(ALL) NOPASSWD: /sbin/poweroff
-ALL ALL=(ALL) NOPASSWD: /usr/sbin/pm-suspend
-" > /etc/sudoers.d/icewm
-
-	
 
 
 	
@@ -255,6 +218,60 @@ vlc.memory_dump = True
 x11 = True
 x11.debug_logs = True
 " > /root/.config/bleachbit/bleachbit.ini
+
+
+
+
+
+echo "
+########################################################################
+################################## ICEWM  ##############################
+########################################################################
+"	
+	
+apt -y install xorg
+apt -y install sakura   
+apt -y install icewm --no-install-recommends 
+
+######## AJUSTE CONFIGURACIONES SOLO EN LIVE
+if grep -q "sh -c 'xrandr --output Virtual-1 --mode 1360x768'" /home/live/.icewm/startup
+then
+	echo "Existe el ajuste, omitiendo este paso..."
+else
+	echo "
+## Generacion de carpetas
+xdg-user-dirs-update &
+
+## Escritorio
+pcmanfm --desktop &
+
+" >>  /home/live/.icewm/startup 
+
+## Ajuste resolucion pantalla
+##sh -c 'xrandr --output Virtual-1 --mode 1280x768' &
+
+
+fi
+
+
+########## AJUSTE PERMISOS APAGADO/REINICIO/SUSPENSION
+mkdir -p /etc/sudoers.d/
+
+echo "
+ALL ALL=(ALL) NOPASSWD: /sbin/reboot
+ALL ALL=(ALL) NOPASSWD: /sbin/poweroff
+ALL ALL=(ALL) NOPASSWD: /usr/sbin/pm-suspend
+" > /etc/sudoers.d/icewm
+
+	
+
+
+
+
+
+
+
+
 
 
 

@@ -2,25 +2,9 @@
 
 source ./variables.sh
 
-echo "
-########################################################################
-############################### SKEL ###################################
-########################################################################
-"
 
-## Eliminacion rastros anteriores
-rm -r /home/live/
-
-## Creacion de la carpeta por si no existe
-mkdir -p /etc/skel
-
-## Copia de home's
-cp -r ./sesion/skel/ /etc/
-cp -r ./sesion/skel/ /home/live/
-
-## Ajuste de permisos
-chown live /home/live -R
-
+apt update
+apt upgrade
 
 
 
@@ -238,8 +222,182 @@ Slide
 	sed -i '/autologin-session=/c autologin-session=icewm-session' /etc/lightdm/lightdm.conf
 	
 
-
 fi
+
+
+echo "
+########################################################################
+############################### REFRACTA ############################### 
+########################################################################
+"
+## Nombre Distro
+sed -i "/snapshot_basename=\"snapshot\"/c snapshot_basename=\"${nombreDistro}\"" /etc/refractasnapshot.conf
+
+##sed -i "/volid=/c volid=\"${nombreDistro}\"" /etc/refractasnapshot.conf 
+
+## Tipo de compresion (Compresion optimizada para CISC (x86))
+##sed -i '/mksq_opt="-comp xz -Xbcj x86"/c mksq_opt="-comp xz -Xbcj x86"' /etc/refractasnapshot.conf
+
+## Ajuste limite de CPU
+#sed -i '/limit_cpu=/c limit_cpu="yes"' /etc/refractasnapshot.conf
+#sed -i '/limit=/c limit="95"' /etc/refractasnapshot.conf
+
+## 
+sed -i '/username=/c username="live"' /etc/refractasnapshot.conf
+
+## Archivos y directorios que no se incluiran a la ISO -----------------------------------------------------------------------------------
+cp ./refractaSnapshot/snapshot_exclude.list /usr/lib/refractasnapshot/
+
+
+
+
+
+echo "
+########################################################################
+################################# GRUB ################################# 
+########################################################################
+"
+
+
+
+## Configura las entredas del menu de GRUB 
+sed -i "/Ubuntu|Kubuntu)/c Ubuntu|Kubuntu|${nombreDistro}*)" /etc/grub.d/10_linux
+
+## Copia de seguridad de /etc/default/grub // ¿Necesario? -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+cp ./grub/grub.ucf-dist /etc/default/
+
+## GRUB_CMDLINE_LINUX_DEFAULT="quiet selinux=0" // Invetigar impacto selinux=0 // Revisar splash
+#/etc/default/grub
+
+sed -i "/GRUB_DISTRIBUTOR=/c GRUB_DISTRIBUTOR=\`lsb_release -d -s 2> \/dev\/null || echo '${nombreDistro}'\`" /etc/default/grub
+#update-grub 
+
+
+
+echo "
+########################################################################
+################################ INIT ################################## 
+########################################################################
+"
+
+apt install xz-utils
+
+## Configuracion del initramfs
+## Debian Vanilla: COMPRESS=zstd || COMPRESS: [ gzip | bzip2 | lz4 | lzma | lzop | xz | zstd ]
+sed -i '/COMPRESS=/c COMPRESS=xz' /etc/initramfs-tools/initramfs.conf
+
+
+# UMASK=0077 significa que los permisos predeterminados para los archivos y directorios creados serán muy restrictivos:
+# Archivos: Los permisos serán 600 (solo lectura y escritura para el propietario).
+# Directorios: Los permisos serán 700 (lectura, escritura y ejecución solo para el propietario).
+echo 'UMASK=0077' > /etc/initramfs-tools/conf.d/calamares-safe-initramfs.conf
+
+
+## El archivo se utiliza para configurar la reanudación desde la suspensión o hibernación.
+if [ -f /etc/initramfs-tools/conf.d/resume ]
+then
+	rm /etc/initramfs-tools/conf.d/resume
+else
+	echo "El fichero a eliminar no existe, 
+probablemente ya se removio anteriormente, omitiendo este paso..."
+fi
+
+
+echo "
+########################################################################
+######################### MODULOS DEL KERNEL ########################### 
+########################################################################
+"
+apt -y remove amd64-microcode intel-microcode
+
+##if [ "systemd" == "${init}" ]
+##then
+	
+## Evita que ciertos módulos del kernel del microcodigo del procesador se carguen automáticamente
+## AMD 
+echo '# The microcode module attempts to apply a microcode update when
+# it autoloads.  This is not always safe, so we block it by default.
+
+## Debian default
+blacklist microcode
+
+####################
+###### CUSTOM ######
+####################
+## Controla el altavoz interno de la placa base (también conocido como "buzzer" o "beeper").
+blacklist pcspkr
+' > /etc/modprobe.d/amd64-microcode-blacklist.conf
+
+
+## INTEL
+echo '# The microcode module attempts to apply a microcode update when
+# it autoloads.  This is not always safe, so we block it by default.
+
+## Debian default
+blacklist microcode
+
+####################
+###### CUSTOM ######
+####################
+## Controla el altavoz interno de la placa base (también conocido como "buzzer" o "beeper")
+blacklist pcspkr
+' > /etc/modprobe.d/intel-microcode-blacklist.conf
+
+
+
+##fi
+
+
+
+
+echo "
+########################################################################
+############################## POLICYKIT ###############################
+########################################################################
+"
+mkdir -p /etc/PolicyKit/
+
+cat << 'EOF' > /etc/PolicyKit/PolicyKit.conf
+<?xml version="1.0" encoding="UTF-8"?> <!-- -*- XML -*- -->
+
+<!DOCTYPE pkconfig PUBLIC "-//freedesktop//DTD PolicyKit Configuration 1.0//EN"
+"http://hal.freedesktop.org/releases/PolicyKit/1.0/config.dtd">
+
+<!-- See the manual page PolicyKit.conf(5) for file format -->
+
+<config version="0.1">
+	<match user="root">
+		<return result="yes"/>
+	</match>
+	<!-- don't ask password for user in live session -->
+	<match user="live">
+		<return result="yes"/>
+	</match>
+	<define_admin_auth group="adm"/>
+</config>
+EOF
+
+
+
+
+echo "
+########################################################################
+############################### SKEL ###################################
+########################################################################
+"
+
+## Eliminacion rastros anteriores
+rm -r /home/live/
+
+## Creacion de la carpeta por si no existe
+mkdir -p /etc/skel
+
+## Copia de home's
+cp -r ./sesion/skel/ /etc/
+cp -r ./sesion/skel/ /home/live/
+
+## Ajuste de permisos
+chown live /home/live -R
 
 
 echo "
@@ -282,7 +440,21 @@ fi
 
 
 
-########## LOGIN SIN CONTRASEÑA (systemd)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -364,11 +536,10 @@ then
 	## Ajuste al archivo
 	##sed -i '/1:2345:respawn:\/sbin\/getty/c 1:2345:respawn:\/sbin\/getty -a live --noclear 38400 tty1' /etc/inittab
 
-	## Aplicando cambios
-	##sudo init q
-	
-	update-rc.d cron remove
-	update-rc.d nftables remove
+
+	########## REMOVIENDO SERVICIOS 
+	update-rc.d -f cron remove
+	update-rc.d -f nftables remove
 
 	
 	
@@ -378,6 +549,8 @@ echo "
 ############################### TTY'S ##################################
 ########################################################################
 "
+
+####### NUM BLOQ ACTIVADO EN TTY'S
 if grep -q 'setleds -D +num < $tty' /etc/rc.local
 then
 	echo 'Existe "setleds -D +num < $tty", omitiendo este paso...'
@@ -391,38 +564,78 @@ done
 fi
 
 
-	########## Ajustando numero de tty's (sysVinit)
-	## Ajuste al archivo
-	sed -i '/4:23:respawn:\/sbin\/getty/c #4:23:respawn:\/sbin\/getty 38400 tty4' /etc/inittab
-	sed -i '/5:23:respawn:\/sbin\/getty/c #5:23:respawn:\/sbin\/getty 38400 tty5' /etc/inittab
-	sed -i '/6:23:respawn:\/sbin\/getty/c #6:23:respawn:\/sbin\/getty 38400 tty6' /etc/inittab
-
-	## Aplicando cambios
-	sudo init q
-
+########## Reduciendo numero de tty's (sysVinit)
+## Ajuste al archivo
+sed -i '/4:23:respawn:\/sbin\/getty/c #4:23:respawn:\/sbin\/getty 38400 tty4' /etc/inittab
+sed -i '/5:23:respawn:\/sbin\/getty/c #5:23:respawn:\/sbin\/getty 38400 tty5' /etc/inittab
+sed -i '/6:23:respawn:\/sbin\/getty/c #6:23:respawn:\/sbin\/getty 38400 tty6' /etc/inittab
 
 
 	
 	
-	
-	
-	
-	
-	echo "
-	########################################################################
-	########################## DISPLAY MANAGER #############################
-	########################################################################
-	"
-	
-	## LXDM
-	apt -y install lxdm 
-	apt -y install lxdm-loc-os
 
-	sed -i '/session=/c session=/usr/bin/icewm-session' /etc/lxdm/default.conf
-	
+echo "
+########################################################################
+########################## DISPLAY MANAGER #############################
+########################################################################
+"
 
-	
-	
+## LXDM
+apt -y install lxdm 
+apt -y install lxdm-loc-os
+
+sed -i '/session=/c session=/usr/bin/icewm-session' /etc/lxdm/default.conf
+
+
+
+
+echo "
+########################################################################
+############################## REFRACTA ################################
+########################################################################
+"		
+## Ajuste sysvinit
+sed -i '/patch_init_nosystemd=/c patch_init_nosystemd="yes"' /etc/refractasnapshot.conf
+
+
+
+echo "
+########################################################################
+###############################  GRUB  #################################
+########################################################################
+"	
+fullNameDistro="Loc-OS 23 Linux (Con Tutti)"
+sed -i "/GRUB_DISTRIBUTOR=/c GRUB_DISTRIBUTOR=\`lsb_release -d -s 2> \/dev\/null || echo '${fullNameDistro}'\`" /etc/default/grub
+
+
+#echo "
+#########################################################################
+######################## MODULOS DEL KERNEL ############################# 
+#########################################################################
+#"
+### ***Todo esta comentado, al instalar paquetes piden regresar el archivo como estaba
+### Evita que ciertos módulos del kernel del microcodigo del procesador se carguen automáticamente
+### AMD 
+#echo '# The microcode module attempts to apply a microcode update when
+## it autoloads.  This is not always safe, so we block it by default.
+
+### Debian default
+#blacklist microcode
+
+#' > /etc/modprobe.d/amd64-microcode-blacklist.conf
+
+
+### INTEL
+#echo '# The microcode module attempts to apply a microcode update when
+## it autoloads.  This is not always safe, so we block it by default.
+
+### Debian default
+#blacklist microcode
+
+#' > /etc/modprobe.d/intel-microcode-blacklist.conf
+
+#update-initramfs -u
+
 
 fi
 
@@ -434,9 +647,9 @@ fi
 
 
 
+update-grub
+update-initramfs -u
+sudo init q
 
 
 
-
-
-#reboot
