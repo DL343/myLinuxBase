@@ -1,6 +1,4 @@
-#!/usr/bin/env bash
-
-
+#!/bin/bash
 
 # Leer extraer la línea que comienza con 'Exec'
 line=$(grep '^Exec=' $HOME/.config/autostart/lxrandr-autostart.desktop)
@@ -11,3 +9,5 @@ command=${command%\'*}
 
 # Ejecutar el comando extraído
 $command
+
+

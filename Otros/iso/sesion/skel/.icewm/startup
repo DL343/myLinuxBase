@@ -1,5 +1,8 @@
 #!/bin/bash
 
+## Resolucion lxrandr
+$HOME/.config/scripts/lxrandr.sh &
+
 ## Ajuste sin DM
 #dbus-update-activation-environment DISPLAY &
 

@@ -61,7 +61,6 @@ echo '
 sudo apt -y install libconfig++9v5 libffado2 liblua5.4-0 libpipewire-0.3-modules libroc0.3 libspeexdsp1 libwireplumber-0.4-0 libxml++2.6-2v5 pipewire pipewire-bin pipewire-pulse  wireplumber  pulseaudio-utils  wireplumber-doc	pavucontrol 
 
 
-pactl set-sink-volume @DEFAULT_SINK@ 25%
 
 
 echo '
@@ -72,7 +71,7 @@ echo '
 sudo sed -i '/GRUB_TIMEOUT=/c GRUB_TIMEOUT=1' /etc/default/grub
 
 ### Guardar la ultima particion seleccionada
-sudo sed -i '/GRUB_DEFAULT=/c GRUB_DEFAULT=saved/g' /etc/default/grub
+sudo sed -i '/GRUB_DEFAULT=/c GRUB_DEFAULT=saved' /etc/default/grub
 
 if grep -q "GRUB_SAVEDEFAULT=true" /etc/default/grub
 then
@@ -164,3 +163,9 @@ apt -y remove --purge aspell-es chafa cups-pk-helper debian-reference-es \
 debian-reference-common fonts-liberation ispanish task-spanish \
 manpages-es system-config-printer system-config-printer-common \
 system-config-printer-udev  python3-cupshelpers python3-cups xterm
+
+
+
+
+pactl set-sink-volume @DEFAULT_SINK@ 25%
+update-rc.d -f nftables remove
