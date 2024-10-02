@@ -271,6 +271,23 @@ ALL ALL=(ALL) NOPASSWD: /sbin/reboot
 ALL ALL=(ALL) NOPASSWD: /sbin/poweroff
 ALL ALL=(ALL) NOPASSWD: /usr/sbin/pm-suspend
 " > /etc/sudoers.d/icewm
+fi
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -280,10 +297,4 @@ ALL ALL=(ALL) NOPASSWD: /usr/sbin/pm-suspend
 
 
 fi
-
-
-
-	
-
-
 
