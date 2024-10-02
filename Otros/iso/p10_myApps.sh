@@ -11,7 +11,7 @@ nano 		gvfs		xarchiver		policykit-1-gnome		brightnessctl
 	
 	
 sudo apt -y install gcr unar keyutils ncdu p7zip-full lm-sensors inxi  xdg-user-dirs lxappearance lxrandr \
-parcellite 	rofi  	flameshot	mirage	nitrogen	redshift	bleachbit    mpv       	console-data        
+parcellite 	rofi  	flameshot	mirage	nitrogen	redshift	bleachbit    mpv       	      
 
 
 sudo apt -y install volumeicon-alsa   numlockx   xdg-desktop-portal
@@ -169,3 +169,6 @@ system-config-printer-udev  python3-cupshelpers python3-cups xterm
 
 pactl set-sink-volume @DEFAULT_SINK@ 25%
 update-rc.d -f nftables remove
+
+
+apt install console-data  	
