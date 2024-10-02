@@ -30,6 +30,10 @@ then
 	cp ./custom/gtk/settings.ini    /home/live/.config/gtk-3.0/settings.ini
 	
 	
+	## IMAGEN PERFIL USUARIO
+	cp ./custom/face/*      /etc/skel/.face
+	cp ./custom/face/*      /home/live/.face
+	
 	## ------------------------------
 	
 	## WALLPAPER PRINCIPAL
@@ -44,15 +48,14 @@ then
 	## /usr/share/color-schemes/
 	
 	
-	## IMAGEN PERFIL USUARIO
-	cp ./custom/face/* /etc/skel/.face
+
 	
 	
 	## ------------------------------
 	
 	
 	## REFRACTASNAPSHOT: Imagen Arranque Instalacion (640x480).png (Colores oscuros de preferencia)-
-	cp ./custom/refracta_Splash/* /usr/lib/refractasnapshot/iso/isolinux/splash.png
+	##cp ./custom/refracta_Splash/* /usr/lib/refractasnapshot/iso/isolinux/splash.png
 	
 	
 	## PLYMOUTH?
@@ -244,15 +247,12 @@ apt -y install xorg
 apt -y install icewm --no-install-recommends 
 apt -y install sakura   connman-gtk
 
-######## AJUSTE CONFIGURACIONES SOLO EN LIVE
+######## ICEWM: AJUSTE CONFIGURACIONES SOLO EN LIVE
 if grep -q "sh -c 'xrandr --output Virtual-1 --mode 1360x768'" /home/live/.icewm/startup
 then
 	echo "Existe el ajuste, omitiendo este paso..."
 else
 	echo "
-## Generacion de carpetas
-xdg-user-dirs-update &
-
 ## Escritorio
 pcmanfm --desktop &
 
@@ -262,10 +262,8 @@ pcmanfm --desktop &
 ##sh -c 'xrandr --output Virtual-1 --mode 1280x768' &
 
 
-fi
 
-
-########## AJUSTE PERMISOS APAGADO/REINICIO/SUSPENSION
+########## ICEWM: AJUSTE PERMISOS APAGADO/REINICIO/SUSPENSION
 mkdir -p /etc/sudoers.d/
 
 echo "
@@ -274,11 +272,6 @@ ALL ALL=(ALL) NOPASSWD: /sbin/poweroff
 ALL ALL=(ALL) NOPASSWD: /usr/sbin/pm-suspend
 " > /etc/sudoers.d/icewm
 
-	
-
-
-
-
 
 
 
@@ -287,5 +280,10 @@ ALL ALL=(ALL) NOPASSWD: /usr/sbin/pm-suspend
 
 
 fi
+
+
+
+	
+
 
 

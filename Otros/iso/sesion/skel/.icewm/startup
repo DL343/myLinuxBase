@@ -33,7 +33,7 @@ brightnessctl s 0 &
 $HOME/.config/scripts/toggle_us_latam.sh &
 
 ## Nitrogen
-nitrogen --restore
+nitrogen --restore &
 
 ## Generacion carpetas
 xdg-user-dirs-update &

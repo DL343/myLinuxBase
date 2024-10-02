@@ -1,32 +1,40 @@
 #!/bin/bash
 
-##
-/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
-
-## Luz calida
-redshift -O 4250K -r -P &
-
-## Brillo al minimo
-brightnessctl s 0 &
-
-## Portapapeles
-parcellite &
-
-## Restaura la ultima imagen aplicada
-nitrogen --restore &
+## Ajuste sin DM
+#dbus-update-activation-environment DISPLAY &
 
 ## Salvapantallas
 #xscreensaver -nosplash &
 
-## Keyring
-#gnome-keyring-daemon &
+## Luz calida
+#redshift -O 4250K -r -P &
+
+## Agente de autenticación de PolicyKit
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+
+## Depósito de claves de GNOME: Servicio de secretos
+/usr/bin/gnome-keyring-daemon --start --components=secrets &
+
+## Certificados y almacenamiento de claves
+/usr/bin/gnome-keyring-daemon --start --components=pkcs11 &
+
+## Portapapeles
+parcellite &
 
 ##----------------------------------------
 
-## Cambios de distribucion de teclado us/latam
+## NumBloq Activado
+numlockx &
+
+## Brillo al minimo
+brightnessctl s 0 &
+
+## Cambios de distribucion de teclado us/latam (ALT+SHIFT)
 $HOME/.config/scripts/toggle_us_latam.sh &
 
-## Ajuste sin WM
-dbus-update-activation-environment DISPLAY &
+## Nitrogen
+nitrogen --restore
 
+## Generacion carpetas
+xdg-user-dirs-update &
 

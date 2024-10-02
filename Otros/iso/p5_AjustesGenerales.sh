@@ -578,7 +578,7 @@ apt -y install lxdm
 apt -y install lxdm-loc-os
 
 sed -i '/session=/c session=/usr/bin/icewm-session' /etc/lxdm/default.conf
-
+sed -i '/numlock=/c numlock=1' /etc/lxdm/default.conf
 
 
 
