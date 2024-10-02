@@ -4,7 +4,7 @@
 
 # Global Property
 title-text: ""
-desktop-image: "background.jpg"
+desktop-image: "background.png"
 desktop-color: "#000000"
 terminal-font: "griffin"
 terminal-box: "terminal_box_*.png"
