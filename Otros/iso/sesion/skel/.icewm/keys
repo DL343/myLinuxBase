@@ -53,7 +53,7 @@ switchkey 'Super+p'             icewm-menu-xrandr
 
 
 ################ TOGGLES ################ 
-key Super+F2                    $HOME/.config/scripts/toggle_network-applet.sh
+key Super+n                     $HOME/.config/scripts/toggle_network-applet.sh
 key Super+b                     $HOME/.config/scripts/toggle_blueman-applet.sh
 key Super+c                     $HOME/.config/scripts/toggle_zenityCalendar.sh
 key Super+v                     $HOME/.config/scripts/toggle_volumeIcon.sh
