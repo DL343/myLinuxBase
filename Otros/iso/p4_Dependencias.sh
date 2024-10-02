@@ -58,4 +58,4 @@ apt -y install firmware-atheros firmware-b43-installer firmware-brcm80211 firmwa
 ## Misc. Tools
 apt -y install xorg zenity xapps-common uno-libs-private toilet tree unar caca-utils acl btrfs-progs cryptsetup gcr  gparted lynx mtools ntpsec user-setup yad libduktape207 mlocate keyutils
  
-apt -y install connman connman-gtk
+apt -y install connman

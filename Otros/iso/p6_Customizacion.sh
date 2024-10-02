@@ -13,11 +13,22 @@ then
 
 	## TEMAS
 	mkdir -p /usr/share/themes/
-	cp -r ./custom/themes/Adwaita-dark /usr/share/themes/
+	cp -r ./custom/themes/*      /usr/share/themes/
 	
 	## ICONOS + CURSOR
 	mkdir -p /usr/share/icons/
-	cp -r ./custom/icons/* /usr/share/icons/
+	cp -r ./custom/icons/*      /usr/share/icons/
+	
+	## APLICANDO...
+	cp ./custom/gtk/.gtkrc-2.0     /etc/skel/.gtkrc-2.0
+	cp ./custom/gtk/.gtkrc-2.0     /home/live/.gtkrc-2.0
+	
+	
+	mkdir -p /etc/skel/.config/gtk-3.0/
+	mkdir -p /home/live/.config/.config/gtk-3.0/
+	cp ./custom/gtk/settings.ini    /etc/skel/.config/gtk-3.0/settings.ini
+	cp ./custom/gtk/settings.ini    /home/live/.config/gtk-3.0/settings.ini
+	
 	
 	## ------------------------------
 	
@@ -230,8 +241,8 @@ echo "
 "	
 	
 apt -y install xorg
-apt -y install sakura   
 apt -y install icewm --no-install-recommends 
+apt -y install sakura   connman-gtk
 
 ######## AJUSTE CONFIGURACIONES SOLO EN LIVE
 if grep -q "sh -c 'xrandr --output Virtual-1 --mode 1360x768'" /home/live/.icewm/startup

@@ -400,14 +400,7 @@ cp -r ./sesion/skel/ /home/live/
 chown live /home/live -R
 
 
-echo "
-########################################################################
-############################## A ELIMINAR ##############################
-########################################################################
-"
 
-##apt -y remove aspell-es chafa cups-pk-helper debian-reference-es debian-reference-common fonts-liberation ispanish task-spanish manpages-es system-config-printer system-config-printer-common python3-gi-cairo python3-cairo system-config-printer-udev python3-cupshelpers python3-cups python3-smbc 
-##blueman
 
 echo "
 ########################################################################
@@ -537,9 +530,6 @@ then
 	##sed -i '/1:2345:respawn:\/sbin\/getty/c 1:2345:respawn:\/sbin\/getty -a live --noclear 38400 tty1' /etc/inittab
 
 
-	########## REMOVIENDO SERVICIOS 
-	update-rc.d -f cron remove
-	update-rc.d -f nftables remove
 
 	
 	
@@ -571,7 +561,10 @@ sed -i '/5:23:respawn:\/sbin\/getty/c #5:23:respawn:\/sbin\/getty 38400 tty5' /e
 sed -i '/6:23:respawn:\/sbin\/getty/c #6:23:respawn:\/sbin\/getty 38400 tty6' /etc/inittab
 
 
-	
+########## REMOVIENDO SERVICIOS 
+update-rc.d -f cron remove
+update-rc.d -f nftables remove
+
 	
 
 echo "
