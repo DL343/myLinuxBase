@@ -3,5 +3,5 @@
 # Place your personal variant in $HOME/.icewm directory.
 
 #prog    XTerm    !    x-terminal-emulator
-prog     Rofi     /usr/share/icons/Vimix-dark/scalable/preferences/gnome-searchtool.svg    rofi -modi drun,run -show-icons -theme /usr/share/rofi/themes/sidebar.rasi -font 'mono 14' -show drun
+prog     Rofi     $HOME/.icewm/themes/Arc-Dark/rofi.png    rofi -modi drun,run -show-icons -theme /usr/share/rofi/themes/sidebar.rasi -font 'mono 14' -show drun
  
