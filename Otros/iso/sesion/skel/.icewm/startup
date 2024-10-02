@@ -1,9 +1,6 @@
 #!/bin/bash
 
-## Resolucion lxrandr
-$HOME/.config/scripts/lxrandr.sh &
-
-## Ajuste sin DM
+## Ajuste auxiliar sin Display Manager
 #dbus-update-activation-environment DISPLAY &
 
 ## Salvapantallas
@@ -11,6 +8,16 @@ $HOME/.config/scripts/lxrandr.sh &
 
 ## Luz calida
 #redshift -O 4250K -r -P &
+
+## Cambios de distribucion de teclado us/latam (ALT+SHIFT)
+##$HOME/.config/scripts/toggle_us_latam.sh &
+
+
+##----------------------------------------
+
+
+## Resolucion lxrandr
+$HOME/.config/scripts/lxrandr.sh &
 
 ## Agente de autenticación de PolicyKit
 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
@@ -24,16 +31,11 @@ $HOME/.config/scripts/lxrandr.sh &
 ## Portapapeles
 parcellite &
 
-##----------------------------------------
-
 ## NumBloq Activado
 numlockx &
 
 ## Brillo al minimo
 brightnessctl s 0 &
-
-## Cambios de distribucion de teclado us/latam (ALT+SHIFT)
-$HOME/.config/scripts/toggle_us_latam.sh &
 
 ## Nitrogen
 nitrogen --restore &
