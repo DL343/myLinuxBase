@@ -60,7 +60,6 @@ echo "[Autologin]
 User=live
 Session=plasma" > /etc/sddm.conf
 
-echo "Loc-OS" > /etc/hostname
 
 
 
@@ -133,3 +132,24 @@ mv /usr/share/plasma/plasmoids.disabled/org.kde.plasma.calendar           /usr/s
 mv /usr/share/plasma/plasmoids.disabled/org.kde.plasma.folder             /usr/share/plasma/plasmoids/   
 mv /usr/share/plasma/plasmoids.disabled/org.kde.plasma.marginsseparator   /usr/share/plasma/plasmoids/   
 mv /usr/share/plasma/plasmoids.disabled/org.kde.plasma.taskmanager        /usr/share/plasma/plasmoids/
+
+
+
+echo "
+- /home/*/.config/kate
+- /home/*/.config/akregatorrc
+- /home/*/.config/dolphinrc
+- /home/*/.config/gwenviewrc
+- /home/*/.config/katerc
+- /home/*/.config/kmixrc
+- /home/*/.config/konsolerc
+- /home/*/.config/konquerorrc
+- /home/*/.config/kwinrc
+- /home/*/.config/spectaclerc
+
+- /home/*/.local/share/dolphin/*
+- /home/*/.local/share/kate/*
+- /home/*/.local/share/klipper/*
+- /home/*/.local/share/kscreen/*
+
+" >> /usr/lib/refractasnapshot/snapshot_exclude.list

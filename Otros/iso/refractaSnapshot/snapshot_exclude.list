@@ -175,6 +175,7 @@
 - /root/*
 - /home/*/.config/htop
 - /home/*/.config/session/*
-- /home/*/.config/kmixrc
-
 - /home/*/.local/share/RecentDocuments/*
+
+
+

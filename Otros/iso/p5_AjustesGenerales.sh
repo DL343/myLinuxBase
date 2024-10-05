@@ -209,18 +209,6 @@ Slide
 
 
 
-	echo "
-	########################################################################
-	########################## DISPLAY MANAGER #############################
-	########################################################################
-	"
-	## LIGHTDM
-	apt -y install lightdm lightdm-gtk-greeter 
-	
-	sed -i '/autologin-user=/c autologin-user=live' /etc/lightdm/lightdm.conf
-	sed -i '/autologin-user-timeout=/c autologin-user-timeout=0' /etc/lightdm/lightdm.conf
-	sed -i '/autologin-session=/c autologin-session=icewm-session' /etc/lightdm/lightdm.conf
-	
 
 fi
 
@@ -238,10 +226,6 @@ sed -i "/snapshot_basename=/c snapshot_basename=\"${nombreDistro}\"" /etc/refrac
 ## Tipo de compresion (Compresion optimizada para CISC (x86))
 ##sed -i '/mksq_opt="-comp xz -Xbcj x86"/c mksq_opt="-comp xz -Xbcj x86"' /etc/refractasnapshot.conf
 
-## Ajuste limite de CPU
-#sed -i '/limit_cpu=/c limit_cpu="yes"' /etc/refractasnapshot.conf
-#sed -i '/limit=/c limit="95"' /etc/refractasnapshot.conf
-
 ## 
 sed -i '/username=/c username="live"' /etc/refractasnapshot.conf
 
@@ -257,8 +241,6 @@ echo "
 ################################# GRUB ################################# 
 ########################################################################
 "
-
-
 
 ## Configura las entredas del menu de GRUB 
 sed -i "/Ubuntu|Kubuntu)/c Ubuntu|Kubuntu|${nombreDistro}*)" /etc/grub.d/10_linux
@@ -376,28 +358,6 @@ cat << 'EOF' > /etc/PolicyKit/PolicyKit.conf
 	<define_admin_auth group="adm"/>
 </config>
 EOF
-
-
-
-
-echo "
-########################################################################
-############################### SKEL ###################################
-########################################################################
-"
-
-## Eliminacion rastros anteriores
-rm -r /home/live/
-
-## Creacion de la carpeta por si no existe
-mkdir -p /etc/skel
-
-## Copia de home's
-cp -r ./sesion/skel/ /etc/
-cp -r ./sesion/skel/ /home/live/
-
-## Ajuste de permisos
-chown live /home/live -R
 
 
 
@@ -636,58 +596,6 @@ then
 	##sed -i '/1:2345:respawn:\/sbin\/getty/c 1:2345:respawn:\/sbin\/getty -a live --noclear 38400 tty1' /etc/inittab
 
 
-
-	
-	
-
-echo "
-########################################################################
-############################### TTY'S ##################################
-########################################################################
-"
-
-####### NUM BLOQ ACTIVADO EN TTY'S
-if grep -q 'setleds -D +num < $tty' /etc/rc.local
-then
-	echo 'Existe "setleds -D +num < $tty", omitiendo este paso...'
-else
-echo '
-for tty in /dev/tty[0-9]*; do
-        setleds -D +num < $tty
-done
-' >> /etc/rc.local 
-
-fi
-
-
-########## Reduciendo numero de tty's (sysVinit)
-## Ajuste al archivo
-sed -i '/4:23:respawn:\/sbin\/getty/c #4:23:respawn:\/sbin\/getty 38400 tty4' /etc/inittab
-sed -i '/5:23:respawn:\/sbin\/getty/c #5:23:respawn:\/sbin\/getty 38400 tty5' /etc/inittab
-sed -i '/6:23:respawn:\/sbin\/getty/c #6:23:respawn:\/sbin\/getty 38400 tty6' /etc/inittab
-
-
-########## REMOVIENDO SERVICIOS 
-update-rc.d -f cron remove
-
-
-	
-
-echo "
-########################################################################
-########################## DISPLAY MANAGER #############################
-########################################################################
-"
-
-## LXDM
-apt -y install lxdm 
-apt -y install lxdm-loc-os
-
-sed -i '/session=/c session=/usr/bin/icewm-session' /etc/lxdm/default.conf
-sed -i '/numlock=/c numlock=1' /etc/lxdm/default.conf
-
-
-
 echo "
 ########################################################################
 ############################## REFRACTA ################################
@@ -741,46 +649,6 @@ sed -i "/GRUB_DISTRIBUTOR=/c GRUB_DISTRIBUTOR=\`lsb_release -d -s 2> \/dev\/null
 
 
 	
-echo "
-########################################################################
-                              AJUSTE CONNMAN
-########################################################################
-"
-
-## SKEL
-echo '
-#!/bin/bash
-
-if pgrep -x "connman-gtk" > /dev/null
-then
-        pkill connman-gtk
-else
-        connman-gtk &
-fi
-' | sudo tee /etc/skel/.config/scripts/toggle_network-applet.sh 
-
-
-
-## LIVE
-echo '
-#!/bin/bash
-
-if pgrep -x "connman-gtk" > /dev/null
-then
-        pkill connman-gtk
-else
-        connman-gtk &
-fi
-' > /home/live/.config/scripts/toggle_network-applet.sh 
-
-
-sudo chown -R live:live /home/live/
-
-
-
-
-
-
 
 
 fi
