@@ -167,7 +167,7 @@ Hidden=false
 chown live:live -R /home/live/
 
 
-if grep -q "- /home/*/.config/kate" /usr/lib/refractasnapshot/snapshot_exclude.list
+if grep -q "/home/*/.config/kate" /usr/lib/refractasnapshot/snapshot_exclude.list
 then
 	echo ":::::'- /home/*/.config/kate' existe, omitiendo este paso....."
 else
