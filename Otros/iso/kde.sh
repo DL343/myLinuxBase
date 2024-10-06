@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+apt -y reinstall welcome-loc-os
+
 ##################################################
 ## Instalar KDE Plasma (base minima)
 ##################################################
@@ -299,5 +301,5 @@ apt -y purge network-manager
 
 apt -y autoremove
 
-apt -y reinstall welcome-loc-os
+
 
