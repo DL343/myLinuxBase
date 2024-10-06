@@ -23,19 +23,29 @@ echo "#########################################"
 
 
 
-
-##### STARTUP
-if grep -q -x "dbus-update-activation-environment DISPLAY &" $HOME/.icewm/startup
+if grep -q "CUSTOM KDE" /usr/lib/refractasnapshot/snapshot_exclude.list
 then
-	echo "::::: Existe 'dbus-update-activation-environment DISPLAY &', omitiendo este paso..."
+	echo ":::::'CUSTOM KDE' existe, omitiendo este paso....."
 else
 echo "
-## Ajuste sin DM
-dbus-update-activation-environment DISPLAY &
-" >> $HOME/.icewm/startup
+
+####### CUSTOM KDE ########
+- /home/*/.config/kate
+- /home/*/.config/akregatorrc
+- /home/*/.config/dolphinrc
+- /home/*/.config/gwenviewrc
+- /home/*/.config/katerc
+- /home/*/.config/kmixrc
+- /home/*/.config/konsolerc
+- /home/*/.config/konquerorrc
+- /home/*/.config/kwinrc
+- /home/*/.config/spectaclerc
+
+- /home/*/.local/share/dolphin/*
+- /home/*/.local/share/kate/*
+- /home/*/.local/share/klipper/*
+- /home/*/.local/share/kscreen/*
+
+" >> /usr/lib/refractasnapshot/snapshot_exclude.list
 fi
-
-
-
-
 
