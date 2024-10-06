@@ -167,11 +167,11 @@ Hidden=false
 chown live:live -R /home/live/
 
 
-if grep -q "/home/*/.config/kate" /usr/lib/refractasnapshot/snapshot_exclude.list
+if grep -q "CUSTOM KDE" /usr/lib/refractasnapshot/snapshot_exclude.list
 then
-	echo ":::::'- /home/*/.config/kate' existe, omitiendo este paso....."
+	echo ":::::'CUSTOM KDE' existe, omitiendo este paso....."
 else
-echo "
+echo "####### CUSTOM KDE ########
 - /home/*/.config/kate
 - /home/*/.config/akregatorrc
 - /home/*/.config/dolphinrc
@@ -190,3 +190,5 @@ echo "
 
 " >> /usr/lib/refractasnapshot/snapshot_exclude.list
 fi
+
+
