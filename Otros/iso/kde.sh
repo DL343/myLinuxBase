@@ -183,6 +183,8 @@ echo "####### CUSTOM KDE ########
 " >> /usr/lib/refractasnapshot/snapshot_exclude.list
 fi
 
+sed -i '/mksq_opt="-comp xz -Xbcj x86"/c mksq_opt="-comp xz -Xbcj x86"' /etc/refractasnapshot.conf
+
 ##################################################
 ## Elimina paquetes adicionales
 ##################################################
@@ -193,4 +195,6 @@ apt -y purge apparmor aspell-es bup chafa cups-pk-helper debian-reference-es deb
 apt -y purge network-manager
 
 
-apt autoremove
+apt -y autoremove
+
+apt -y reinstall welcome-loc-os
