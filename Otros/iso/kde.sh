@@ -135,6 +135,42 @@ mv /usr/share/plasma/plasmoids.disabled/org.kde.plasma.taskmanager        /usr/s
 
 
 
+
+###########################################################
+## COMPLEMENTOS
+############################################################
+
+##### NAVEGADOR
+apt -y install chromium kde-spectacle vlc kamera kate ark kcalc gwenview fastfetch okular unrar-free unzip webapp-manager zip libreoffice-calc libreoffice-writer
+
+##### NETWORK
+apt -y purge network-manager
+
+
+
+
+
+mkdir -p /home/live/.config/autostart
+echo "[Desktop Entry]
+Encoding=UTF-8
+Version=0.9.4
+Type=Application
+Name=Welcome
+Comment=
+Exec=/bin/loc-oswelcome.sh
+OnlyShowIn=KDE;
+RunHook=0
+StartupNotify=false
+Terminal=false
+Hidden=false
+" > /home/live/.config/autostart/Welcome.desktop
+chown live:live -R /home/live/
+
+
+if grep -q "- /home/*/.config/kate" /usr/lib/refractasnapshot/snapshot_exclude.list
+then
+	echo ":::::'- /home/*/.config/kate' existe, omitiendo este paso....."
+else
 echo "
 - /home/*/.config/kate
 - /home/*/.config/akregatorrc
@@ -153,3 +189,4 @@ echo "
 - /home/*/.local/share/kscreen/*
 
 " >> /usr/lib/refractasnapshot/snapshot_exclude.list
+fi
