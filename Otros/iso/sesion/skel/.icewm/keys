@@ -1,50 +1,61 @@
 
 
+########################################################################
+################################ CUSTOM ################################
+########################################################################
 
-########################## CUSTOM ###############################
-
-
-################# VOLUMEN ################
+########################################################################
+################################ VOLUMEN ###############################
+########################################################################
 ##### LAPTOP
 key XF86AudioLowerVolume        pactl set-sink-volume @DEFAULT_SINK@ -5%
 key XF86AudioRaiseVolume        pactl set-sink-volume @DEFAULT_SINK@ +5%
 key XF86AudioMute               pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-##### PC
+##### GENERICO
 key Alt+KP_Subtract             pactl set-sink-volume @DEFAULT_SINK@ -5%
 key Alt+KP_Add                  pactl set-sink-volume @DEFAULT_SINK@ +5%
 key Alt+KP_Multiply             pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 
-#key XF86AudioLowerVolume         amixer sset Master 5%-
-#key XF86AudioRaiseVolume         amixer sset Master 5%+
-#key XF86AudioMute                amixer sset Master toggle
+###key XF86AudioLowerVolume       amixer sset Master 5%-
+###key XF86AudioRaiseVolume       amixer sset Master 5%+
+###key XF86AudioMute              amixer sset Master toggle
 
-#key Super+Alt+KP_Subtract         
-#key Super+Alt+KP_Add             
-#key Super+Alt+KP_Multiply        
-
-
-
-
-
-################ BRILLO ################
-key XF86MonBrightnessDown       brightnessctl s 10%-
-key XF86MonBrightnessUp         brightnessctl s 10%+
+    
+##### CONTROL SEGUNDO DISPOSITIVO
+key Super+Alt+KP_Add            sh -c '$HOME/.config/scripts/twoVolume.sh +'
+key Super+Alt+KP_Subtract       sh -c '$HOME/.config/scripts/twoVolume.sh -'
+key Super+Alt+KP_Multiply       sh -c '$HOME/.config/scripts/twoVolume.sh mute'
 
 
+########################################################################
+############################### BRILLO #################################
+########################################################################
+## LAPTOP
+key XF86MonBrightnessDown       brightnessctl s 5%-
+key XF86MonBrightnessUp         brightnessctl s 5%+
 
-################ GENERAL ################ 
+## GENERICO
+key Super+Alt+Up                brightnessctl s 5%+
+key Super+Alt+Down              brightnessctl s 5%-
+
+
+########################################################################
+################################ GENERAL ###############################
+########################################################################
 key Ctrl+Alt+t                  x-terminal-emulator
 key Super+Enter                 x-terminal-emulator
 key Super+t                     x-terminal-emulator
 key Super+f                     pcmanfm
 key Super+e                     geany
-key Ctrl+Shift+Escape           sakura -x htop
 key Super+Space                 rofi -modi drun,run -show-icons -theme /usr/share/rofi/themes/Monokai.rasi -font 'mono 14' -show drun
 key Super+Alt+v                 pavucontrol
 
-################ CAPTURA PANTALLA ################ 
+
+########################################################################
+############################ CAPTURA PANTALLA ##########################
+########################################################################
 key Print                       flameshot full
 key Super+Shift+s               flameshot gui
 
@@ -52,7 +63,9 @@ key Super+Shift+s               flameshot gui
 switchkey 'Super+p'             icewm-menu-xrandr
 
 
-################ TOGGLES ################ 
+########################################################################
+################################# TOGGLES ##############################
+########################################################################
 key Super+n                     $HOME/.config/scripts/toggle_network-applet.sh
 key Super+b                     $HOME/.config/scripts/toggle_blueman-applet.sh
 key Super+c                     $HOME/.config/scripts/toggle_zenityCalendar.sh

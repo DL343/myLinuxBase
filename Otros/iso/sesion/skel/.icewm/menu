@@ -1,0 +1,69 @@
+menu "Audio" applications-multimedia {
+prog "Audacious" audacious audacious
+prog "Control de volumen de PulseAudio" multimedia-volume-control pavucontrol
+}
+menu "Development" folder {
+prog "Geany" geany geany
+prog "Icon Browser" yad yad-icon-browser
+prog "Meld" org.gnome.Meld meld
+prog "VSCodium" vscodium /usr/share/codium/codium
+}
+menu "Gráficos" applications-graphics {
+prog "Editor de deseño Gnome Paint" gp gnome-paint
+prog "Flameshot" org.flameshot.Flameshot flameshot
+prog "ImageMagick (color depth=q16)" display-im6.q16 icewm-menu-fdo "/usr/share/applications/display-im6.q16.desktop"
+prog "Mirage" mirage mirage
+prog "mtPaint graphic editor" mtpaint mtpaint
+prog "Programa de manipulación de imágenes de GNU" gimp gimp-2.10
+prog "Visor de documentos" org.gnome.Evince evince
+}
+menu "Network" folder {
+prog "Brave Web Browser" brave-browser /usr/bin/brave-browser-stable
+prog "Navegador web Firefox ESR" firefox-esr /usr/lib/firefox-esr/firefox-esr
+prog "Visor remoto" virt-viewer remote-viewer
+}
+menu "Oficina" applications-office {
+prog "Visor de documentos" org.gnome.Evince evince
+}
+menu "Science" folder {
+prog "Qalculate!" qalculate qalculate-gtk
+}
+menu "Settings" folder {
+prog "Ajustes del monitor" video-display lxrandr
+prog "ARandR" display arandr
+prog "Configuración de red avanzada" preferences-system-network nm-connection-editor
+prog "Control de volumen de PulseAudio" multimedia-volume-control pavucontrol
+prog "Gestor de conexiones Bluetooth" blueman blueman-manager
+prog "Personalizar apariencia y comportamiento" preferences-desktop-theme lxappearance
+prog "Preferencias del escritorio" user-desktop pcmanfm --desktop-pref
+prog "XScreenSaver Settings" xscreensaver xscreensaver-settings
+}
+menu "Sistema" preferences-other {
+prog "BleachBit" bleachbit bleachbit
+prog "BleachBit (as root)" bleachbit pkexec bleachbit
+prog "btop++" btop x-terminal-emulator -e btop
+prog "Editor de particiones GParted" gparted /usr/sbin/gparted
+prog "Foot" foot foot
+prog "Foot Client" foot footclient
+prog "Foot Server" foot foot --server
+prog "Gestor de archivos PCManFM" system-file-manager pcmanfm
+prog "Gestor de máquinas virtuales" virt-manager virt-manager
+prog "Htop" htop x-terminal-emulator -e htop
+prog "Monitor del sistema" org.gnome.SystemMonitor gnome-system-monitor
+prog "Sakura" terminal-tango sakura
+}
+menu "Sonido y vídeo" applications-multimedia {
+prog "Audacious" audacious audacious
+prog "Control de volumen de PulseAudio" multimedia-volume-control pavucontrol
+prog "Reproductor multimedia VLC" vlc icewm-menu-fdo "/usr/share/applications/vlc.desktop"
+}
+menu "Utility" folder {
+prog "Captura de pantalla" org.gnome.Screenshot gnome-screenshot --interactive
+prog "Debian Reference" debian-reference debian-reference
+prog "Gestor de archivos PCManFM" system-file-manager pcmanfm
+prog "Imager" rpi-imager rpi-imager
+prog "nitrogen" nitrogen nitrogen
+prog "Qalculate!" qalculate qalculate-gtk
+prog "Sakura" terminal-tango sakura
+prog "Xarchiver" xarchiver xarchiver
+}

@@ -680,7 +680,7 @@
 # QuickSwitchToMinimized=1 # 0/1
 
 #  Prioritize Alt+Tab to urgent windows.
-# QuickSwitchToUrgent=1 # 0/1
+ QuickSwitchToUrgent=0 # 0/1
 
 #  Place the icons and titles vertical instead of horizontal.
 # QuickSwitchVertical=1 # 0/1
@@ -746,10 +746,10 @@
 # ShowMoveSizeStatus=1 # 0/1
 
 #  Show popup menus above mouse pointer.
-# ShowPopupsAbovePointer=0 # 0/1
+# ShowPopupsAbovePointer=1 # 0/1
 
 #  Show programs submenu in the program menu.
-# ShowProgramsMenu=1 # 0/1
+ ShowProgramsMenu=0 # 0/1
 
 #  Show the run menu item in the program menu.
 # ShowRun=1 # 0/1
@@ -764,7 +764,7 @@
 # ShowThemesMenu=1 # 0/1
 
 #  Show the window menu item in the program menu.
-# ShowWindowList=1 # 0/1
+ ShowWindowList=0 # 0/1
 
 #  Show name of current workspace while switching.
 # ShowWorkspaceStatus=1 # 0/1
@@ -803,7 +803,7 @@
 # TaskBarAutoHide=0 # 0/1
 
 #  Delay between CPU Monitor samples in ms.
-# TaskBarCPUDelay=500 # [10-3600000]
+ TaskBarCPUDelay=1000 # [10-3600000]
 
 #  The width of the CPU Monitor applet in pixels.
 # TaskBarCPUSamples=20 # [2-1000]
@@ -827,7 +827,7 @@
 # TaskBarLaunchOnSingleClick=1 # 0/1
 
 #  Delay between Memory Monitor samples in ms.
-# TaskBarMEMDelay=500 # [10-3600000]
+ TaskBarMEMDelay=1000 # [10-3600000]
 
 #  The width of the Memory Monitor applet in pixels.
 # TaskBarMEMSamples=20 # [2-1000]
@@ -839,7 +839,7 @@
 # TaskBarMailboxStatusCountMessages=0 # 0/1
 
 #  Delay between Net Monitor samples in ms.
-# TaskBarNetDelay=500 # [10-3600000]
+ TaskBarNetDelay=1000 # [10-3600000]
 
 #  The width of the Net Monitor applet in pixels.
 # TaskBarNetSamples=20 # [2-1000]
@@ -902,7 +902,7 @@ TaskBarShowMailboxStatus=0 # 0/1
 # TaskBarShowWorkspaces=1 # 0/1
 
 #  Group applications with the same class name under a single task button: 0=off, 1=digits, 2=dots, 3=both.
-# TaskBarTaskGrouping=0 # [0-3]
+ TaskBarTaskGrouping=3 # [0-3]
 
 #  Enable mouse wheel cycling over workspaces and task buttons in taskbar.
  TaskBarUseMouseWheel=0 # 0/1
@@ -1324,7 +1324,7 @@ WorkspaceNames=" 1 ", " 2 "
 # MenuFontNameXft="DejaVu Sans:size=10:bold"
 
 #  Menu icon size.
-# MenuIconSize=16 # [8-128]
+MenuIconSize=25 # [8-128]
 
 #  Name of the normal button font.
 # NormalButtonFontName="-misc-dejavu sans-medium-r-normal--12-*-*-*-*-*-*-*"
@@ -1497,4 +1497,5 @@ WorkspaceNames=" 1 ", " 2 "
 
 #  Support for semitransparent terminals like Eterm or gnome-terminal.
 # SupportSemitransparency=1 # 0/1
+
 
