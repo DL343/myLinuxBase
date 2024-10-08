@@ -110,14 +110,14 @@ echo '
 	
 	
 
-echo '
-########################################################################
-                            INTERFACES
-########################################################################
-'
+#echo '
+#########################################################################
+                            #INTERFACES
+#########################################################################
+#'
 
-echo '## Deshabilitar "interfaces"'
-sudo mv /etc/network/interfaces /etc/network/interfaces.old
+#echo '## Deshabilitar "interfaces"'
+#sudo mv /etc/network/interfaces /etc/network/interfaces.old
 
 
 
