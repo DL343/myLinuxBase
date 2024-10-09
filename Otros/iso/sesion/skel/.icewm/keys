@@ -49,7 +49,7 @@ key Super+Enter                 x-terminal-emulator
 key Super+t                     x-terminal-emulator
 key Super+f                     pcmanfm
 key Super+e                     geany
-key Super+Space                 rofi -modi drun,run -show-icons -theme /usr/share/rofi/themes/Monokai.rasi -font 'mono 14' -show drun
+key Super+Space                 rofi -modi drun,run -show-icons -theme .config/rofi/Monokai.rasi -font 'mono 16' -show drun
 key Super+Alt+v                 pavucontrol
 
 

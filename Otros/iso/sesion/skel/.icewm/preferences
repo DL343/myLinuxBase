@@ -902,7 +902,7 @@ TaskBarShowMailboxStatus=0 # 0/1
 # TaskBarShowWorkspaces=1 # 0/1
 
 #  Group applications with the same class name under a single task button: 0=off, 1=digits, 2=dots, 3=both.
- TaskBarTaskGrouping=3 # [0-3]
+# TaskBarTaskGrouping=0 # [0-3]
 
 #  Enable mouse wheel cycling over workspaces and task buttons in taskbar.
  TaskBarUseMouseWheel=0 # 0/1
@@ -1324,7 +1324,8 @@ WorkspaceNames=" 1 ", " 2 "
 # MenuFontNameXft="DejaVu Sans:size=10:bold"
 
 #  Menu icon size.
-MenuIconSize=25 # [8-128]
+#MenuIconSize=25 # [8-128]
+MenuIconSize=32 # [8-128]
 
 #  Name of the normal button font.
 # NormalButtonFontName="-misc-dejavu sans-medium-r-normal--12-*-*-*-*-*-*-*"
@@ -1378,7 +1379,7 @@ MenuIconSize=25 # [8-128]
 # ShowMenuButtonIcon=1 # 0/1
 
 #  Dimension of the small icons.
-#SmallIconSize=16 # [8-128]
+SmallIconSize=22 # [8-128]
 
 #  Name of the status display font.
 # StatusFontName="-misc-dejavu sans mono-bold-r-normal--12-*-*-*-*-*-*-*"

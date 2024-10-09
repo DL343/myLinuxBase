@@ -19,5 +19,5 @@ install -D $BASE/.config/bleachbit/bleachbit.ini               $HOME/.config/ble
 
 cp -r $BASE/.icewm                                             $HOME/
 cp -r $BASE/.config/scripts/                                   $HOME/.config/
-
+cp -r $BASE/.config/rofi/                                      $HOME/.config/
 

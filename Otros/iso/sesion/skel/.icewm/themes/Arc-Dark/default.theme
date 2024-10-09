@@ -95,7 +95,7 @@ ColorNetIdle=#222
 #Workspaces
 ColorActiveWorkspaceButton=rgb:4b/46/f6
 ColorActiveWorkspaceButtonText=#D3DAE3
-SmallIconSize=18
+#SmallIconSize=18
 
 # Dialog
 ColorDialog=#222
