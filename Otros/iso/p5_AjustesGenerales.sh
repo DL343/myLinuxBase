@@ -349,11 +349,8 @@ echo "
 ############################## POLICYKIT ###############################
 ########################################################################
 "
-mkdir -p /etc/PolicyKit/
 
-cp ./PolicyKit/PolicyKit.conf /etc/PolicyKit/
-
-
+cp -r ./PolicyKit/ /etc/
 
 
 echo "
