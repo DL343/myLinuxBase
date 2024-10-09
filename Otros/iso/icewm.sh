@@ -27,18 +27,18 @@ echo "
 ########################################################################
 "
 
-####### NUM BLOQ ACTIVADO EN TTY'S
-if grep -q 'setleds -D +num < $tty' /etc/rc.local
-then
-	echo 'Existe "setleds -D +num < $tty", omitiendo este paso...'
-else
-echo '
-for tty in /dev/tty[0-9]*; do
-        setleds -D +num < $tty
-done
-' >> /etc/rc.local 
+######## NUM BLOQ ACTIVADO EN TTY'S
+#if grep -q 'setleds -D +num < $tty' /etc/rc.local
+#then
+	#echo 'Existe "setleds -D +num < $tty", omitiendo este paso...'
+#else
+#echo '
+#for tty in /dev/tty[0-9]*; do
+        #setleds -D +num < $tty
+#done
+#' >> /etc/rc.local 
 
-fi
+#fi
 
 
 

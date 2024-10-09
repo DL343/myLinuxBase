@@ -1,1 +1,2 @@
-includeprog icewm-menu-fdo --no-sep-others --seps
+includeprog icewm-menu-fdo --no-sep-others --no-sub-cats
+
