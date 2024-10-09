@@ -210,6 +210,26 @@ cp ./custom/wallpapers/* /usr/share/wallpapers/
 #sed -i '/autologin-session=/c autologin-session=icewm-session' /etc/lightdm/lightdm.conf
 
 
+if [ "sysvinit" == "${init}" ]
+then
+	
+	
+	## Autoinicio de Welcome para iceWM
+if grep -q "/bin/loc-oswelcome.sh" /home/live/.icewm/startup
+then
+	echo "Existe el ajuste, omitiendo este paso..."
+else
+	echo "
+## Script inicio
+/bin/loc-oswelcome.sh
+
+" >>  /home/live/.icewm/startup 
+fi
+
+
+
+fi
+
 
 
 update-grub

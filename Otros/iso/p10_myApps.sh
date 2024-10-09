@@ -149,26 +149,31 @@ echo "
 ########################################################################
 "
 
-sudo apt -y install chromium waterfox
+apt -y install chromium waterfox
 
 
-sudo apt -y remove --purge avahi-daemon   git  at-spi2-core  rtkit 
+apt -y purge avahi-daemon   git  at-spi2-core  rtkit 
 
 
 
-##   xdg-desktop-portal-gtk
+echo "
+########################################################################
+                              LIMPIEZA
+########################################################################
+"
 
-
-apt -y remove --purge aspell-es chafa cups-pk-helper debian-reference-es \
+apt -y purge aspell-es chafa cups-pk-helper debian-reference-es \
 debian-reference-common fonts-liberation ispanish task-spanish \
 manpages-es system-config-printer system-config-printer-common \
 system-config-printer-udev  python3-cupshelpers python3-cups xterm
 
 
-
+echo "
+########################################################################
+                              AJUSTES
+########################################################################
+"
 
 pactl set-sink-volume @DEFAULT_SINK@ 25%
 update-rc.d -f nftables remove
-
-
 apt install console-data  	
