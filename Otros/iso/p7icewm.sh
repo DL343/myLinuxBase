@@ -23,38 +23,6 @@ chown live /home/live -R
 
 echo "
 ########################################################################
-########################## DISPLAY MANAGER #############################
-########################################################################
-"
-
-## LXDM
-apt -y install lxdm 
-apt -y install lxdm-loc-os
-
-sed -i '/session=/c session=/usr/bin/icewm-session' /etc/lxdm/default.conf
-sed -i '/numlock=/c numlock=1' /etc/lxdm/default.conf
-
-
-
-
-#echo "
-#########################################################################
-########################### DISPLAY MANAGER #############################
-#########################################################################
-#"
-### LIGHTDM
-#apt -y install lightdm lightdm-gtk-greeter 
-
-#sed -i '/autologin-user=/c autologin-user=live' /etc/lightdm/lightdm.conf
-#sed -i '/autologin-user-timeout=/c autologin-user-timeout=0' /etc/lightdm/lightdm.conf
-#sed -i '/autologin-session=/c autologin-session=icewm-session' /etc/lightdm/lightdm.conf
-
-
-
-
-
-echo "
-########################################################################
                               AJUSTE CONNMAN
 ########################################################################
 "
@@ -204,6 +172,41 @@ sed -i '/6:23:respawn:\/sbin\/getty/c #6:23:respawn:\/sbin\/getty 38400 tty6' /e
 
 ########## REMOVIENDO SERVICIOS 
 update-rc.d -f cron remove
+
+
+
+
+
+
+echo "
+########################################################################
+########################## DISPLAY MANAGER #############################
+########################################################################
+"
+
+## LXDM
+apt -y install lxdm 
+apt -y install lxdm-loc-os
+
+sed -i '/session=/c session=/usr/bin/icewm-session' /etc/lxdm/default.conf
+sed -i '/numlock=/c numlock=1' /etc/lxdm/default.conf
+
+
+
+
+#echo "
+#########################################################################
+########################### DISPLAY MANAGER #############################
+#########################################################################
+#"
+### LIGHTDM
+#apt -y install lightdm lightdm-gtk-greeter 
+
+#sed -i '/autologin-user=/c autologin-user=live' /etc/lightdm/lightdm.conf
+#sed -i '/autologin-user-timeout=/c autologin-user-timeout=0' /etc/lightdm/lightdm.conf
+#sed -i '/autologin-session=/c autologin-session=icewm-session' /etc/lightdm/lightdm.conf
+
+
 
 
 
