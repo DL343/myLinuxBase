@@ -1,8 +1,8 @@
 #!/bin/bash
 
 
-sudo apt update
-sudo apt upgrade -y
+apt update
+apt -y upgrade
 
 
 sudo apt -y install xorg	bash-completion 	htop 		btop		fastfetch 		gparted 	\
