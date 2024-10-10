@@ -152,8 +152,8 @@ echo "
 apt -y install chromium waterfox
 
 
-apt -y purge avahi-daemon   git  at-spi2-core  rtkit 
-
+apt -y purge avahi-daemon  at-spi2-core  rtkit 
+#git
 
 
 echo "
