@@ -2,10 +2,8 @@
 
 source ./variables.sh
 
-
 apt update
-apt upgrade
-
+apt -y upgrade
 
 
 if [ "systemd" == "${init}" ]

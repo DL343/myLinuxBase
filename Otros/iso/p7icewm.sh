@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source ./variables.sh
+
 echo "
 ########################################################################
 ############################ SKEL Y LIVE ###############################
@@ -37,7 +39,7 @@ then
 else
         connman-gtk &
 fi
-' | sudo tee /etc/skel/.config/scripts/toggle_network-applet.sh 
+' > /etc/skel/.config/scripts/toggle_network-applet.sh 
 
 
 
@@ -189,6 +191,26 @@ sed -i '/numlock=/c numlock=1' /etc/lxdm/default.conf
 #sed -i '/autologin-user-timeout=/c autologin-user-timeout=0' /etc/lightdm/lightdm.conf
 #sed -i '/autologin-session=/c autologin-session=icewm-session' /etc/lightdm/lightdm.conf
 
+
+
+
+
+
+
+########################################################################
+
+
+
+
+
+
+########################################################################
+
+
+
+
+
+########################################################################
 
 
 
