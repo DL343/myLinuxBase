@@ -206,14 +206,28 @@ sed -i '/greeter-setup-script=/c greeter-setup-script=/usr/bin/numlockx on' /etc
 ##### LIGHTDM: MOSTAR USUARIOS DISPONIBLES
 sed -i '/greeter-hide-users=/c greeter-hide-users=false' /usr/share/lightdm/lightdm.conf.d/01_debian.conf 
 
-##### LIGHTDM: WALLPAPER
-sed -i '/background =/c background = /usr/share/wallpapers/loquitux_orquidea.png'  /etc/lightdm/lightdm-gtk-greeter.conf
+###### LIGHTDM: WALLPAPER
+#sed -i '/background=/c background=/usr/share/wallpapers/loquitux_orquidea.png'  /etc/lightdm/lightdm-gtk-greeter.conf
 
-##### LIGHTDM: TEMA
-sed -i '/theme-name =/c theme-name = DarkAndGolden'  /etc/lightdm/lightdm-gtk-greeter.conf
+###### LIGHTDM: TEMA
+#sed -i '/theme-name=/c theme-name=DarkAndGolden'  /etc/lightdm/lightdm-gtk-greeter.conf
 
-##### LIGHTDM: ICONOS
-sed -i '/icon-theme-name =/c icon-theme-name = Tela-grey-dark'  /etc/lightdm/lightdm-gtk-greeter.conf
+###### LIGHTDM: ICONOS
+#sed -i '/icon-theme-name=/c icon-theme-name=Tela-grey-dark'  /etc/lightdm/lightdm-gtk-greeter.conf
+
+if grep -q "background=/usr/share/wallpapers/loquitux_orquidea.png" /etc/lightdm/lightdm-gtk-greeter.conf
+
+	echo "Existe ajuste, omitiendo este paso"
+
+else
+
+echo "
+background=/usr/share/wallpapers/loquitux_orquidea.png
+theme-name=DarkAndGolden
+icon-theme-name=Tela-grey-dark
+" >> /etc/lightdm/lightdm-gtk-greeter.conf
+
+fi
 
 
 ########################################################################

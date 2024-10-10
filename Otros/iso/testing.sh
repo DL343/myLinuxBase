@@ -21,24 +21,17 @@ fi
 
 echo "#########################################"
 
+if grep -q "background=/usr/share/wallpapers/loquitux_orquidea.png" /etc/lightdm/lightdm-gtk-greeter.conf
+then
 
-##### LIGHTDM: DEPENDENCIA
-apt -y install numlockx
+	echo "Existe ajuste, omitiendo este paso"
 
-## LIGHTDM: INSTALACION
-apt -y install lightdm lightdm-gtk-greeter --no-install-recommends 
+else
 
-##### LIGHTDM: AUTOLOGIN LIVE
-sed -i '/autologin-user=/c autologin-user=live' /etc/lightdm/lightdm.conf
-sed -i '/autologin-user-timeout=/c autologin-user-timeout=0' /etc/lightdm/lightdm.conf
-sed -i '/autologin-session=/c autologin-session=icewm-session' /etc/lightdm/lightdm.conf
+echo "
+background=/usr/share/wallpapers/loquitux_orquidea.png
+theme-name=DarkAndGolden
+icon-theme-name=Tela-grey-dark
+" >> /etc/lightdm/lightdm-gtk-greeter.conf
 
-##### LIGHTDM: BLOQ NUM ACTIVADO POR DEFECTO
-sed -i '/greeter-setup-script=/c greeter-setup-script=/usr/bin/numlockx on' /etc/lightdm/lightdm.conf
-
-##### LIGHTDM: MOSTAR USUARIOS DISPONIBLES
-sed -i '/greeter-hide-users=/c greeter-hide-users=false' /usr/share/lightdm/lightdm.conf.d/01_debian.conf 
-
-##### LIGHTDM: WALLPAPER
-sed -i '/background =/c background = /usr/share/wallpapers/loquitux_orquidea.png'  /etc/lightdm/lightdm-gtk-greeter.conf
-
+fi
