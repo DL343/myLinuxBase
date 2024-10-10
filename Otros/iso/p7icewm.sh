@@ -163,38 +163,53 @@ cp ./custom/wallpapers/* /usr/share/wallpapers/
 
 
 
+#echo "
+#########################################################################
+########################### DISPLAY MANAGER #############################
+#########################################################################
+#"
+
+### LXDM
+#apt -y install lxdm 
+#apt -y install lxdm-loc-os
+
+#sed -i '/session=/c session=/usr/bin/icewm-session' /etc/lxdm/default.conf
+#sed -i '/numlock=/c numlock=1' /etc/lxdm/default.conf
+
+
+
+
 echo "
 ########################################################################
 ########################## DISPLAY MANAGER #############################
 ########################################################################
 "
 
-## LXDM
-apt -y install lxdm 
-apt -y install lxdm-loc-os
+##### LIGHTDM: DEPENDENCIA
+apt -y install numlockx
 
-sed -i '/session=/c session=/usr/bin/icewm-session' /etc/lxdm/default.conf
-sed -i '/numlock=/c numlock=1' /etc/lxdm/default.conf
+## LIGHTDM: INSTALACION
+sudo apt -y install lightdm lightdm-gtk-greeter --no-install-recommends 
 
+##### LIGHTDM: AUTOLOGIN LIVE
+sed -i '/autologin-user=/c autologin-user=live' /etc/lightdm/lightdm.conf
+sed -i '/autologin-user-timeout=/c autologin-user-timeout=0' /etc/lightdm/lightdm.conf
+sed -i '/autologin-session=/c autologin-session=icewm-session' /etc/lightdm/lightdm.conf
 
+##### LIGHTDM: BLOQ NUM ACTIVADO POR DEFECTO
+sed -i '/greeter-setup-script=/c greeter-setup-script=/usr/bin/numlockx on' /etc/lightdm/lightdm.conf
 
+##### LIGHTDM: MOSTAR USUARIOS DISPONIBLES
+sed -i '/greeter-hide-users=/c greeter-hide-users=false' /usr/share/lightdm/lightdm.conf.d/01_debian.conf 
 
-#echo "
-#########################################################################
-########################### DISPLAY MANAGER #############################
-#########################################################################
-#"
-### LIGHTDM
-#apt -y install lightdm lightdm-gtk-greeter 
+##### LIGHTDM: WALLPAPER
+sed -i '/background =/c background = /usr/share/wallpapers/loquitux_orquidea.png'  /etc/lightdm/lightdm-gtk-greeter.conf
 
-#sed -i '/autologin-user=/c autologin-user=live' /etc/lightdm/lightdm.conf
-#sed -i '/autologin-user-timeout=/c autologin-user-timeout=0' /etc/lightdm/lightdm.conf
-#sed -i '/autologin-session=/c autologin-session=icewm-session' /etc/lightdm/lightdm.conf
+##### LIGHTDM: TEMA
+sed -i '/theme-name =/c theme-name = DarkAndGolden'  /etc/lightdm/lightdm-gtk-greeter.conf
 
-
-
-
-
+##### LIGHTDM: ICONOS
+sed -i '/icon-theme-name =/c icon-theme-name = Tela-grey-dark'  /etc/lightdm/lightdm-gtk-greeter.conf
 
 
 ########################################################################

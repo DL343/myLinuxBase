@@ -51,6 +51,7 @@ key Super+f                     pcmanfm
 key Super+e                     geany
 key Super+Space                 rofi -modi drun,run -show-icons -theme .config/rofi/Monokai.rasi -font 'mono 16' -show drun
 key Super+Alt+v                 pavucontrol
+key Ctrl+Shift+Esc              x-terminal-emulator -m -x "btop -p 0"
 
 
 ########################################################################

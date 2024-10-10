@@ -516,6 +516,9 @@ echo "
 ########################################################################
 "
 
+##### LIGHTDM: DEPENDENCIA
+apt -y install numlockx
+
 
 echo '###### HABILITAR EL DM ######'
 if [ "$isInit" ==  "systemd" ]; then
@@ -553,19 +556,14 @@ imagenSeleccionada="${imagenes[$indice]}"
 
  cp "$imagenSeleccionada" /usr/share/pixmaps/lightdm.jpg
 
-## Configuracion del wallpaper
-echo '[greeter]
-background = /usr/share/pixmaps/lightdm.jpg
-theme-name = Adwaita-dark
-icon-theme-name = Adwaita
+##### LIGHTDM: BLOQ NUM ACTIVADO POR DEFECTO
+sed -i '/greeter-setup-script=/c greeter-setup-script=/usr/bin/numlockx on' /etc/lightdm/lightdm.conf
 
-' |  tee /etc/lightdm/lightdm-gtk-greeter.conf
+##### LIGHTDM: MOSTAR USUARIOS DISPONIBLES
+sed -i '/greeter-hide-users=/c greeter-hide-users=false' /usr/share/lightdm/lightdm.conf.d/01_debian.conf 
 
-
-
-## Desactivar la ocultacion de los usuarios disponibles
- sed -i '/greeter-hide-users=/c greeter-hide-users=false' /usr/share/lightdm/lightdm.conf.d/01_debian.conf 
-
+##### LIGHTDM: WALLPAPER
+sed -i '/background =/c background = /usr/share/pixmaps/lightdm.jpg'  /etc/lightdm/lightdm-gtk-greeter.conf
 
 
 
