@@ -73,6 +73,7 @@ apt -y install sakura   connman-gtk
 ######## ICEWM: AJUSTE CONFIGURACIONES SOLO EN LIVE
 if grep -q "pcmanfm --desktop &" /home/live/.icewm/startup
 then
+
 	echo "Existe el ajuste, omitiendo este paso..."
 else
 	echo "
@@ -80,6 +81,22 @@ else
 pcmanfm --desktop &
 
 " >>  /home/live/.icewm/startup 
+
+fi
+
+######## ICEWM: DESHABILITAR POLKIT GNOME EN LIVE
+if grep -q "#/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &" /home/live/.icewm/startup
+then
+	echo "Existe el ajuste, omitiendo este paso..."
+else
+
+	sed -i '/\/usr\/lib\/policykit-1-gnome\/polkit-gnome-authentication-agent-1 &/c #\/usr\/lib\/policykit-1-gnome\/polkit-gnome-authentication-agent-1 &' /home/live/.icewm/startup
+
+fi
+
+
+
+
 
 ## Ajuste resolucion pantalla
 ##sh -c 'xrandr --output Virtual-1 --mode 1280x768' &
@@ -94,7 +111,7 @@ ALL ALL=(ALL) NOPASSWD: /sbin/reboot
 ALL ALL=(ALL) NOPASSWD: /sbin/poweroff
 ALL ALL=(ALL) NOPASSWD: /usr/sbin/pm-suspend
 " > /etc/sudoers.d/icewm
-fi
+
 
 
 
@@ -171,8 +188,6 @@ sed -i '/numlock=/c numlock=1' /etc/lxdm/default.conf
 #sed -i '/autologin-user=/c autologin-user=live' /etc/lightdm/lightdm.conf
 #sed -i '/autologin-user-timeout=/c autologin-user-timeout=0' /etc/lightdm/lightdm.conf
 #sed -i '/autologin-session=/c autologin-session=icewm-session' /etc/lightdm/lightdm.conf
-
-
 
 
 
