@@ -2,7 +2,7 @@
 
 echo "
 ########################################################################
-############################### SKEL ###################################
+############################ SKEL Y LIVE ###############################
 ########################################################################
 "
 
@@ -23,42 +23,6 @@ chown live /home/live -R
 
 echo "
 ########################################################################
-############################### TTY'S ##################################
-########################################################################
-"
-
-######## NUM BLOQ ACTIVADO EN TTY'S
-#if grep -q 'setleds -D +num < $tty' /etc/rc.local
-#then
-	#echo 'Existe "setleds -D +num < $tty", omitiendo este paso...'
-#else
-#echo '
-#for tty in /dev/tty[0-9]*; do
-        #setleds -D +num < $tty
-#done
-#' >> /etc/rc.local 
-
-#fi
-
-
-
-
-########## Reduciendo numero de tty's (sysVinit)
-## Ajuste al archivo
-sed -i '/4:23:respawn:\/sbin\/getty/c #4:23:respawn:\/sbin\/getty 38400 tty4' /etc/inittab
-sed -i '/5:23:respawn:\/sbin\/getty/c #5:23:respawn:\/sbin\/getty 38400 tty5' /etc/inittab
-sed -i '/6:23:respawn:\/sbin\/getty/c #6:23:respawn:\/sbin\/getty 38400 tty6' /etc/inittab
-
-
-
-
-########## REMOVIENDO SERVICIOS 
-update-rc.d -f cron remove
-
-
-
-echo "
-########################################################################
 ########################## DISPLAY MANAGER #############################
 ########################################################################
 "
@@ -70,6 +34,20 @@ apt -y install lxdm-loc-os
 sed -i '/session=/c session=/usr/bin/icewm-session' /etc/lxdm/default.conf
 sed -i '/numlock=/c numlock=1' /etc/lxdm/default.conf
 
+
+
+
+#echo "
+#########################################################################
+########################### DISPLAY MANAGER #############################
+#########################################################################
+#"
+### LIGHTDM
+#apt -y install lightdm lightdm-gtk-greeter 
+
+#sed -i '/autologin-user=/c autologin-user=live' /etc/lightdm/lightdm.conf
+#sed -i '/autologin-user-timeout=/c autologin-user-timeout=0' /etc/lightdm/lightdm.conf
+#sed -i '/autologin-session=/c autologin-session=icewm-session' /etc/lightdm/lightdm.conf
 
 
 
@@ -197,17 +175,39 @@ cp ./custom/wallpapers/* /usr/share/wallpapers/
 
 
 
-#echo "
-#########################################################################
-########################### DISPLAY MANAGER #############################
-#########################################################################
-#"
-### LIGHTDM
-#apt -y install lightdm lightdm-gtk-greeter 
+echo "
+########################################################################
+############################### TTY'S ##################################
+########################################################################
+"
 
-#sed -i '/autologin-user=/c autologin-user=live' /etc/lightdm/lightdm.conf
-#sed -i '/autologin-user-timeout=/c autologin-user-timeout=0' /etc/lightdm/lightdm.conf
-#sed -i '/autologin-session=/c autologin-session=icewm-session' /etc/lightdm/lightdm.conf
+######## NUM BLOQ ACTIVADO EN TTY'S
+#if grep -q 'setleds -D +num < $tty' /etc/rc.local
+#then
+	#echo 'Existe "setleds -D +num < $tty", omitiendo este paso...'
+#else
+#echo '
+#for tty in /dev/tty[0-9]*; do
+        #setleds -D +num < $tty
+#done
+#' >> /etc/rc.local 
+
+#fi
+
+
+########## Reduciendo numero de tty's (sysVinit)
+## Ajuste al archivo
+sed -i '/4:23:respawn:\/sbin\/getty/c #4:23:respawn:\/sbin\/getty 38400 tty4' /etc/inittab
+sed -i '/5:23:respawn:\/sbin\/getty/c #5:23:respawn:\/sbin\/getty 38400 tty5' /etc/inittab
+sed -i '/6:23:respawn:\/sbin\/getty/c #6:23:respawn:\/sbin\/getty 38400 tty6' /etc/inittab
+
+
+########## REMOVIENDO SERVICIOS 
+update-rc.d -f cron remove
+
+
+
+
 
 
 if [ "sysvinit" == "${init}" ]
