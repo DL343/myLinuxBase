@@ -216,6 +216,7 @@ sed -i '/greeter-hide-users=/c greeter-hide-users=false' /usr/share/lightdm/ligh
 #sed -i '/icon-theme-name=/c icon-theme-name=Tela-grey-dark'  /etc/lightdm/lightdm-gtk-greeter.conf
 
 if grep -q "background=/usr/share/wallpapers/loquitux_orquidea.png" /etc/lightdm/lightdm-gtk-greeter.conf
+then
 
 	echo "Existe ajuste, omitiendo este paso"
 
