@@ -262,6 +262,7 @@ fi
 EOF
 
 
+mkdir -p /home/live/Desktop/
 echo "
 [Desktop Entry]
 Type=Application
@@ -287,10 +288,8 @@ X-AppStream-Ignore=true
 
 
 
-
-
 ##################################################
-## Elimina paquetes adicionales
+## Elimina residuos
 ##################################################
 
 apt -y purge apparmor aspell-es bup chafa cups-pk-helper debian-reference-es debian-reference-common fonts-freefont-ttf fonts-liberation git ispanish kdeconnect konqueror kpeople-vcard kup-backup kwrite manpages-es mlocate par2 partitionmanager plasma-browser-integration plasma-disks plocate python3-cairo python3-cups python3-cupshelpers python3-fuse python3-pylibacl python3-smbc python3-tornado rtkit smartmontools sshfs system-config-printer vim-tiny zutty
@@ -301,6 +300,6 @@ apt -y purge network-manager
 
 apt -y autoremove
 
-rm /home/live/Desktop/install.desktop
+#rm /home/live/Desktop/install.desktop
 
 

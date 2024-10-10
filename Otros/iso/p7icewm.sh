@@ -143,40 +143,6 @@ cp ./custom/wallpapers/* /usr/share/wallpapers/
 
 
 
-echo "
-########################################################################
-############################### TTY'S ##################################
-########################################################################
-"
-
-######## NUM BLOQ ACTIVADO EN TTY'S
-#if grep -q 'setleds -D +num < $tty' /etc/rc.local
-#then
-	#echo 'Existe "setleds -D +num < $tty", omitiendo este paso...'
-#else
-#echo '
-#for tty in /dev/tty[0-9]*; do
-        #setleds -D +num < $tty
-#done
-#' >> /etc/rc.local 
-
-#fi
-
-
-########## Reduciendo numero de tty's (sysVinit)
-## Ajuste al archivo
-sed -i '/4:23:respawn:\/sbin\/getty/c #4:23:respawn:\/sbin\/getty 38400 tty4' /etc/inittab
-sed -i '/5:23:respawn:\/sbin\/getty/c #5:23:respawn:\/sbin\/getty 38400 tty5' /etc/inittab
-sed -i '/6:23:respawn:\/sbin\/getty/c #6:23:respawn:\/sbin\/getty 38400 tty6' /etc/inittab
-
-
-########## REMOVIENDO SERVICIOS 
-update-rc.d -f cron remove
-
-
-
-
-
 
 echo "
 ########################################################################
@@ -229,6 +195,20 @@ else
 " >>  /home/live/.icewm/startup 
 fi
 
+
+echo "
+########################################################################
+############################## CALAMARES ##############################
+########################################################################
+"
+## IMG: Icono 
+#cp ./LO/Calamares/calamares-loc-os.png /home/live/
+#
+
+## Entrada en el escritorio
+mkdir -p /home/live/Desktop/
+cp ./LO/Calamares/install.desktop /home/live/Desktop/install.desktop
+#
 
 
 fi
