@@ -16,6 +16,7 @@ install -D $BASE/.config/flameshot/flameshot.ini               $HOME/.config/fla
 install -D $BASE/.config/mimeapps.list                         $HOME/.config/mimeapps.list 
 install -D $BASE/.config/htop/htoprc                           $HOME/.config/htop/htoprc
 install -D $BASE/.config/bleachbit/bleachbit.ini               $HOME/.config/bleachbit/bleachbit.ini
+install -D $BASE/.config/libfm/libfm.conf                      $HOME/.config/libfm/libfm.conf
 
 cp -r $BASE/.icewm                                             $HOME/
 cp -r $BASE/.config/scripts/                                   $HOME/.config/
