@@ -450,7 +450,11 @@ echo "
 ########################################################################
 "
 
-cp -r ./PolicyKit/ /etc/
+mkdir -p /etc/PolicyKit/
+cp ./PolicyKit/PolicyKit.conf /etc/PolicyKit/
+
+
+#cp -r ./PolicyKit/ /etc/
 
 
 echo "
