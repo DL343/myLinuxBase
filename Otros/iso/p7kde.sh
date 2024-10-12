@@ -300,6 +300,6 @@ apt -y purge network-manager
 
 apt -y autoremove
 
-#rm /home/live/Desktop/install.desktop
+rm /home/live/Desktop/install.desktop
 
 
