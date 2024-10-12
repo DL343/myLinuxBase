@@ -17,7 +17,7 @@ then
 	
 	
 	## REFRACTASNAPSHOT: Imagen Arranque Instalacion (640x480).png (Colores oscuros de preferencia)-
-	##cp ./custom/refracta_Splash/* /usr/lib/refractasnapshot/iso/isolinux/splash.png
+	cp ./custom/refracta_Splash/* /usr/lib/refractasnapshot/iso/isolinux/splash.png
 	
 	
 	## PLYMOUTH?

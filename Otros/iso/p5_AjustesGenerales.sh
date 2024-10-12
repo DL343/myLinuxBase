@@ -244,6 +244,108 @@ cp ./refractaSnapshot/snapshot_exclude.list /usr/lib/refractasnapshot/
 
 
 
+kernel=$(ls /boot/ | grep vmlinuz | grep -v old)
+initrd=$(ls /boot/ | grep initrd | grep -v old)
+
+kernelCount=$(ls /boot/ | grep initrd | grep -v somepattern | wc -l)
+initrdCount=$(ls /boot/ | grep vmlinuz | grep -v somepattern | wc -l)
+
+if !( [ "$kernelCount" -eq 1 ] && [ "$kernelCount" -eq 1 ] )
+then
+
+	echo "
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      Algo no cuadra, revisar kernel e initrd en /boot/
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    "
+
+else
+
+    
+echo "::::: Perfecto, se detecto 
+kernel = $kernel y initrm = $initrd
+continuando con este paso...."
+
+
+
+awk -v kernel="$kernel" 'BEGIN { count = 0 }
+{
+   	if (/kernel \/live\/vmlinuz/){
+			if (count < 3) {
+				print "     kernel /live/" kernel
+			}     
+			if (count == 3) {
+				print "     kernel /live/" kernel " noapic noapm nodma nomce nolapic nosmp forcepae nomodeset vga=normal ${ifnames_opt} ${netconfig_opt} ${username_opt}" 
+			}
+			count++	
+    } else {
+        print
+    }
+}' /usr/lib/refractasnapshot/iso/isolinux/live.cfg > /usr/lib/refractasnapshot/iso/isolinux/live.cfg.tmp
+mv /usr/lib/refractasnapshot/iso/isolinux/live.cfg.tmp /usr/lib/refractasnapshot/iso/isolinux/live.cfg
+
+
+
+awk -v initrd="$initrd" 'BEGIN { count = 0 }
+{
+   	if (/append initrd=\/live\/initrd.img/){
+			if (count == 0) {
+				print "    append initrd=/live/" initrd " boot=live ${ifnames_opt} ${netconfig_opt} ${username_opt}  "
+			}     
+			if (count == 1) {
+				print "    append initrd=/live/" initrd " boot=live ${ifnames_opt} ${netconfig_opt} ${username_opt} locales=it_IT.UTF-8 keyboard-layouts=it"
+			}  
+			if (count == 2) {
+				print "    append initrd=/live/" initrd " boot=live  toram ${ifnames_opt} ${netconfig_opt} ${username_opt} "
+			}  
+			if (count == 3) {
+				print "    append initrd=/live/" initrd " boot=live   "
+			} 
+			count++	
+    } else {
+        print
+    }
+}' /usr/lib/refractasnapshot/iso/isolinux/live.cfg   >  /usr/lib/refractasnapshot/iso/isolinux/live.cfg.tmp
+mv /usr/lib/refractasnapshot/iso/isolinux/live.cfg.tmp   /usr/lib/refractasnapshot/iso/isolinux/live.cfg
+
+
+
+
+awk -v kernel="$kernel" -v initrd="$initrd" '
+BEGIN { count = 0 }
+{
+	if (/kernel_image=/) {
+		if( count == 1 ){
+			print "kernel_image=\"/boot/" kernel "\""
+		} else {
+			count++
+			print
+		}	
+	} else {
+		print
+	}
+	
+}' /etc/refractasnapshot.conf   >   /tmp/refractasnapshot.conf.tmp
+mv /tmp/refractasnapshot.conf.tmp   /etc/refractasnapshot.conf 
+
+
+
+awk -v kernel="$kernel" -v initrd="$initrd" '
+BEGIN { count = 0 }
+{
+	if (/initrd_image=/) {
+		print "initrd_image=\"/boot/" initrd "\""
+	} else {
+		print
+	}
+	
+}' /etc/refractasnapshot.conf   >   /tmp/refractasnapshot.conf.tmp
+mv /tmp/refractasnapshot.conf.tmp   /etc/refractasnapshot.conf 
+
+
+fi
+echo "::::: REFRACTASNAPSHOT: TODO LISTO"
+
 
 
 echo "
