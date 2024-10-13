@@ -2,6 +2,5 @@
 #
 # Place your personal variant in $HOME/.icewm directory.
 
-#prog    XTerm    !    x-terminal-emulator
-prog     Rofi     $HOME/.icewm/themes/Arc-Dark/rofi.png    rofi -modi drun,run -show-icons -theme .config/rofi/sidebar.rasi -font 'mono 20' -show drun
+prog     Rofi     $HOME/.icewm/themes/Arc-Dark/rofi.png    sh -c "rofi -modi drun,run -show-icons -theme $HOME/.config/rofi/sidebar.rasi -font 'mono 20' -show drun"
  
