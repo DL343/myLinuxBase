@@ -267,7 +267,7 @@ kernel = $kernel y initrm = $initrd
 continuando con este paso...."
 
 
-
+##### REFRACTASNAPSHOT: AJUSTE ENTRADAS BIOS KERNEL/VMLINUZ
 awk -v kernel="$kernel" 'BEGIN { count = 0 }
 {
    	if (/kernel \/live\/vmlinuz/){
@@ -281,11 +281,11 @@ awk -v kernel="$kernel" 'BEGIN { count = 0 }
     } else {
         print
     }
-}' /usr/lib/refractasnapshot/iso/isolinux/live.cfg > /usr/lib/refractasnapshot/iso/isolinux/live.cfg.tmp
-mv /usr/lib/refractasnapshot/iso/isolinux/live.cfg.tmp /usr/lib/refractasnapshot/iso/isolinux/live.cfg
+}' /usr/lib/refractasnapshot/iso/isolinux/live.cfg > /tmp/live.cfg.tmp
+mv /tmp/live.cfg.tmp   /usr/lib/refractasnapshot/iso/isolinux/live.cfg
 
 
-
+##### REFRACTASNAPSHOT: AJUSTE ENTRADAS BIOS INIT
 awk -v initrd="$initrd" 'BEGIN { count = 0 }
 {
    	if (/append initrd=\/live\/initrd.img/){
@@ -305,12 +305,12 @@ awk -v initrd="$initrd" 'BEGIN { count = 0 }
     } else {
         print
     }
-}' /usr/lib/refractasnapshot/iso/isolinux/live.cfg   >  /usr/lib/refractasnapshot/iso/isolinux/live.cfg.tmp
-mv /usr/lib/refractasnapshot/iso/isolinux/live.cfg.tmp   /usr/lib/refractasnapshot/iso/isolinux/live.cfg
+}' /usr/lib/refractasnapshot/iso/isolinux/live.cfg   >  /tmp/live.cfg.tmp
+mv /tmp/live.cfg.tmp   /usr/lib/refractasnapshot/iso/isolinux/live.cfg
 
 
 
-
+##### REFRACTASNAPSHOT: AJUSTE ARCHIVO DE CONFIGURACION: KERNEL
 awk -v kernel="$kernel" -v initrd="$initrd" '
 BEGIN { count = 0 }
 {
@@ -329,7 +329,7 @@ BEGIN { count = 0 }
 mv /tmp/refractasnapshot.conf.tmp   /etc/refractasnapshot.conf 
 
 
-
+##### REFRACTASNAPSHOT: AJUSTE ARCHIVO DE CONFIGURACION: INIT
 awk -v kernel="$kernel" -v initrd="$initrd" '
 BEGIN { count = 0 }
 {
@@ -341,6 +341,72 @@ BEGIN { count = 0 }
 	
 }' /etc/refractasnapshot.conf   >   /tmp/refractasnapshot.conf.tmp
 mv /tmp/refractasnapshot.conf.tmp   /etc/refractasnapshot.conf 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##### REFRACTASNAPSHOT: AJUSTE ENTRADAS EFI KERNEL
+awk -v kernel="$kernel" 'BEGIN { count = 0 }
+{
+
+	if(/linux   \/live\/vmlinuz/){
+		if (count == 0) {
+		print "    linux   /live/" kernel " boot=live ${ifnames_opt} ${netconfig_opt} ${username_opt}    "
+		}    
+		if (count == 1) {
+		print "    linux   /live/" kernel " boot=live ${ifnames_opt} ${netconfig_opt} ${username_opt} locales=it_IT.UTF-8 keyboard-layouts=it "
+		} 
+		if (count == 2) {
+		print " linux   /live/" kernel " boot=live toram ${ifnames_opt} ${netconfig_opt} ${username_opt}    "
+		} 
+		if (count == 3) {
+		print " linux   /live/" kernel " boot=live nocomponents=xinit noapm noapic nolapic nodma nosmp forcepae nomodeset vga=normal ${ifnames_opt} ${netconfig_opt} ${username_opt} "
+		}
+
+		count++
+
+	} else {
+
+		print
+
+	}
+}
+
+' /usr/lib/refractasnapshot/grub.cfg.template   >   /tmp/grub.cfg.template
+mv  /tmp/grub.cfg.template   /usr/lib/refractasnapshot/grub.cfg.template
+
+
+
+
+
+
+
+##### REFRACTASNAPSHOT: AJUSTE ENTRADAS EFI INIT
+awk -v initrd="$initrd" '{
+
+	if(/initrd  \/live\/initrd.img/){
+
+		print "    initrd  /live/" initrd
+
+	} else {
+
+		print
+
+	}
+}
+' /usr/lib/refractasnapshot/grub.cfg.template   >   /tmp/grub.cfg.template
+mv  /tmp/grub.cfg.template   /usr/lib/refractasnapshot/grub.cfg.template
+
 
 
 fi
