@@ -33,4 +33,3 @@ cp ./LO/Welcome/chromium.sh /opt/browsers/scripts/chromium.sh
 cp ./LO/Welcome/browsers.sh /bin/browsers.sh
 
 
-
