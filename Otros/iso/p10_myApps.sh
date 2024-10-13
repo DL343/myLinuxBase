@@ -148,7 +148,7 @@ echo "
 ########################################################################
 "
 
-apt -y install chromium waterfox
+apt -y install librewolf
 
 
 
