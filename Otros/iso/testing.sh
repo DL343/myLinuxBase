@@ -23,25 +23,27 @@ echo "#########################################"
 
 
 
+plasmaDiscover="prog     Tienda de apps(plasma-discover)  /usr/share/icons/Tela-grey-dark/scalable/apps/plasmadiscover.svg    plasma-discover"
 
-
-if grep -q "prog     Tienda de apps(plasma-discover)  /usr/share/icons/Tela-grey-dark/scalable/apps/plasmadiscover.svg    plasma-discover" /etc/skel/.icewm/toolbar 
+if grep -q "$plasmaDiscover" /etc/skel/.icewm/toolbar 
 then
 	echo "::::: Existe, omitiendo este paso..."
 else
 
-	echo "prog     Tienda de apps(plasma-discover)  /usr/share/icons/Tela-grey-dark/scalable/apps/plasmadiscover.svg    plasma-discover" >> /etc/skel/.icewm/toolbar 
-	echo "prog     Tienda de apps(plasma-discover)  /usr/share/icons/Tela-grey-dark/scalable/apps/plasmadiscover.svg    plasma-discover" >> /home/live/.icewm/toolbar
+	echo "$plasmaDiscover" >> /etc/skel/.icewm/toolbar 
+	echo "$plasmaDiscover" >> /home/live/.icewm/toolbar
 
 fi
 
-if grep -q "prog     Browser(Librewolf)  /usr/share/icons/hicolor/scalable/apps/librewolf.svg    librewolf" /etc/skel/.icewm/toolbar 
+librewolf="prog     Browser(Librewolf)  /usr/share/icons/hicolor/128x128/apps/librewolf.png    librewolf"
+
+if grep -q "$librewolf" /etc/skel/.icewm/toolbar 
 then
 	echo "::::: Existe, omitiendo este paso..."
 else
 
-	echo "prog     Browser(Librewolf)  /usr/share/icons/hicolor/scalable/apps/librewolf.svg    librewolf" >> /etc/skel/.icewm/toolbar 
-	echo "prog     Browser(Librewolf)  /usr/share/icons/hicolor/scalable/apps/librewolf.svg    librewolf" >> /home/live/.icewm/toolbar
+	echo "$librewolf" >> /etc/skel/.icewm/toolbar 
+	echo "$librewolf" >> /home/live/.icewm/toolbar
 
 fi
 
