@@ -127,13 +127,7 @@ echo "
 ########################################################################
 "	
 
-## TEMAS
-mkdir -p /usr/share/themes/
-cp -r ./custom/themes/*      /usr/share/themes/
 
-## ICONOS + CURSOR
-mkdir -p /usr/share/icons/
-cp -r ./custom/icons/*      /usr/share/icons/
 
 ## APLICANDO...
 cp ./custom/gtk/.gtkrc-2.0     /etc/skel/.gtkrc-2.0
@@ -146,18 +140,9 @@ cp ./custom/gtk/settings.ini    /etc/skel/.config/gtk-3.0/settings.ini
 cp ./custom/gtk/settings.ini    /home/live/.config/gtk-3.0/settings.ini
 
 
-## IMAGEN PERFIL USUARIO
-cp ./custom/face/*      /etc/skel/.face
-cp ./custom/face/*      /home/live/.face
 
 ## ------------------------------
 
-## WALLPAPER PRINCIPAL
-mkdir -p /usr/share/wallpapers/
-cp ./custom/wall/* /usr/share/wallpapers/default.png
-
-## WALLPAPER'S COMPLEMENTARIOS
-cp ./custom/wallpapers/* /usr/share/wallpapers/
 
 
 ## COLORES
