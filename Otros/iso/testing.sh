@@ -23,7 +23,7 @@ echo "#########################################"
 
 
 
-plasmaDiscover="prog     Tienda de apps(plasma-discover)  /usr/share/icons/Tela-grey-dark/scalable/apps/plasmadiscover.svg    plasma-discover"
+plasmaDiscover="prog     \"Tienda de apps(plasma-discover)\"  /usr/share/icons/Tela-grey-dark/scalable/apps/plasmadiscover.svg    plasma-discover"
 
 if grep -q "$plasmaDiscover" /etc/skel/.icewm/toolbar 
 then
