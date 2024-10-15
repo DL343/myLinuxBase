@@ -25,7 +25,6 @@ then
 
 
 	##### WALLPAPER PRINCIPAL
-	rm -r /usr/share/wallpapers/
 	mkdir -p /usr/share/wallpapers/
 	cp ./custom/wall/* /usr/share/wallpapers/default.png
 
