@@ -11,7 +11,10 @@ nano 		gvfs		xarchiver		policykit-1-gnome		brightnessctl
 	
 sudo apt -y install gcr unar keyutils ncdu p7zip-full lm-sensors inxi  xdg-user-dirs lxappearance lxrandr \
 parcellite 	gtk2-engines-pixbuf    rofi  	flameshot	mirage	nitrogen	redshift	bleachbit    mpv  \
-evince
+evince   plasma-discover
+
+
+
 
 sudo apt -y install volumeicon-alsa   numlockx   xdg-desktop-portal
 

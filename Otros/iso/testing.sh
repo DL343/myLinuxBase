@@ -23,3 +23,9 @@ echo "#########################################"
 
 
 
+
+
+
+sudo apt install breeze-icon-theme plasma-discover
+sudo apt install libkf5purpose-dev  --no-install-recommends
+
