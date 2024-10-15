@@ -25,7 +25,27 @@ echo "#########################################"
 
 
 
+if grep -q "prog     Tienda de apps(plasma-discover)  /usr/share/icons/Tela-grey-dark/scalable/apps/plasmadiscover.svg    plasma-discover" /etc/skel/.icewm/toolbar 
+then
+	echo "::::: Existe, omitiendo este paso..."
+else
 
-sudo apt install breeze-icon-theme plasma-discover
-sudo apt install libkf5purpose-dev  --no-install-recommends
+	echo "prog     Tienda de apps(plasma-discover)  /usr/share/icons/Tela-grey-dark/scalable/apps/plasmadiscover.svg    plasma-discover" >> /etc/skel/.icewm/toolbar 
+	echo "prog     Tienda de apps(plasma-discover)  /usr/share/icons/Tela-grey-dark/scalable/apps/plasmadiscover.svg    plasma-discover" >> /home/live/.icewm/toolbar
+
+fi
+
+if grep -q "prog     Browser(Librewolf)  /usr/share/icons/hicolor/scalable/apps/librewolf.svg    librewolf" /etc/skel/.icewm/toolbar 
+then
+	echo "::::: Existe, omitiendo este paso..."
+else
+
+	echo "prog     Browser(Librewolf)  /usr/share/icons/hicolor/scalable/apps/librewolf.svg    librewolf" >> /etc/skel/.icewm/toolbar 
+	echo "prog     Browser(Librewolf)  /usr/share/icons/hicolor/scalable/apps/librewolf.svg    librewolf" >> /home/live/.icewm/toolbar
+
+fi
+
+
+sudo apt install breeze-icon-theme plasma-discover qml-module-org-kde-purpose libkf5purpose-dev    
+apt purge kdeconnect
 
