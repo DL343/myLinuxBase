@@ -1379,7 +1379,7 @@ MenuIconSize=32 # [8-128]
 # ShowMenuButtonIcon=1 # 0/1
 
 #  Dimension of the small icons.
-SmallIconSize=22 # [8-128]
+SmallIconSize=26 # [8-128]
 
 #  Name of the status display font.
 # StatusFontName="-misc-dejavu sans mono-bold-r-normal--12-*-*-*-*-*-*-*"

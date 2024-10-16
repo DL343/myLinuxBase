@@ -18,12 +18,6 @@ then
 	mkdir -p /usr/share/icons/
 	cp -r ./custom/icons/*      /usr/share/icons/
 
-
-	##### IMAGEN PERFIL USUARIO
-	cp ./custom/face/*      /etc/skel/.face
-	cp ./custom/face/*      /home/live/.face
-
-
 	##### WALLPAPER PRINCIPAL
 	mkdir -p /usr/share/wallpapers/
 	cp ./custom/wall/* /usr/share/wallpapers/default.png
