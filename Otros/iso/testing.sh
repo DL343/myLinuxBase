@@ -84,3 +84,12 @@ cp  ./custom/dm/face.png   /home/live/.face.icon
 cp  ./custom/dm/face.png   /etc/skel/.face.icon 
 
 
+
+/usr/share/sddm/themes/breeze/theme.conf.user > "
+[General]
+background=/usr/share/wallpapers/loquitux_orquidea.png 
+"
+
+
+
+
