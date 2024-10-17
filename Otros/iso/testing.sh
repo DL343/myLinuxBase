@@ -84,11 +84,11 @@ apt purge kdeconnect
 #cp  ./custom/dm/face.png   /etc/skel/.face.icon 
 
 
-###### SDDM: WALLPAPER CUSTOM
-#echo "
-#[General]
-#background=/usr/share/wallpapers/loquitux_orquidea.png 
-#" > /usr/share/sddm/themes/breeze/theme.conf.user
+##### SDDM: WALLPAPER CUSTOM
+echo "
+[General]
+background=/usr/share/wallpapers/loquitux_orquidea.png 
+" > /usr/share/sddm/themes/breeze/theme.conf.user
 
 
 
