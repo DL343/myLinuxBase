@@ -63,21 +63,9 @@ apt install sddm --no-install-recommends
 
 ##### SDDM: CONFIGURACION
 echo "
-[General]
-# Initial NumLock state. Can be on, off or none.
-# If property is set to none, numlock won't be changed
-# NOTE: Currently ignored if autologin is enabled.
-Numlock=on
-
-
-
-
 [Theme]
 # Current theme name
 Current=breeze
-
-
-
 
 
 
