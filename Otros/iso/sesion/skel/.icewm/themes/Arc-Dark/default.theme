@@ -82,9 +82,9 @@ ColorClock=#222
 ColorClockText=#ffffff
 
 #Cpu
-#ColorCPUStatusUser=#5294E2
-#ColorCPUStatusSystem=rgb:c0/c0/c0
-#ColorCPUStatusNice=#D3DAE3
+#ColorCPUStatusUser=#0f0
+#ColorCPUStatusSystem=#f00
+#ColorCPUStatusNice=#fd0
 ColorCPUStatusIdle=#222
 
 #Net monitor
