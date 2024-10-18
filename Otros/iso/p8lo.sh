@@ -10,6 +10,15 @@ echo "
 ########################################################################
 "
 
+apt -y install lpkg glpkg 
+
+
+echo "
+########################################################################
+############################## REPO MANAGER ##############################
+########################################################################
+"
+
 ## Instalacion
 apt -y install repo-manager-loc-os
 
@@ -85,7 +94,7 @@ mkdir -p /home/live/Desktop/
 #" > /home/live/Desktop/install.desktop
 
 
-###### CALAMARES
+###### CALAMARES LO
 echo "
 [Desktop Entry]
 Type=Application

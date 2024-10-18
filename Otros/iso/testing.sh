@@ -81,7 +81,7 @@ echo "
 "
 ##### PLASMA-DISCOVER
 sudo apt install breeze-icon-theme plasma-discover qml-module-org-kde-purpose libkf5purpose-dev    
-apt purge kdeconnect
+apt -y purge kdeconnect
 
 
 
