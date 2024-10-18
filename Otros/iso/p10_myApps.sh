@@ -19,6 +19,19 @@ evince   plasma-discover
 sudo apt -y install volumeicon-alsa   numlockx   xdg-desktop-portal
 
 
+echo "
+########################################################################
+                              TIENDA APPS
+########################################################################
+"
+##### PLASMA-DISCOVER
+sudo apt install breeze-icon-theme plasma-discover qml-module-org-kde-purpose libkf5purpose-dev    
+apt purge kdeconnect
+
+
+
+
+
 if [ "$(sed -n '/Option "Tapping" "true"/p' /usr/share/X11/xorg.conf.d/40-libinput.conf)" == 'Option "Tapping" "true"' ]; then 
 
 	echo "Perfecto!, existe la configracion, omitiendo este paso...";
@@ -206,6 +219,7 @@ apt -y purge aspell-es chafa cups-pk-helper debian-reference-es \
 debian-reference-common fonts-liberation ispanish task-spanish \
 manpages-es system-config-printer system-config-printer-common \
 system-config-printer-udev  python3-cupshelpers python3-cups xterm
+
 
 
 echo "

@@ -120,6 +120,31 @@ ALL ALL=(ALL) NOPASSWD: /usr/sbin/pm-suspend
 
 
 
+##### ICEWM: TOOLBAR
+plasmaDiscover="prog     \"Tienda de apps(plasma-discover)\"  /usr/share/icons/Tela-grey-dark/scalable/apps/plasmadiscover.svg    plasma-discover"
+
+if grep -q "$plasmaDiscover" /etc/skel/.icewm/toolbar 
+then
+	echo "::::: Existe, omitiendo este paso..."
+else
+
+	echo "$plasmaDiscover" >> /etc/skel/.icewm/toolbar 
+	echo "$plasmaDiscover" >> /home/live/.icewm/toolbar
+
+fi
+
+librewolf="prog     Browser(Librewolf)  /usr/share/icons/hicolor/128x128/apps/librewolf.png    librewolf"
+
+if grep -q "$librewolf" /etc/skel/.icewm/toolbar 
+then
+	echo "::::: Existe, omitiendo este paso..."
+else
+
+	echo "$librewolf" >> /etc/skel/.icewm/toolbar 
+	echo "$librewolf" >> /home/live/.icewm/toolbar
+
+fi
+
 
 echo "
 ########################################################################
