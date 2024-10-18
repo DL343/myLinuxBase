@@ -57,6 +57,14 @@ apt purge kdeconnect
 
 
 
+
+
+
+
+
+
+
+
 ###### SDDM: INSTALACION
 #apt install sddm --no-install-recommends 
 
@@ -84,12 +92,23 @@ apt purge kdeconnect
 #cp  ./custom/dm/face.png   /etc/skel/.face.icon 
 
 
-##### SDDM: WALLPAPER CUSTOM
-echo "
-[General]
-background=/usr/share/wallpapers/loquitux_orquidea.png 
-" > /usr/share/sddm/themes/breeze/theme.conf.user
+###### SDDM: WALLPAPER CUSTOM
+#echo "
+#[General]
+#background=/usr/share/wallpapers/loquitux_orquidea.png 
+#" > /usr/share/sddm/themes/breeze/theme.conf.user
 
+
+##### LIGHTDM: AJUSTE SOLO SYSVINIT (SHUTDOWN/REBOOT/SUSPEND/HIBERNATE)
+mkdir -p /etc/polkit-1/localauthority/90-mandatory.d/
+
+echo "[Enable LightDM poweroff, reboot, suspend, hibernate (logind)]
+Identity=unix-user:*
+Action=org.freedesktop.login1.power-off;org.freedesktop.login1.reboot;org.freedesktop.login1.suspend;org.freedesktop.login1.hibernate
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes
+" > /etc/polkit-1/localauthority/90-mandatory.d/lightdm-enable-power-menu.pkla
 
 
 
