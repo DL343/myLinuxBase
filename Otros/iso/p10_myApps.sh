@@ -21,32 +21,6 @@ sudo apt -y install volumeicon-alsa   numlockx   xdg-desktop-portal
 
 echo "
 ########################################################################
-                              TIENDA APPS
-########################################################################
-"
-##### PLASMA-DISCOVER
-sudo apt install breeze-icon-theme plasma-discover qml-module-org-kde-purpose libkf5purpose-dev    
-apt purge kdeconnect
-
-
-
-
-
-if [ "$(sed -n '/Option "Tapping" "true"/p' /usr/share/X11/xorg.conf.d/40-libinput.conf)" == 'Option "Tapping" "true"' ]; then 
-
-	echo "Perfecto!, existe la configracion, omitiendo este paso...";
-
-else 
-
-   echo "No existe la configuracion, aplicando...."
-   sudo sed -i '/Identifier "libinput touchpad catchall"/a Option "Tapping" "true"' /usr/share/X11/xorg.conf.d/40-libinput.conf
-
-   echo "Listo"
-fi
-
-
-echo "
-########################################################################
                                UFW
 ########################################################################
 " 
