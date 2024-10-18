@@ -18,6 +18,25 @@ evince   plasma-discover
 
 sudo apt -y install volumeicon-alsa   numlockx   xdg-desktop-portal
 
+echo "
+########################################################################
+                               LIBINPUT
+########################################################################
+" 
+
+
+if [ "$(sed -n '/Option "Tapping" "true"/p' /usr/share/X11/xorg.conf.d/40-libinput.conf)" == 'Option "Tapping" "true"' ]; then 
+
+	echo "Perfecto!, existe la configracion, omitiendo este paso...";
+
+else 
+
+   echo "No existe la configuracion, aplicando...."
+   sudo sed -i '/Identifier "libinput touchpad catchall"/a Option "Tapping" "true"' /usr/share/X11/xorg.conf.d/40-libinput.conf
+
+   echo "Listo"
+fi
+
 
 echo "
 ########################################################################
