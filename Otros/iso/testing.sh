@@ -459,7 +459,7 @@ mv /usr/share/plasma/plasmoids.disabled/org.kde.plasma.taskmanager        /usr/s
 ############################################################
 
 ##### APPS
-apt -y install   librewolf   cmst   mpv   fastfetch   htop   konsole	kate   unzip   webapp-manager   zip   unrar-free    mirage \
+apt -y install   librewolf   cmst   mpv   fastfetch   htop   konsole	kate   unzip   webapp-manager   zip   unrar-free  \
 gwenview   kcalc   kamera   \
 ark   okular   kde-spectacle
 #libreoffice-calc libreoffice-writer 
@@ -622,10 +622,10 @@ X-AppStream-Ignore=true
 apt -y purge  network-manager   xterm \
 aspell-es bup chafa cups-pk-helper debian-reference-es debian-reference-common fonts-freefont-ttf fonts-liberation ispanish manpages-es mlocate \
 kdeconnect konqueror kpeople-vcard kup-backup kwrite plasma-browser-integration plasma-disks kdeconnect \
-par2 partitionmanager  plocate  python3-cups python3-cupshelpers python3-fuse python3-pylibacl python3-smbc python3-tornado \
+par2 partitionmanager  plocate python3-cairo python3-cups python3-cupshelpers python3-fuse python3-pylibacl python3-smbc python3-tornado \
 rtkit smartmontools sshfs system-config-printer vim-tiny zutty
 
-#python3-cairo
+
  
 
 apt -y autoremove --purge
