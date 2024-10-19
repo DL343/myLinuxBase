@@ -72,57 +72,27 @@ echo "#########################################"
 #" > /usr/share/sddm/themes/breeze/theme.conf.user
 
 
+##### FLATPAK
 
-
-echo "
-########################################################################
-                              TIENDA APPS
-########################################################################
-"
-##### PLASMA-DISCOVER
-sudo apt install breeze-icon-theme plasma-discover qml-module-org-kde-purpose libkf5purpose-dev    
-apt -y purge kdeconnect
-
-
-##### SYSVINIT: ACTUALIZACION DE REPOSITORIOS AL ARRANQUE
-echo '### BEGIN INIT INFO
-# Provides:          apt-update
-# Required-Start:    $local_fs $remote_fs lightdm
-# Required-Stop:     $local_fs $remote_fs 
-# Default-Start:     2 3 4 5
-# Default-Stop:      0 1 6
-# Short-Description: apt update on startup
-# Description:       apt update on startup
-#                    
-#                    
-### END INIT INFO
-
-
-case "$1" in
-    start)
-        echo "Starting Repository updater: apt update"
-        (apt-get update > /var/log/apt-update.log 2>&1) &
-        ;;
-    stop)
-        #
-        ;;
-    *)
-        echo "Usage: /etc/init.d/apt-update {start|stop}"
-        exit 1
-        ;;
-esac
-
-exit 0
-
-' > /etc/init.d/apt-update
-
-chmod +x /etc/init.d/apt-update
-
-sudo update-rc.d apt-update defaults 
+sudo apt -y install   htop   btop   fastfetch   p7zip-full   lm-sensors inxi  \
+lxappearance    lxrandr   \
+parcellite 	    rofi  		nitrogen	redshift	 \
+plasma-discover   
 
 
 
 
+sudo apt -y install volumeicon-alsa   numlockx   xdg-desktop-portal
 
+
+
+
+flatpak install flathub org.flameshot.Flameshot
+flatpak install flathub org.nomacs.ImageLounge
+flatpak install flathub org.bleachbit.BleachBit
+flatpak install flathub io.mpv.Mpv
+flatpak install flathub org.gnome.Evince
+flatpak install flathub org.geany.Geany
+flatpak install flathub io.gitlab.librewolf-community
 
 

@@ -4,19 +4,33 @@ apt update
 apt -y upgrade
 
 
-sudo apt -y install xorg	bash-completion 	htop 		btop		fastfetch 		gparted 	\
-btrfs-progs 		mtools 		geany		pcmanfm		sakura	\
-nano 		gvfs		xarchiver		policykit-1-gnome		brightnessctl	
+sudo apt -y install   xorg	bash-completion   gparted 	\
+btrfs-progs   mtools   pcmanfm   sakura   acpi   gcr   unar   keyutils ncdu   gtk2-engines-pixbuf \
+nano   gvfs   xarchiver   policykit-1-gnome   brightnessctl   xdg-user-dirs 
 	
-	
-sudo apt -y install gcr unar keyutils ncdu p7zip-full lm-sensors inxi  xdg-user-dirs lxappearance lxrandr \
-parcellite 	gtk2-engines-pixbuf    rofi  	flameshot	mirage	nitrogen	redshift	bleachbit    mpv  \
-evince   plasma-discover
+	 
+sudo apt -y install   htop   btop   fastfetch   p7zip-full   lm-sensors inxi  \
+lxappearance    lxrandr   \
+parcellite 	    rofi  	flameshot	mirage	nitrogen	redshift	bleachbit    mpv  \
+evince   plasma-discover   geany
 
 
 
 
 sudo apt -y install volumeicon-alsa   numlockx   xdg-desktop-portal
+
+
+
+echo "
+########################################################################
+                              TIENDA APPS
+########################################################################
+"
+##### PLASMA-DISCOVER
+sudo apt install breeze-icon-theme plasma-discover qml-module-org-kde-purpose libkf5purpose-dev    
+apt -y purge kdeconnect
+
+
 
 echo "
 ########################################################################
