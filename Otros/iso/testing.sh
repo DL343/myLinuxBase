@@ -459,7 +459,7 @@ mv /usr/share/plasma/plasmoids.disabled/org.kde.plasma.taskmanager        /usr/s
 ############################################################
 
 ##### APPS
-apt -y install   librewolf   cmst   mpv   fastfetch   htop   konsole	kate   unzip   webapp-manager   zip   unrar-free  \
+apt -y install   librewolf   cmst   mpv   fastfetch   htop   konsole	kate   unzip   webapp-manager   zip   unrar-free  dolphin \
 gwenview   kcalc   kamera   \
 ark   okular   kde-spectacle
 #libreoffice-calc libreoffice-writer 
