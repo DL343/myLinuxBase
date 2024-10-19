@@ -203,7 +203,7 @@ echo "
 apt -y install numlockx
 
 ## LIGHTDM: INSTALACION
-sudo apt -y install lightdm lightdm-gtk-greeter --no-install-recommends 
+sudo apt -y install lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings 
 
 ##### LIGHTDM: AUTOLOGIN LIVE
 sed -i '/autologin-user=/c autologin-user=live' /etc/lightdm/lightdm.conf
