@@ -378,8 +378,11 @@ chown live /home/live -R
 
 
 ##################################################
-## Hostname & SDDM
+## SDDM
 ##################################################
+
+ apt install sddm --no-install-recommends
+
 echo "[Autologin]
 User=live
 Session=plasma" > /etc/sddm.conf
@@ -411,21 +414,12 @@ mv /etc/xdg/autostart/print-applet.desktop              /etc/xdg/autostart.disab
 ##################################################
 ## Desactivar servicios de plasma
 ##################################################
-apt -y remove kdeconnect
-
 #chmod -x /usr/lib/x86_64-linux-gnu/libexec/kactivitymanagerd
 chmod -x /usr/bin/kglobalaccel5
 chmod -x /usr/bin/kded5
 
 
-##################################################
-## Desactivar servicios de plasma
-##################################################
-apt -y remove kdeconnect
 
-#chmod -x /usr/lib/x86_64-linux-gnu/libexec/kactivitymanagerd
-chmod -x /usr/bin/kglobalaccel5
-chmod -x /usr/bin/kded5
 
 ##################################################
 ## Desactiva plasmoides
@@ -465,7 +459,11 @@ mv /usr/share/plasma/plasmoids.disabled/org.kde.plasma.taskmanager        /usr/s
 ############################################################
 
 ##### APPS
-apt -y install chromium kde-spectacle vlc kamera kate ark kcalc gwenview fastfetch okular unrar-free unzip webapp-manager zip libreoffice-calc libreoffice-writer htop imagemagick cmst
+apt -y install   librewolf   cmst   mpv   fastfetch
+## kate   unzip   webapp-manager   zip   htop   imagemagick 
+
+##kde-spectacle  kamera  ark kcalc gwenview  okular unrar-free 
+#libreoffice-calc libreoffice-writer 
 
 
 
@@ -620,13 +618,18 @@ X-AppStream-Ignore=true
 ## Elimina residuos
 ##################################################
 
-apt -y purge apparmor aspell-es bup chafa cups-pk-helper debian-reference-es debian-reference-common fonts-freefont-ttf fonts-liberation git ispanish kdeconnect konqueror kpeople-vcard kup-backup kwrite manpages-es mlocate par2 partitionmanager plasma-browser-integration plasma-disks plocate python3-cairo python3-cups python3-cupshelpers python3-fuse python3-pylibacl python3-smbc python3-tornado rtkit smartmontools sshfs system-config-printer vim-tiny zutty
+## apparmor
 
-##### NETWORK
-apt -y purge network-manager xterm
+apt -y purge  network-manager   xterm \
+aspell-es bup chafa cups-pk-helper debian-reference-es debian-reference-common fonts-freefont-ttf fonts-liberation ispanish manpages-es mlocate \
+kdeconnect konqueror kpeople-vcard kup-backup kwrite plasma-browser-integration plasma-disks kdeconnect \
+par2 partitionmanager  plocate python3-cairo python3-cups python3-cupshelpers python3-fuse python3-pylibacl python3-smbc python3-tornado \
+rtkit smartmontools sshfs system-config-printer vim-tiny zutty
 
 
-apt -y autoremove
+ 
+
+apt -y autoremove --purge
 
 rm /home/live/Desktop/install.desktop
 

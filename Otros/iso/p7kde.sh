@@ -91,15 +91,6 @@ chmod -x /usr/bin/kded5
 
 
 ##################################################
-## Desactivar servicios de plasma
-##################################################
-apt -y remove kdeconnect
-
-#chmod -x /usr/lib/x86_64-linux-gnu/libexec/kactivitymanagerd
-chmod -x /usr/bin/kglobalaccel5
-chmod -x /usr/bin/kded5
-
-##################################################
 ## Desactiva plasmoides
 ##################################################
 

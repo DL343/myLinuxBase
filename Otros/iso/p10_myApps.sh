@@ -199,17 +199,7 @@ echo "
 #fi
 
 
-########## Reduciendo numero de tty's (sysVinit)
-## Ajuste al archivo
-sed -i '/4:23:respawn:\/sbin\/getty/c #4:23:respawn:\/sbin\/getty 38400 tty4' /etc/inittab
-sed -i '/5:23:respawn:\/sbin\/getty/c #5:23:respawn:\/sbin\/getty 38400 tty5' /etc/inittab
-sed -i '/6:23:respawn:\/sbin\/getty/c #6:23:respawn:\/sbin\/getty 38400 tty6' /etc/inittab
 
-
-########## REMOVIENDO SERVICIOS 
-update-rc.d -f cron remove
-
-apt -y purge avahi-daemon  at-spi2-core  rtkit 
 #git
 
 
@@ -236,5 +226,5 @@ echo "
 "
 
 pactl set-sink-volume @DEFAULT_SINK@ 25%
-update-rc.d -f nftables remove
+
 apt install console-data  	
