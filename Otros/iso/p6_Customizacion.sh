@@ -19,6 +19,7 @@ then
 	cp -r ./custom/icons/*      /usr/share/icons/
 
 	##### WALLPAPERS: LIMPIEZA DIRECTORIO
+	rm -r /usr/share/wallpapers/
 
 	##### WALLPAPER PRINCIPAL
 	mkdir -p /usr/share/wallpapers/
