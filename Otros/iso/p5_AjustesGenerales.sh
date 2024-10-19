@@ -14,6 +14,10 @@ echo "
 echo "QT_QPA_PLATFORMTHEME=gtk2" > /etc/environment
 
 
+##### WALLPAPERS: LIMPIEZA DIRECTORIO
+rm -r /usr/share/wallpapers/
+mkdir -p /usr/share/wallpapers
+
 
 
 
