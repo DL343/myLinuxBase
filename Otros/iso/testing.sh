@@ -402,12 +402,13 @@ mv /etc/xdg/autostart/pam_kwallet_init.desktop          /etc/xdg/autostart.disab
 mv /etc/xdg/autostart/geoclue-demo-agent.desktop        /etc/xdg/autostart.disabled/
 mv /etc/xdg/autostart/gmenudbusmenuproxy.desktop        /etc/xdg/autostart.disabled/
 mv /etc/xdg/autostart/kaccess.desktop                   /etc/xdg/autostart.disabled/
-mv /etc/xdg/autostart/powerdevil.desktop                /etc/xdg/autostart.disabled/
 mv /etc/xdg/autostart/kup-daemon.desktop                /etc/xdg/autostart.disabled/
 mv /etc/xdg/autostart/org.kde.discover.notifier.desktop /etc/xdg/autostart.disabled/
 mv /etc/xdg/autostart/org.kde.kdeconnect.daemon.desktop /etc/xdg/autostart.disabled/
 mv /etc/xdg/autostart/konqy_preload.desktop             /etc/xdg/autostart.disabled/
 mv /etc/xdg/autostart/print-applet.desktop              /etc/xdg/autostart.disabled/
+
+#mv /etc/xdg/autostart/powerdevil.desktop                /etc/xdg/autostart.disabled/
 
 
 
@@ -459,11 +460,14 @@ mv /usr/share/plasma/plasmoids.disabled/org.kde.plasma.taskmanager        /usr/s
 ############################################################
 
 ##### APPS
-apt -y install   librewolf   cmst   mpv   fastfetch   htop   konsole	kate   unzip   webapp-manager   zip   unrar-free  dolphin \
+apt -y install   librewolf   cmst   mpv   fastfetch   htop  sakura	geany   pcmanfm \
+unzip   zip   unrar-free   \
 gwenview   kcalc   kamera   \
-ark   okular   kde-spectacle
-#libreoffice-calc libreoffice-writer 
-
+ark   okular   kde-spectacle \
+libreoffice-calc 
+#libreoffice-writer 
+#webapp-manager
+# dolphin
 
 
 
