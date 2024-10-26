@@ -920,10 +920,10 @@ sed -i "/GRUB_DISTRIBUTOR=/c GRUB_DISTRIBUTOR=\`lsb_release -d -s 2> \/dev\/null
 
 ##### SYSVINIT: ACTUALIZACION DE REPOSITORIOS AL ARRANQUE
 echo '### BEGIN INIT INFO
-# Provides:          S99apt-update
-# Required-Start:    $network
-# Required-Stop:     $network 
-# Default-Start:     5
+# Provides:          apt-update
+# Required-Start:    $remote_fs $network dbus
+# Required-Stop:     $remote_fs $network dbus
+# Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
 # Short-Description: apt update on startup
 # Description:       apt update on startup
@@ -948,11 +948,11 @@ esac
 
 exit 0
 
-' > /etc/init.d/S99apt-update
+' > /etc/init.d/apt-update
 
-chmod +x /etc/init.d/S99apt-update
+chmod +x /etc/init.d/apt-update
 
-sudo update-rc.d S99apt-update defaults 
+sudo update-rc.d apt-update defaults 
 
 
 
