@@ -454,7 +454,7 @@ apt install xz-utils
 
 ## Configuracion del initramfs
 ## Debian Vanilla: COMPRESS=zstd || COMPRESS: [ gzip | bzip2 | lz4 | lzma | lzop | xz | zstd ]
-sed -i '/COMPRESS=/c COMPRESS=xz' /etc/initramfs-tools/initramfs.conf
+sed -i '/COMPRESS=/c COMPRESS=gzip' /etc/initramfs-tools/initramfs.conf
 
 
 # UMASK=0077 significa que los permisos predeterminados para los archivos y directorios creados serán muy restrictivos:
