@@ -921,8 +921,8 @@ sed -i "/GRUB_DISTRIBUTOR=/c GRUB_DISTRIBUTOR=\`lsb_release -d -s 2> \/dev\/null
 ##### SYSVINIT: ACTUALIZACION DE REPOSITORIOS AL ARRANQUE
 echo '### BEGIN INIT INFO
 # Provides:          apt-update
-# Required-Start:    $remote_fs $network dbus
-# Required-Stop:     $remote_fs $network dbus
+# Required-Start:    $remote_fs $network connman
+# Required-Stop:     $remote_fs $network connman
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
 # Short-Description: apt update on startup
