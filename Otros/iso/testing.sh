@@ -636,3 +636,50 @@ apt -y autoremove --purge
 rm /home/live/Desktop/install.desktop
 
 
+
+
+
+
+
+
+
+
+
+
+###### SYSVINIT: ACTUALIZACION DE REPOSITORIOS AL ARRANQUE
+#echo '### BEGIN INIT INFO
+## Provides:          apt-update
+## Required-Start:    $local_fs $remote_fs $network
+## Required-Stop:      
+## Default-Start:     2 3 4 5
+## Default-Stop:      0 1 6
+## Short-Description: apt update on startup
+## Description:       apt update on startup
+##                    
+##                    
+#### END INIT INFO
+
+
+#case "$1" in
+    #start)
+        #echo "Starting Repository updater: apt update"
+        #(apt-get update > /var/log/apt-update.log 2>&1) &
+        #;;
+    #stop)
+        ##
+        #;;
+    #*)
+        #echo "Usage: /etc/init.d/apt-update {start|stop}"
+        #exit 1
+        #;;
+#esac
+
+#exit 0
+
+#' > /etc/init.d/apt-update
+
+#chmod +x /etc/init.d/apt-update
+
+#sudo update-rc.d apt-update defaults 
+
+
