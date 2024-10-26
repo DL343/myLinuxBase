@@ -335,6 +335,18 @@ apt -y reinstall welcome-loc-os
 apt -y install plasma-desktop
 
 
+##################################################
+## SDDM
+##################################################
+
+ apt -y install sddm 
+
+echo "[Autologin]
+User=live
+Session=plasma" > /etc/sddm.conf
+
+
+
 
 ##################################################
 ## Wallpapers y Temas visuales
@@ -377,16 +389,6 @@ chown live /home/live -R
 
 
 
-##################################################
-## SDDM
-##################################################
-
- apt install sddm --no-install-recommends
-
-echo "[Autologin]
-User=live
-Session=plasma" > /etc/sddm.conf
-
 
 
 
@@ -416,8 +418,9 @@ mv /etc/xdg/autostart/print-applet.desktop              /etc/xdg/autostart.disab
 ## Desactivar servicios de plasma
 ##################################################
 #chmod -x /usr/lib/x86_64-linux-gnu/libexec/kactivitymanagerd
-chmod -x /usr/bin/kglobalaccel5
-chmod -x /usr/bin/kded5
+
+#chmod -x /usr/bin/kglobalaccel5
+#chmod -x /usr/bin/kded5
 
 
 
