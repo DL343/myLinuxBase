@@ -149,6 +149,7 @@ StartupNotify=false
 Terminal=false
 Hidden=false
 " > /home/live/.config/autostart/Welcome.desktop
+chmod +x /home/live/.config/autostart/Welcome.desktop
 chown live:live -R /home/live/
 
 

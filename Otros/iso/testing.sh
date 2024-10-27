@@ -463,10 +463,10 @@ mv /usr/share/plasma/plasmoids.disabled/org.kde.plasma.taskmanager        /usr/s
 ############################################################
 
 ##### APPS
-apt -y install   chromium   cmst   mpv   fastfetch   htop  sakura	geany   pcmanfm \
+apt -y install   chromium   cmst   mpv   fastfetch   htop  sakura	geany   pcmanfm   bleachbit \
 unzip   zip   unrar-free   \
 gwenview   kcalc   kamera   \
-ark   okular   kde-spectacle \ 
+ark   okular   kde-spectacle 
 #libreoffice-writer 
 #webapp-manager
 # dolphin
@@ -489,6 +489,7 @@ StartupNotify=false
 Terminal=false
 Hidden=false
 " > /home/live/.config/autostart/Welcome.desktop
+chmod +x /home/live/.config/autostart/Welcome.desktop
 chown live:live -R /home/live/
 
 
