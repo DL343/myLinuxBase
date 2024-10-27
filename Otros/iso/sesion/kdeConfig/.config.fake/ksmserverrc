@@ -5,10 +5,12 @@ update_info=ksmserver_update_loginMode_value.upd:ksmserver_update_loginMode_valu
 loginMode=emptySession
 
 [LegacySession: saved at previous logout]
-count=0
+clientMachine1=localhost
+command1=pcmanfm
+count=1
 
 [Session: saved at previous logout]
-clientId1=109bc2632d000172996895200000014020003
+clientId1=109bc2632d000173000895300000078610003
 count=1
 program1=pulseaudio
 restartCommand1=

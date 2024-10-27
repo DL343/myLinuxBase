@@ -21,7 +21,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][1][Configuration]
-PreloadWeight=0
+PreloadWeight=42
 
 [Containments][1][General]
 ToolBoxButtonState=topcenter
@@ -31,6 +31,27 @@ ToolBoxButtonX=124
 FillMode=0
 Image=/usr/share/wallpapers/loquitux_playa.png
 SlidePaths=/usr/share/wallpapers/
+
+[Containments][2][Applets][12][Configuration]
+PreloadWeight=42
+
+[Containments][2][Applets][13][Configuration]
+PreloadWeight=42
+
+[Containments][2][Applets][3][Configuration]
+PreloadWeight=92
+
+[Containments][2][Applets][5][Configuration]
+PreloadWeight=42
+
+[Containments][2][Applets][6][Configuration]
+PreloadWeight=42
+
+[Containments][2][Applets][7][Configuration]
+PreloadWeight=47
+
+[Containments][2][Configuration]
+PreloadWeight=42
 
 [Containments][3]
 activityId=
@@ -64,6 +85,10 @@ PreloadWeight=100
 popupHeight=514
 popupWidth=655
 
+[Containments][3][Applets][4][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
 [Containments][3][Applets][4][Configuration][General]
 favoritesPortedToKAstats=true
 
@@ -71,7 +96,7 @@ favoritesPortedToKAstats=true
 global=Alt+F1
 
 [Containments][3][Applets][4][Shortcuts]
-global=Alt+F1
+global=
 
 [Containments][3][Applets][5]
 immutability=1
@@ -88,7 +113,7 @@ plugin=org.kde.plasma.icontasks
 PreloadWeight=0
 
 [Containments][3][Applets][6][Configuration][General]
-launchers=applications:chromium.desktop,applications:org.kde.discover.desktop,applications:systemsettings.desktop
+launchers=applications:chromium.desktop,applications:pcmanfm.desktop,applications:org.kde.discover.desktop,applications:systemsettings.desktop
 
 [Containments][3][Applets][7]
 immutability=1
@@ -114,6 +139,18 @@ PreloadWeight=0
 
 [Containments][3][General]
 AppletOrder=4;6;7;8;19;20
+
+[Containments][8][Applets][10][Configuration]
+PreloadWeight=42
+
+[Containments][8][Applets][11][Configuration]
+PreloadWeight=42
+
+[Containments][8][Applets][9][Configuration]
+PreloadWeight=42
+
+[Containments][8][Configuration]
+PreloadWeight=42
 
 [Containments][9]
 activityId=
@@ -214,5 +251,5 @@ extraItems=org.kde.plasma.notifications,org.kde.kscreen,org.kde.plasma.volume
 knownItems=org.kde.plasma.notifications,org.kde.kscreen,org.kde.plasma.volume
 
 [ScreenMapping]
-itemsOnDisabledScreens=0,9ee0e045-91d9-40ec-94ba-64309d91df5d,1,desktop:/Instalar.desktop
+itemsOnDisabledScreens=0,13074aa9-e5d1-46c7-8f47-f2b2cc06acd5,1,desktop:/Instalar.desktop
 screenMapping=desktop:/Instalar.desktop,0,2f291e6c-d4af-4984-b91a-6086ca3bd203
