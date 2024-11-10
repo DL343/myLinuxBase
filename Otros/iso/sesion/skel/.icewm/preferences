@@ -803,7 +803,7 @@
 # TaskBarAutoHide=0 # 0/1
 
 #  Delay between CPU Monitor samples in ms.
- TaskBarCPUDelay=3000 # [10-3600000]
+ TaskBarCPUDelay=5000 # [10-3600000]
 
 #  The width of the CPU Monitor applet in pixels.
 # TaskBarCPUSamples=20 # [2-1000]
@@ -827,7 +827,7 @@
 # TaskBarLaunchOnSingleClick=1 # 0/1
 
 #  Delay between Memory Monitor samples in ms.
- TaskBarMEMDelay=3000 # [10-3600000]
+ TaskBarMEMDelay=5000 # [10-3600000]
 
 #  The width of the Memory Monitor applet in pixels.
 # TaskBarMEMSamples=20 # [2-1000]
@@ -839,7 +839,7 @@
 # TaskBarMailboxStatusCountMessages=0 # 0/1
 
 #  Delay between Net Monitor samples in ms.
- TaskBarNetDelay=3000 # [10-3600000]
+ TaskBarNetDelay=5000 # [10-3600000]
 
 #  The width of the Net Monitor applet in pixels.
 # TaskBarNetSamples=20 # [2-1000]
