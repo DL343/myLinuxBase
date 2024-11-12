@@ -16,6 +16,17 @@ joy-theme \
 softwaves-theme
 
 	
+	
+##### UFW
+sudo apt -y install ufw
+
+##### UFW: ACTIVACION
+sudo ufw enable
+
+##### UFW: PREFIX
+update-rc.d -f nftables remove
+
+	
 ##### NFTABLES
 update-rc.d -f nftables remove
 

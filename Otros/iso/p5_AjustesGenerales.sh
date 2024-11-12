@@ -990,15 +990,6 @@ update-rc.d -f cron remove
 apt -y purge avahi-daemon  at-spi2-core  rtkit 
 
 
-##### UFW
-sudo apt -y install ufw
-
-##### UFW: ACTIVACION
-sudo ufw enable
-
-##### UFW: PREFIX
-update-rc.d -f nftables remove
-
 
 
 fi
