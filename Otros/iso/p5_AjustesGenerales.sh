@@ -780,17 +780,6 @@ x11.debug_logs = True
 	##### WALLPAPERS: LIMPIEZA DIRECTORIO
 	rm -r /usr/share/wallpapers/
 	mkdir -p /usr/share/wallpapers
-	
-	cd /usr/share/desktop-base/
-	rm -r homeworld-theme \
-	lines-theme \
-	spacefun-theme \
-	emerald-theme \
-	joy-inksplat-theme \
-	moonlight-theme \
-	futureprototype-theme \
-	joy-theme \
-	softwaves-theme
 
 	##### WALLPAPER PRINCIPAL
 	mkdir -p /usr/share/wallpapers/

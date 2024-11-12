@@ -268,7 +268,7 @@ apt -y purge network-manager xterm
 
 apt -y autoremove
 
-rm /home/live/Desktop/install.desktop
+#rm /home/live/Desktop/install.desktop
 
 
 
