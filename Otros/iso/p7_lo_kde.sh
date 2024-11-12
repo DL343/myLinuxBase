@@ -275,3 +275,15 @@ rm /home/live/Desktop/install.desktop
 
 cp ./custom/dm/face.png   /etc/skel/
 cp ./custom/dm/face.png   /home/live/
+
+
+
+cp ./sesion/skel/.profile       /etc/skel/
+cp ./sesion/skel/.bash_logout   /etc/skel/
+cp ./sesion/skel/.bashrc        /etc/skel/
+
+cp ./sesion/skel/.profile       /home/live/
+cp ./sesion/skel/.bash_logout   /home/live/
+cp ./sesion/skel/.bashrc        /home/live/
+
+chown -R live:live /home/live/
