@@ -6,7 +6,7 @@ apt -y upgrade
 
 echo "
 ########################################################################
-############################## REPO MANAGER ##############################
+############################## LPKG ##############################
 ########################################################################
 "
 
@@ -95,6 +95,7 @@ mkdir -p /home/live/Desktop/
 
 
 ###### CALAMARES LO
+mkdir -p /home/live/Desktop/
 echo "
 [Desktop Entry]
 Type=Application
@@ -123,7 +124,7 @@ Name[pt_PT]=Instalar Sistema
 GenericName[pt_PT]=Instalador de Sistema
 Hidden=false
 
-" > /home/live/Desktop/install.desktop
+" > /home/live/Desktop/Install.desktop
 
 
 

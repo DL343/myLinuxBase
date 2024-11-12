@@ -256,32 +256,6 @@ fi
 EOF
 
 
-mkdir -p /home/live/Desktop/
-echo "
-[Desktop Entry]
-Type=Application
-Version=1.0
-Name=Install Loc-OS
-GenericName=System Installer
-Keywords=calamares;system;installer;
-TryExec=calamares
-Exec=sh -c \"pkexec calamares\"
-Comment=Calamares — System Installer
-Icon=/usr/share/icons/hicolor/48x48/apps/calamares-loc-os.png
-Terminal=false
-StartupNotify=true
-Categories=Qt;System;
-X-AppStream-Ignore=true
-" > /home/live/Desktop/Instalar.desktop
-
-
-
-
-
-
-
-
-
 ##################################################
 ## Elimina residuos
 ##################################################
