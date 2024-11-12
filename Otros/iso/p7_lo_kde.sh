@@ -271,3 +271,7 @@ apt -y autoremove
 rm /home/live/Desktop/install.desktop
 
 
+
+
+cp ./custom/dm/face.png   /etc/skel/
+cp ./custom/dm/face.png   /home/live/
