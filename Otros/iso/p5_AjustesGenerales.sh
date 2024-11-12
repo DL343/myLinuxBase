@@ -777,6 +777,17 @@ x11.debug_logs = True
 
 
 
+	##### WALLPAPERS: LIMPIEZA DIRECTORIO
+	rm -r /usr/share/wallpapers/
+	mkdir -p /usr/share/wallpapers
+
+	##### WALLPAPER PRINCIPAL
+	mkdir -p /usr/share/wallpapers/
+	cp ./custom/wall/*          /usr/share/wallpapers/default.png
+
+	##### WALLPAPER'S COMPLEMENTARIOS
+	cp ./custom/wallpapers/*    /usr/share/wallpapers/
+
 
 
 

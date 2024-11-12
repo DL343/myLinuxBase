@@ -6,6 +6,24 @@ apt update
 apt -y upgrade
 
 
+
+
+
+
+	##### TEMAS
+	mkdir -p /usr/share/themes/
+	cp -r ./custom/themes/*      /usr/share/themes/
+
+	##### ICONOS + CURSOR
+	mkdir -p /usr/share/icons/
+	cp -r ./custom/icons/*      /usr/share/icons/
+
+
+
+
+
+
+
 echo "
 ########################################################################
 ############################ SKEL Y LIVE ###############################
