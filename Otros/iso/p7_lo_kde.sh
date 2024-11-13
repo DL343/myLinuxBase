@@ -260,7 +260,7 @@ EOF
 ## Elimina residuos
 ##################################################
 
-apt -y purge apparmor aspell-es bup chafa cups-pk-helper debian-reference-es debian-reference-common fonts-freefont-ttf fonts-liberation git ispanish kdeconnect konqueror kpeople-vcard kup-backup kwrite manpages-es mlocate par2 partitionmanager plasma-browser-integration plasma-disks plocate python3-cairo python3-cups python3-cupshelpers python3-fuse python3-pylibacl python3-smbc python3-tornado rtkit smartmontools sshfs system-config-printer vim-tiny zutty
+apt -y purge apparmor aspell-es bup chafa cups-pk-helper debian-reference-es debian-reference-common fonts-freefont-ttf fonts-liberation git ispanish kdeconnect konqueror kpeople-vcard kup-backup kwrite manpages-es mlocate par2 partitionmanager plasma-browser-integration plasma-disks plocate python3-cairo python3-cups python3-cupshelpers python3-fuse python3-pylibacl python3-smbc python3-tornado rtkit smartmontools sshfs system-config-printer vim-tiny zutty libreoffice-math
 
 ##### NETWORK
 apt -y purge network-manager xterm
@@ -295,8 +295,8 @@ background=/usr/share/wallpapers/loquitux_orquidea.png
 
 
 
-cp ./custom/dm/face.png   /etc/skel/
-cp ./custom/dm/face.png   /home/live/
+cp ./custom/dm/face.png   /etc/skel/.face.icon
+cp ./custom/dm/face.png   /home/live/.face.icon
 
 
 
@@ -310,6 +310,17 @@ cp ./sesion/skel/.profile       /home/live/
 cp ./sesion/skel/.bash_logout   /home/live/
 cp ./sesion/skel/.bashrc        /home/live/
 cp ./custom/dm/face.png         /home/live/
+
+
+
+rm /usr/share/wallpapers/SpaceFun.svg
+rm /usr/share/wallpapers/SoftWaves.svg
+rm /usr/share/wallpapers/moonlight.svg
+rm /usr/share/wallpapers/Lines.svg
+rm /usr/share/wallpapers/JoyInksplat.svg
+rm /usr/share/wallpapers/homeworld.svg
+rm /usr/share/wallpapers/default.png
+
 
 
 chown -R live:live /home/live/
