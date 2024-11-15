@@ -1,5 +1,18 @@
 #!/usr/bin/env bash
 
+
+
+read -p "
+	1. Solo configuracion
+	2. Configuracion + apps
+	" seleccion
+
+
+if ( ! [ "$seleccion" -eq "1" ] )
+then
+
+
+
 apt -y reinstall welcome-loc-os
 
 ##################################################
@@ -46,7 +59,7 @@ cd ..
 
 
 ##################################################
-## Hostname & SDDM
+##  SDDM
 ##################################################
 echo "[Autologin]
 User=live
@@ -115,19 +128,6 @@ mv /usr/share/plasma/plasmoids.disabled/org.kde.plasma.calendar           /usr/s
 mv /usr/share/plasma/plasmoids.disabled/org.kde.plasma.folder             /usr/share/plasma/plasmoids/   
 mv /usr/share/plasma/plasmoids.disabled/org.kde.plasma.marginsseparator   /usr/share/plasma/plasmoids/   
 mv /usr/share/plasma/plasmoids.disabled/org.kde.plasma.taskmanager        /usr/share/plasma/plasmoids/
-
-
-
-
-###########################################################
-## COMPLEMENTOS
-############################################################
-
-##### APPS
-apt -y install librewolf kde-spectacle mpv kamera kate ark kcalc gwenview fastfetch okular unrar-free unzip webapp-manager zip libreoffice-calc libreoffice-writer htop imagemagick cmst
-
-
-
 
 
 
@@ -250,22 +250,6 @@ fi
 EOF
 
 
-##################################################
-## Elimina residuos
-##################################################
-
-apt -y purge apparmor aspell-es bup chafa cups-pk-helper debian-reference-es debian-reference-common fonts-freefont-ttf fonts-liberation git ispanish kdeconnect konqueror kpeople-vcard kup-backup kwrite manpages-es mlocate par2 partitionmanager plasma-browser-integration plasma-disks plocate python3-cairo python3-cups python3-cupshelpers python3-fuse python3-pylibacl python3-smbc python3-tornado rtkit smartmontools sshfs system-config-printer vim-tiny zutty libreoffice-math
-
-##### NETWORK
-apt -y purge network-manager xterm
-
-
-apt -y autoremove
-
-#rm /home/live/Desktop/install.desktop
-
-
-
 
 
 ##################################################
@@ -317,4 +301,63 @@ rm /usr/share/wallpapers/default.png
 
 
 
+
+
+
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###########################################################
+## COMPLEMENTOS
+############################################################
+
+##### APPS
+apt -y install librewolf kde-spectacle mpv kamera kate ark kcalc gwenview fastfetch okular unrar-free unzip webapp-manager zip libreoffice-calc libreoffice-writer htop imagemagick cmst
+
+
+
+
+
+
+##################################################
+## Elimina residuos
+##################################################
+
+apt -y purge apparmor aspell-es bup chafa cups-pk-helper debian-reference-es debian-reference-common fonts-freefont-ttf fonts-liberation git ispanish kdeconnect konqueror kpeople-vcard kup-backup kwrite manpages-es mlocate par2 partitionmanager plasma-browser-integration plasma-disks plocate python3-cairo python3-cups python3-cupshelpers python3-fuse python3-pylibacl python3-smbc python3-tornado rtkit smartmontools sshfs system-config-printer vim-tiny zutty libreoffice-math
+
+##### NETWORK
+apt -y purge network-manager xterm
+
+
+apt -y autoremove
+
+#rm /home/live/Desktop/install.desktop
+
+
+
+
+
+
 chown -R live:live /home/live/
+
