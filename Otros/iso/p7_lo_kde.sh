@@ -12,17 +12,24 @@ apt -y install kde-plasma-desktop
 ##################################################
 ## Wallpapers, iconos y temas 
 ##################################################
-wget -O /tmp/colors.tar.gz https://staging.karlaperezyt.com/locoskde/src/themes/FlatRemixYellow.tar.gz
-wget -O /tmp/icons.tar.gz https://staging.karlaperezyt.com/locoskde/src/themes/Vimix.tar.gz
 
-mkdir -p /usr/share/color-schemes
-mkdir -p /usr/share/icons
+mkdir -p /usr/share/color-schemes/
+mkdir -p /usr/share/icons/
 
-tar -xf /tmp/colors.tar.gz -C /usr/share/color-schemes
-tar -xf /tmp/icons.tar.gz -C /usr/share/icons
+mkdir -p /tmp/FlatRemixYellow/ 
+mkdir -p /tmp/Vimix/
 
-rm /tmp/colors.tar.gz
-rm /tmp/icons.tar.gz
+tar -xzvf  ./custom/themes/kde/FlatRemixYellow.tar.gz   -C   /tmp/FlatRemixYellow
+tar -xzvf  ./custom/themes/kde/Vimix.tar.gz             -C   /tmp/Vimix
+
+cp -r  /tmp/FlatRemixYellow/*     /usr/share/color-schemes
+cp -r  /tmp/Vimix/*               /usr/share/icons
+
+rm -r  /tmp/FlatRemixYellow/ 
+rm -r  /tmp/Vimix/
+
+
+
 
 ##################################################
 ## Skel
@@ -34,19 +41,6 @@ cd ./sesion/kdeConfig/
 cd ..
 cd ..
 
-
-wget -O /tmp/face.png https://staging.karlaperezyt.com/locoskde/src/userconfig/face.png
-
-mkdir -p /etc/skel
-
-#tar -xf /tmp/defaults.tar.gz -C /etc/skel
-#tar -xf /tmp/live.tar.gz -C /home/live
-cp /tmp/face.png /etc/skel/.face
-
-rm /tmp/defaults.tar.gz
-rm /tmp/face.png
-
-chown live /home/live -R
 
 
 
