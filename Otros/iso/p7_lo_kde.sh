@@ -263,18 +263,15 @@ cp  ./custom/dm/face.png   /etc/skel/.face.icon
 
 
 ##### SDDM: WALLPAPER CUSTOM
-echo "
-[General]
-background=/usr/share/wallpapers/loquitux_orquidea.png 
-" > /usr/share/sddm/themes/breeze/theme.conf.user
+#echo "
+#[General]
+#background=/usr/share/wallpapers/loquitux_orquidea.png 
+#" > /usr/share/sddm/themes/breeze/theme.conf.user
 
 
 
 
 
-
-cp ./custom/dm/face.png   /etc/skel/.face.icon
-cp ./custom/dm/face.png   /home/live/.face.icon
 
 
 
@@ -289,13 +286,13 @@ cp ./custom/dm/face.png   /home/live/.face.icon
 
 
 
-rm /usr/share/wallpapers/SpaceFun.svg
-rm /usr/share/wallpapers/SoftWaves.svg
-rm /usr/share/wallpapers/moonlight.svg
-rm /usr/share/wallpapers/Lines.svg
-rm /usr/share/wallpapers/JoyInksplat.svg
-rm /usr/share/wallpapers/homeworld.svg
-rm /usr/share/wallpapers/default.png
+rm -r /usr/share/wallpapers/SpaceFun.svg
+rm -r /usr/share/wallpapers/SoftWaves.svg
+rm -r /usr/share/wallpapers/moonlight.svg
+rm -r /usr/share/wallpapers/Lines.svg
+rm -r /usr/share/wallpapers/JoyInksplat.svg
+rm -r /usr/share/wallpapers/homeworld.svg
+rm -r /usr/share/wallpapers/default.png
 
 
 
