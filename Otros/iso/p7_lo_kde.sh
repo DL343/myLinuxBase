@@ -2,14 +2,7 @@
 
 
 
-read -p "
-	1. Solo configuracion
-	2. Configuracion + apps
-	" seleccion
-
-
-if ( ! [ "$seleccion" -eq "1" ] )
-then
+function soloConfigs {
 
 
 
@@ -262,6 +255,7 @@ cp  ./custom/dm/face.png   /home/live/.face.icon
 cp  ./custom/dm/face.png   /etc/skel/.face.icon 
 
 
+
 ##### SDDM: WALLPAPER CUSTOM
 #echo "
 #[General]
@@ -293,16 +287,9 @@ rm -r /usr/share/wallpapers/Lines.svg
 rm -r /usr/share/wallpapers/JoyInksplat.svg
 rm -r /usr/share/wallpapers/homeworld.svg
 rm -r /usr/share/wallpapers/default.png
-
-
-
-
-
-
-fi
-
-
-
+	
+	
+}
 
 
 
@@ -318,8 +305,7 @@ fi
 
 
 
-
-
+function apps {
 
 
 
@@ -355,4 +341,53 @@ apt -y autoremove
 
 
 chown -R live:live /home/live/
+
+	
+	
+}
+
+
+
+
+
+
+
+
+read -p "
+	1. Solo configuracion
+	2. Configuracion + apps
+	" seleccion
+
+
+if [ "$seleccion" -eq "1" ]
+then
+
+soloConfigs
+
+else
+
+soloConfigs
+apps
+
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
