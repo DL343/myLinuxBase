@@ -21,7 +21,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][1][Configuration]
-PreloadWeight=18
+PreloadWeight=2
 
 [Containments][1][Wallpaper][org.kde.image][General]
 Image=/usr/share/wallpapers/loquitux_playa.png
@@ -41,7 +41,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][18][Configuration]
-PreloadWeight=23
+PreloadWeight=7
 popupHeight=450
 popupWidth=396
 
@@ -50,14 +50,14 @@ immutability=1
 plugin=org.kde.plasma.showdesktop
 
 [Containments][2][Applets][19][Configuration]
-PreloadWeight=18
+PreloadWeight=2
 
 [Containments][2][Applets][3]
 immutability=1
 plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][3][Configuration]
-PreloadWeight=86
+PreloadWeight=89
 popupHeight=514
 popupWidth=651
 
@@ -82,7 +82,7 @@ immutability=1
 plugin=org.kde.plasma.icontasks
 
 [Containments][2][Applets][5][Configuration]
-PreloadWeight=18
+PreloadWeight=2
 
 [Containments][2][Applets][5][Configuration][General]
 launchers=applications:librewolf.desktop,preferred://filemanager,applications:org.kde.discover.desktop,applications:systemsettings.desktop
@@ -92,21 +92,21 @@ immutability=1
 plugin=org.kde.plasma.marginsseparator
 
 [Containments][2][Applets][6][Configuration]
-PreloadWeight=18
+PreloadWeight=2
 
 [Containments][2][Applets][7]
 immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][7][Configuration]
-PreloadWeight=48
+PreloadWeight=32
 SystrayContainmentId=8
 
 [Containments][2][Configuration]
-PreloadWeight=18
+PreloadWeight=2
 
 [Containments][2][General]
-AppletOrder=3;4;5;6;7;18;19
+AppletOrder=3;5;6;7;18;19
 
 [Containments][8]
 activityId=
@@ -138,7 +138,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][8][Applets][12][Configuration]
-PreloadWeight=18
+PreloadWeight=2
 
 [Containments][8][Applets][12][Configuration][General]
 migrated=true
@@ -148,7 +148,7 @@ immutability=1
 plugin=org.kde.kscreen
 
 [Containments][8][Applets][13][Configuration]
-PreloadWeight=18
+PreloadWeight=2
 
 [Containments][8][Applets][14]
 immutability=1
@@ -169,7 +169,7 @@ immutability=1
 plugin=org.kde.plasma.notifications
 
 [Containments][8][Applets][16][Configuration]
-PreloadWeight=18
+PreloadWeight=2
 
 [Containments][8][Applets][17]
 immutability=1
@@ -183,7 +183,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][20][Configuration]
-PreloadWeight=18
+PreloadWeight=2
 
 [Containments][8][Applets][21]
 immutability=1
@@ -197,7 +197,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][22][Configuration]
-PreloadWeight=18
+PreloadWeight=2
 
 [Containments][8][Applets][9]
 immutability=1
@@ -207,11 +207,12 @@ plugin=org.kde.plasma.manage-inputmethod
 PreloadWeight=18
 
 [Containments][8][Configuration]
-PreloadWeight=18
+PreloadWeight=2
 
 [Containments][8][General]
-extraItems=org.kde.plasma.manage-inputmethod,org.kde.plasma.bluetooth,org.kde.plasma.vault,org.kde.plasma.devicenotifier,org.kde.plasma.volume,org.kde.kscreen,org.kde.kdeconnect,org.kde.plasma.battery,org.kde.kupapplet,org.kde.plasma.keyboardlayout,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.plasma.clipboard
-knownItems=org.kde.plasma.manage-inputmethod,org.kde.plasma.bluetooth,org.kde.plasma.vault,org.kde.plasma.devicenotifier,org.kde.plasma.volume,org.kde.kscreen,org.kde.kdeconnect,org.kde.plasma.battery,org.kde.kupapplet,org.kde.plasma.keyboardlayout,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.plasma.clipboard
+extraItems=org.kde.plasma.volume,org.kde.kscreen,org.kde.plasma.notifications
+knownItems=org.kde.plasma.volume,org.kde.kscreen,org.kde.plasma.notifications
 
 [ScreenMapping]
-itemsOnDisabledScreens=
+itemsOnDisabledScreens=0,c8ad8624-7f28-43c2-8031-bd618166564a,1,desktop:/Install.desktop
+screenMapping=desktop:/Install.desktop,0,c8ad8624-7f28-43c2-8031-bd618166564a

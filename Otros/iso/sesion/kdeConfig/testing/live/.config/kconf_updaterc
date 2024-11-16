@@ -1,5 +1,10 @@
 updateInfoAdded=true
 
+[ark.upd]
+ctime=1731782564
+done=add-hamburgermenu-to-toolbar
+mtime=1677536372
+
 [breezehighcontrasttobreezedark.upd]
 ctime=1729943033
 done=BreezeHighContrastToBreezeDark
@@ -60,6 +65,11 @@ ctime=1729921473
 done=gtk_theme,dont_use_gtk_css_for_window_decorations,remove_deprecated_gtk4_option
 mtime=1683632190
 
+[gwenview.upd]
+ctime=1731782569
+done=SideBar_StatusBar_Rename,ImageView_AlphaBackgroundMode_Update,DeleteThumbnailSetting_Rename
+mtime=1677300904
+
 [icons_remove_effects.upd]
 ctime=1729921491
 done=IconsRemoveEffects
@@ -69,6 +79,10 @@ mtime=1683632330
 ctime=1731625327
 done=migrate_kate_sessions_applet_to_kdeplasma-addons
 mtime=1677470432
+
+[kcalcrc.upd]
+ctime=1731782571
+mtime=1677301154
 
 [kcm_rename_plasma_desktop.upd]
 ctime=1729921519
@@ -130,10 +144,34 @@ ctime=1729921519
 done=split-variants
 mtime=1683632276
 
+[okular.upd]
+ctime=1731782594
+done=annotation-toolbar,builtin-annotations
+mtime=1677302525
+
 [plasmashell-5.27-use-panel-thickness-in-default-group.upd]
 ctime=1729921491
 done=plasmashell-5.27-use-panel-thickness-in-default-group
 mtime=1683632330
+
+[spectacle_clipboard.upd]
+ctime=1731782571
+done=clipboard-settings-change
+mtime=1677302653
+
+[spectacle_newConfig.upd]
+ctime=1731782571
+mtime=1677302653
+
+[spectacle_rememberregion.upd]
+ctime=1731782571
+done=spectacle-migrate-rememberregion
+mtime=1677302653
+
+[spectacle_shortcuts.upd]
+ctime=1731782571
+done=spectacle-migrate-shortcuts
+mtime=1677302653
 
 [style_widgetstyle_default_breeze.upd]
 ctime=1729921491
