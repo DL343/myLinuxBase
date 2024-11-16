@@ -1,0 +1,235 @@
+org.kde.startup: not a reply org.freedesktop.locale1 QDBusMessage(type=Error, service="org.freedesktop.DBus", error name="org.freedesktop.DBus.Error.ServiceUnknown", error message="The name org.freedesktop.locale1 was not provided by any .service files", signature="s", contents=("The name org.freedesktop.locale1 was not provided by any .service files") )
+dbus-daemon[2219]: [session uid=1000 pid=2219] Activating service name='org.kde.KSplash' requested by ':1.0' (uid=1000 pid=2220 comm="/usr/bin/startplasma-wayland" label="kernel")
+kdeinit5: preparing to launch '/usr/lib/x86_64-linux-gnu/libexec/kf5/klauncher'
+kdeinit5: Launched KLauncher, pid = 2238, result = 0
+No backend specified, automatically choosing drm
+kwin_wayland_drm: Atomic Mode Setting disabled on GPU /dev/dri/card0 because of cursor offset issues in virtual machines
+OpenGL vendor string:                   Mesa/X.org
+OpenGL renderer string:                 virgl (AMD Radeon Graphics (raven2, LLVM 15.0.6, DRM 3.49, ...)
+OpenGL version string:                  4.3 (Core Profile) Mesa 22.3.6
+OpenGL shading language version string: 4.30
+Driver:                                 Unknown
+GPU class:                              Unknown
+OpenGL version:                         4.3
+GLSL version:                           4.30
+Mesa version:                           22.3.6
+Linux kernel version:                   5.10.226
+Requires strict binding:                no
+GLSL shaders:                           yes
+Texture NPOT support:                   yes
+Virtual Machine:                        no
+kwin_xkbcommon: XKB: inet:334:58: unrecognized keysym "XF86EmojiPicker"
+kwin_wayland_drm: Setting gamma failed! Function not implemented
+dbus-daemon[2219]: [session uid=1000 pid=2219] Successfully activated service 'org.kde.KSplash'
+Connecting to deprecated signal QDBusConnectionInterface::serviceOwnerChanged(QString,QString,QString)
+The XKEYBOARD keymap compiler (xkbcomp) reports:
+> Warning:          Unsupported maximum keycode 708, clipping.
+>                   X11 cannot support keycodes above 255.
+Errors from xkbcomp are not fatal to the X server
+kdeinit5: opened connection to :1
+Initializing  "/usr/lib/x86_64-linux-gnu/qt5/plugins/plasma/kcms/systemsettings/kcm_fonts.so"
+Initializing  "/usr/lib/x86_64-linux-gnu/qt5/plugins/plasma/kcms/systemsettings/kcm_mouse.so"
+Initializing  "/usr/lib/x86_64-linux-gnu/qt5/plugins/plasma/kcms/systemsettings/kcm_style.so"
+kdeinit5: Got SETENV 'GTK_RC_FILES=/etc/gtk/gtkrc:/home/live/.gtkrc:/home/live/.config/gtkrc' from launcher.
+kdeinit5: Got SETENV 'GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/live/.gtkrc-2.0:/home/live/.config/gtkrc-2.0' from launcher.
+org.kde.plasma.session: process job  "kcminit_startup" finished with exit code  0
+dbus-daemon[2219]: [session uid=1000 pid=2219] Activating service name='ca.desrt.dconf' requested by ':1.9' (uid=1000 pid=2277 comm="/usr/bin/kded5" label="kernel")
+dbus-daemon[2219]: [session uid=1000 pid=2219] Successfully activated service 'ca.desrt.dconf'
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Created window 0xa00001 on screen 0 with timestamp 77818
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 13 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 13 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 13 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 13 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 13 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 13 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 13 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+Qt: Session management error: networkIdsList argument is NULL
+kdeinit5: Got SETENV 'SESSION_MANAGER=local/Loc-OS:@/tmp/.ICE-unix/2282,unix/Loc-OS:/tmp/.ICE-unix/2282' from launcher.
+kdeinit5: Got SETENV 'SESSION_MANAGER=local/Loc-OS:@/tmp/.ICE-unix/2282,unix/Loc-OS:/tmp/.ICE-unix/2282' from launcher.
+/usr/bin/iceauth:  creating new authority file /run/user/1000/ICEauthority
+Initializing  "/usr/lib/x86_64-linux-gnu/qt5/plugins/plasma/kcms/systemsettings/kcm_touchpad.so"
+Initializing  "/usr/lib/x86_64-linux-gnu/qt5/plugins/plasma/kcms/systemsettings/kcm_kgamma.so"
+Xlib XKB extension major= 1  minor= 0
+dbus-daemon[2219]: [session uid=1000 pid=2219] Activating service name='org.kde.ActivityManager' requested by ':1.13' (uid=1000 pid=2307 comm="/usr/lib/x86_64-linux-gnu/libexec/org_kde_powerdev" label="kernel")
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+dbus-daemon[2219]: [session uid=1000 pid=2219] Successfully activated service 'org.kde.ActivityManager'
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 13 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+org.kde.powerdevil: org.kde.powerdevil.chargethresholdhelper.getthreshold failed "Charge thresholds are not supported by the kernel for this hardware"
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 13 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+org.kde.powerdevil: org.kde.powerdevil.backlighthelper.brightness failed
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 13 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+kup.daemon: "Kup is not enabled, enable it from the system settings module. You can do that by running kcmshell5 kup"
+dbus-daemon[2219]: [session uid=1000 pid=2219] Activating service name='org.freedesktop.Notifications' requested by ':1.19' (uid=1000 pid=2314 comm="/usr/lib/x86_64-linux-gnu/libexec/kdeconnectd" label="kernel")
+KXMessages used on non-X11 platform! This is an application bug.
+New PolkitAgentListener  0x55895e4c2ac0
+Adding new listener  PolkitQt1::Agent::Listener(0x55895e580900) for  0x55895e4c2ac0
+Listener online
+kf.notifications: env says KDE is running but SNI unavailable -- check KDE_FULL_SESSION and XDG_CURRENT_DESKTOP
+X server XKB extension major= 1  minor= 0
+Checking screens: available: (QScreen(0x56526dad65c0, name="Virtual-1")) redundant: QHash() fake: QSet() all: (QScreen(0x56526dad65c0, name="Virtual-1"))
+Authentication agent result: true
+kf.plasma.quick: Applet preload policy set to 1
+org.kde.powerdevil: Handle button events action could not check for screen configuration
+org.kde.powerdevil: The profile  "AC" tried to activate "DimDisplay" a non-existent action. This is usually due to an installation problem, a configuration problem, or because the action is not supported
+org.kde.powerdevil: org.kde.powerdevil.chargethresholdhelper.getthreshold failed "Charge thresholds are not supported by the kernel for this hardware"
+qt.qpa.wayland: Wayland does not support QWindow::requestActivate()
+qt.qpa.wayland: Wayland does not support QWindow::requestActivate()
+QObject::connect: No such slot DesktopProtocol::_k_slotRedirection(KIO::Job *, QUrl)
+qt.qpa.wayland: Wayland does not support QWindow::requestActivate()
+qt.qpa.wayland: Wayland does not support QWindow::requestActivate()
+file:///usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml:534:9: QML Label: Binding loop detected for property "height"
+file:///usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml:499:13: QML Label: Binding loop detected for property "height"
+Trying to use rootObject before initialization is completed, whilst using setInitializationDelayed. Forcing completion
+org.kde.plasma.kicker: Entry is not valid "preferred://browser" QSharedPointer(0x56526e1d5050)
+org.kde.plasma.kicker: Entry is not valid "org.kde.kontact.desktop" QSharedPointer(0x56526e3b35d0)
+org.kde.plasma.kicker: Entry is not valid "ktp-contactlist.desktop" QSharedPointer(0x56526e3b3790)
+org.kde.plasma.kicker: Entry is not valid "preferred://browser" QSharedPointer(0x56526e201f80)
+org.kde.plasma.kicker: Entry is not valid "org.kde.kontact.desktop" QSharedPointer(0x56526e3b37e0)
+org.kde.plasma.kicker: Entry is not valid "ktp-contactlist.desktop" QSharedPointer(0x56526e383a30)
+file:///usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml:499:13: QML Label: Binding loop detected for property "height"
+file:///usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml:534:9: QML Label: Binding loop detected for property "height"
+file:///usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml:556:5: QML Label: Binding loop detected for property "height"
+qt.qpa.wayland: Wayland does not support QWindow::requestActivate()
+Known activities: ("c8ad8624-7f28-43c2-8031-bd618166564a")
+Cyclic dependency detected between "file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/global/Globals.qml" and "file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/NotificationHeader.qml"
+Cyclic dependency detected between "file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/global/Globals.qml" and "file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/ThumbnailStrip.qml"
+dbus-daemon[2219]: [session uid=1000 pid=2219] Successfully activated service 'org.freedesktop.Notifications'
+org.kde.klipper: Failed to load history resource. Clipboard history cannot be read. :  History file does not exist
+file:///usr/share/plasma/plasmoids/org.kde.plasma.networkmanagement/contents/ui/main.qml:95: TypeError: Cannot read property 'airplaneModeAvailable' of null
+qt.qpa.wayland: Wayland does not support QWindow::requestActivate()
+QFont::setPointSizeF: Point size <= 0 (0.000000), must be greater than 0
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/plasma/extras/PlaceholderMessage.qml:238:5: QML Heading: Binding loop detected for property "verticalAlignment"
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/plasma/extras/PlaceholderMessage.qml:238:5: QML Heading: Binding loop detected for property "verticalAlignment"
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/plasma/extras/PlaceholderMessage.qml:238:5: QML Heading: Binding loop detected for property "verticalAlignment"
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/plasma/extras/PlaceholderMessage.qml:238:5: QML Heading: Binding loop detected for property "verticalAlignment"
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/plasma/extras/PlaceholderMessage.qml:238:5: QML Heading: Binding loop detected for property "verticalAlignment"
+kf5idletime_wayland: This plugin does not support polling idle time
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/plasma/extras/PlaceholderMessage.qml:238:5: QML Heading: Binding loop detected for property "verticalAlignment"
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/plasma/extras/PlaceholderMessage.qml:238:5: QML Heading: Binding loop detected for property "verticalAlignment"
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/plasma/extras/PlaceholderMessage.qml:238:5: QML Heading: Binding loop detected for property "verticalAlignment"
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/plasma/extras/PlaceholderMessage.qml:238:5: QML Heading: Binding loop detected for property "verticalAlignment"
+file:///usr/share/plasma/plasmoids/org.kde.plasma.battery/contents/ui/CompactRepresentation.qml:61:17: Unable to assign [undefined] to int
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/plasma/extras/PlaceholderMessage.qml:238:5: QML Heading: Binding loop detected for property "verticalAlignment"
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2/ScrollablePage.qml:200:9: QML MouseArea: Binding loop detected for property "width"
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2/ScrollablePage.qml:200:9: QML MouseArea: Binding loop detected for property "width"
+QQmlEngine::setContextForObject(): Object already has a QQmlContext
+qt.qpa.wayland: Wayland does not support QWindow::requestActivate()
+[W][00139.358756] pw.conf      | [          conf.c: 1016 try_load_conf()] can't load config client.conf: No such file or directory
+[E][00139.359145] pw.conf      | [          conf.c: 1045 pw_conf_load_conf_for_context()] can't load config client.conf: No such file or directory
+kwin_screencast: Failed to create PipeWire context
+error creating screencast "Failed to create PipeWire context"
+Hspell: can't open /usr/share/hspell/hebrew.wgz.sizes.
+kf.sonnet.clients.hspell: HSpellDict::HSpellDict: Init failed
+QQmlEngine::setContextForObject(): Object already has a QQmlContext
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2/templates/InlineMessage.qml:257:13: QML SelectableLabel: Binding loop detected for property "implicitWidth"
+file:///usr/share/kpackage/kcms/kcm_sddm/contents/ui/main.qml:54:20: QML Image: Cannot open: file:///usr/share/sddm/themes/debian-breeze/preview.png
+file:///usr/share/kpackage/kcms/kcm_sddm/contents/ui/main.qml:54:20: QML Image: Cannot open: file:///usr/share/sddm/themes/debian-theme/preview.png
+file:///usr/share/kpackage/kcms/kcm_sddm/contents/ui/main.qml:54:20: QML Image: Cannot open: file:///usr/share/sddm/themes/debian-breeze/preview.png
+file:///usr/share/kpackage/kcms/kcm_sddm/contents/ui/main.qml:54:20: QML Image: Cannot open: file:///usr/share/sddm/themes/debian-theme/preview.png
+qml: The item SubCategoryPage_QMLTYPE_74(0x5617271a7260) is already in the PageRow
+file:///usr/share/kpackage/kcms/kcm_sddm/contents/ui/main.qml:54:20: QML Image: Cannot open: file:///usr/share/sddm/themes/debian-breeze/preview.png
+file:///usr/share/kpackage/kcms/kcm_sddm/contents/ui/main.qml:54:20: QML Image: Cannot open: file:///usr/share/sddm/themes/debian-theme/preview.png
+file:///usr/share/kpackage/kcms/kcm_sddm/contents/ui/DetailsDialog.qml:35:13: QML Image: Cannot open: file:///usr/share/sddm/themes/debian-theme/preview.png
+file:///usr/share/kpackage/kcms/kcm_sddm/contents/ui/main.qml:179:13: QML Image: Cannot open: file:///usr/share/wallpapers/Next/contents/images/5120x2880.png
+file:///usr/share/kpackage/kcms/kcm_sddm/contents/ui/DetailsDialog.qml:35:13: QML Image: Cannot open: file:///usr/share/sddm/themes/debian-theme/preview.png
+file:///usr/share/kpackage/kcms/kcm_sddm/contents/ui/DetailsDialog.qml:35:13: QML Image: Cannot open: file:///usr/share/sddm/themes/debian-breeze/preview.png
+file:///usr/share/kpackage/kcms/kcm_sddm/contents/ui/DetailsDialog.qml:35:13: QML Image: Cannot open: file:///usr/share/sddm/themes/debian-theme/preview.png
+Listener adapter polkit_qt_listener_initiate_authentication
+GSimpleAsyncResult: 0x55895e59ade0
+polkit_qt_listener_initiate_authentication callback for  0x55895e4c2ac0
+Initiating authentication
+Message of action:  "Save Settings in SDDM"
+Action description has been found
+WinId of the dialog is  2 2
+WinId of the shown dialog is  2 2
+Trying again
+REQUEST
+Request:  "Password: "
+"Password: "
+Dialog accepted
+COMPLETED
+Completed:  true
+Finishing obtaining privileges
+Listener adapter polkit_qt_listener_initiate_authentication_finish
+polkit_qt_listener_initiate_authentication_finish callback for  0x55895e4c2ac0
+Finish obtain authorization: true
+Debug message from helper: Copying background from  "/usr/share/desktop-base/active-theme/login/background.svg"  to  "/usr/share/sddm/themes/debian-theme/background.svg"
+[W][00230.716935] pw.conf      | [          conf.c: 1016 try_load_conf()] can't load config client.conf: No such file or directory
+[E][00230.716993] pw.conf      | [          conf.c: 1045 pw_conf_load_conf_for_context()] can't load config client.conf: No such file or directory
+kwin_screencast: Failed to create PipeWire context
+[W][00230.717193] pw.conf      | [          conf.c: 1016 try_load_conf()] can't load config client.conf: No such file or directory
+[E][00230.717212] pw.conf      | [          conf.c: 1045 pw_conf_load_conf_for_context()] can't load config client.conf: No such file or directory
+kwin_screencast: Failed to create PipeWire context
+error creating screencast "Failed to create PipeWire context"
+error creating screencast "Failed to create PipeWire context"
+[W][00241.638255] pw.conf      | [          conf.c: 1016 try_load_conf()] can't load config client.conf: No such file or directory
+[E][00241.638318] pw.conf      | [          conf.c: 1045 pw_conf_load_conf_for_context()] can't load config client.conf: No such file or directory
+kwin_screencast: Failed to create PipeWire context
+error creating screencast "Failed to create PipeWire context"
+Listener adapter polkit_qt_listener_initiate_authentication
+GSimpleAsyncResult: 0x55895ec79340
+polkit_qt_listener_initiate_authentication callback for  0x55895e4c2ac0
+Initiating authentication
+Message of action:  "Save Settings in SDDM"
+Action description has been found
+WinId of the dialog is  3 3
+WinId of the shown dialog is  3 3
+Trying again
+REQUEST
+Request:  "Password: "
+"Password: "
+Dialog accepted
+COMPLETED
+Completed:  true
+Finishing obtaining privileges
+Listener adapter polkit_qt_listener_initiate_authentication_finish
+polkit_qt_listener_initiate_authentication_finish callback for  0x55895e4c2ac0
+Finish obtain authorization: true
+Debug message from helper: Removed previous background  "/usr/share/sddm/themes/debian-theme/background.svg"
+Debug message from helper: Copying background from  "/usr/share/wallpapers/loquitux_orquidea.png"  to  "/usr/share/sddm/themes/debian-theme/loquitux_orquidea.png"
+qt.qpa.wayland: Wayland does not support QWindow::requestActivate()
+dbus-daemon[2219]: [session uid=1000 pid=2219] Activating service name='org.kde.LogoutPrompt' requested by ':1.26' (uid=1000 pid=2306 comm="/usr/bin/plasmashell" label="kernel")
+dbus-daemon[2219]: [session uid=1000 pid=2219] Successfully activated service 'org.kde.LogoutPrompt'
+qt.qpa.wayland: Wayland does not support QWindow::requestActivate()
+qt.qpa.wayland: Wayland does not support QWindow::requestActivate()
+dbus-daemon[2219]: [session uid=1000 pid=2219] Activating service name='org.kde.Shutdown' requested by ':1.32' (uid=1000 pid=2644 comm="/usr/lib/x86_64-linux-gnu/libexec/ksmserver-logout" label="kernel")
+dbus-daemon[2219]: [session uid=1000 pid=2219] Successfully activated service 'org.kde.Shutdown'
+kdeinit5: Fatal IO error: client killed
+kdeinit5: sending SIGHUP to children.
+klauncher: Exiting on signal 1
+X connection to :1 broken (explicit kill or server shutdown).
+The X11 connection broke (error 1). Did the X11 server die?
+kdeinit5: sending SIGTERM to children.
+kdeinit5: Exit.
+QtDBus: cannot relay signals from parent QObject(0x5649c0222bb0 "") unless they are emitted in the object's thread QThread(0x5649c0125438 "libinput-connection"). Current thread is QThread(0x5649c00dce90 "").
+The Wayland connection broke. Did the Wayland compositor die?
+The Wayland connection broke. Did the Wayland compositor die?
+The Wayland connection broke. Did the Wayland compositor die?
+The Wayland connection broke. Did the Wayland compositor die?
+The Wayland connection broke. Did the Wayland compositor die?
+The Wayland connection broke. Did the Wayland compositor die?
+The Wayland connection broke. Did the Wayland compositor die?
+The Wayland connection broke. Did the Wayland compositor die?
+The Wayland connection broke. Did the Wayland compositor die?
+Error: could not determine $DISPLAY.
+Error: Can not contact kdeinit5!
+org.kde.startup: "kdeinit5_shutdown" () exited with code 255
+startplasma-wayland: Shutting down...
+startplasmacompositor: Shutting down...
+startplasmacompositor: Done.

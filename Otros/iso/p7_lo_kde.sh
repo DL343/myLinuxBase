@@ -42,10 +42,15 @@ rm -r  /tmp/Vimix/
 ##################################################
 #wget -O /tmp/defaults.tar.gz https://staging.karlaperezyt.com/locoskde/src/userconfig/defaults.tar.gz
 #wget -O /tmp/live.tar.gz https://staging.karlaperezyt.com/locoskde/src/userconfig/live.tar.gz
-cd ./sesion/kdeConfig/
-./setKDEConfig.sh
-cd ..
-cd ..
+
+rm -r   /home/live/
+
+cp -r   ./sesion/kdeConfig/testing/live   /home/
+
+#cd ./sesion/kdeConfig/
+#./setKDEConfig.sh
+#cd ..
+#cd ..
 
 
 

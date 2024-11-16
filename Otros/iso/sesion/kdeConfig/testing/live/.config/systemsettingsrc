@@ -1,0 +1,12 @@
+[KFileDialog Settings]
+Recent Files[$e]=loquitux_orquidea.png,file:///usr/share/wallpapers/loquitux_orquidea.png
+Recent URLs[$e]=file:///usr/share/wallpapers/,file:$HOME/Documents/,file:///usr/share/
+detailViewIconSize=16
+
+[MainWindow]
+1280x800 screen: Height=700
+1280x800 screen: Width=1020
+1280x800 screen: Window-Maximized=true
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAABQAAAALXAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled

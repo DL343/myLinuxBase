@@ -1,0 +1,5 @@
+[PlasmaRunnerManager]
+LaunchCounts=6 exec:///usr/bin/konsole,1 exec:///usr/bin/htop,1 exec:///usr/bin/pkexec bleachbit,2 exec:///usr/bin/bleachbit
+
+[PlasmaRunnerManager][History]
+c8ad8624-7f28-43c2-8031-bd618166564a=bleac,bleach,ht,kons,kon,konso
