@@ -45,7 +45,7 @@ rm -r  /tmp/Vimix/
 
 rm -r   /home/live/
 
-cp -r   ./sesion/kdeConfig/testing/live   /home/
+cp -r   ./sesion/kdeConfig/testing/live/   /home/
 
 #cd ./sesion/kdeConfig/
 #./setKDEConfig.sh
