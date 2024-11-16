@@ -44,8 +44,11 @@ rm -r  /tmp/Vimix/
 #wget -O /tmp/live.tar.gz https://staging.karlaperezyt.com/locoskde/src/userconfig/live.tar.gz
 
 rm -r   /home/live/
+rm -r   /etc/skel/
 
 cp -r   ./sesion/kdeConfig/testing/live/   /home/
+cp -r   ./sesion/kdeConfig/testing/live/   /etc/skel/
+
 
 #cd ./sesion/kdeConfig/
 #./setKDEConfig.sh
