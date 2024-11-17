@@ -296,6 +296,23 @@ rm -r /usr/share/wallpapers/JoyInksplat.svg
 rm -r /usr/share/wallpapers/homeworld.svg
 rm -r /usr/share/wallpapers/default.png
 	
+
+
+##### XDG-USER-DIRS-UPDATE
+echo '[Desktop Entry]
+Type=Application
+Name=User folders update
+TryExec=
+Exec=sh -c "xdg-user-dirs-update --force"
+StartupNotify=false
+NoDisplay=true
+
+X-GNOME-Autostart-Phase=Initialization
+X-KDE-autostart-phase=1
+	
+' > /etc/xdg/autostart/xdg-user-dirs.desktop
+
+
 	
 }
 
