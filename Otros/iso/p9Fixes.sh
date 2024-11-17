@@ -13,9 +13,12 @@ joy-inksplat-theme \
 moonlight-theme \
 futureprototype-theme \
 joy-theme \
-softwaves-theme
-
-	
+softwaves-theme \
+kde_montain_1920x1080.png \
+kde_montain_5120x2880.png \
+kde_montainDark_1920x1080.png \
+kde_mountainDark_5120x2880.png \
+landscape_2560x1440.jpeg \	
 	
 ##### UFW
 sudo apt -y install ufw
