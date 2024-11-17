@@ -264,11 +264,11 @@ cp  ./custom/dm/face.png   /etc/skel/.face.icon
 
 
 
-##### SDDM: WALLPAPER CUSTOM
-#echo "
-#[General]
-#background=/usr/share/wallpapers/loquitux_playa.png
-#" > /usr/share/sddm/themes/breeze/theme.conf.user
+#### SDDM: WALLPAPER CUSTOM
+echo "
+[General]
+background=/usr/share/wallpapers/loquitux_playa.png
+" > /usr/share/sddm/themes/breeze/theme.conf.user
 
 
 
@@ -314,6 +314,26 @@ X-KDE-autostart-phase=1
 
 
 	
+
+
+##### WALLPAPERS DEBIAN: LIMPIEZA
+cd /usr/share/desktop-base/
+rm -r homeworld-theme \
+lines-theme \
+spacefun-theme \
+emerald-theme \
+joy-inksplat-theme \
+moonlight-theme \
+futureprototype-theme \
+joy-theme \
+softwaves-theme \
+kde_montain_1920x1080.png \
+kde_montain_5120x2880.png \
+kde_montainDark_1920x1080.png \
+kde_mountainDark_5120x2880.png \
+landscape_2560x1440.jpeg \	
+
+
 }
 
 
@@ -350,7 +370,7 @@ apt -y install librewolf kde-spectacle mpv kamera kate ark kcalc gwenview fastfe
 ## Elimina residuos
 ##################################################
 
-apt -y purge apparmor aspell-es bup chafa cups-pk-helper debian-reference-es debian-reference-common fonts-freefont-ttf fonts-liberation git ispanish kdeconnect konqueror kpeople-vcard kup-backup kwrite manpages-es mlocate par2 partitionmanager plasma-browser-integration plasma-disks plocate python3-cairo python3-cups python3-cupshelpers python3-fuse python3-pylibacl python3-smbc python3-tornado rtkit smartmontools sshfs system-config-printer vim-tiny zutty libreoffice-math
+apt -y purge apparmor aspell-es bup chafa cups-pk-helper debian-reference-es debian-reference-common fonts-freefont-ttf fonts-liberation ispanish kdeconnect konqueror kpeople-vcard kup-backup kwrite manpages-es mlocate par2 partitionmanager plasma-browser-integration plasma-disks plocate python3-cairo python3-cups python3-cupshelpers python3-fuse python3-pylibacl python3-smbc python3-tornado rtkit smartmontools sshfs system-config-printer vim-tiny zutty libreoffice-math
 
 ##### NETWORK
 apt -y purge network-manager xterm
