@@ -334,6 +334,8 @@ kde_mountainDark_5120x2880.png \
 landscape_2560x1440.jpeg \	
 
 
+#rm /etc/sddm.conf.d/kde_settings.conf
+
 }
 
 
