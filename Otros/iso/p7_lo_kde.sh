@@ -327,7 +327,9 @@ moonlight-theme \
 futureprototype-theme \
 joy-theme \
 softwaves-theme \
-kde_montain_1920x1080.png \
+
+cd /usr/share/wallpapers/
+rm -r   kde_montain_1920x1080.png \
 kde_montain_5120x2880.png \
 kde_montainDark_1920x1080.png \
 kde_mountainDark_5120x2880.png \
