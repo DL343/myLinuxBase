@@ -94,7 +94,7 @@ mkdir -p /home/live/Desktop/
 #" > /home/live/Desktop/install.desktop
 
 
-###### CALAMARES LO
+###### CALAMARES LO ESCRITORIO 
 mkdir -p /home/live/Desktop/
 echo "
 [Desktop Entry]
@@ -125,6 +125,39 @@ GenericName[pt_PT]=Instalador de Sistema
 Hidden=false
 
 " > /home/live/Desktop/Install.desktop
+
+
+
+###### CALAMARES LO GENERAL 
+echo "
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Install Loc-OS
+GenericName=System Installer
+Keywords=calamares;system;installer;
+TryExec=
+Exec=sh -c '/bin/install-loc-os' 
+Comment=Loc-OS — System Installer
+Icon=/usr/share/icons/hicolor/48x48/apps/calamares-loc-os.png
+Terminal=false
+StartupNotify=true
+Categories=Qt;System;
+X-AppStream-Ignore=true
+
+Name[es]=Instalar el sistema
+GenericName[es]=Instalador del sistema
+Name[es_MX]=Instalar el Sistema
+Icon[es_MX]=calamares
+GenericName[es_MX]=Instalador del sistema
+Name[es_PR]=Instalar el sistema
+Name[pt]=Instalar Sistema
+Name[pt_BR]=Instalar Sistema
+Name[pt_PT]=Instalar Sistema
+GenericName[pt_PT]=Instalador de Sistema
+Hidden=false
+
+" > /usr/share/applications/install.desktop
 
 
 

@@ -6,11 +6,12 @@ function soloConfigs {
 
 
 
-apt -y reinstall welcome-loc-os
+
 
 ##################################################
 ## BASE MINIMA
 ##################################################
+## apt -y install plasma-desktop
 apt -y install kde-plasma-desktop
 
 
@@ -54,17 +55,6 @@ cp -r   ./sesion/kdeConfig/testing/live/   /etc/skel/
 #./setKDEConfig.sh
 #cd ..
 #cd ..
-
-
-
-
-
-##################################################
-##  SDDM
-##################################################
-echo "[Autologin]
-User=live
-Session=plasma" > /etc/sddm.conf
 
 
 
@@ -258,6 +248,20 @@ EOF
 ##################################################
 
 
+##### SDDM: Configuracion basica
+
+echo "[Autologin]
+User=live
+Session=plasma
+
+[Theme]
+Current=debian-theme
+
+" > /etc/sddm.conf
+
+
+
+
 ##### SDDM: APLICANDO IMAGEN PERFIL USUARIO
 cp  ./custom/dm/face.png   /home/live/.face.icon  
 cp  ./custom/dm/face.png   /etc/skel/.face.icon 
@@ -268,10 +272,14 @@ cp  ./custom/dm/face.png   /etc/skel/.face.icon
 echo "
 [General]
 background=/usr/share/wallpapers/loquitux_playa.png
-" > /usr/share/sddm/themes/breeze/theme.conf.user
+type=image
+" > /usr/share/sddm/themes/debian-theme/theme.conf.user
 
 
 
+##################################################
+
+##################################################
 
 
 
@@ -338,6 +346,8 @@ landscape_2560x1440.jpeg \
 
 #rm /etc/sddm.conf.d/kde_settings.conf
 
+
+
 }
 
 
@@ -389,9 +399,6 @@ apt -y autoremove
 
 
 
-chown -R live:live /home/live/
-
-	
 	
 }
 
@@ -422,7 +429,7 @@ fi
 
 
 
-
+chown live:live -R /home/live/
 
 
 
