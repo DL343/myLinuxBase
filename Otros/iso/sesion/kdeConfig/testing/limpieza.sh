@@ -30,3 +30,9 @@ rm   ./live/.config/discoverrc
 
 rm   ./live/.xsession-errors
 rm   ./live/.Xauthority
+
+
+rm   ./live/.local/share/user-places.xbel
+
+
+#ksmserverrc
