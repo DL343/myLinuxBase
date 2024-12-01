@@ -305,22 +305,64 @@ rm -r /usr/share/wallpapers/default.png
 	
 
 
-##### XDG-USER-DIRS-UPDATE
+###### XDG-USER-DIRS-UPDATE
+#echo '[Desktop Entry]
+#Type=Application
+#Name=User folders update
+#TryExec=sh -c "xdg-user-dirs-update --force"
+#Exec=
+#StartupNotify=false
+#NoDisplay=true
+
+#X-GNOME-Autostart-Phase=Initialization
+#X-KDE-autostart-phase=1
+	
+#' > /etc/xdg/autostart/xdg-user-dirs.desktop
+
 echo '[Desktop Entry]
+Comment[en_US]=
+Comment=
+Exec=/bin/xdg-user-dirs-update --force
+GenericName[en_US]=
+GenericName=
+Icon=dialog-scripts
+MimeType=
+Name[en_US]=xdg-user-dirs-update
+Name=xdg-user-dirs-update
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
 Type=Application
-Name=User folders update
-TryExec=sh -c "xdg-user-dirs-update --force"
-Exec=
-StartupNotify=false
-NoDisplay=true
+X-KDE-AutostartScript=true
+X-KDE-SubstituteUID=false
+X-KDE-Username=
 
-X-GNOME-Autostart-Phase=Initialization
-X-KDE-autostart-phase=1
-	
-' > /etc/xdg/autostart/xdg-user-dirs.desktop
+' > /home/live/.config/autostart/xdg-user-dirs-update.desktop
+chmod +x /home/live/.config/autostart/xdg-user-dirs-update.desktop
 
+echo '[Desktop Entry]
+Comment[en_US]=
+Comment=
+Exec=/bin/xdg-user-dirs-update --force
+GenericName[en_US]=
+GenericName=
+Icon=dialog-scripts
+MimeType=
+Name[en_US]=xdg-user-dirs-update
+Name=xdg-user-dirs-update
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-AutostartScript=true
+X-KDE-SubstituteUID=false
+X-KDE-Username=
 
-	
+' > /etc/skel/.config/autostart/xdg-user-dirs-update.desktop
+chmod +x /etc/skel/.config/autostart/xdg-user-dirs-update.desktop
+
 
 
 ##### WALLPAPERS DEBIAN: LIMPIEZA
