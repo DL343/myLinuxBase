@@ -1,0 +1,493 @@
+Xsession: X session started for live at Sat Nov 30 08:13:44 PM CST 2024
+localuser:live being added to access control list
+dbus-update-activation-environment: systemd --user not found, ignoring --systemd argument
+dbus-update-activation-environment: setting SHELL=/bin/bash
+dbus-update-activation-environment: setting XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0
+dbus-update-activation-environment: setting LC_ADDRESS=en_US.UTF-8
+dbus-update-activation-environment: setting LC_NAME=en_US.UTF-8
+dbus-update-activation-environment: setting DESKTOP_SESSION=plasma
+dbus-update-activation-environment: setting LC_MONETARY=en_US.UTF-8
+dbus-update-activation-environment: setting PWD=/home/live
+dbus-update-activation-environment: setting XDG_SESSION_DESKTOP=KDE
+dbus-update-activation-environment: setting LOGNAME=live
+dbus-update-activation-environment: setting QT_QPA_PLATFORMTHEME=gtk2
+dbus-update-activation-environment: setting XDG_SESSION_TYPE=x11
+dbus-update-activation-environment: setting GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
+dbus-update-activation-environment: setting XAUTHORITY=/home/live/.Xauthority
+dbus-update-activation-environment: setting HOME=/home/live
+dbus-update-activation-environment: setting LC_PAPER=en_US.UTF-8
+dbus-update-activation-environment: setting LANG=en_US.UTF-8
+dbus-update-activation-environment: setting XDG_CURRENT_DESKTOP=KDE
+dbus-update-activation-environment: setting XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+dbus-update-activation-environment: setting XDG_SESSION_CLASS=user
+dbus-update-activation-environment: setting LC_IDENTIFICATION=en_US.UTF-8
+dbus-update-activation-environment: setting USER=live
+dbus-update-activation-environment: setting DISPLAY=:0
+dbus-update-activation-environment: setting SHLVL=0
+dbus-update-activation-environment: setting LC_TELEPHONE=en_US.UTF-8
+dbus-update-activation-environment: setting LC_MEASUREMENT=en_US.UTF-8
+dbus-update-activation-environment: setting XDG_RUNTIME_DIR=/run/user/1000
+dbus-update-activation-environment: setting LC_TIME=en_US.UTF-8
+dbus-update-activation-environment: setting GTK3_MODULES=xapp-gtk3-module
+dbus-update-activation-environment: setting PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+dbus-update-activation-environment: setting DBUS_SESSION_BUS_ADDRESS=unix:path=/tmp/dbus-Xj4AhMEmz4,guid=98ac19e71ca716eed123ccfe674bc658
+dbus-update-activation-environment: setting LC_NUMERIC=en_US.UTF-8
+dbus-update-activation-environment: setting _=/usr/bin/dbus-update-activation-environment
+kdeinit5: preparing to launch '/usr/lib/x86_64-linux-gnu/libexec/kf5/klauncher'
+kdeinit5: Launched KLauncher, pid = 1645, result = 0
+Connecting to deprecated signal QDBusConnectionInterface::serviceOwnerChanged(QString,QString,QString)
+kdeinit5: opened connection to :0
+Initializing  "/usr/lib/x86_64-linux-gnu/qt5/plugins/plasma/kcms/systemsettings/kcm_fonts.so"
+Initializing  "/usr/lib/x86_64-linux-gnu/qt5/plugins/plasma/kcms/systemsettings/kcm_mouse.so"
+kdeinit5: Got SETENV 'XCURSOR_THEME=breeze_cursors' from launcher.
+kdeinit5: Got SETENV 'XCURSOR_SIZE=24' from launcher.
+Initializing  "/usr/lib/x86_64-linux-gnu/qt5/plugins/plasma/kcms/systemsettings/kcm_style.so"
+kdeinit5: Got SETENV 'GTK_RC_FILES=/etc/gtk/gtkrc:/home/live/.gtkrc:/home/live/.config/gtkrc' from launcher.
+kdeinit5: Got SETENV 'GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/live/.gtkrc-2.0:/home/live/.config/gtkrc-2.0' from launcher.
+org.kde.plasma.session: process job  "kcminit_startup" finished with exit code  0
+xsettingsd: Loaded 13 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Created window 0x1400001 on screen 0 with timestamp 8869
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+kwin_xkbcommon: XKB: inet:334:58: unrecognized keysym "XF86EmojiPicker"
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 13 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+Qt: Session management error: networkIdsList argument is NULL
+kdeinit5: Got SETENV 'SESSION_MANAGER=local/Loc-OS:@/tmp/.ICE-unix/1704,unix/Loc-OS:/tmp/.ICE-unix/1704' from launcher.
+kdeinit5: Got SETENV 'SESSION_MANAGER=local/Loc-OS:@/tmp/.ICE-unix/1704,unix/Loc-OS:/tmp/.ICE-unix/1704' from launcher.
+/usr/bin/iceauth:  creating new authority file /run/user/1000/ICEauthority
+Initializing  "/usr/lib/x86_64-linux-gnu/qt5/plugins/plasma/kcms/systemsettings/kcm_touchpad.so"
+kcm_touchpad: Using X11 backend
+OpenGL vendor string:                   Mesa/X.org
+OpenGL renderer string:                 llvmpipe (LLVM 15.0.6, 128 bits)
+OpenGL version string:                  4.5 (Compatibility Profile) Mesa 22.3.6
+OpenGL shading language version string: 4.50
+Driver:                                 LLVMpipe
+GPU class:                              Unknown
+OpenGL version:                         4.5
+GLSL version:                           4.50
+Mesa version:                           22.3.6
+X server version:                       1.21.1
+Linux kernel version:                   5.10.229
+Requires strict binding:                yes
+GLSL shaders:                           yes
+Texture NPOT support:                   yes
+Virtual Machine:                        no
+kwin_platform_x11_standalone: glSwapInterval is unsupported
+Initializing  "/usr/lib/x86_64-linux-gnu/qt5/plugins/plasma/kcms/systemsettings/kcm_kgamma.so"
+/home/live/Desktop was removed, reassigning DESKTOP to homedir
+Moving DESKTOP directory from  to Desktop
+Moving DOWNLOAD directory from  to Downloads
+Moving TEMPLATES directory from  to Templates
+Moving PUBLICSHARE directory from  to Public
+Moving DOCUMENTS directory from  to Documents
+Moving MUSIC directory from  to Music
+Moving PICTURES directory from  to Pictures
+Moving VIDEOS directory from  to Videos
+New PolkitAgentListener  0x557175193800
+Adding new listener  PolkitQt1::Agent::Listener(0x7f089400c250) for  0x557175193800
+Listener online
+Authentication agent result: true
+org.kde.powerdevil: org.kde.powerdevil.chargethresholdhelper.getthreshold failed "Charge thresholds are not supported by the kernel for this hardware"
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 1161, resource id: 14680069, major code: 18 (ChangeProperty), minor code: 0
+kf.config.core: "\"fsrestore1\" - conversion of \"0,0,0,0\" to QRect failed"
+kf.config.core: "\"fsrestore2\" - conversion of \"0,0,0,0\" to QRect failed"
+org.kde.powerdevil: org.kde.powerdevil.backlighthelper.brightness failed
+Checking screens: available: (QScreen(0x5625199a69e0, name="Virtual-1")) redundant: QHash() fake: QSet() all: (QScreen(0x5625199a69e0, name="Virtual-1"))
+Checking screens: available: (QScreen(0x5625199a69e0, name="Virtual-1")) redundant: QHash() fake: QSet() all: (QScreen(0x5625199a69e0, name="Virtual-1"))
+kf.notifications: env says KDE is running but SNI unavailable -- check KDE_FULL_SESSION and XDG_CURRENT_DESKTOP
+kf.plasma.quick: Applet preload policy set to 1
+
+(yad:1885): dbind-WARNING **: 20:13:50.059: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+org.kde.powerdevil: Handle button events action could not check for screen configuration
+org.kde.powerdevil: The profile  "AC" tried to activate "DimDisplay" a non-existent action. This is usually due to an installation problem, a configuration problem, or because the action is not supported
+org.kde.powerdevil: org.kde.powerdevil.chargethresholdhelper.getthreshold failed "Charge thresholds are not supported by the kernel for this hardware"
+QObject::connect: No such slot DesktopProtocol::_k_slotRedirection(KIO::Job *, QUrl)
+file:///usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml:534:9: QML Label: Binding loop detected for property "height"
+file:///usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml:499:13: QML Label: Binding loop detected for property "height"
+Trying to use rootObject before initialization is completed, whilst using setInitializationDelayed. Forcing completion
+org.kde.plasma.kicker: Entry is not valid "preferred://browser" QSharedPointer(0x56251abee590)
+org.kde.plasma.kicker: Entry is not valid "org.kde.kontact.desktop" QSharedPointer(0x56251abee590)
+org.kde.plasma.kicker: Entry is not valid "ktp-contactlist.desktop" QSharedPointer(0x56251abeb3e0)
+org.kde.plasma.kicker: Entry is not valid "preferred://browser" QSharedPointer(0x56251abf38f0)
+org.kde.plasma.kicker: Entry is not valid "org.kde.kontact.desktop" QSharedPointer(0x56251abf3940)
+org.kde.plasma.kicker: Entry is not valid "ktp-contactlist.desktop" QSharedPointer(0x56251abeb870)
+file:///usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml:499:13: QML Label: Binding loop detected for property "height"
+file:///usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml:534:9: QML Label: Binding loop detected for property "height"
+file:///usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml:556:5: QML Label: Binding loop detected for property "height"
+Cyclic dependency detected between "file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/global/Globals.qml" and "file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/NotificationHeader.qml"
+Cyclic dependency detected between "file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/global/Globals.qml" and "file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/ThumbnailStrip.qml"
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 2133, resource id: 8388641, major code: 18 (ChangeProperty), minor code: 0
+Could not find the Plasmoid for Plasma::FrameSvgItem(0x56251b5b22c0) QQmlContext(0x56251af83d00) QUrl("file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/global/Globals.qml")
+Could not find the Plasmoid for Plasma::FrameSvgItem(0x56251b5b22c0) QQmlContext(0x56251af83d00) QUrl("file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/global/Globals.qml")
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 2678, resource id: 35651655, major code: 20 (GetProperty), minor code: 0
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 2738, resource id: 35651655, major code: 18 (ChangeProperty), minor code: 0
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 2800, resource id: 39845897, major code: 18 (ChangeProperty), minor code: 0
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 2805, resource id: 39845898, major code: 18 (ChangeProperty), minor code: 0
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 2806, resource id: 35651655, major code: 15 (QueryTree), minor code: 0
+fetch ratings! true
+adding empty sources model QStandardItemModel(0x5647ccb49420)
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 3425, resource id: 41943043, major code: 15 (QueryTree), minor code: 0
+Hspell: can't open /usr/share/hspell/hebrew.wgz.sizes.
+kf.sonnet.clients.hspell: HSpellDict::HSpellDict: Init failed
+no component found for "io.sourceforge.loc-os.debian"
+took really long to fetch PackageKitBackend(0x5647ccb0e810)
+took really long to fetch KNSBackend(0x5647ccb64510, name = "/usr/share/knsrcfiles/kwineffect.knsrc")
+took really long to fetch KNSBackend(0x5647ccb63050, name = "/usr/share/knsrcfiles/window-decorations.knsrc")
+took really long to fetch KNSBackend(0x5647ccb6ee00, name = "/usr/share/knsrcfiles/konsole.knsrc")
+took really long to fetch KNSBackend(0x5647ccb749c0, name = "/usr/share/knsrcfiles/wallpaperplugin.knsrc")
+took really long to fetch KNSBackend(0x5647ccb692f0, name = "/usr/share/knsrcfiles/colorschemes.knsrc")
+took really long to fetch KNSBackend(0x5647ccb96050, name = "/usr/share/knsrcfiles/plasmoids.knsrc")
+took really long to fetch KNSBackend(0x5647ccb94100, name = "/usr/share/knsrcfiles/icons.knsrc")
+took really long to fetch KNSBackend(0x5647ccb93910, name = "/usr/share/knsrcfiles/aurorae.knsrc")
+took really long to fetch KNSBackend(0x5647ccb91d00, name = "/usr/share/knsrcfiles/plasma-systemmonitor.knsrc")
+took really long to fetch KNSBackend(0x5647ccb9bbc0, name = "/usr/share/knsrcfiles/systemmonitor-faces.knsrc")
+took really long to fetch KNSBackend(0x5647ccb98590, name = "/usr/share/knsrcfiles/kfontinst.knsrc")
+took really long to fetch KNSBackend(0x5647ccb9e360, name = "/usr/share/knsrcfiles/kwinscripts.knsrc")
+took really long to fetch KNSBackend(0x5647ccba1b20, name = "/usr/share/knsrcfiles/ksplash.knsrc")
+took really long to fetch KNSBackend(0x5647ccba7bc0, name = "/usr/share/knsrcfiles/krunner.knsrc")
+took really long to fetch KNSBackend(0x5647ccb94070, name = "/usr/share/knsrcfiles/plasma-themes.knsrc")
+took really long to fetch KNSBackend(0x5647ccbacec0, name = "/usr/share/knsrcfiles/lookandfeel.knsrc")
+took really long to fetch KNSBackend(0x5647ccbba900, name = "/usr/share/knsrcfiles/xcursor.knsrc")
+took really long to fetch KNSBackend(0x5647ccbb7800, name = "/usr/share/knsrcfiles/kwinswitcher.knsrc")
+took really long to fetch KNSBackend(0x5647ccb729e0, name = "/usr/share/knsrcfiles/servicemenu.knsrc")
+took really long to fetch KNSBackend(0x5647ccbb6c60, name = "/usr/share/knsrcfiles/gtk_themes.knsrc")
+took really long to fetch KNSBackend(0x5647ccbbf170, name = "/usr/share/knsrcfiles/wallpaper-mobile.knsrc")
+took really long to fetch KNSBackend(0x5647ccbc4700, name = "/usr/share/knsrcfiles/wallpaper.knsrc")
+took really long to fetch KNSBackend(0x5647ccb1c450, name = "/usr/share/knsrcfiles/sddmtheme.knsrc")
+took really long to fetch KNSBackend(0x5647ccbca6f0, name = "/usr/share/knsrcfiles/systemmonitor-presets.knsrc")
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 5296, resource id: 8388643, major code: 18 (ChangeProperty), minor code: 0
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 5304, resource id: 39845899, major code: 18 (ChangeProperty), minor code: 0
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 6136, resource id: 35651720, major code: 18 (ChangeProperty), minor code: 0
+file:///usr/share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/Task.qml:286: Unable to assign [undefined] to QString
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 6683, resource id: 18874538, major code: 3 (GetWindowAttributes), minor code: 0
+qt.qpa.xcb: QXcbConnection: XCB error: 9 (BadDrawable), sequence: 6684, resource id: 18874538, major code: 14 (GetGeometry), minor code: 0
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2/ScrollablePage.qml:200:9: QML MouseArea: Binding loop detected for property "width"
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2/ScrollablePage.qml:200:9: QML MouseArea: Binding loop detected for property "width"
+QQmlEngine::setContextForObject(): Object already has a QQmlContext
+Hspell: can't open /usr/share/hspell/hebrew.wgz.sizes.
+kf.sonnet.clients.hspell: HSpellDict::HSpellDict: Init failed
+QQmlEngine::setContextForObject(): Object already has a QQmlContext
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2/templates/InlineMessage.qml:257:13: QML SelectableLabel: Binding loop detected for property "implicitWidth"
+file:///usr/share/kpackage/kcms/kcm_workspace/contents/ui/main.qml:46:5: QML FormLayout (parent or ancestor of QQuickLayoutAttached): Binding loop detected for property "preferredHeight"
+qml: The item SubCategoryPage_QMLTYPE_103(0x5579fd60a480) is already in the PageRow
+QQmlEngine::setContextForObject(): Object already has a QQmlContext
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2/ScrollablePage.qml:200:9: QML MouseArea: Binding loop detected for property "implicitHeight"
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2/ScrollablePage.qml:200:9: QML MouseArea: Binding loop detected for property "implicitHeight"
+qml: The item SubCategoryPage_QMLTYPE_103(0x5579fd60a480) is already in the PageRow
+kf.coreaddons: Expected a KPluginFactory, got a KIOPluginForMetaData
+kf.coreaddons: Expected a KPluginFactory, got a KIOPluginForMetaData
+kf.coreaddons: Expected a KPluginFactory, got a KIOPluginForMetaData
+QQmlEngine::setContextForObject(): Object already has a QQmlContext
+kf.configwidgets: A widget named ' "kcfg_keepHistoryFor" ' was found but there is no setting named ' "keepHistoryFor" '
+kf.configwidgets: A widget named ' "kcfg_whatToRemember" ' was found but there is no setting named ' "whatToRemember" '
+kf.configwidgets: A widget named ' "kcfg_blockedByDefault" ' was found but there is no setting named ' "blockedByDefault" '
+qml: The item SubCategoryPage_QMLTYPE_103(0x5579fd60a480) is already in the PageRow
+QSqlDatabasePrivate::removeDatabase: connection 'plugins_sqlite_db_resources' is still in use, all queries will cease to work.
+QQmlEngine::setContextForObject(): Object already has a QQmlContext
+qml: The item SubCategoryPage_QMLTYPE_103(0x5579fd60a480) is already in the PageRow
+QQmlEngine::setContextForObject(): Object already has a QQmlContext
+kf.configwidgets: A widget named ' "kcfg_keepHistoryFor" ' was found but there is no setting named ' "keepHistoryFor" '
+kf.configwidgets: A widget named ' "kcfg_whatToRemember" ' was found but there is no setting named ' "whatToRemember" '
+kf.configwidgets: A widget named ' "kcfg_blockedByDefault" ' was found but there is no setting named ' "blockedByDefault" '
+qml: The item SubCategoryPage_QMLTYPE_103(0x5579fd60a480) is already in the PageRow
+QSqlDatabasePrivate::removeDatabase: connection 'plugins_sqlite_db_resources' is still in use, all queries will cease to work.
+QQmlEngine::setContextForObject(): Object already has a QQmlContext
+qml: The item SubCategoryPage_QMLTYPE_103(0x5579fd60a480) is already in the PageRow
+QQmlEngine::setContextForObject(): Object already has a QQmlContext
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2/templates/InlineMessage.qml:257:13: QML SelectableLabel: Binding loop detected for property "implicitWidth"
+qml: The item SubCategoryPage_QMLTYPE_103(0x5579fd60a480) is already in the PageRow
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2/FormLayout.qml:101:5: QML GridLayout: Binding loop detected for property "knownItemsImplicitWidth"
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2/FormLayout.qml:101:5: QML GridLayout: Binding loop detected for property "knownItemsImplicitWidth"
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2/FormLayout.qml:296:9: QML QQuickItem* (parent or ancestor of QQuickLayoutAttached): Binding loop detected for property "preferredHeight"
+QQmlEngine::setContextForObject(): Object already has a QQmlContext
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2/ScrollablePage.qml:200:9: QML MouseArea: Binding loop detected for property "implicitHeight"
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2/ScrollablePage.qml:200:9: QML MouseArea: Binding loop detected for property "implicitHeight"
+qml: The item SubCategoryPage_QMLTYPE_103(0x5579fd60a480) is already in the PageRow
+QQmlEngine::setContextForObject(): Object already has a QQmlContext
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2/templates/InlineMessage.qml:257:13: QML SelectableLabel: Binding loop detected for property "implicitWidth"
+file:///usr/share/kpackage/kcms/kcm_workspace/contents/ui/main.qml:46:5: QML FormLayout (parent or ancestor of QQuickLayoutAttached): Binding loop detected for property "preferredHeight"
+qml: The item SubCategoryPage_QMLTYPE_103(0x5579fd60a480) is already in the PageRow
+QQmlEngine::setContextForObject(): Object already has a QQmlContext
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2/templates/InlineMessage.qml:257:13: QML SelectableLabel: Binding loop detected for property "implicitWidth"
+file:///usr/share/kpackage/kcms/kcm_sddm/contents/ui/main.qml:54:20: QML Image: Cannot open: file:///usr/share/sddm/themes/debian-breeze/preview.png
+file:///usr/share/kpackage/kcms/kcm_sddm/contents/ui/main.qml:54:20: QML Image: Cannot open: file:///usr/share/sddm/themes/debian-theme/preview.png
+file:///usr/share/kpackage/kcms/kcm_sddm/contents/ui/main.qml:54:20: QML Image: Cannot open: file:///usr/share/sddm/themes/debian-breeze/preview.png
+file:///usr/share/kpackage/kcms/kcm_sddm/contents/ui/main.qml:54:20: QML Image: Cannot open: file:///usr/share/sddm/themes/debian-theme/preview.png
+qml: The item SubCategoryPage_QMLTYPE_103(0x5579fd60a480) is already in the PageRow
+QQmlEngine::setContextForObject(): Object already has a QQmlContext
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2/templates/InlineMessage.qml:257:13: QML SelectableLabel: Binding loop detected for property "implicitWidth"
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2/templates/InlineMessage.qml:257:13: QML SelectableLabel: Binding loop detected for property "implicitWidth"
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2/ScrollablePage.qml:200:9: QML MouseArea: Binding loop detected for property "implicitHeight"
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2/ScrollablePage.qml:200:9: QML MouseArea: Binding loop detected for property "implicitHeight"
+qml: The item SubCategoryPage_QMLTYPE_103(0x5579fd60a480) is already in the PageRow
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2/ScrollablePage.qml:200:9: QML MouseArea: Binding loop detected for property "implicitHeight"
+file:///usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2/ScrollablePage.qml:200:9: QML MouseArea: Binding loop detected for property "implicitHeight"
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 12553, resource id: 41943053, major code: 18 (ChangeProperty), minor code: 0
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 12557, resource id: 8388822, major code: 18 (ChangeProperty), minor code: 0
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 12568, resource id: 35651721, major code: 18 (ChangeProperty), minor code: 0
+Destroying listener
+Removing listener  PolkitQt1::Agent::Listener(0x7f089400c250)
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 14044, resource id: 14680077, major code: 18 (ChangeProperty), minor code: 0
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 14048, resource id: 39845900, major code: 18 (ChangeProperty), minor code: 0
+file:///usr/share/plasma/wallpapers/org.kde.image/contents/ui/main.qml:20: TypeError: Cannot read property 'pluginName' of null
+file:///usr/share/plasma/wallpapers/org.kde.image/contents/ui/main.qml:75: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/wallpapers/org.kde.image/contents/ui/main.qml:78: TypeError: Cannot read property 'pluginName' of null
+file:///usr/share/plasma/wallpapers/org.kde.image/contents/ui/main.qml:80: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/wallpapers/org.kde.image/contents/ui/main.qml:81: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/wallpapers/org.kde.image/contents/ui/main.qml:82: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/wallpapers/org.kde.image/contents/ui/main.qml:83: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/wallpapers/org.kde.image/contents/ui/main.qml:84: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/wallpapers/org.kde.image/contents/ui/main.qml:16: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/wallpapers/org.kde.image/contents/ui/main.qml:17: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/wallpapers/org.kde.image/contents/ui/main.qml:18: TypeError: Cannot read property 'configuration' of null
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 14163, resource id: 8388640, major code: 18 (ChangeProperty), minor code: 0
+file:///usr/share/plasma/packages/org.kde.paneltoolbox/contents/ui/main.qml:17: TypeError: Cannot read property 'formFactor' of null
+file:///usr/share/plasma/packages/org.kde.paneltoolbox/contents/ui/main.qml:100: TypeError: Cannot read property 'editMode' of null
+file:///usr/share/plasma/packages/org.kde.paneltoolbox/contents/ui/main.qml:45: TypeError: Cannot read property 'editMode' of null
+file:///usr/share/plasma/packages/org.kde.paneltoolbox/contents/ui/main.qml:34: TypeError: Cannot read property 'editMode' of null
+file:///usr/share/plasma/plasmoids/org.kde.panel/contents/ui/main.qml: Writing to "applet" broke the binding to the underlying model
+file:///usr/share/plasma/plasmoids/org.kde.panel/contents/ui/main.qml: Writing to "applet" broke the binding to the underlying model
+file:///usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/KickoffListDelegate.qml:22: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/Kickoff.qml:29: TypeError: Cannot read property 'location' of null
+file:///usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/Kickoff.qml:35: TypeError: Cannot read property 'formFactor' of null
+file:///usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/Kickoff.qml:38: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/Kickoff.qml:48: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/Kickoff.qml:87: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/Kickoff.qml:127: TypeError: Cannot read property 'formFactor' of null
+file:///usr/share/plasma/plasmoids/org.kde.panel/contents/ui/main.qml: Writing to "applet" broke the binding to the underlying model
+file:///usr/share/plasma/plasmoids/org.kde.panel/contents/ui/main.qml: Writing to "applet" broke the binding to the underlying model
+file:///usr/share/plasma/plasmoids/org.kde.panel/contents/ui/main.qml: Writing to "applet" broke the binding to the underlying model
+file:///usr/share/plasma/plasmoids/org.kde.panel/contents/ui/main.qml: Writing to "applet" broke the binding to the underlying model
+file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/global/Globals.qml:407: TypeError: Cannot read property 'Window' of null
+file:///usr/share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/main.qml:770: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/global/Globals.qml:0: RangeError: Maximum call stack size exceeded.
+file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/global/Globals.qml:0: RangeError: Maximum call stack size exceeded.
+file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/global/Globals.qml:0: RangeError: Maximum call stack size exceeded.
+file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/global/Globals.qml:0: RangeError: Maximum call stack size exceeded.
+file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/global/Globals.qml:0: RangeError: Maximum call stack size exceeded.
+file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/global/Globals.qml:0: RangeError: Maximum call stack size exceeded.
+org.kde.plasma.pulseaudio: No object for name "alsa_output.pci-0000_00_1b.0.analog-stereo"
+org.kde.plasma.pulseaudio: No object for name "alsa_output.pci-0000_00_1b.0.analog-stereo"
+org.kde.plasma.pulseaudio: No object for name "alsa_input.pci-0000_00_1b.0.analog-stereo"
+kdeinit5: Fatal IO error: client killed
+kdeinit5: sending SIGHUP to children.
+X connection to :0 broken (explicit kill or server shutdown).
+klauncher: Exiting on signal 1
+The X11 connection broke (error 1). Did the X11 server die?
+The X11 connection broke (error 1). Did the X11 server die?
+The X11 connection broke (error 1). Did the X11 server die?
+kdeinit5: sending SIGTERM to children.
+kdeinit5: Exit.
+Xsession: X session started for live at Sat Nov 30 08:15:32 PM CST 2024
+localuser:live being added to access control list
+dbus-update-activation-environment: systemd --user not found, ignoring --systemd argument
+dbus-update-activation-environment: setting SHELL=/bin/bash
+dbus-update-activation-environment: setting XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0
+dbus-update-activation-environment: setting LC_ADDRESS=en_US.UTF-8
+dbus-update-activation-environment: setting LC_NAME=en_US.UTF-8
+dbus-update-activation-environment: setting DESKTOP_SESSION=plasma
+dbus-update-activation-environment: setting LC_MONETARY=en_US.UTF-8
+dbus-update-activation-environment: setting PWD=/home/live
+dbus-update-activation-environment: setting XDG_SESSION_DESKTOP=KDE
+dbus-update-activation-environment: setting LOGNAME=live
+dbus-update-activation-environment: setting QT_QPA_PLATFORMTHEME=gtk2
+dbus-update-activation-environment: setting XDG_SESSION_TYPE=x11
+dbus-update-activation-environment: setting GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
+dbus-update-activation-environment: setting XAUTHORITY=/home/live/.Xauthority
+dbus-update-activation-environment: setting HOME=/home/live
+dbus-update-activation-environment: setting LC_PAPER=en_US.UTF-8
+dbus-update-activation-environment: setting LANG=en_US.UTF-8
+dbus-update-activation-environment: setting XDG_CURRENT_DESKTOP=KDE
+dbus-update-activation-environment: setting XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+dbus-update-activation-environment: setting XDG_SESSION_CLASS=user
+dbus-update-activation-environment: setting LC_IDENTIFICATION=en_US.UTF-8
+dbus-update-activation-environment: setting USER=live
+dbus-update-activation-environment: setting DISPLAY=:0
+dbus-update-activation-environment: setting SHLVL=0
+dbus-update-activation-environment: setting LC_TELEPHONE=en_US.UTF-8
+dbus-update-activation-environment: setting LC_MEASUREMENT=en_US.UTF-8
+dbus-update-activation-environment: setting XDG_RUNTIME_DIR=/run/user/1000
+dbus-update-activation-environment: setting LC_TIME=en_US.UTF-8
+dbus-update-activation-environment: setting GTK3_MODULES=xapp-gtk3-module
+dbus-update-activation-environment: setting PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+dbus-update-activation-environment: setting DBUS_SESSION_BUS_ADDRESS=unix:path=/tmp/dbus-AupnREVB6k,guid=ae0d71d00eca8ee5d4eff1c7674bc6c4
+dbus-update-activation-environment: setting LC_NUMERIC=en_US.UTF-8
+dbus-update-activation-environment: setting _=/usr/bin/dbus-update-activation-environment
+kdeinit5: preparing to launch '/usr/lib/x86_64-linux-gnu/libexec/kf5/klauncher'
+kdeinit5: Launched KLauncher, pid = 1668, result = 0
+Connecting to deprecated signal QDBusConnectionInterface::serviceOwnerChanged(QString,QString,QString)
+kdeinit5: opened connection to :0
+Initializing  "/usr/lib/x86_64-linux-gnu/qt5/plugins/plasma/kcms/systemsettings/kcm_fonts.so"
+Initializing  "/usr/lib/x86_64-linux-gnu/qt5/plugins/plasma/kcms/systemsettings/kcm_mouse.so"
+kdeinit5: Got SETENV 'XCURSOR_THEME=breeze_cursors' from launcher.
+kdeinit5: Got SETENV 'XCURSOR_SIZE=24' from launcher.
+Initializing  "/usr/lib/x86_64-linux-gnu/qt5/plugins/plasma/kcms/systemsettings/kcm_style.so"
+kdeinit5: Got SETENV 'GTK_RC_FILES=/etc/gtk/gtkrc:/home/live/.gtkrc:/home/live/.config/gtkrc' from launcher.
+kdeinit5: Got SETENV 'GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/live/.gtkrc-2.0:/home/live/.config/gtkrc-2.0' from launcher.
+org.kde.plasma.session: process job  "kcminit_startup" finished with exit code  0
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Created window 0x1200001 on screen 0 with timestamp 7863
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 13 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 13 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+kwin_xkbcommon: XKB: inet:334:58: unrecognized keysym "XF86EmojiPicker"
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+Qt: Session management error: networkIdsList argument is NULL
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 0 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+kdeinit5: Got SETENV 'SESSION_MANAGER=local/Loc-OS:@/tmp/.ICE-unix/1730,unix/Loc-OS:/tmp/.ICE-unix/1730' from launcher.
+kdeinit5: Got SETENV 'SESSION_MANAGER=local/Loc-OS:@/tmp/.ICE-unix/1730,unix/Loc-OS:/tmp/.ICE-unix/1730' from launcher.
+OpenGL vendor string:                   Mesa/X.org
+OpenGL renderer string:                 llvmpipe (LLVM 15.0.6, 128 bits)
+OpenGL version string:                  4.5 (Compatibility Profile) Mesa 22.3.6
+OpenGL shading language version string: 4.50
+Driver:                                 LLVMpipe
+GPU class:                              Unknown
+OpenGL version:                         4.5
+GLSL version:                           4.50
+Mesa version:                           22.3.6
+X server version:                       1.21.1
+Linux kernel version:                   5.10.229
+Requires strict binding:                yes
+GLSL shaders:                           yes
+Texture NPOT support:                   yes
+Virtual Machine:                        no
+kwin_platform_x11_standalone: glSwapInterval is unsupported
+xsettingsd: Reloading configuration
+xsettingsd: Loaded 13 settings from /home/live/.config/xsettingsd/xsettingsd.conf
+/usr/bin/iceauth:  creating new authority file /run/user/1000/ICEauthority
+Initializing  "/usr/lib/x86_64-linux-gnu/qt5/plugins/plasma/kcms/systemsettings/kcm_touchpad.so"
+kcm_touchpad: Using X11 backend
+Initializing  "/usr/lib/x86_64-linux-gnu/qt5/plugins/plasma/kcms/systemsettings/kcm_kgamma.so"
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 892, resource id: 14680069, major code: 18 (ChangeProperty), minor code: 0
+
+(yad:1770): dbind-WARNING **: 20:15:35.498: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+New PolkitAgentListener  0x557174aa1e00
+Adding new listener  PolkitQt1::Agent::Listener(0x7f8aec00c250) for  0x557174aa1e00
+Listener online
+Authentication agent result: true
+org.kde.powerdevil: org.kde.powerdevil.chargethresholdhelper.getthreshold failed "Charge thresholds are not supported by the kernel for this hardware"
+org.kde.powerdevil: org.kde.powerdevil.backlighthelper.brightness failed
+Checking screens: available: (QScreen(0x55a1477cd460, name="Virtual-1")) redundant: QHash() fake: QSet() all: (QScreen(0x55a1477cd460, name="Virtual-1"))
+Checking screens: available: (QScreen(0x55a1477cd460, name="Virtual-1")) redundant: QHash() fake: QSet() all: (QScreen(0x55a1477cd460, name="Virtual-1"))
+kf.plasma.quick: Applet preload policy set to 1
+org.kde.powerdevil: Handle button events action could not check for screen configuration
+org.kde.powerdevil: The profile  "AC" tried to activate "DimDisplay" a non-existent action. This is usually due to an installation problem, a configuration problem, or because the action is not supported
+org.kde.powerdevil: org.kde.powerdevil.chargethresholdhelper.getthreshold failed "Charge thresholds are not supported by the kernel for this hardware"
+QObject::connect: No such slot DesktopProtocol::_k_slotRedirection(KIO::Job *, QUrl)
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 1581, resource id: 8388641, major code: 18 (ChangeProperty), minor code: 0
+file:///usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml:534:9: QML Label: Binding loop detected for property "height"
+file:///usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml:499:13: QML Label: Binding loop detected for property "height"
+Trying to use rootObject before initialization is completed, whilst using setInitializationDelayed. Forcing completion
+org.kde.plasma.kicker: Entry is not valid "preferred://browser" QSharedPointer(0x55a148054f80)
+org.kde.plasma.kicker: Entry is not valid "org.kde.kontact.desktop" QSharedPointer(0x55a148054f80)
+org.kde.plasma.kicker: Entry is not valid "ktp-contactlist.desktop" QSharedPointer(0x55a147e24140)
+org.kde.plasma.kicker: Entry is not valid "preferred://browser" QSharedPointer(0x55a14813e840)
+org.kde.plasma.kicker: Entry is not valid "org.kde.kontact.desktop" QSharedPointer(0x55a14813e890)
+org.kde.plasma.kicker: Entry is not valid "ktp-contactlist.desktop" QSharedPointer(0x55a147f3acb0)
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 1715, resource id: 37748739, major code: 15 (QueryTree), minor code: 0
+file:///usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml:499:13: QML Label: Binding loop detected for property "height"
+file:///usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml:534:9: QML Label: Binding loop detected for property "height"
+file:///usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml:556:5: QML Label: Binding loop detected for property "height"
+Cyclic dependency detected between "file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/global/Globals.qml" and "file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/NotificationHeader.qml"
+Cyclic dependency detected between "file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/global/Globals.qml" and "file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/ThumbnailStrip.qml"
+trying to show an empty dialog
+Qt: Session management error: networkIdsList argument is NULL
+kf.kirigami: Failed to find a Kirigami platform plugin
+file:///usr/share/plasma/look-and-feel/org.kde.breeze.desktop/contents/components/VirtualKeyboard.qml:12:1: Type InputPanel unavailable
+qrc:/QtQuick/VirtualKeyboard/content/InputPanel.qml:138:5: Type Keyboard unavailable
+qrc:/QtQuick/VirtualKeyboard/content/components/Keyboard.qml:38:1: module "QtQuick.VirtualKeyboard.Plugins" is not installed
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 6530, resource id: 8388647, major code: 18 (ChangeProperty), minor code: 0
+Destroying listener
+Removing listener  PolkitQt1::Agent::Listener(0x7f8aec00c250)
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 8972, resource id: 14680077, major code: 18 (ChangeProperty), minor code: 0
+qt.qpa.xcb: QXcbConnection: XCB error: 3 (BadWindow), sequence: 9036, resource id: 8388640, major code: 18 (ChangeProperty), minor code: 0
+file:///usr/share/plasma/wallpapers/org.kde.image/contents/ui/main.qml:20: TypeError: Cannot read property 'pluginName' of null
+file:///usr/share/plasma/wallpapers/org.kde.image/contents/ui/main.qml:75: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/wallpapers/org.kde.image/contents/ui/main.qml:78: TypeError: Cannot read property 'pluginName' of null
+file:///usr/share/plasma/wallpapers/org.kde.image/contents/ui/main.qml:80: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/wallpapers/org.kde.image/contents/ui/main.qml:81: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/wallpapers/org.kde.image/contents/ui/main.qml:82: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/wallpapers/org.kde.image/contents/ui/main.qml:83: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/wallpapers/org.kde.image/contents/ui/main.qml:84: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/wallpapers/org.kde.image/contents/ui/main.qml:16: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/wallpapers/org.kde.image/contents/ui/main.qml:17: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/wallpapers/org.kde.image/contents/ui/main.qml:18: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/packages/org.kde.paneltoolbox/contents/ui/main.qml:17: TypeError: Cannot read property 'formFactor' of null
+file:///usr/share/plasma/packages/org.kde.paneltoolbox/contents/ui/main.qml:100: TypeError: Cannot read property 'editMode' of null
+file:///usr/share/plasma/packages/org.kde.paneltoolbox/contents/ui/main.qml:45: TypeError: Cannot read property 'editMode' of null
+file:///usr/share/plasma/packages/org.kde.paneltoolbox/contents/ui/main.qml:34: TypeError: Cannot read property 'editMode' of null
+file:///usr/share/plasma/plasmoids/org.kde.panel/contents/ui/main.qml: Writing to "applet" broke the binding to the underlying model
+file:///usr/share/plasma/plasmoids/org.kde.panel/contents/ui/main.qml: Writing to "applet" broke the binding to the underlying model
+file:///usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/KickoffListDelegate.qml:22: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/Kickoff.qml:29: TypeError: Cannot read property 'location' of null
+file:///usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/Kickoff.qml:35: TypeError: Cannot read property 'formFactor' of null
+file:///usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/Kickoff.qml:38: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/Kickoff.qml:48: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/Kickoff.qml:87: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/Kickoff.qml:127: TypeError: Cannot read property 'formFactor' of null
+file:///usr/share/plasma/plasmoids/org.kde.panel/contents/ui/main.qml: Writing to "applet" broke the binding to the underlying model
+file:///usr/share/plasma/plasmoids/org.kde.panel/contents/ui/main.qml: Writing to "applet" broke the binding to the underlying model
+file:///usr/share/plasma/plasmoids/org.kde.panel/contents/ui/main.qml: Writing to "applet" broke the binding to the underlying model
+file:///usr/share/plasma/plasmoids/org.kde.panel/contents/ui/main.qml: Writing to "applet" broke the binding to the underlying model
+file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/global/Globals.qml:407: TypeError: Cannot read property 'Window' of null
+file:///usr/share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/main.qml:770: TypeError: Cannot read property 'configuration' of null
+file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/global/Globals.qml:0: RangeError: Maximum call stack size exceeded.
+file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/global/Globals.qml:0: RangeError: Maximum call stack size exceeded.
+file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/global/Globals.qml:0: RangeError: Maximum call stack size exceeded.
+file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/global/Globals.qml:0: RangeError: Maximum call stack size exceeded.
+file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/global/Globals.qml:0: RangeError: Maximum call stack size exceeded.
+file:///usr/share/plasma/plasmoids/org.kde.plasma.notifications/contents/ui/global/Globals.qml:0: RangeError: Maximum call stack size exceeded.
+org.kde.plasma.pulseaudio: No object for name "alsa_output.pci-0000_00_1b.0.analog-stereo"
+org.kde.plasma.pulseaudio: No object for name "alsa_output.pci-0000_00_1b.0.analog-stereo"
+org.kde.plasma.pulseaudio: No object for name "alsa_input.pci-0000_00_1b.0.analog-stereo"
+The X11 connection broke (error 1). Did the X11 server die?
+X connection to :0 broken (explicit kill or server shutdown).
+The X11 connection broke (error 1). Did the X11 server die?
+kdeinit5: Fatal IO error: client killed
+kdeinit5: sending SIGHUP to children.
+klauncher: Exiting on signal 1
+The X11 connection broke (error 1). Did the X11 server die?
+kdeinit5: sending SIGTERM to children.
+kdeinit5: Exit.
