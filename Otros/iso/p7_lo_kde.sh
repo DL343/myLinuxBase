@@ -271,7 +271,7 @@ cp  ./custom/dm/face.png   /etc/skel/.face.icon
 #### SDDM: WALLPAPER CUSTOM
 echo "
 [General]
-background=/usr/share/wallpapers/loquitux_playa.png
+background=/usr/share/wallpapers/loquitux_orquidea.png
 type=image
 " > /usr/share/sddm/themes/debian-theme/theme.conf.user
 
@@ -383,6 +383,7 @@ kde_montain_5120x2880.png \
 kde_montainDark_1920x1080.png \
 kde_mountainDark_5120x2880.png \
 landscape_2560x1440.jpeg \	
+Next \
 
 
 #rm /etc/sddm.conf.d/kde_settings.conf
