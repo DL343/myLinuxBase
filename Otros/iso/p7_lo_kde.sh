@@ -309,8 +309,8 @@ rm -r /usr/share/wallpapers/default.png
 echo '[Desktop Entry]
 Type=Application
 Name=User folders update
-TryExec=
-Exec=sh -c "xdg-user-dirs-update --force"
+TryExec=sh -c "xdg-user-dirs-update --force"
+Exec=
 StartupNotify=false
 NoDisplay=true
 
