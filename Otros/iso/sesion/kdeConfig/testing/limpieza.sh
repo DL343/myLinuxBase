@@ -33,6 +33,11 @@ rm   ./live/.Xauthority
 
 
 rm   ./live/.local/share/user-places.xbel
+rm   ./live/.local/share/krunnerstaterc
+rm   ./live/.local/share/sddm/wayland-session.log
+rm   ./live/.config/session/dolphin_dolphin_dolphin
 
+rm -r   ./live/.local/share/kate/
+rm -r   ./live/.local/share/systemsettings/
 
 #ksmserverrc

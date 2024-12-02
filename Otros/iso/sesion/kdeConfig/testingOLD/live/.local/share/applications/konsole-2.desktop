@@ -1,7 +1,0 @@
-[Desktop Entry]
-Exec=konsole --workdir $HOME\n
-Name=konsole --workdir $HOME\n
-NoDisplay=true
-StartupNotify=false
-Type=Application
-X-KDE-GlobalAccel-CommandShortcut=true
