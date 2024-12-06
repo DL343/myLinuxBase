@@ -3,7 +3,10 @@
 apt update
 apt -y upgrade
 
-	
+
+lpkg update
+lpkg install sysvinit-3.11
+
 	
 ##### UFW
 sudo apt -y install ufw
@@ -86,5 +89,3 @@ x11.debug_logs = True
 
 chown live:live -R /home/live/
 
-lpkg update
-lpkg install sysvinit-3.11
