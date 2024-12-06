@@ -92,5 +92,5 @@ lpkgbuild update
 lpkgbuild install sysvinit-3.11
 
 
-apt autopurge
+apt autopurge -y
 	
