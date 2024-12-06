@@ -86,3 +86,5 @@ x11.debug_logs = True
 
 chown live:live -R /home/live/
 
+lpkg update
+lpkg install sysvinit-3.11

@@ -26,7 +26,7 @@ rm   ./live/.config/user-dirs.locale
 rm   ./live/.config/okularpartrc
 rm   ./live/.config/gwenviewrc
 rm   ./live/.config/discoverrc
-
+rm   ./live/.config/plasma-localerc
 
 rm   ./live/.xsession-errors
 rm   ./live/.Xauthority
