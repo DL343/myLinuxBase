@@ -415,7 +415,7 @@ function apps {
 ############################################################
 
 ##### APPS
-apt -y install librewolf kde-spectacle mpv kamera kate ark kcalc gwenview fastfetch okular unrar-free unzip webapp-manager zip libreoffice-calc libreoffice-writer htop imagemagick cmst
+apt -y install librewolf kde-spectacle mpv kamera kate ark kcalc gwenview fastfetch okular unrar-free unzip webapp-manager zip libreoffice-calc libreoffice-writer  libreoffice-impress htop imagemagick cmst
 
 
 
