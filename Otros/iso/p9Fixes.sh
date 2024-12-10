@@ -3,7 +3,7 @@
 apt update
 apt -y upgrade
 
-
+sudo apt 
 
 ##### UFW
 sudo apt -y install ufw
@@ -88,7 +88,22 @@ chown live:live -R /home/live/
 
 
 
-##### PREFIX REFRACTA SNAPSHOT
+
+
+lpkgbuild update
+lpkgbuild install sysvinit-3.11
+
+
+apt install -y linux-image-5.10.230-loc-os
+
+
+
+echo "
+############################################
+####### PREFIX REFRACTA SNAPSHOT
+############################################
+"
+function refractaSnapshot {
 
 kernel=$(ls /boot/ | grep vmlinuz | grep -v old)
 initrd=$(ls /boot/ | grep initrd | grep -v old)
@@ -257,12 +272,10 @@ mv  /tmp/grub.cfg.template   /usr/lib/refractasnapshot/grub.cfg.template
 
 fi
 
+}
 
 
-
-
-lpkgbuild update
-lpkgbuild install sysvinit-3.11
+refractaSnapshot
 
 
 apt -y autoremove --purge
