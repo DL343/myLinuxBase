@@ -1,10 +1,22 @@
 #!/usr/bin/env bash
 
-apt update
-apt -y upgrade
 
-sudo apt 
 
+echo "
+############################################
+####### ACTUALIZACION GENERAL
+############################################
+"
+apt-get update
+apt-get -y upgrade
+
+
+
+echo "
+############################################
+####### AJUSTES
+############################################
+"
 ##### UFW
 sudo apt -y install ufw
 
@@ -14,14 +26,18 @@ sudo ufw enable
 ##### UFW: PREFIX
 update-rc.d -f nftables remove
 
-	
 ##### NFTABLES
 update-rc.d -f nftables remove
 
-
-
 ##### GIT: ELIMINACION
 apt -y purge git
+
+
+echo "
+############################################
+####### CONFIG BLEACHBIT
+############################################
+"
 
 ###### BLEACHBIT LIVE
 #mkdir -p /home/live/.config/bleachbit/
@@ -87,8 +103,11 @@ apt -y purge git
 chown live:live -R /home/live/
 
 
-
-
+echo "
+############################################
+####### ACTUALIZACIONES ESPECIFICAS
+############################################
+"
 
 lpkgbuild update
 lpkgbuild install sysvinit-3.11
@@ -277,6 +296,12 @@ fi
 
 refractaSnapshot
 
+
+echo "
+############################################
+####### LIEMPIEZA
+############################################
+"
 
 apt -y autoremove --purge
 	
