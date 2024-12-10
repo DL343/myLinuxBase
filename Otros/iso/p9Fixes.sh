@@ -88,6 +88,179 @@ chown live:live -R /home/live/
 
 
 
+##### PREFIX REFRACTA SNAPSHOT
+
+kernel=$(ls /boot/ | grep vmlinuz | grep -v old)
+initrd=$(ls /boot/ | grep initrd | grep -v old)
+
+kernelCount=$(ls /boot/ | grep initrd | grep -v somepattern | wc -l)
+initrdCount=$(ls /boot/ | grep vmlinuz | grep -v somepattern | wc -l)
+
+if !( [ "$kernelCount" -eq 1 ] && [ "$kernelCount" -eq 1 ] )
+then
+
+	echo "
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      Algo no cuadra, revisar kernel e initrd en /boot/
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    "
+
+else
+
+    
+echo "::::: Perfecto, se detecto 
+kernel = $kernel y initrm = $initrd
+continuando con este paso...."
+
+
+##### REFRACTASNAPSHOT: AJUSTE ENTRADAS BIOS KERNEL/VMLINUZ
+awk -v kernel="$kernel" 'BEGIN { count = 0 }
+{
+   	if (/kernel \/live\/vmlinuz/){
+			if (count < 3) {
+				print "     kernel /live/" kernel
+			}     
+			if (count == 3) {
+				print "     kernel /live/" kernel " noapic noapm nodma nomce nolapic nosmp forcepae nomodeset vga=normal ${ifnames_opt} ${netconfig_opt} ${username_opt}" 
+			}
+			count++	
+    } else {
+        print
+    }
+}' /usr/lib/refractasnapshot/iso/isolinux/live.cfg > /tmp/live.cfg.tmp
+mv /tmp/live.cfg.tmp   /usr/lib/refractasnapshot/iso/isolinux/live.cfg
+
+
+##### REFRACTASNAPSHOT: AJUSTE ENTRADAS BIOS INIT
+awk -v initrd="$initrd" 'BEGIN { count = 0 }
+{
+   	if (/append initrd=\/live\/initrd.img/){
+			if (count == 0) {
+				print "    append initrd=/live/" initrd " boot=live ${ifnames_opt} ${netconfig_opt} ${username_opt}  "
+			}     
+			if (count == 1) {
+				print "    append initrd=/live/" initrd " boot=live ${ifnames_opt} ${netconfig_opt} ${username_opt} locales=it_IT.UTF-8 keyboard-layouts=it"
+			}  
+			if (count == 2) {
+				print "    append initrd=/live/" initrd " boot=live  toram ${ifnames_opt} ${netconfig_opt} ${username_opt} "
+			}  
+			if (count == 3) {
+				print "    append initrd=/live/" initrd " boot=live   "
+			} 
+			count++	
+    } else {
+        print
+    }
+}' /usr/lib/refractasnapshot/iso/isolinux/live.cfg   >  /tmp/live.cfg.tmp
+mv /tmp/live.cfg.tmp   /usr/lib/refractasnapshot/iso/isolinux/live.cfg
+
+
+
+##### REFRACTASNAPSHOT: AJUSTE ARCHIVO DE CONFIGURACION: KERNEL
+awk -v kernel="$kernel" -v initrd="$initrd" '
+BEGIN { count = 0 }
+{
+	if (/kernel_image=/) {
+		if( count == 1 ){
+			print "kernel_image=\"/boot/" kernel "\""
+		} else {
+			count++
+			print
+		}	
+	} else {
+		print
+	}
+	
+}' /etc/refractasnapshot.conf   >   /tmp/refractasnapshot.conf.tmp
+mv /tmp/refractasnapshot.conf.tmp   /etc/refractasnapshot.conf 
+
+
+##### REFRACTASNAPSHOT: AJUSTE ARCHIVO DE CONFIGURACION: INIT
+awk -v kernel="$kernel" -v initrd="$initrd" '
+BEGIN { count = 0 }
+{
+	if (/initrd_image=/) {
+		print "initrd_image=\"/boot/" initrd "\""
+	} else {
+		print
+	}
+	
+}' /etc/refractasnapshot.conf   >   /tmp/refractasnapshot.conf.tmp
+mv /tmp/refractasnapshot.conf.tmp   /etc/refractasnapshot.conf 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##### REFRACTASNAPSHOT: AJUSTE ENTRADAS EFI KERNEL
+awk -v kernel="$kernel" 'BEGIN { count = 0 }
+{
+
+	if(/linux   \/live\/vmlinuz/){
+		if (count == 0) {
+		print "    linux   /live/" kernel " boot=live ${ifnames_opt} ${netconfig_opt} ${username_opt}    "
+		}    
+		if (count == 1) {
+		print "    linux   /live/" kernel " boot=live ${ifnames_opt} ${netconfig_opt} ${username_opt} locales=it_IT.UTF-8 keyboard-layouts=it "
+		} 
+		if (count == 2) {
+		print " linux   /live/" kernel " boot=live toram ${ifnames_opt} ${netconfig_opt} ${username_opt}    "
+		} 
+		if (count == 3) {
+		print " linux   /live/" kernel " boot=live nocomponents=xinit noapm noapic nolapic nodma nosmp forcepae nomodeset vga=normal ${ifnames_opt} ${netconfig_opt} ${username_opt} "
+		}
+
+		count++
+
+	} else {
+
+		print
+
+	}
+}
+
+' /usr/lib/refractasnapshot/grub.cfg.template   >   /tmp/grub.cfg.template
+mv  /tmp/grub.cfg.template   /usr/lib/refractasnapshot/grub.cfg.template
+
+
+
+
+
+
+
+##### REFRACTASNAPSHOT: AJUSTE ENTRADAS EFI INIT
+awk -v initrd="$initrd" '{
+
+	if(/initrd  \/live\/initrd.img/){
+
+		print "    initrd  /live/" initrd
+
+	} else {
+
+		print
+
+	}
+}
+' /usr/lib/refractasnapshot/grub.cfg.template   >   /tmp/grub.cfg.template
+mv  /tmp/grub.cfg.template   /usr/lib/refractasnapshot/grub.cfg.template
+
+
+
+fi
+
+
+
+
+
 lpkgbuild update
 lpkgbuild install sysvinit-3.11
 
