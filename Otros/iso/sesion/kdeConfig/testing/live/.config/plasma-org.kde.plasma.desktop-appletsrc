@@ -57,7 +57,7 @@ immutability=1
 plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][3][Configuration]
-PreloadWeight=92
+PreloadWeight=89
 popupHeight=514
 popupWidth=651
 
@@ -214,5 +214,5 @@ extraItems=org.kde.plasma.volume,org.kde.kscreen,org.kde.plasma.notifications
 knownItems=org.kde.plasma.volume,org.kde.kscreen,org.kde.plasma.notifications
 
 [ScreenMapping]
-itemsOnDisabledScreens=0,c8ad8624-7f28-43c2-8031-bd618166564a,1,desktop:/Install.desktop
+itemsOnDisabledScreens=
 screenMapping=desktop:/Install.desktop,0,c8ad8624-7f28-43c2-8031-bd618166564a

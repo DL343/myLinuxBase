@@ -3,6 +3,7 @@
 
 rm   ./live/.face.icon
 rm   ./live/.config/autostart/Welcome.desktop
+rm   ./live/.bash_history
 
 rm  -r ./live/Desktop/
 rm  -r ./live/Documents/
