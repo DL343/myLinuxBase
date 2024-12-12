@@ -440,7 +440,7 @@ idleTime=300000
 suspendThenHibernate=false
 suspendType=1
 
-" /home/live/.config/powermanagementprofilesrc
+" > /home/live/.config/powermanagementprofilesrc
 
 
 
