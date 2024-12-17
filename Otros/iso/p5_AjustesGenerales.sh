@@ -454,7 +454,7 @@ apt install xz-utils
 
 ## Configuracion del initramfs
 ## Debian Vanilla: COMPRESS=zstd || COMPRESS: [ gzip | bzip2 | lz4 | lzma | lzop | xz | zstd ]
-sed -i '/COMPRESS=/c COMPRESS=gzip' /etc/initramfs-tools/initramfs.conf
+sed -i '/COMPRESS=/c COMPRESS=xz' /etc/initramfs-tools/initramfs.conf
 
 
 # UMASK=0077 significa que los permisos predeterminados para los archivos y directorios creados serán muy restrictivos:
@@ -779,7 +779,20 @@ x11.debug_logs = True
 
 	##### WALLPAPERS: LIMPIEZA DIRECTORIO
 	rm -r /usr/share/wallpapers/
-	mkdir -p /usr/share/wallpapers
+	mkdir -p /usr/share/wallpapers/
+	
+##### WALLPAPERS DEBIAN: LIMPIEZA
+cd /usr/share/desktop-base/
+rm -r homeworld-theme \
+lines-theme \
+spacefun-theme \
+emerald-theme \
+joy-inksplat-theme \
+moonlight-theme \
+futureprototype-theme \
+joy-theme \
+softwaves-theme
+
 
 	##### WALLPAPER PRINCIPAL
 	mkdir -p /usr/share/wallpapers/

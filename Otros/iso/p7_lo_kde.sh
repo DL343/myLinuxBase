@@ -365,17 +365,17 @@ chmod +x /etc/skel/.config/autostart/xdg-user-dirs-update.desktop
 
 
 
-##### WALLPAPERS DEBIAN: LIMPIEZA
-cd /usr/share/desktop-base/
-rm -r homeworld-theme \
-lines-theme \
-spacefun-theme \
-emerald-theme \
-joy-inksplat-theme \
-moonlight-theme \
-futureprototype-theme \
-joy-theme \
-softwaves-theme \
+###### WALLPAPERS DEBIAN: LIMPIEZA
+#cd /usr/share/desktop-base/
+#rm -r homeworld-theme \
+#lines-theme \
+#spacefun-theme \
+#emerald-theme \
+#joy-inksplat-theme \
+#moonlight-theme \
+#futureprototype-theme \
+#joy-theme \
+#softwaves-theme \
 
 cd /usr/share/wallpapers/
 rm -r   kde_montain_1920x1080.png \
