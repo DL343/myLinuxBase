@@ -258,7 +258,8 @@ icon-theme-name=Tela-grey-dark
 
 fi
 
-
+###### LIGHTDM: ICONO USUARIO
+cp ./custom/dm/face.png   /home/live/.fase
 
 
 
