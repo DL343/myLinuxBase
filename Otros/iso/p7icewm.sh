@@ -259,8 +259,8 @@ icon-theme-name=Tela-grey-dark
 fi
 
 ###### LIGHTDM: ICONO USUARIO
-cp ./custom/dm/face.png   /home/live/.fase
-
+cp ./custom/dm/face.png   /home/live/.face
+cp ./custom/dm/face.png   /etc/skel/.face
 
 
 ########################################################################
